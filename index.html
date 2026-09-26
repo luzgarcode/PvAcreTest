@@ -238,6 +238,12 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .scan-video{ width:100%; height:100%; object-fit:cover; display:block; }
 .scan-guide{ position:absolute; inset:16% 8%; border:2px solid var(--vis); border-radius:6px; pointer-events:none; }
 .scan-msg{ text-align:center; margin:0; }
+.scan-torch{ position:absolute; top:10px; right:10px; z-index:2; width:38px; height:38px; padding:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(20,24,30,.55); border-color:transparent; color:#fff; }
+.scan-torch[hidden]{ display:none; }
+.scan-torch svg{ width:18px; height:18px; }
+.scan-torch.on{ background:var(--vis); color:#221a00; }
+.scan-focus-ring{ position:absolute; width:56px; height:56px; margin-left:-28px; margin-top:-28px; border:2px solid #fff; border-radius:50%; pointer-events:none; animation:focusring .6s ease-out forwards; }
+@keyframes focusring{ 0%{ transform:scale(1.3); opacity:1; } 100%{ transform:scale(1); opacity:0; } }
 
 .toast{ position:fixed; left:50%; bottom:calc(84px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:6px; z-index:60; font-weight:600; max-width:90vw; }
 .busy{ position:fixed; inset:0; z-index:70; background:rgba(10,15,20,.45); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:18px; }
@@ -312,6 +318,7 @@ const ICON = {
   chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
   logout:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>',
   barcode:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M7 8v8M10 8v8M13 8v3M13 14v2M16 8v8"/></svg>',
+  flash:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
 };
 const TYPES = {
   text:{label:"Texte", def:[150,16]}, multiline:{label:"Paragraphe", def:[260,50]}, date:{label:"Date", def:[90,16]},
@@ -905,21 +912,48 @@ function scanBarcode(){
     m.innerHTML=`<div class="sheet scan-sheet" role="dialog" aria-modal="true" aria-label="Scanner un code-barres">
       <div class="sheet-h"><h3 style="font-size:18px">Scanner un code-barres</h3><button class="btn sm ghost" data-x="cancel" aria-label="Fermer">✕</button></div>
       <div class="sheet-b scan-body">
-        <div class="scan-frame"><video class="scan-video" playsinline muted autoplay></video><div class="scan-guide"></div></div>
-        <p class="kbd scan-msg" id="scanMsg">Visez le code-barres avec la caméra…</p>
+        <div class="scan-frame"><video class="scan-video" playsinline muted autoplay></video><div class="scan-guide"></div><button type="button" class="scan-torch" data-x="torch" aria-label="Activer le flash" hidden>${ICON.flash}</button></div>
+        <p class="kbd scan-msg" id="scanMsg">Visez le code-barres avec la caméra… touchez l'image pour faire la mise au point.</p>
       </div>
       <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button></div></div>`;
     document.body.appendChild(m);
-    const video=$("video",m), msg=$("#scanMsg",m);
-    let controls=null, done=false;
+    const video=$("video",m), msg=$("#scanMsg",m), torchBtn=$(".scan-torch",m), frame=$(".scan-frame",m);
+    let controls=null, done=false, torchOn=false, torchBusy=false;
     const close=v=>{ if(done) return; done=true; try{ controls && controls.stop(); }catch(e){} m.remove(); resolve(v); };
     let reader;
     try{ reader = new ZXingBrowser.BrowserMultiFormatReader(); }
     catch(e){ toast("Scanner indisponible sur cet appareil"); m.remove(); resolve(null); return; }
     reader.decodeFromVideoDevice(undefined, video, (result) => { if (result && !done) close(result.getText()); })
-      .then(c => { controls=c; })
+      .then(c => {
+        controls=c;
+        try{
+          const caps = c.streamVideoCapabilitiesGet && c.streamVideoCapabilitiesGet();
+          if (caps && caps.torch && c.switchTorch) torchBtn.hidden=false;
+        }catch(e){}
+      })
       .catch(e => { msg.textContent = e && e.name==="NotAllowedError" ? "Accès à la caméra refusé." : e && e.name==="NotFoundError" ? "Aucune caméra détectée sur cet appareil." : "Impossible d'ouvrir la caméra."; });
-    m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="cancel") close(null); };
+    const focusRing = (x,y) => { const r=document.createElement("div"); r.className="scan-focus-ring"; r.style.left=x+"px"; r.style.top=y+"px"; frame.appendChild(r); setTimeout(()=>r.remove(), 650); };
+    frame.addEventListener("click", e => {
+      if (e.target.closest(".scan-torch")) return;
+      const rect=video.getBoundingClientRect();
+      focusRing(e.clientX-rect.left, e.clientY-rect.top);
+      if (!controls || !controls.streamVideoConstraintsApply) return;
+      const x=(e.clientX-rect.left)/rect.width, y=(e.clientY-rect.top)/rect.height;
+      try{
+        const p = controls.streamVideoConstraintsApply({ advanced:[{ pointsOfInterest:[{x,y}], focusMode:"single-shot" }] });
+        if (p && p.catch) p.catch(() => {
+          try{ const p2=controls.streamVideoConstraintsApply({ advanced:[{ focusMode:"single-shot" }] }); if (p2 && p2.catch) p2.catch(()=>{}); }catch(e2){}
+        });
+      }catch(err){}
+    });
+    m.onclick=e=>{ const a=e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x); if(!a) return;
+      if(a==="cancel") close(null);
+      if(a==="torch"){
+        if (!controls || !controls.switchTorch || torchBusy) return;
+        torchBusy=true; const next=!torchOn;
+        controls.switchTorch(next).then(()=>{ torchOn=next; torchBtn.classList.toggle("on", torchOn); }).catch(()=>{}).finally(()=>{ torchBusy=false; });
+      }
+    };
   });
 }
 
