@@ -96,7 +96,10 @@ img{ max-width:100%; }
 .rolepill.admin{ color:var(--vis-ink); background:var(--vis); border-color:var(--vis); }
 .rolepill.checking{ opacity:.7; }
 .rolepill.err{ color:#F08A83; border-color:#F08A83; cursor:help; }
-.rolepill{ white-space:nowrap; }
+.rolepill{ white-space:nowrap; transition:opacity .6s ease; }
+.rolepill.pill-out{ opacity:0; }
+.mark span.brand-fade{ opacity:0; transition:opacity .6s ease; }
+.mark span.brand-fade.brand-in{ opacity:1; }
 .sec-h{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:28px 0 12px; }
 .sec-h h2{ font-family:var(--font-c); font-size:24px; margin:0; flex:1; min-width:180px; }
 .list{ display:grid; gap:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
@@ -430,9 +433,23 @@ async function syncPill(){
   const txt = mins < 2 ? "à jour à l'instant" : mins < 60 ? `à jour il y a ${mins} min` : `à jour depuis le ${fmtDate(last.v)}`;
   return `<span class="rolepill" title="Les modèles sont vérifiés à chaque ouverture">${esc(txt)}</span>`;
 }
+let brandFadeTimer = null;
 async function homeBar(){
-  setBar(`<div class="mark"><i></i><span>PV &amp; Go</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
+  if (brandFadeTimer){ clearTimeout(brandFadeTimer); brandFadeTimer = null; }
+  setBar(`<div class="mark"><i></i><span class="brand-fade">PV &amp; Go</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
   if (IS_TEST_BUILD) $("#barLogout").onclick = logout;
+  // Sur mobile, l'icône seule reste dans la barre ; une fois la synchro confirmée
+  // (pas d'erreur, pas en cours), le pill "à jour…" laisse place au nom de l'appli
+  // après quelques secondes. En cas d'échec/hors-ligne, le pill d'état reste affiché.
+  if (!S.syncing && !S.syncError){
+    brandFadeTimer = setTimeout(() => {
+      const pill = bar.querySelector(".rolepill");
+      const span = bar.querySelector(".mark span");
+      if (pill) pill.classList.add("pill-out");
+      if (span){ span.style.display = "inline-block"; requestAnimationFrame(() => span.classList.add("brand-in")); }
+      if (pill) setTimeout(() => { if (pill.isConnected) pill.style.display = "none"; }, 650);
+    }, 3500);
+  }
 }
 
 const emptyProfile = () => ({name:"", phone:"", email:"", signature:null, secteur:""});
