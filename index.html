@@ -765,7 +765,7 @@ $("#pickPdfs").onchange = async e => {
       const src = await PDFLib.PDFDocument.load(buf, {ignoreEncryption:true});
       const pages = src.getPageCount();
       S.draft.annexFiles = S.draft.annexFiles || [];
-      S.draft.annexFiles.push({id:uid(), name:f.name, bytes:buf, pages});
+      S.draft.annexFiles.push({id:uid(), name:f.name, bytes:buf, pages, caption:""});
     }catch(err){ failed++; }
   }
   done(); renderAnnexFiles(); draftChanged();
@@ -777,7 +777,9 @@ function renderAnnexFiles(){
   L.innerHTML = files.length ? files.map((a,i)=>`<div class="annex-item" data-af="${a.id}">
     <div class="ph" style="cursor:default;font-weight:700;color:var(--ink-2)">PDF</div>
     <div><div style="font-weight:600">${esc(a.name)}</div><div class="kbd">${a.pages?`${a.pages} page${a.pages>1?"s":""}`:""}</div>
+    <label class="fld" style="margin:6px 0"><span>Légende</span><input class="inp" data-afcap="${a.id}" value="${esc(a.caption||"")}" placeholder="Ex. Attestation fournisseur"></label>
     <div class="btnrow">${i>0?`<button class="btn sm ghost" data-afup="${a.id}">Monter</button>`:""}<button class="btn sm ghost danger" data-afdel="${a.id}">Retirer</button></div></div></div>`).join("") : `<p class="kbd">Aucun fichier PDF joint pour l'instant.</p>`;
+  $$("[data-afcap]",L).forEach(el=>el.oninput=()=>{ const a=S.draft.annexFiles.find(a=>a.id===el.dataset.afcap); if(a){ a.caption=el.value; draftChanged(); } });
   $$("[data-afdel]",L).forEach(el=>el.onclick=()=>{ S.draft.annexFiles=(S.draft.annexFiles||[]).filter(a=>a.id!==el.dataset.afdel); renderAnnexFiles(); draftChanged(); });
   $$("[data-afup]",L).forEach(el=>el.onclick=()=>{ const arr=S.draft.annexFiles; const i=arr.findIndex(a=>a.id===el.dataset.afup); const [x]=arr.splice(i,1); arr.splice(i-1,0,x); renderAnnexFiles(); draftChanged(); });
   updateStats();
@@ -909,13 +911,23 @@ async function buildPdf(tpl, draft){
       pg.drawText(cap,{x:M,y:M+(capH-cs)/2,size:cs,font:bold,color:rgb(0.09,0.13,0.17)});
     }
   }
-  // fichiers PDF joints — pages ajoutées telles quelles, à la fin
+  // fichiers PDF joints — pages ajoutées telles quelles, à la fin, avec une légende sur la 1ère page
   for (const a of (draft.annexFiles||[])){
     if (!a.bytes) continue;
     try{
       const src = await PDFDocument.load(a.bytes, {ignoreEncryption:true});
       const copied = await doc.copyPages(src, src.getPageIndices());
-      copied.forEach(p => doc.addPage(p));
+      copied.forEach((p,idx) => {
+        doc.addPage(p);
+        if (idx===0 && a.caption){
+          const pw=p.getWidth(), ph=p.getHeight(), bh=Math.min(30, Math.max(16, ph*0.1));
+          p.drawRectangle({x:0,y:ph-bh,width:pw,height:bh,color:rgb(0.09,0.13,0.17)});
+          const cap = safeB(a.caption);
+          let cs = Math.min(11, bh*0.45);
+          while (bold.widthOfTextAtSize(cap,cs) > pw-16 && cs>6) cs -= 0.25;
+          p.drawText(cap, {x:8, y:ph-bh+(bh-cs)/2, size:cs, font:bold, color:rgb(1,1,1)});
+        }
+      });
     }catch(e){ console.error("annexFile", a.name, e); }
   }
   try{ const form = doc.getForm(); for (const ff of form.getFields()) form.removeField(ff); }catch(e){}
@@ -954,8 +966,6 @@ async function showSendReview(bytes){
   const defaultBase = pdfFileName().replace(/\.pdf$/i, "");
   const defaultMsg = await emailBodyFor();
   const subject = await emailSubjectFor();
-  const profile = await getProfile();
-  const sector = sectorInfo(profile.secteur);
   const m=document.createElement("div"); m.className="modal";
   m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Envoyer le PV" style="max-width:560px">
     <div class="sheet-h"><h3>Envoyer le PV</h3></div>
@@ -963,20 +973,11 @@ async function showSendReview(bytes){
       <label class="fld"><span>Nom du fichier</span><input class="inp" id="sendName" value="${esc(defaultBase)}"></label>
       <label class="fld" style="margin-top:12px"><span>Message</span><textarea class="inp" id="sendMsg" rows="7">${esc(defaultMsg)}</textarea></label>
       <p class="kbd" style="margin:8px 0 0">Le message est repris si tu envoies par mail, SMS ou une appli de message ; ignoré pour un simple téléchargement.</p>
-      ${sector.destEmail ? `<div class="divider" style="margin:14px 0"></div>
-      <p class="kbd" style="margin:0 0 8px"><b>1.</b> Télécharge/partage le PDF avec le bouton ci-dessous. <b>2.</b> Touche « Ouvrir le mail » : le destinataire et l'objet sont déjà remplis, il ne reste qu'à joindre le fichier.</p>
-      <a class="btn" id="sendMailto" href="#" style="width:100%;justify-content:center">✉️ Ouvrir le mail (${esc(sector.destEmail)})</a>` : ""}
     </div>
-    <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button><button class="btn primary" data-x="send">${canShareFiles()?"Envoyer":"Télécharger"} le PDF</button></div>
+    <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button><button class="btn primary" data-x="send">${canShareFiles()?"Envoyer":"Télécharger"}</button></div>
   </div>`;
   document.body.appendChild(m);
   const ni = $("#sendName", m); ni.focus(); ni.setSelectionRange(ni.value.length, ni.value.length);
-  const mailtoLink = $("#sendMailto", m);
-  if (mailtoLink){
-    const updateMailto = () => { mailtoLink.href = `mailto:${sector.destEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent($("#sendMsg", m).value)}`; };
-    updateMailto();
-    $("#sendMsg", m).addEventListener("input", updateMailto);
-  }
   return new Promise(resolve => {
     m.onclick = async e => {
       const a = e.target.dataset && e.target.dataset.x; if(!a) return;
