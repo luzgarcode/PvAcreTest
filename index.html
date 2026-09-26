@@ -115,6 +115,9 @@ img{ max-width:100%; }
 .client-ico-img{ background:#fff; border:1px solid var(--line, #e2e2e2); border-radius:8px; padding:4px; overflow:hidden; }
 .client-ico-img::before{ content:none; }
 .client-ico-img img{ width:100%; height:100%; object-fit:contain; }
+.doc-ico-img{ background:#fff; overflow:hidden; }
+.doc-ico-img::before{ content:none; }
+.doc-ico-img img{ width:100%; height:100%; object-fit:cover; border-radius:1px; }
 .chev{ flex:none; color:var(--ink-2); width:20px; height:20px; }
 .searchwrap{ margin:0 0 22px; }
 .row .title{}
@@ -438,6 +441,13 @@ function tplClients(t){
 }
 function templatesForClient(tpls, clientName){ return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
 function tplCategory(t){ const c = t.category; return CATEGORIES.includes(c) ? c : "Autre"; }
+const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png" };
+function tplIconHtml(t, extraClass){
+  const icon = CATEGORY_ICONS[tplCategory(t)];
+  const cls = "doc-ico" + (extraClass?` ${extraClass}`:"");
+  if (icon) return `<div class="${cls} doc-ico-img"><img src="${esc(icon)}" alt="" loading="lazy"></div>`;
+  return `<div class="${cls}"></div>`;
+}
 async function bindDraftRows(drafts, tplName){
   $$("[data-open-draft]").forEach(b => b.onclick = () => openFill(b.dataset.openDraft));
   $$("[data-del-draft]").forEach(b => b.onclick = async () => { const d=drafts.find(x=>x.id===b.dataset.delDraft); if(!confirm(`Supprimer le rapport « ${d.name} » ?`)) return; await Store.del("drafts", d.id); showHome(); });
@@ -445,7 +455,7 @@ async function bindDraftRows(drafts, tplName){
 function draftRowsHtml(drafts, tpls, tplName){
   return drafts.length ? drafts.map(d => {
     const tpl = tpls.find(t=>t.id===d.templateId); const tot = tpl ? tpl.fields.length : 0; const n = countFilled(d, tpl);
-    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}</div>${tot?`<div class="progress" title="${n} sur ${tot} zones remplies"><b style="width:${Math.round(100*n/tot)}%"></b></div>`:""}</div>
+    return `<div class="row">${tpl ? tplIconHtml(tpl, "filled") : `<div class="doc-ico filled"></div>`}<div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}</div>${tot?`<div class="progress" title="${n} sur ${tot} zones remplies"><b style="width:${Math.round(100*n/tot)}%"></b></div>`:""}</div>
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`;}).join("")
     : `<div class="empty">Aucun rapport en cours.</div>`;
 }
@@ -511,7 +521,7 @@ function renderSearch(tpls){
   const norm = s => String(s||"").toLowerCase();
   const hits = tpls.filter(t => norm(t.name).includes(q) || tplClients(t).some(c => norm(c).includes(q)) || norm(tplCategory(t)).includes(q));
   box.innerHTML = `<div class="sec-h"><h2>${hits.length} résultat${hits.length>1?"s":""}</h2></div>
-    <div class="list">${hits.length ? hits.map(t => `<div class="row"><div class="doc-ico"></div><div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${esc(tplClients(t).join(", "))} · ${esc(tplCategory(t))}</div></div>
+    <div class="list">${hits.length ? hits.map(t => `<div class="row">${tplIconHtml(t)}<div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${esc(tplClients(t).join(", "))} · ${esc(tplCategory(t))}</div></div>
       <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle ne correspond à « ${esc(S.searchQ)} ».</div>`}</div>`;
   $$("[data-new-draft]", box).forEach(b => b.onclick = () => newDraft(b.dataset.newDraft));
   if (IS_TEST_BUILD) $$("[data-calib]", box).forEach(b => b.onclick = async () => openCalibrate(await Store.get("templates", b.dataset.calib)));
@@ -543,7 +553,7 @@ async function showCategory(clientName, categoryName){
   tpls.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
   main.innerHTML = `<div class="wrap">
     <div class="sec-h"><h2>${esc(clientName)} · ${esc(categoryName)}</h2></div>
-    <div class="list">${tpls.length ? tpls.map(t => `<div class="row"><div class="doc-ico"></div><div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${clientName==="Tous clients"?`${esc(tplClients(t).join(", "))} · `:""}${t.fields.length} zone${t.fields.length>1?"s":""} à remplir${t.annexPhotos&&t.annexPhotos.length?` · ${t.annexPhotos.length} photo${t.annexPhotos.length>1?"s":""} demandée${t.annexPhotos.length>1?"s":""}`:""}</div></div>
+    <div class="list">${tpls.length ? tpls.map(t => `<div class="row">${tplIconHtml(t)}<div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${clientName==="Tous clients"?`${esc(tplClients(t).join(", "))} · `:""}${t.fields.length} zone${t.fields.length>1?"s":""} à remplir${t.annexPhotos&&t.annexPhotos.length?` · ${t.annexPhotos.length} photo${t.annexPhotos.length>1?"s":""} demandée${t.annexPhotos.length>1?"s":""}`:""}</div></div>
       <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle pour l'instant dans cette rubrique.</div>`}</div>
   </div>`;
   $$("[data-new-draft]").forEach(b => b.onclick = () => newDraft(b.dataset.newDraft));
