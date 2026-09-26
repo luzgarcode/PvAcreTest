@@ -329,22 +329,22 @@
     {
       "id": "fe00a2b15",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 1",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 264.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
@@ -447,22 +447,22 @@
     {
       "id": "f57002d58",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 2",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 291.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
@@ -565,22 +565,22 @@
     {
       "id": "fecd3ca99",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 3",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 318.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 24.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
@@ -683,22 +683,22 @@
     {
       "id": "fa09ec314",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 4",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 346.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
@@ -801,22 +801,22 @@
     {
       "id": "fc1893c12",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 5",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 373.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
@@ -919,22 +919,22 @@
     {
       "id": "f2c2461e1",
       "type": "choice",
-      "label": "Modèle de la borne installée",
+      "label": "Modèle de la borne (22 = K22 / 27 = K27)",
       "group": "Borne 6",
       "page": 3,
-      "x": 104.5,
+      "x": 111.0,
       "y": 400.0,
-      "w": 21.5,
+      "w": 14.8,
       "h": 24.0,
       "fontSize": 0,
       "align": "center",
       "options": [
         {
-          "label": "K22",
+          "label": "22",
           "box": null
         },
         {
-          "label": "K27",
+          "label": "27",
           "box": null
         }
       ],
