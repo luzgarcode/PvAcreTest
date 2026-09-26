@@ -1,0 +1,5340 @@
+{
+  "name": "K22-K27 – PV d'installation combiné",
+  "shortName": "K22-K27",
+  "fields": [
+    {
+      "id": "f65ff7d42",
+      "type": "multiline",
+      "label": "Client",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 31.0,
+      "y": 178.0,
+      "w": 209.0,
+      "h": 63.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "f6d2d819e",
+      "type": "text",
+      "label": "Adresse du site",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 328.0,
+      "y": 181.0,
+      "w": 484.0,
+      "h": 29.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb485449b",
+      "type": "text",
+      "label": "Numéro du site",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 330.0,
+      "y": 217.0,
+      "w": 482.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "f6fc8ae04",
+      "type": "text",
+      "label": "Nom du responsable du site",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 370.0,
+      "y": 248.0,
+      "w": 189.0,
+      "h": 29.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff9989ba8",
+      "type": "text",
+      "label": "Téléphone du responsable",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 632.0,
+      "y": 245.0,
+      "w": 180.0,
+      "h": 68.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f39e72e73",
+      "type": "text",
+      "label": "Adresse email du responsable",
+      "group": "Informations générales du site",
+      "page": 0,
+      "x": 104.0,
+      "y": 284.0,
+      "w": 455.0,
+      "h": 29.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb9e1b437",
+      "type": "text",
+      "label": "Technicien responsable de l'installation",
+      "group": "Techniciens",
+      "page": 0,
+      "x": 294.0,
+      "y": 341.0,
+      "w": 265.0,
+      "h": 29.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-name"
+    },
+    {
+      "id": "fd4378318",
+      "type": "text",
+      "label": "Téléphone (installateur)",
+      "group": "Techniciens",
+      "page": 0,
+      "x": 632.0,
+      "y": 338.0,
+      "w": 180.0,
+      "h": 32.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-phone"
+    },
+    {
+      "id": "f61e6a6c4",
+      "type": "text",
+      "label": "Technicien chargé de l'assistance à l'ouverture",
+      "group": "Techniciens",
+      "page": 0,
+      "x": 328.0,
+      "y": 376.0,
+      "w": 231.0,
+      "h": 29.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7a1690e9",
+      "type": "text",
+      "label": "Téléphone (assistance)",
+      "group": "Techniciens",
+      "page": 0,
+      "x": 632.0,
+      "y": 374.0,
+      "w": 180.0,
+      "h": 31.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa469dd2f",
+      "type": "date",
+      "label": "Date d'installation",
+      "group": "Horaires",
+      "page": 0,
+      "x": 87.0,
+      "y": 454.0,
+      "w": 111.0,
+      "h": 19.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2beee6b6",
+      "type": "time",
+      "label": "Heure d'arrivée (installateur)",
+      "group": "Horaires",
+      "page": 0,
+      "x": 332.0,
+      "y": 446.0,
+      "w": 96.0,
+      "h": 11.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f30c0e52d",
+      "type": "time",
+      "label": "Heure de départ (installateur)",
+      "group": "Horaires",
+      "page": 0,
+      "x": 618.0,
+      "y": 446.0,
+      "w": 96.0,
+      "h": 11.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe56b7230",
+      "type": "time",
+      "label": "Heure d'arrivée (assistance)",
+      "group": "Horaires",
+      "page": 0,
+      "x": 332.0,
+      "y": 505.0,
+      "w": 96.0,
+      "h": 11.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fedca5f0b",
+      "type": "time",
+      "label": "Heure de départ (assistance)",
+      "group": "Horaires",
+      "page": 0,
+      "x": 618.0,
+      "y": 505.0,
+      "w": 96.0,
+      "h": 11.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2de5e851",
+      "type": "time",
+      "label": "Heure de mise à disposition des palettes Acrelec",
+      "group": "Horaires complémentaires",
+      "page": 3,
+      "x": 514,
+      "y": 158.5,
+      "w": 299,
+      "h": 14,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f80a13d0f",
+      "type": "time",
+      "label": "Heure de la mise sous tension des bornes",
+      "group": "Horaires complémentaires",
+      "page": 3,
+      "x": 514,
+      "y": 175.5,
+      "w": 299,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f92f03177",
+      "type": "time",
+      "label": "Heure de fin du paramétrage",
+      "group": "Horaires complémentaires",
+      "page": 3,
+      "x": 514,
+      "y": 191.5,
+      "w": 299,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fddf6c283",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 182.0,
+      "y": 264.0,
+      "w": 114.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6627302a",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 300.0,
+      "y": 264.0,
+      "w": 109.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb84f8b54",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 413.0,
+      "y": 264.0,
+      "w": 124.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffe215a7b",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 541.0,
+      "y": 264.0,
+      "w": 103.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6a1243e5",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 648.0,
+      "y": 264.0,
+      "w": 165.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9403f205",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 182.0,
+      "y": 291.0,
+      "w": 114.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f31aa3b9d",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 300.0,
+      "y": 291.0,
+      "w": 109.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc5ad14d3",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 413.0,
+      "y": 291.0,
+      "w": 124.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fab457c2b",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 541.0,
+      "y": 291.0,
+      "w": 103.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb915aa1c",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 648.0,
+      "y": 291.0,
+      "w": 165.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc8f1f7a3",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 182.0,
+      "y": 318.0,
+      "w": 114.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f15ba1d0c",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 300.0,
+      "y": 318.0,
+      "w": 109.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f786cf3fa",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 413.0,
+      "y": 318.0,
+      "w": 124.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fda9b8439",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 541.0,
+      "y": 318.0,
+      "w": 103.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f339df14f",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 648.0,
+      "y": 318.0,
+      "w": 165.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fffbfc96e",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 182.0,
+      "y": 346.0,
+      "w": 114.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffe9942b6",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 300.0,
+      "y": 346.0,
+      "w": 109.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe9186cd3",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 413.0,
+      "y": 346.0,
+      "w": 124.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fef74003c",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 541.0,
+      "y": 346.0,
+      "w": 103.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f819e5212",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 648.0,
+      "y": 346.0,
+      "w": 165.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa34330ea",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 182.0,
+      "y": 373.0,
+      "w": 114.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbbcd62a7",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 300.0,
+      "y": 373.0,
+      "w": 109.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb8699a78",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 413.0,
+      "y": 373.0,
+      "w": 124.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f25257857",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 541.0,
+      "y": 373.0,
+      "w": 103.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7823c9da",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 648.0,
+      "y": 373.0,
+      "w": 165.0,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7869f4b5",
+      "type": "text",
+      "label": "Type de borne (sur pied, comptoir, murale)",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 182.0,
+      "y": 400.0,
+      "w": 114.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3a1ac0af",
+      "type": "text",
+      "label": "N° de série",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 300.0,
+      "y": 400.0,
+      "w": 109.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9bad2344",
+      "type": "text",
+      "label": "N° de série TPE",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 413.0,
+      "y": 400.0,
+      "w": 124.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6669de61",
+      "type": "text",
+      "label": "N° de série PC",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 541.0,
+      "y": 400.0,
+      "w": 103.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0c428562",
+      "type": "text",
+      "label": "N° de brassage",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 648.0,
+      "y": 400.0,
+      "w": 165.0,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f076a9eaa",
+      "type": "text",
+      "label": "Nom (personne 1)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 205.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9aadb2a9",
+      "type": "signature",
+      "label": "Émargement (personne 1)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 205.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6ea75028",
+      "type": "text",
+      "label": "Nom (personne 2)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 223.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0c0eacad",
+      "type": "signature",
+      "label": "Émargement (personne 2)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 223.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f231dd474",
+      "type": "text",
+      "label": "Nom (personne 3)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 241.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9df686b0",
+      "type": "signature",
+      "label": "Émargement (personne 3)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 241.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1c24d087",
+      "type": "text",
+      "label": "Nom (personne 4)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 259.0,
+      "w": 389.0,
+      "h": 15.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe731cc03",
+      "type": "signature",
+      "label": "Émargement (personne 4)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 259.0,
+      "w": 388.0,
+      "h": 15.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3041f5a2",
+      "type": "text",
+      "label": "Nom (personne 5)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 278.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f708df32c",
+      "type": "signature",
+      "label": "Émargement (personne 5)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 278.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa0740cff",
+      "type": "text",
+      "label": "Nom (personne 6)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 296.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f782e6f91",
+      "type": "signature",
+      "label": "Émargement (personne 6)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 296.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f51927ac6",
+      "type": "text",
+      "label": "Nom (personne 7)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 31.0,
+      "y": 314.0,
+      "w": 389.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8d65a0bf",
+      "type": "signature",
+      "label": "Émargement (personne 7)",
+      "group": "Formation et émargement",
+      "page": 7,
+      "x": 424.0,
+      "y": 314.0,
+      "w": 388.0,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3dd36350",
+      "type": "multiline",
+      "label": "Commentaires client",
+      "group": "Commentaires et signatures",
+      "page": 8,
+      "x": 30.0,
+      "y": 120.0,
+      "w": 779.0,
+      "h": 86.0,
+      "fontSize": 9,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 12.5,
+      "auto": ""
+    },
+    {
+      "id": "fc22e4471",
+      "type": "multiline",
+      "label": "Commentaires Prestataire Acrelec",
+      "group": "Commentaires et signatures",
+      "page": 8,
+      "x": 30.0,
+      "y": 248.0,
+      "w": 779.0,
+      "h": 86.0,
+      "fontSize": 9,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 12.5,
+      "auto": ""
+    },
+    {
+      "id": "f75ab421d",
+      "type": "signature",
+      "label": "Signature du responsable du site",
+      "group": "Commentaires et signatures",
+      "page": 8,
+      "x": 117.0,
+      "y": 402.0,
+      "w": 216.0,
+      "h": 86.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff57edc75",
+      "type": "signature",
+      "label": "Signature du représentant Acrelec",
+      "group": "Commentaires et signatures",
+      "page": 8,
+      "x": 597.0,
+      "y": 402.0,
+      "w": 216.0,
+      "h": 86.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-signature"
+    },
+    {
+      "id": "f59d2ecf9",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 234.0,
+      "w": 50.8,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9cede601",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 234.0,
+      "w": 50.6,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffece6b7a",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 234.0,
+      "w": 50.7,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6a2e5725",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 234.0,
+      "w": 50.7,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5724daa2",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 234.0,
+      "w": 50.8,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f13fe13da",
+      "type": "choice",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 234.0,
+      "w": 50.7,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4d7804dc",
+      "type": "multiline",
+      "label": "1. Fixation de la borne (mur ou sol, totalité des trous vis)",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 234.0,
+      "w": 170.8,
+      "h": 54.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0caa5db2",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 292.4,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f090c59cd",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 292.4,
+      "w": 50.6,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f64c04d74",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 292.4,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f469415a9",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 292.4,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f23f60a92",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 292.4,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f735a8a70",
+      "type": "choice",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 292.4,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f886a3f44",
+      "type": "multiline",
+      "label": "2. Alimentation 230V : borne câblée et câble repéré ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 292.4,
+      "w": 170.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe26d4b71",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 335.4,
+      "w": 50.8,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f67738c01",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 335.4,
+      "w": 50.6,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd1a55e59",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 335.4,
+      "w": 50.7,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f91df76d7",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 335.4,
+      "w": 50.7,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f566033ea",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 335.4,
+      "w": 50.8,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0ab2fc67",
+      "type": "choice",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 335.4,
+      "w": 50.7,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff53edff3",
+      "type": "multiline",
+      "label": "3. Kiosk correctement brassé (ports 4 à 10 sur switch 1 et 2) ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 335.4,
+      "w": 170.8,
+      "h": 45.4,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc4ac1f26",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 384.9,
+      "w": 50.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffd290aaf",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 384.9,
+      "w": 50.6,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7525989f",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 384.9,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa120e86f",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 384.9,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8a0291f1",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 384.9,
+      "w": 50.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6fd906a6",
+      "type": "choice",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 384.9,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f01c887e2",
+      "type": "multiline",
+      "label": "4. Câblage réseau PC : câblé et câble repéré ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 384.9,
+      "w": 170.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9079928f",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 428.1,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe299be25",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 428.1,
+      "w": 50.6,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f484cc3ce",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 428.1,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd80f6a33",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 428.1,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff5fa887b",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 428.1,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff0dc859b",
+      "type": "choice",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 428.1,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f430a22da",
+      "type": "multiline",
+      "label": "5. Câblage réseau TPE : câblé et câble repéré ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 428.1,
+      "w": 170.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe6c14b01",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 471.1,
+      "w": 50.8,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3c0f1d96",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 471.1,
+      "w": 50.6,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6bb65353",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 471.1,
+      "w": 50.7,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8c2527d9",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 471.1,
+      "w": 50.7,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f93751432",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 471.1,
+      "w": 50.8,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7726f797",
+      "type": "choice",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 471.1,
+      "w": 50.7,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9a611f4c",
+      "type": "multiline",
+      "label": "6. Écran correctement fixé et câblé ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 471.1,
+      "w": 170.8,
+      "h": 26.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fca06489b",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 1",
+      "page": 4,
+      "x": 293.0,
+      "y": 502.1,
+      "w": 50.8,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1a91df42",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 2",
+      "page": 4,
+      "x": 349.8,
+      "y": 502.1,
+      "w": 50.6,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2f43a086",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 3",
+      "page": 4,
+      "x": 406.4,
+      "y": 502.1,
+      "w": 50.7,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa10181cd",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 4",
+      "page": 4,
+      "x": 463.1,
+      "y": 502.1,
+      "w": 50.7,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbe04bb57",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 5",
+      "page": 4,
+      "x": 519.8,
+      "y": 502.1,
+      "w": 50.8,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd62b3121",
+      "type": "choice",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Borne 6",
+      "page": 4,
+      "x": 576.6,
+      "y": 502.1,
+      "w": 50.7,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3378bd16",
+      "type": "multiline",
+      "label": "7. Imprimante correctement câblée ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 4,
+      "x": 633.3,
+      "y": 502.1,
+      "w": 170.8,
+      "h": 26.7,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb8261e30",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 77.6,
+      "w": 50.8,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5d23dd91",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 77.6,
+      "w": 50.6,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2a2e9288",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 77.6,
+      "w": 50.7,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0f3ae94b",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 77.6,
+      "w": 50.7,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f68cb14b8",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 77.6,
+      "w": 50.8,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd2e849e2",
+      "type": "choice",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 77.6,
+      "w": 50.7,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "faa2257c5",
+      "type": "multiline",
+      "label": "8. Scanner correctement fixé et câblé ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 77.6,
+      "w": 170.8,
+      "h": 26.8,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f315710ed",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 108.5,
+      "w": 50.8,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f877b5d8c",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 108.5,
+      "w": 50.6,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb21e147a",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 108.5,
+      "w": 50.7,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f135f6a2f",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 108.5,
+      "w": 50.7,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f815ad6ed",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 108.5,
+      "w": 50.8,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f581fc787",
+      "type": "choice",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 108.5,
+      "w": 50.7,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3c6604ed",
+      "type": "multiline",
+      "label": "9. Plaque monétique correctement fixée ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 108.5,
+      "w": 170.8,
+      "h": 28.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f822f4fa0",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 141.2,
+      "w": 50.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7ad20cb4",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 141.2,
+      "w": 50.6,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc9c2a2a8",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 141.2,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcf2f058a",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 141.2,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9b02e25a",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 141.2,
+      "w": 50.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f122a0a2b",
+      "type": "choice",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 141.2,
+      "w": 50.7,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f751f1eca",
+      "type": "multiline",
+      "label": "10. TPE correctement fixé et câblé ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 141.2,
+      "w": 170.8,
+      "h": 39.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f64f786c6",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 184.4,
+      "w": 50.8,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff03ef6c7",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 184.4,
+      "w": 50.6,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd249d72d",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 184.4,
+      "w": 50.7,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6d426542",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 184.4,
+      "w": 50.7,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcc52a99b",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 184.4,
+      "w": 50.8,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd13eb1bd",
+      "type": "choice",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 184.4,
+      "w": 50.7,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5c391409",
+      "type": "multiline",
+      "label": "11. Carte audio correctement fixée et câblée ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 184.4,
+      "w": 170.8,
+      "h": 26.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f332c08cb",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 373.5,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd90c3a59",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 373.5,
+      "w": 50.6,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f42f86dce",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 373.5,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7b8e35b0",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 373.5,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe92db666",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 373.5,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6d1588b9",
+      "type": "choice",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 373.5,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1e781abb",
+      "type": "multiline",
+      "label": "12. Aspect extérieur de la borne (griffes, chocs)",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 373.5,
+      "w": 170.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f13c84fc3",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 433.5,
+      "w": 50.8,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdbd9348d",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 433.5,
+      "w": 50.6,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd76d15a7",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 433.5,
+      "w": 50.7,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6145a7dd",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 433.5,
+      "w": 50.7,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9d248485",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 433.5,
+      "w": 50.8,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9af345ad",
+      "type": "choice",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 433.5,
+      "w": 50.7,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa2092489",
+      "type": "multiline",
+      "label": "13. Porte borne : ouverture et fermeture",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 433.5,
+      "w": 170.8,
+      "h": 51.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f16e10a89",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 1",
+      "page": 5,
+      "x": 293.0,
+      "y": 488.8,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f64e728ea",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 2",
+      "page": 5,
+      "x": 349.8,
+      "y": 488.8,
+      "w": 50.6,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd936332a",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 3",
+      "page": 5,
+      "x": 406.4,
+      "y": 488.8,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f130a6f53",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 4",
+      "page": 5,
+      "x": 463.1,
+      "y": 488.8,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2d8abc30",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 5",
+      "page": 5,
+      "x": 519.8,
+      "y": 488.8,
+      "w": 50.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0b32818a",
+      "type": "choice",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Borne 6",
+      "page": 5,
+      "x": 576.6,
+      "y": 488.8,
+      "w": 50.7,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc02fa882",
+      "type": "multiline",
+      "label": "14. Trappe imprimante : ouverture et fermeture",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 5,
+      "x": 633.3,
+      "y": 488.8,
+      "w": 170.8,
+      "h": 38.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f241df200",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 212.3,
+      "w": 50.8,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3b9960bb",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 212.3,
+      "w": 50.6,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcd65d32a",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 212.3,
+      "w": 50.7,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9df365f5",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 212.3,
+      "w": 50.7,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f50bcc0e7",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 212.3,
+      "w": 50.8,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0fb34d77",
+      "type": "choice",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 212.3,
+      "w": 50.7,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7055eba9",
+      "type": "multiline",
+      "label": "15. Écran : lisibilité et fonctionnement de la dalle tactile",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 212.3,
+      "w": 170.8,
+      "h": 45.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4b7c750c",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 261.5,
+      "w": 50.8,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb59bf113",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 261.5,
+      "w": 50.6,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbb7ebb7a",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 261.5,
+      "w": 50.7,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0dba8655",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 261.5,
+      "w": 50.7,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc59cbe9f",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 261.5,
+      "w": 50.8,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffd197f4c",
+      "type": "choice",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 261.5,
+      "w": 50.7,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa022d1a8",
+      "type": "multiline",
+      "label": "16. Scanner : lecture code (feuille A4 + carte + smartphone)",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 261.5,
+      "w": 170.8,
+      "h": 45.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb177f0d0",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 310.9,
+      "w": 50.8,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fff7f0ffe",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 310.9,
+      "w": 50.6,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc6096b34",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 310.9,
+      "w": 50.7,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f49df7f46",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 310.9,
+      "w": 50.7,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fde2976a1",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 310.9,
+      "w": 50.8,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6cfab6f1",
+      "type": "choice",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 310.9,
+      "w": 50.7,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f577246f8",
+      "type": "multiline",
+      "label": "17. TPE : encaissement possible ?",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 310.9,
+      "w": 170.8,
+      "h": 32.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f880f8076",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 347.9,
+      "w": 50.8,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f85ce46cb",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 347.9,
+      "w": 50.6,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc8caae09",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 347.9,
+      "w": 50.7,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6084255e",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 347.9,
+      "w": 50.7,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7b976035",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 347.9,
+      "w": 50.8,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f408eb951",
+      "type": "choice",
+      "label": "18. Imprimante : ticket test",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 347.9,
+      "w": 50.7,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2072638f",
+      "type": "multiline",
+      "label": "18. Imprimante : ticket test",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 347.9,
+      "w": 170.8,
+      "h": 31.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5d07fa19",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 396.6,
+      "w": 50.8,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6bda25e0",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 396.6,
+      "w": 50.6,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f318b130b",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 396.6,
+      "w": 50.7,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdf99c8ef",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 396.6,
+      "w": 50.7,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4b8b0025",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 396.6,
+      "w": 50.8,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fee5f2cae",
+      "type": "choice",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 396.6,
+      "w": 50.7,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f148d9b74",
+      "type": "multiline",
+      "label": "19. Prise de contact client pour lancement de l'applicatif",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 396.6,
+      "w": 170.8,
+      "h": 19.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe5422dcb",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 420.3,
+      "w": 50.8,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fef856a5d",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 420.3,
+      "w": 50.6,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff642a77e",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 420.3,
+      "w": 50.7,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9f1d2ca3",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 420.3,
+      "w": 50.7,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f612d87c2",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 420.3,
+      "w": 50.8,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f453e98ea",
+      "type": "choice",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 420.3,
+      "w": 50.7,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9f464ff8",
+      "type": "multiline",
+      "label": "20. Parcours client (2-3 tests)",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 420.3,
+      "w": 170.8,
+      "h": 35.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff2e32ffa",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 474.1,
+      "w": 50.8,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb55da58c",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 474.1,
+      "w": 50.6,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb89950f8",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 474.1,
+      "w": 50.7,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f721feeec",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 474.1,
+      "w": 50.7,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f116cba25",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 474.1,
+      "w": 50.8,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb65d4949",
+      "type": "choice",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 474.1,
+      "w": 50.7,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc066f8e7",
+      "type": "multiline",
+      "label": "21. Documentation utilisateurs remise",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 474.1,
+      "w": 170.8,
+      "h": 12.8,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8c5b5811",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 491.0,
+      "w": 50.8,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f872acdc4",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 491.0,
+      "w": 50.6,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6732697e",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 491.0,
+      "w": 50.7,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2e546345",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 491.0,
+      "w": 50.7,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff580be6d",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 491.0,
+      "w": 50.8,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f83598e49",
+      "type": "choice",
+      "label": "22. PV d'installation signé au client",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 491.0,
+      "w": 50.7,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f23e3408b",
+      "type": "multiline",
+      "label": "22. PV d'installation signé au client",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 491.0,
+      "w": 170.8,
+      "h": 12.9,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd3e1ebd1",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 1",
+      "page": 6,
+      "x": 293.0,
+      "y": 508.0,
+      "w": 50.8,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa66c0962",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 2",
+      "page": 6,
+      "x": 349.8,
+      "y": 508.0,
+      "w": 50.6,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f268f6a17",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 3",
+      "page": 6,
+      "x": 406.4,
+      "y": 508.0,
+      "w": 50.7,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3d4ea596",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 4",
+      "page": 6,
+      "x": 463.1,
+      "y": 508.0,
+      "w": 50.7,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f48e0453e",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 5",
+      "page": 6,
+      "x": 519.8,
+      "y": 508.0,
+      "w": 50.8,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fec1c42bb",
+      "type": "choice",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Borne 6",
+      "page": 6,
+      "x": 576.6,
+      "y": 508.0,
+      "w": 50.7,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f778df65b",
+      "type": "multiline",
+      "label": "23. Clef mécanique remise (2 clefs/borne)",
+      "group": "Commentaires des contrôles (reste à faire)",
+      "page": 6,
+      "x": 633.3,
+      "y": 508.0,
+      "w": 170.8,
+      "h": 20.8,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    }
+  ],
+  "annexPhotos": [],
+  "optionalPages": [],
+  "category": "Borne de commande",
+  "clients": [
+    "O'Tacos"
+  ]
+}
