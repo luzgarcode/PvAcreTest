@@ -526,9 +526,10 @@ async function showClient(clientName){
   const tpls = await Store.all("templates");
   const forClient = templatesForClient(tpls, clientName);
   const countFor = cat => forClient.filter(t => tplCategory(t)===cat).length;
+  const nonEmptyCategories = cd.categories.filter(cat => countFor(cat) > 0);
   main.innerHTML = `<div class="wrap">
     <div class="sec-h"><h2>${esc(clientName)}</h2></div>
-    <div class="list">${cd.categories.map(cat => `<div class="row client-row" data-cat="${esc(cat)}" role="button" tabindex="0"><div class="doc-ico"></div><div class="main"><div class="name">${esc(cat)}</div><div class="meta">${countFor(cat)} modèle${countFor(cat)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
+    <div class="list">${nonEmptyCategories.map(cat => `<div class="row client-row" data-cat="${esc(cat)}" role="button" tabindex="0"><div class="doc-ico"></div><div class="main"><div class="name">${esc(cat)}</div><div class="meta">${countFor(cat)} modèle${countFor(cat)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
   </div>`;
   $$(".client-row").forEach(el => { const go=()=>showCategory(clientName, el.dataset.cat); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
 }
