@@ -231,6 +231,16 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 @keyframes spin{ to{ transform:rotate(360deg);} }
 @media (prefers-reduced-motion: reduce){ .busy::before{ animation:none; } .grp > summary::before{ transition:none; } }
 .warn{ background:var(--vis-soft); border:1px solid var(--vis); padding:10px 12px; border-radius:var(--r); font-size:14px; margin-bottom:12px; }
+.login-screen{ position:fixed; inset:0; z-index:9999; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px 20px; background:var(--paper); text-align:center; }
+.login-mark{ width:64px; height:64px; border-radius:16px; background:var(--ink); color:var(--vis); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.login-mark svg{ width:34px; height:34px; }
+.login-screen h1{ font-family:var(--font-c); font-size:26px; margin:0 0 6px; }
+.login-screen p.sub{ color:var(--ink-2); font-size:14px; margin:0 0 28px; max-width:320px; }
+.login-card{ width:100%; max-width:340px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px; text-align:left; }
+.login-card .fld{ margin-bottom:14px; }
+.login-card .inp{ font-size:16px; min-height:46px; text-align:center; letter-spacing:.02em; }
+.login-card .btn.primary{ width:100%; min-height:46px; font-size:16px; }
+.login-err{ color:var(--nok); font-size:13px; font-weight:600; margin:0 0 12px; min-height:16px; }
 
 @media (max-width: 820px){
   .ed-body{ flex-direction:column; }
@@ -1136,17 +1146,50 @@ async function previewPdf(){
   }catch(e){ done(); }
 }
 
+/* ============ accès (mot de passe local) ============ */
+const AUTH_PASSWORD = "AcreTech";
+const AUTH_KEY = "pvgo_auth_ok";
+function isAuthed(){ try{ return localStorage.getItem(AUTH_KEY)==="1"; }catch(e){ return false; } }
+function setAuthed(){ try{ localStorage.setItem(AUTH_KEY,"1"); }catch(e){} }
+function showLogin(onSuccess){
+  const overlay = document.createElement("div");
+  overlay.id = "loginOverlay";
+  overlay.className = "login-screen";
+  overlay.innerHTML = `<div class="login-mark">${ICON.mark}</div>
+    <h1>PV &amp; Go</h1>
+    <p class="sub">Application réservée aux techniciens Acrelec. Entrez le mot de passe pour continuer.</p>
+    <div class="login-card">
+      <p class="login-err" id="loginErr"></p>
+      <label class="fld"><span>Mot de passe</span><input class="inp" id="loginPw" type="password" inputmode="text" autocomplete="current-password" placeholder="••••••••"></label>
+      <button class="btn primary" id="loginBtn">Accéder à l'application</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  const pw = overlay.querySelector("#loginPw");
+  const err = overlay.querySelector("#loginErr");
+  const go = () => {
+    if (pw.value === AUTH_PASSWORD){ setAuthed(); overlay.remove(); onSuccess(); }
+    else { err.textContent = "Mot de passe incorrect."; pw.value=""; pw.focus(); }
+  };
+  overlay.querySelector("#loginBtn").onclick = go;
+  pw.addEventListener("keydown", e => { if (e.key==="Enter") go(); });
+  pw.focus();
+}
+
 /* ============ boot ============ */
 (async function boot(){
   if (!window.pdfjsLib || !window.PDFLib){ main.innerHTML=`<div class="wrap"><div class="warn">Les bibliothèques PDF n'ont pas pu se charger. Vérifiez la connexion internet puis rechargez la page.</div></div>`; await homeBar(); return; }
-  await Store.open();
-  const hadAny = (await Store.all("templates")).length > 0;
-  if (!hadAny) S.syncing = true;
-  showHome();
-  const res = await syncManifest();
-  S.syncing = false; S.syncError = res.error || null;
-  if (S.view === "home") showHome();
-  if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
+  const start = async () => {
+    await Store.open();
+    const hadAny = (await Store.all("templates")).length > 0;
+    if (!hadAny) S.syncing = true;
+    showHome();
+    const res = await syncManifest();
+    S.syncing = false; S.syncError = res.error || null;
+    if (S.view === "home") showHome();
+    if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
+  };
+  if (isAuthed()) await start();
+  else showLogin(start);
 })();
 </script>
 </body>
