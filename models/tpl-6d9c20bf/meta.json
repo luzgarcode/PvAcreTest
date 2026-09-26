@@ -760,7 +760,7 @@
     {
       "id": "f4c72a7c0",
       "type": "choice",
-      "label": "Item 1 - Borne 1 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 1 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -799,7 +799,7 @@
     {
       "id": "f40e6dd4c",
       "type": "choice",
-      "label": "Item 1 - Borne 2 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 2 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -838,7 +838,7 @@
     {
       "id": "fe3d3244d",
       "type": "choice",
-      "label": "Item 1 - Borne 3 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 3 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -877,7 +877,7 @@
     {
       "id": "f26edbede",
       "type": "choice",
-      "label": "Item 1 - Borne 4 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 4 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -916,7 +916,7 @@
     {
       "id": "f500f7e7d",
       "type": "choice",
-      "label": "Item 1 - Borne 5 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 5 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -955,7 +955,7 @@
     {
       "id": "fceb720b8",
       "type": "choice",
-      "label": "Item 1 - Borne 6 - Fixation de la Borne (murale ou au sol)",
+      "label": "Borne 6 - Fixation de la Borne (murale ou au sol)",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -994,7 +994,7 @@
     {
       "id": "f7d150ad8",
       "type": "multiline",
-      "label": "Item 1 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -1012,7 +1012,7 @@
     {
       "id": "f3eac5e58",
       "type": "choice",
-      "label": "Item 2 - Borne 1 - Alimentation 230V",
+      "label": "Borne 1 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -1051,7 +1051,7 @@
     {
       "id": "f6a881424",
       "type": "choice",
-      "label": "Item 2 - Borne 2 - Alimentation 230V",
+      "label": "Borne 2 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -1090,7 +1090,7 @@
     {
       "id": "f8f89ab2a",
       "type": "choice",
-      "label": "Item 2 - Borne 3 - Alimentation 230V",
+      "label": "Borne 3 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -1129,7 +1129,7 @@
     {
       "id": "fa23c871a",
       "type": "choice",
-      "label": "Item 2 - Borne 4 - Alimentation 230V",
+      "label": "Borne 4 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -1168,7 +1168,7 @@
     {
       "id": "ff809374f",
       "type": "choice",
-      "label": "Item 2 - Borne 5 - Alimentation 230V",
+      "label": "Borne 5 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -1207,7 +1207,7 @@
     {
       "id": "f5d989308",
       "type": "choice",
-      "label": "Item 2 - Borne 6 - Alimentation 230V",
+      "label": "Borne 6 - Alimentation 230V",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -1246,7 +1246,7 @@
     {
       "id": "f4f53103b",
       "type": "multiline",
-      "label": "Item 2 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -1264,7 +1264,7 @@
     {
       "id": "feccebfb3",
       "type": "choice",
-      "label": "Item 3 - Borne 1 - Câblage Réseau PC",
+      "label": "Borne 1 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -1303,7 +1303,7 @@
     {
       "id": "f055bb6d7",
       "type": "choice",
-      "label": "Item 3 - Borne 2 - Câblage Réseau PC",
+      "label": "Borne 2 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -1342,7 +1342,7 @@
     {
       "id": "fbba5d579",
       "type": "choice",
-      "label": "Item 3 - Borne 3 - Câblage Réseau PC",
+      "label": "Borne 3 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -1381,7 +1381,7 @@
     {
       "id": "f9935a924",
       "type": "choice",
-      "label": "Item 3 - Borne 4 - Câblage Réseau PC",
+      "label": "Borne 4 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -1420,7 +1420,7 @@
     {
       "id": "f3a9eaf80",
       "type": "choice",
-      "label": "Item 3 - Borne 5 - Câblage Réseau PC",
+      "label": "Borne 5 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -1459,7 +1459,7 @@
     {
       "id": "fb9b25e62",
       "type": "choice",
-      "label": "Item 3 - Borne 6 - Câblage Réseau PC",
+      "label": "Borne 6 - Câblage Réseau PC",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -1498,7 +1498,7 @@
     {
       "id": "fe5359796",
       "type": "multiline",
-      "label": "Item 3 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -1516,7 +1516,7 @@
     {
       "id": "f064b1b9e",
       "type": "choice",
-      "label": "Item 4 - Borne 1 - Câblage Réseau TPE",
+      "label": "Borne 1 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -1555,7 +1555,7 @@
     {
       "id": "f24cd9bae",
       "type": "choice",
-      "label": "Item 4 - Borne 2 - Câblage Réseau TPE",
+      "label": "Borne 2 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -1594,7 +1594,7 @@
     {
       "id": "f9d33329a",
       "type": "choice",
-      "label": "Item 4 - Borne 3 - Câblage Réseau TPE",
+      "label": "Borne 3 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -1633,7 +1633,7 @@
     {
       "id": "ff4dca8b7",
       "type": "choice",
-      "label": "Item 4 - Borne 4 - Câblage Réseau TPE",
+      "label": "Borne 4 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -1672,7 +1672,7 @@
     {
       "id": "f96089f9b",
       "type": "choice",
-      "label": "Item 4 - Borne 5 - Câblage Réseau TPE",
+      "label": "Borne 5 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -1711,7 +1711,7 @@
     {
       "id": "f51cc6915",
       "type": "choice",
-      "label": "Item 4 - Borne 6 - Câblage Réseau TPE",
+      "label": "Borne 6 - Câblage Réseau TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -1750,7 +1750,7 @@
     {
       "id": "f7abc81b9",
       "type": "multiline",
-      "label": "Item 4 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -1768,7 +1768,7 @@
     {
       "id": "f5c9ab59b",
       "type": "choice",
-      "label": "Item 5 - Borne 1 - Ecran",
+      "label": "Borne 1 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -1807,7 +1807,7 @@
     {
       "id": "fefff6657",
       "type": "choice",
-      "label": "Item 5 - Borne 2 - Ecran",
+      "label": "Borne 2 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -1846,7 +1846,7 @@
     {
       "id": "f30ca86a1",
       "type": "choice",
-      "label": "Item 5 - Borne 3 - Ecran",
+      "label": "Borne 3 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -1885,7 +1885,7 @@
     {
       "id": "fd72ceaa8",
       "type": "choice",
-      "label": "Item 5 - Borne 4 - Ecran",
+      "label": "Borne 4 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -1924,7 +1924,7 @@
     {
       "id": "fbd42fe60",
       "type": "choice",
-      "label": "Item 5 - Borne 5 - Ecran",
+      "label": "Borne 5 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -1963,7 +1963,7 @@
     {
       "id": "fa4a8959a",
       "type": "choice",
-      "label": "Item 5 - Borne 6 - Ecran",
+      "label": "Borne 6 - Ecran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -2002,7 +2002,7 @@
     {
       "id": "f1c19904a",
       "type": "multiline",
-      "label": "Item 5 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -2020,7 +2020,7 @@
     {
       "id": "ff3b49ab5",
       "type": "choice",
-      "label": "Item 6 - Borne 1 - Imprimante",
+      "label": "Borne 1 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -2059,7 +2059,7 @@
     {
       "id": "f1c244263",
       "type": "choice",
-      "label": "Item 6 - Borne 2 - Imprimante",
+      "label": "Borne 2 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -2098,7 +2098,7 @@
     {
       "id": "facb55a1b",
       "type": "choice",
-      "label": "Item 6 - Borne 3 - Imprimante",
+      "label": "Borne 3 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -2137,7 +2137,7 @@
     {
       "id": "faffd8f27",
       "type": "choice",
-      "label": "Item 6 - Borne 4 - Imprimante",
+      "label": "Borne 4 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -2176,7 +2176,7 @@
     {
       "id": "f0149722a",
       "type": "choice",
-      "label": "Item 6 - Borne 5 - Imprimante",
+      "label": "Borne 5 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -2215,7 +2215,7 @@
     {
       "id": "fa01ecde6",
       "type": "choice",
-      "label": "Item 6 - Borne 6 - Imprimante",
+      "label": "Borne 6 - Imprimante",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -2254,7 +2254,7 @@
     {
       "id": "f26d0d27f",
       "type": "multiline",
-      "label": "Item 6 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -2272,7 +2272,7 @@
     {
       "id": "fa2bee787",
       "type": "choice",
-      "label": "Item 7 - Borne 1 - Scanner",
+      "label": "Borne 1 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -2311,7 +2311,7 @@
     {
       "id": "fd9476135",
       "type": "choice",
-      "label": "Item 7 - Borne 2 - Scanner",
+      "label": "Borne 2 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -2350,7 +2350,7 @@
     {
       "id": "f942781fa",
       "type": "choice",
-      "label": "Item 7 - Borne 3 - Scanner",
+      "label": "Borne 3 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -2389,7 +2389,7 @@
     {
       "id": "fb147ed38",
       "type": "choice",
-      "label": "Item 7 - Borne 4 - Scanner",
+      "label": "Borne 4 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -2428,7 +2428,7 @@
     {
       "id": "fc7af0535",
       "type": "choice",
-      "label": "Item 7 - Borne 5 - Scanner",
+      "label": "Borne 5 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -2467,7 +2467,7 @@
     {
       "id": "f37b5ca3e",
       "type": "choice",
-      "label": "Item 7 - Borne 6 - Scanner",
+      "label": "Borne 6 - Scanner",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -2506,7 +2506,7 @@
     {
       "id": "f1434f074",
       "type": "multiline",
-      "label": "Item 7 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -2524,7 +2524,7 @@
     {
       "id": "fca9497b7",
       "type": "choice",
-      "label": "Item 8 - Borne 1 - Plaque Monétique",
+      "label": "Borne 1 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -2563,7 +2563,7 @@
     {
       "id": "f20b9ee76",
       "type": "choice",
-      "label": "Item 8 - Borne 2 - Plaque Monétique",
+      "label": "Borne 2 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -2602,7 +2602,7 @@
     {
       "id": "ff37d905d",
       "type": "choice",
-      "label": "Item 8 - Borne 3 - Plaque Monétique",
+      "label": "Borne 3 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -2641,7 +2641,7 @@
     {
       "id": "f9f160e03",
       "type": "choice",
-      "label": "Item 8 - Borne 4 - Plaque Monétique",
+      "label": "Borne 4 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -2680,7 +2680,7 @@
     {
       "id": "fb3666662",
       "type": "choice",
-      "label": "Item 8 - Borne 5 - Plaque Monétique",
+      "label": "Borne 5 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -2719,7 +2719,7 @@
     {
       "id": "fc34d58fb",
       "type": "choice",
-      "label": "Item 8 - Borne 6 - Plaque Monétique",
+      "label": "Borne 6 - Plaque Monétique",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -2758,7 +2758,7 @@
     {
       "id": "f9deebe08",
       "type": "multiline",
-      "label": "Item 8 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -2776,7 +2776,7 @@
     {
       "id": "fd31a0783",
       "type": "choice",
-      "label": "Item 9 - Borne 1 - TPE",
+      "label": "Borne 1 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -2815,7 +2815,7 @@
     {
       "id": "f0814f15c",
       "type": "choice",
-      "label": "Item 9 - Borne 2 - TPE",
+      "label": "Borne 2 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -2854,7 +2854,7 @@
     {
       "id": "f8eade1ee",
       "type": "choice",
-      "label": "Item 9 - Borne 3 - TPE",
+      "label": "Borne 3 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -2893,7 +2893,7 @@
     {
       "id": "ffecc4a06",
       "type": "choice",
-      "label": "Item 9 - Borne 4 - TPE",
+      "label": "Borne 4 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -2932,7 +2932,7 @@
     {
       "id": "fc6389ded",
       "type": "choice",
-      "label": "Item 9 - Borne 5 - TPE",
+      "label": "Borne 5 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -2971,7 +2971,7 @@
     {
       "id": "fe4f601e8",
       "type": "choice",
-      "label": "Item 9 - Borne 6 - TPE",
+      "label": "Borne 6 - TPE",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
@@ -3010,7 +3010,7 @@
     {
       "id": "f2fe5d378",
       "type": "multiline",
-      "label": "Item 9 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 634.1,
@@ -3028,7 +3028,7 @@
     {
       "id": "fa9156f05",
       "type": "choice",
-      "label": "Item 10 - Borne 1 - BORNE",
+      "label": "Borne 1 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 294.8,
@@ -3067,7 +3067,7 @@
     {
       "id": "ff700d421",
       "type": "choice",
-      "label": "Item 10 - Borne 2 - BORNE",
+      "label": "Borne 2 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 351.6,
@@ -3106,7 +3106,7 @@
     {
       "id": "fdf995b4c",
       "type": "choice",
-      "label": "Item 10 - Borne 3 - BORNE",
+      "label": "Borne 3 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 408.3,
@@ -3145,7 +3145,7 @@
     {
       "id": "f043651a0",
       "type": "choice",
-      "label": "Item 10 - Borne 4 - BORNE",
+      "label": "Borne 4 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 465.1,
@@ -3184,7 +3184,7 @@
     {
       "id": "fc376b49d",
       "type": "choice",
-      "label": "Item 10 - Borne 5 - BORNE",
+      "label": "Borne 5 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 521.8,
@@ -3223,7 +3223,7 @@
     {
       "id": "f656091a9",
       "type": "choice",
-      "label": "Item 10 - Borne 6 - BORNE",
+      "label": "Borne 6 - BORNE",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 578.6,
@@ -3262,7 +3262,7 @@
     {
       "id": "ffe31122c",
       "type": "multiline",
-      "label": "Item 10 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 634.3,
@@ -3280,7 +3280,7 @@
     {
       "id": "f35320045",
       "type": "choice",
-      "label": "Item 11 - Borne 1 - Porte Borne",
+      "label": "Borne 1 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 294.8,
@@ -3319,7 +3319,7 @@
     {
       "id": "f5f262b66",
       "type": "choice",
-      "label": "Item 11 - Borne 2 - Porte Borne",
+      "label": "Borne 2 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 351.6,
@@ -3358,7 +3358,7 @@
     {
       "id": "f33bcf465",
       "type": "choice",
-      "label": "Item 11 - Borne 3 - Porte Borne",
+      "label": "Borne 3 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 408.3,
@@ -3397,7 +3397,7 @@
     {
       "id": "f68fa0225",
       "type": "choice",
-      "label": "Item 11 - Borne 4 - Porte Borne",
+      "label": "Borne 4 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 465.1,
@@ -3436,7 +3436,7 @@
     {
       "id": "fd6b93140",
       "type": "choice",
-      "label": "Item 11 - Borne 5 - Porte Borne",
+      "label": "Borne 5 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 521.8,
@@ -3475,7 +3475,7 @@
     {
       "id": "f673aa8a2",
       "type": "choice",
-      "label": "Item 11 - Borne 6 - Porte Borne",
+      "label": "Borne 6 - Porte Borne",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 578.6,
@@ -3514,7 +3514,7 @@
     {
       "id": "fed7a23ed",
       "type": "multiline",
-      "label": "Item 11 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 634.3,
@@ -3532,7 +3532,7 @@
     {
       "id": "f94729978",
       "type": "choice",
-      "label": "Item 12 - Borne 1 - Trappe Imprimante",
+      "label": "Borne 1 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 294.8,
@@ -3571,7 +3571,7 @@
     {
       "id": "fc7e07005",
       "type": "choice",
-      "label": "Item 12 - Borne 2 - Trappe Imprimante",
+      "label": "Borne 2 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 351.6,
@@ -3610,7 +3610,7 @@
     {
       "id": "f10a37421",
       "type": "choice",
-      "label": "Item 12 - Borne 3 - Trappe Imprimante",
+      "label": "Borne 3 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 408.3,
@@ -3649,7 +3649,7 @@
     {
       "id": "fa903bc1e",
       "type": "choice",
-      "label": "Item 12 - Borne 4 - Trappe Imprimante",
+      "label": "Borne 4 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 465.1,
@@ -3688,7 +3688,7 @@
     {
       "id": "f47a4c1c9",
       "type": "choice",
-      "label": "Item 12 - Borne 5 - Trappe Imprimante",
+      "label": "Borne 5 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 521.8,
@@ -3727,7 +3727,7 @@
     {
       "id": "f8ce7a32a",
       "type": "choice",
-      "label": "Item 12 - Borne 6 - Trappe Imprimante",
+      "label": "Borne 6 - Trappe Imprimante",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 578.6,
@@ -3766,7 +3766,7 @@
     {
       "id": "f33f41fa6",
       "type": "multiline",
-      "label": "Item 12 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Ouverture / Fermeture",
       "page": 4,
       "x": 634.3,
@@ -3784,7 +3784,7 @@
     {
       "id": "fda2e91e4",
       "type": "choice",
-      "label": "Item 13 - Borne 1 - ECRAN",
+      "label": "Borne 1 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 295.0,
@@ -3823,7 +3823,7 @@
     {
       "id": "fd400a448",
       "type": "choice",
-      "label": "Item 13 - Borne 2 - ECRAN",
+      "label": "Borne 2 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 351.8,
@@ -3862,7 +3862,7 @@
     {
       "id": "f5f365cfd",
       "type": "choice",
-      "label": "Item 13 - Borne 3 - ECRAN",
+      "label": "Borne 3 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 408.3,
@@ -3901,7 +3901,7 @@
     {
       "id": "f63f9d420",
       "type": "choice",
-      "label": "Item 13 - Borne 4 - ECRAN",
+      "label": "Borne 4 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 465.0,
@@ -3940,7 +3940,7 @@
     {
       "id": "f7ad15c1a",
       "type": "choice",
-      "label": "Item 13 - Borne 5 - ECRAN",
+      "label": "Borne 5 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 521.8,
@@ -3979,7 +3979,7 @@
     {
       "id": "f1edd23f6",
       "type": "choice",
-      "label": "Item 13 - Borne 6 - ECRAN",
+      "label": "Borne 6 - ECRAN",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 578.5,
@@ -4018,7 +4018,7 @@
     {
       "id": "fc792d278",
       "type": "multiline",
-      "label": "Item 13 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 634.3,
@@ -4036,7 +4036,7 @@
     {
       "id": "f8215ef56",
       "type": "choice",
-      "label": "Item 14 - Borne 1 - Scanner",
+      "label": "Borne 1 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 295.0,
@@ -4075,7 +4075,7 @@
     {
       "id": "f525e4c25",
       "type": "choice",
-      "label": "Item 14 - Borne 2 - Scanner",
+      "label": "Borne 2 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 351.8,
@@ -4114,7 +4114,7 @@
     {
       "id": "f6cdcc5a2",
       "type": "choice",
-      "label": "Item 14 - Borne 3 - Scanner",
+      "label": "Borne 3 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 408.3,
@@ -4153,7 +4153,7 @@
     {
       "id": "f576fc536",
       "type": "choice",
-      "label": "Item 14 - Borne 4 - Scanner",
+      "label": "Borne 4 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 465.0,
@@ -4192,7 +4192,7 @@
     {
       "id": "f62d3ac36",
       "type": "choice",
-      "label": "Item 14 - Borne 5 - Scanner",
+      "label": "Borne 5 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 521.8,
@@ -4231,7 +4231,7 @@
     {
       "id": "f9dc1b552",
       "type": "choice",
-      "label": "Item 14 - Borne 6 - Scanner",
+      "label": "Borne 6 - Scanner",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 578.5,
@@ -4270,7 +4270,7 @@
     {
       "id": "feb763710",
       "type": "multiline",
-      "label": "Item 14 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 634.3,
@@ -4288,7 +4288,7 @@
     {
       "id": "f28609b5e",
       "type": "choice",
-      "label": "Item 15 - Borne 1 - TPE",
+      "label": "Borne 1 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 295.0,
@@ -4327,7 +4327,7 @@
     {
       "id": "fb23fa42c",
       "type": "choice",
-      "label": "Item 15 - Borne 2 - TPE",
+      "label": "Borne 2 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 351.8,
@@ -4366,7 +4366,7 @@
     {
       "id": "fa2182234",
       "type": "choice",
-      "label": "Item 15 - Borne 3 - TPE",
+      "label": "Borne 3 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 408.3,
@@ -4405,7 +4405,7 @@
     {
       "id": "f96c4be92",
       "type": "choice",
-      "label": "Item 15 - Borne 4 - TPE",
+      "label": "Borne 4 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 465.0,
@@ -4444,7 +4444,7 @@
     {
       "id": "fdfc22231",
       "type": "choice",
-      "label": "Item 15 - Borne 5 - TPE",
+      "label": "Borne 5 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 521.8,
@@ -4483,7 +4483,7 @@
     {
       "id": "f946388af",
       "type": "choice",
-      "label": "Item 15 - Borne 6 - TPE",
+      "label": "Borne 6 - TPE",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 578.5,
@@ -4522,7 +4522,7 @@
     {
       "id": "f7bfb11e0",
       "type": "multiline",
-      "label": "Item 15 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 634.3,
@@ -4540,7 +4540,7 @@
     {
       "id": "fefcf0166",
       "type": "choice",
-      "label": "Item 16 - Borne 1 - Imprimante",
+      "label": "Borne 1 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 295.0,
@@ -4579,7 +4579,7 @@
     {
       "id": "f5ed8c17d",
       "type": "choice",
-      "label": "Item 16 - Borne 2 - Imprimante",
+      "label": "Borne 2 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 351.8,
@@ -4618,7 +4618,7 @@
     {
       "id": "fab881f1a",
       "type": "choice",
-      "label": "Item 16 - Borne 3 - Imprimante",
+      "label": "Borne 3 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 408.3,
@@ -4657,7 +4657,7 @@
     {
       "id": "f82865183",
       "type": "choice",
-      "label": "Item 16 - Borne 4 - Imprimante",
+      "label": "Borne 4 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 465.0,
@@ -4696,7 +4696,7 @@
     {
       "id": "f7f19aa58",
       "type": "choice",
-      "label": "Item 16 - Borne 5 - Imprimante",
+      "label": "Borne 5 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 521.8,
@@ -4735,7 +4735,7 @@
     {
       "id": "f5931d31b",
       "type": "choice",
-      "label": "Item 16 - Borne 6 - Imprimante",
+      "label": "Borne 6 - Imprimante",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 578.5,
@@ -4774,7 +4774,7 @@
     {
       "id": "fe80989b5",
       "type": "multiline",
-      "label": "Item 16 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 634.3,
@@ -4792,7 +4792,7 @@
     {
       "id": "fcc23427e",
       "type": "choice",
-      "label": "Item 17 - Borne 1 - Parcours client",
+      "label": "Borne 1 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 295.0,
@@ -4831,7 +4831,7 @@
     {
       "id": "fb6d81c46",
       "type": "choice",
-      "label": "Item 17 - Borne 2 - Parcours client",
+      "label": "Borne 2 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 351.8,
@@ -4870,7 +4870,7 @@
     {
       "id": "f4084092e",
       "type": "choice",
-      "label": "Item 17 - Borne 3 - Parcours client",
+      "label": "Borne 3 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 408.3,
@@ -4909,7 +4909,7 @@
     {
       "id": "f67718954",
       "type": "choice",
-      "label": "Item 17 - Borne 4 - Parcours client",
+      "label": "Borne 4 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 465.0,
@@ -4948,7 +4948,7 @@
     {
       "id": "fbcf06d0f",
       "type": "choice",
-      "label": "Item 17 - Borne 5 - Parcours client",
+      "label": "Borne 5 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 521.8,
@@ -4987,7 +4987,7 @@
     {
       "id": "feaf4aa33",
       "type": "choice",
-      "label": "Item 17 - Borne 6 - Parcours client",
+      "label": "Borne 6 - Parcours client",
       "group": "Parcours client",
       "page": 5,
       "x": 578.5,
@@ -5026,7 +5026,7 @@
     {
       "id": "f2e40fd7a",
       "type": "multiline",
-      "label": "Item 17 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Parcours client",
       "page": 5,
       "x": 634.3,
@@ -5044,7 +5044,7 @@
     {
       "id": "f3557f821",
       "type": "choice",
-      "label": "Item 18 - Borne 1 - Remise de la documentation utilisateurs",
+      "label": "Borne 1 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 295.0,
@@ -5083,7 +5083,7 @@
     {
       "id": "f3ea03bae",
       "type": "choice",
-      "label": "Item 18 - Borne 2 - Remise de la documentation utilisateurs",
+      "label": "Borne 2 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 351.8,
@@ -5122,7 +5122,7 @@
     {
       "id": "f425eadb7",
       "type": "choice",
-      "label": "Item 18 - Borne 3 - Remise de la documentation utilisateurs",
+      "label": "Borne 3 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 408.3,
@@ -5161,7 +5161,7 @@
     {
       "id": "f55bcc89b",
       "type": "choice",
-      "label": "Item 18 - Borne 4 - Remise de la documentation utilisateurs",
+      "label": "Borne 4 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 465.0,
@@ -5200,7 +5200,7 @@
     {
       "id": "f11b61b11",
       "type": "choice",
-      "label": "Item 18 - Borne 5 - Remise de la documentation utilisateurs",
+      "label": "Borne 5 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 521.8,
@@ -5239,7 +5239,7 @@
     {
       "id": "f4c5e9642",
       "type": "choice",
-      "label": "Item 18 - Borne 6 - Remise de la documentation utilisateurs",
+      "label": "Borne 6 - Remise de la documentation utilisateurs",
       "group": "Documentation & signature",
       "page": 5,
       "x": 578.5,
@@ -5278,7 +5278,7 @@
     {
       "id": "fd3adcf41",
       "type": "multiline",
-      "label": "Item 18 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Documentation & signature",
       "page": 5,
       "x": 634.3,
@@ -5296,7 +5296,7 @@
     {
       "id": "f614af3cb",
       "type": "choice",
-      "label": "Item 19 - Borne 1 - Signer le PV d'installation au client",
+      "label": "Borne 1 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 295.0,
@@ -5335,7 +5335,7 @@
     {
       "id": "f04172c0f",
       "type": "choice",
-      "label": "Item 19 - Borne 2 - Signer le PV d'installation au client",
+      "label": "Borne 2 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 351.8,
@@ -5374,7 +5374,7 @@
     {
       "id": "fbb965dae",
       "type": "choice",
-      "label": "Item 19 - Borne 3 - Signer le PV d'installation au client",
+      "label": "Borne 3 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 408.3,
@@ -5413,7 +5413,7 @@
     {
       "id": "f9d9d44d8",
       "type": "choice",
-      "label": "Item 19 - Borne 4 - Signer le PV d'installation au client",
+      "label": "Borne 4 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 465.0,
@@ -5452,7 +5452,7 @@
     {
       "id": "f7a8af40f",
       "type": "choice",
-      "label": "Item 19 - Borne 5 - Signer le PV d'installation au client",
+      "label": "Borne 5 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 521.8,
@@ -5491,7 +5491,7 @@
     {
       "id": "fb84fd1d0",
       "type": "choice",
-      "label": "Item 19 - Borne 6 - Signer le PV d'installation au client",
+      "label": "Borne 6 - Signer le PV d'installation au client",
       "group": "Documentation & signature",
       "page": 5,
       "x": 578.5,
@@ -5530,7 +5530,7 @@
     {
       "id": "f35429939",
       "type": "multiline",
-      "label": "Item 19 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Documentation & signature",
       "page": 5,
       "x": 634.3,
@@ -5548,7 +5548,7 @@
     {
       "id": "f892e30a8",
       "type": "choice",
-      "label": "Item 20 - Borne 1 - Remise de la clef mécanique de la borne",
+      "label": "Borne 1 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 295.0,
@@ -5587,7 +5587,7 @@
     {
       "id": "f1294ba83",
       "type": "choice",
-      "label": "Item 20 - Borne 2 - Remise de la clef mécanique de la borne",
+      "label": "Borne 2 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 351.8,
@@ -5626,7 +5626,7 @@
     {
       "id": "f553e7a4d",
       "type": "choice",
-      "label": "Item 20 - Borne 3 - Remise de la clef mécanique de la borne",
+      "label": "Borne 3 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 408.3,
@@ -5665,7 +5665,7 @@
     {
       "id": "f95af02e0",
       "type": "choice",
-      "label": "Item 20 - Borne 4 - Remise de la clef mécanique de la borne",
+      "label": "Borne 4 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 465.0,
@@ -5704,7 +5704,7 @@
     {
       "id": "f1ff4e419",
       "type": "choice",
-      "label": "Item 20 - Borne 5 - Remise de la clef mécanique de la borne",
+      "label": "Borne 5 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 521.8,
@@ -5743,7 +5743,7 @@
     {
       "id": "fbffd9740",
       "type": "choice",
-      "label": "Item 20 - Borne 6 - Remise de la clef mécanique de la borne",
+      "label": "Borne 6 - Remise de la clef mécanique de la borne",
       "group": "Documentation & signature",
       "page": 5,
       "x": 578.5,
@@ -5782,7 +5782,7 @@
     {
       "id": "f3b2cebd5",
       "type": "multiline",
-      "label": "Item 20 - Commentaires / Reste à faire",
+      "label": "Commentaires / Reste à faire",
       "group": "Documentation & signature",
       "page": 5,
       "x": 634.3,

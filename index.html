@@ -750,6 +750,19 @@ function groupHtml(g, fs, gi){
     ${fs.map(f=>fieldHtml(f)).join("")}</div></details>`;
 }
 function isSerialField(f){ return f.type==="text" && /s[ée]rie|serial/i.test(f.label||""); }
+function borneNum(label){ const m = /borne\b[\s\S]*?(\d+)\s*(?:[–-]|$)/i.exec(label||""); return m ? m[1] : null; }
+function activeBornes(tpl, values){
+  // Detects a per-borne info section (fields whose label names a borne number, outside choice checklists).
+  // Returns {borneNum:true,...} for bornes that have at least one filled info field, or null if this template has no such concept (no restriction).
+  let hasInfo = false; const info = {};
+  tpl.fields.forEach(f=>{
+    if (f.type==="choice") return;
+    const n = borneNum(f.label); if(!n) return;
+    hasInfo = true;
+    if (isFilled(values[f.id])) info[n] = true;
+  });
+  return hasInfo ? info : null;
+}
 function fieldHtml(f){
   const v = S.draft.values[f.id]; const id="in_"+f.id;
   let w="";
@@ -801,7 +814,21 @@ function bindFill(){
     if (b.dataset.sign){ const fid=b.dataset.sign; const f=S.tpl.fields.find(x=>x.id===fid); const png=await signaturePad(f.label, f.w/f.h); if(png){ setVal(fid, png); refreshField(fid); } return; }
     if (b.dataset.scan){ const fid=b.dataset.scan; const val=await scanBarcode(); if(val){ setVal(fid, val); refreshField(fid); $("#in_"+fid)?.focus(); } return; }
     const det = b.closest("details");
-    if (b.hasAttribute("data-allfirst")){ let n=0; $$(".q", det).forEach(q=>{ const f=S.tpl.fields.find(x=>x.id===q.dataset.q); if(f.type==="choice" && !isFilled(S.draft.values[f.id]) && f.options[0]){ S.draft.values[f.id]=f.options[0].label; refreshField(f.id); n++; } }); draftChanged(); toast(n?`${n} réponse${n>1?"s":""} remplie${n>1?"s":""}`:"Rien à remplir ici"); return; }
+    if (b.hasAttribute("data-allfirst")){
+      const active = activeBornes(S.tpl, S.draft.values);
+      let n=0, skipped=0;
+      $$(".q", det).forEach(q=>{
+        const f=S.tpl.fields.find(x=>x.id===q.dataset.q);
+        if(f.type==="choice" && !isFilled(S.draft.values[f.id]) && f.options[0]){
+          const bn = borneNum(f.label);
+          if (active && bn && !active[bn]){ skipped++; return; }
+          S.draft.values[f.id]=f.options[0].label; refreshField(f.id); n++;
+        }
+      });
+      draftChanged();
+      toast(n ? `${n} réponse${n>1?"s":""} remplie${n>1?"s":""}${skipped?` (${skipped} ignorée${skipped>1?"s":""}, borne non renseignée)`:""}` : (skipped?"Aucune borne renseignée pour l'instant":"Rien à remplir ici"));
+      return;
+    }
     if (b.hasAttribute("data-clear")){ if(!confirm("Vider toutes les réponses de cette rubrique ?")) return; $$(".q", det).forEach(q=>{ delete S.draft.values[q.dataset.q]; refreshField(q.dataset.q); }); draftChanged(); return; }
   });
 }
