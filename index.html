@@ -535,34 +535,29 @@ async function showHome(){
       <p>Choisissez un client, remplissez les infos, les contrôles, les photos et les signatures directement sur le téléphone. L'appli les place dans le PDF d'origine, prêt à envoyer.</p>
     </div>
 
-    <div class="profcard" id="profCard">
-      <div class="avatar">${profileFilled(profile)?esc(initials(profile.name)):ICON.user}</div>
+    ${profileFilled(profile)?"":`<div class="profcard" id="profCard">
+      <div class="avatar">${ICON.user}</div>
       <div class="main">
-        <div class="name">${profileFilled(profile)?esc(profile.name||"Profil incomplet"):"Complète ton profil technicien"}</div>
-        <div class="meta">${profileFilled(profile)?[profile.phone,profile.email].filter(Boolean).join(" · ")||"Ajoute ton téléphone et ton email":"Ton nom, ton téléphone et ta signature seront proposés automatiquement dans chaque nouveau rapport."}</div>
+        <div class="name">Complète ton profil technicien</div>
+        <div class="meta">Ton nom, ton téléphone et ta signature seront proposés automatiquement dans chaque nouveau rapport.</div>
       </div>
-      <button class="btn ${profileFilled(profile)?"":"primary"}" id="editProfile">${profileFilled(profile)?"Modifier":"Renseigner mon profil"}</button>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><b>${openCount}</b><span>rapport${openCount>1?"s":""} en cours</span></div>
-      <div class="stat"><b>${tpls.length}</b><span>modèle${tpls.length>1?"s":""} disponible${tpls.length>1?"s":""}</span></div>
-    </div>
+      <button class="btn primary" id="editProfile">Renseigner mon profil</button>
+    </div>`}
 
     <div class="searchwrap"><label class="fld" style="margin:0"><span>Rechercher un modèle</span><input class="inp" id="tplSearch" type="search" inputmode="search" placeholder="Ex. McDo borne, K27, fiche…" value="${esc(S.searchQ||"")}" autocomplete="off"></label></div>
     <div id="searchResults"></div>
 
     <div id="normalSections" class="${S.searchQ?"hidden":""}">
-    <div class="sec-h"><h2>Rapports en cours</h2></div>
-    <div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div>
+    ${openCount?`<div class="sec-h"><h2>Rapports en cours</h2></div>
+    <div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div>`:""}
 
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
     <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.</p>
     </div>
   </div>`;
-  $("#editProfile").onclick = () => showProfile();
-  $("#profCard").addEventListener("click", e => { if (e.target.id!=="editProfile") showProfile(); });
+  if ($("#editProfile")) $("#editProfile").onclick = () => showProfile();
+  if ($("#profCard")) $("#profCard").addEventListener("click", e => { if (e.target.id!=="editProfile") showProfile(); });
   $("#barProfile").onclick = () => showProfile();
   $("#refreshBtn").onclick = async () => { S.syncing=true; await homeBar(); S.syncError=(await syncManifest()).error||null; showHome(); };
   $$(".client-row").forEach(el => { const go=()=>showClient(el.dataset.client); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
