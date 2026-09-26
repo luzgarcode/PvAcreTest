@@ -497,13 +497,13 @@ function tplClients(t){
 }
 function templatesForClient(tpls, clientName){ return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
 function tplCategory(t){ const c = t.category; return CATEGORIES.includes(c) ? c : "Autre"; }
-const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png" };
+const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png" };
 function categoryIconHtml(cat){
   const icon = CATEGORY_ICONS[cat];
   if (icon) return `<div class="doc-ico doc-ico-img"><img src="${esc(icon)}" alt="" loading="lazy"></div>`;
   return `<div class="doc-ico"></div>`;
 }
-const TEMPLATE_ICONS = { "tpl-fe1ced90": "assets/logos/pointeuse.png", "tpl-o22k27": "assets/logos/k27-otacos.png", "tpl-f9c787bb": "assets/logos/doublecheck.png" };
+const TEMPLATE_ICONS = { "tpl-fe1ced90": "assets/logos/pointeuse.png", "tpl-o22k27": "assets/logos/k27-otacos.png", "tpl-f9c787bb": "assets/logos/doublecheck.png", "tpl-1b4ee5ca": "assets/logos/sco-aco.png" };
 function templateIconHtml(t){
   const icon = TEMPLATE_ICONS[t.id];
   if (icon) return `<div class="doc-ico doc-ico-img"><img src="${esc(icon)}" alt="" loading="lazy"></div>`;
