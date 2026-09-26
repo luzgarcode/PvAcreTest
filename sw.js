@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v2";
+const CACHE = "pv-terrain-shell-v3";
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
@@ -28,7 +28,21 @@ self.addEventListener("fetch", event => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
 
-  // App shell (this origin, listed files): cache-first, refresh in background.
+  // Page navigation (opening/launching the app, incl. the installed PWA): network first,
+  // so a relaunch always picks up the latest index.html when online. Falls back to the
+  // cached shell only when offline. Checked BEFORE the shell cache below, since index.html
+  // is also listed in SHELL and would otherwise be served stale-first even on launch.
+  if (req.mode === "navigate") {
+    event.respondWith(
+      fetch(req).then(res => {
+        if (res.ok) caches.open(CACHE).then(c => c.put("./index.html", res.clone()));
+        return res;
+      }).catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  // App shell (this origin, listed files, non-navigation requests): cache-first, refresh in background.
   if (url.origin === self.location.origin && SHELL.some(p => url.pathname.endsWith(p.replace("./", "/")))) {
     event.respondWith(
       caches.match(req).then(cached => {
@@ -38,14 +52,6 @@ self.addEventListener("fetch", event => {
         }).catch(() => cached);
         return cached || fresh;
       })
-    );
-    return;
-  }
-
-  // Page navigation (opening the URL itself): network first, fall back to cached shell.
-  if (req.mode === "navigate") {
-    event.respondWith(
-      fetch(req).catch(() => caches.match("./index.html"))
     );
     return;
   }
