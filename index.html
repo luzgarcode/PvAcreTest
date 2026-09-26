@@ -296,6 +296,7 @@ const ICON = {
   zin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5 5M7 10h6M10 7v6"/></svg>',
   zout:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5 5M7 10h6"/></svg>',
   chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
+  logout:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>',
 };
 const TYPES = {
   text:{label:"Texte", def:[150,16]}, multiline:{label:"Paragraphe", def:[260,50]}, date:{label:"Date", def:[90,16]},
@@ -429,7 +430,10 @@ async function syncPill(){
   const txt = mins < 2 ? "à jour à l'instant" : mins < 60 ? `à jour il y a ${mins} min` : `à jour depuis le ${fmtDate(last.v)}`;
   return `<span class="rolepill" title="Les modèles sont vérifiés à chaque ouverture">${esc(txt)}</span>`;
 }
-async function homeBar(){ setBar(`<div class="mark"><i></i><span>PV &amp; Go</span></div>${await syncPill()}<div class="sp"></div><button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`); }
+async function homeBar(){
+  setBar(`<div class="mark"><i></i><span>PV &amp; Go</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
+  if (IS_TEST_BUILD) $("#barLogout").onclick = logout;
+}
 
 const emptyProfile = () => ({name:"", phone:"", email:"", signature:null, secteur:""});
 const SECTORS = {
@@ -1163,6 +1167,11 @@ function isAuthed(){
   }catch(e){ return false; }
 }
 function setAuthed(){ try{ localStorage.setItem(AUTH_KEY,"1"); localStorage.setItem(AUTH_AT_KEY, String(Date.now())); }catch(e){} }
+function logout(){
+  if (!confirm("Se déconnecter ? Le mot de passe sera redemandé au prochain accès.")) return;
+  try{ localStorage.removeItem(AUTH_KEY); localStorage.removeItem(AUTH_AT_KEY); }catch(e){}
+  location.reload();
+}
 function showLogin(onSuccess){
   const overlay = document.createElement("div");
   overlay.id = "loginOverlay";
