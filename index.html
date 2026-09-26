@@ -343,6 +343,7 @@ const TAXONOMY = [
 function clientDef(name){ return TAXONOMY.find(c => c.client===name); }
 function initialsClient(name){ const w=String(name||"").replace(/[^\p{L}\s'']/gu,"").trim().split(/\s+/).filter(Boolean); return (w[0]?.[0]||"").concat(w[1]?.[0]||"").toUpperCase() || "?"; }
 const CLIENT_LOGOS = {
+  "Tous clients": "assets/logos/acrelec.jpg",
   "McDonald's": "assets/logos/mcdonalds.png",
   "KFC": "assets/logos/kfc.png",
   "Burger King": "assets/logos/burgerking.jpg",
