@@ -1,0 +1,762 @@
+{
+  "name": "Service à Table – PV d'installation",
+  "fields": [
+    {
+      "id": "f71b97bc0",
+      "type": "text",
+      "label": "Restaurant",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 185,
+      "y": 161,
+      "w": 135,
+      "h": 23,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "f40733ee7",
+      "type": "date",
+      "label": "Date",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 445,
+      "y": 161,
+      "w": 110,
+      "h": 23,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f880f164b",
+      "type": "text",
+      "label": "Code restaurant",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 185,
+      "y": 189,
+      "w": 135,
+      "h": 23,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "fe3764419",
+      "type": "text",
+      "label": "Type installé",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 445,
+      "y": 189,
+      "w": 110,
+      "h": 23,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbff0b566",
+      "type": "choice",
+      "label": "Les prérequis étaient présents lors de l'installation",
+      "group": "Périmètre hors ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 245.5,
+      "w": 78,
+      "h": 23.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 245.5,
+            "w": 78,
+            "h": 23.7
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 245.5,
+            "w": 79.1,
+            "h": 23.7
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3638ea54",
+      "type": "choice",
+      "label": "Les prises réseaux sont correctement brassées",
+      "group": "Périmètre hors ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 269.2,
+      "w": 78,
+      "h": 23.3,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 269.2,
+            "w": 78,
+            "h": 23.3
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 269.2,
+            "w": 79.1,
+            "h": 23.3
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f75905b95",
+      "type": "choice",
+      "label": "Les supports Borne/Pied sont installés",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 324.6,
+      "w": 78,
+      "h": 35.099999999999966,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 324.6,
+            "w": 78,
+            "h": 35.099999999999966
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 324.6,
+            "w": 79.1,
+            "h": 35.099999999999966
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f171755d5",
+      "type": "choice",
+      "label": "Le(s) support(s) écran sont installé(s) aux emplacement(s) indiqué(s) par un(e) responsable",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 359.7,
+      "w": 78,
+      "h": 34.30000000000001,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 359.7,
+            "w": 78,
+            "h": 34.30000000000001
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 359.7,
+            "w": 79.1,
+            "h": 34.30000000000001
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f385ffb5f",
+      "type": "choice",
+      "label": "Les antennes et Gateway sont installées aux endroits indiqués lors de la pré visite (si non, expliquer en commentaire)",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 394.0,
+      "w": 78,
+      "h": 34.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 394.0,
+            "w": 78,
+            "h": 34.5
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 394.0,
+            "w": 79.1,
+            "h": 34.5
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f16de88fe",
+      "type": "choice",
+      "label": "Une zone est dessinée pour chaque carte (restaurants en TT3 uniquement)",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 428.5,
+      "w": 78,
+      "h": 34.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 428.5,
+            "w": 78,
+            "h": 34.5
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 428.5,
+            "w": 79.1,
+            "h": 34.5
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4372de29",
+      "type": "choice",
+      "label": "Le zoning correspond à celui envoyé par le client lors de la prévisite (restaurants en TT2 uniquement)",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 463.0,
+      "w": 78,
+      "h": 34.69999999999999,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 463.0,
+            "w": 78,
+            "h": 34.69999999999999
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 463.0,
+            "w": 79.1,
+            "h": 34.69999999999999
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3d8ef512",
+      "type": "choice",
+      "label": "Des tests ont été réalisés, les chevalets sont détectés dans chaque zone (TT2) ou au mètre près (TT3)",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 497.7,
+      "w": 78,
+      "h": 34.30000000000001,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 497.7,
+            "w": 78,
+            "h": 34.30000000000001
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 497.7,
+            "w": 79.1,
+            "h": 34.30000000000001
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1c457282",
+      "type": "choice",
+      "label": "Des tests ont été réalisés, les flags sont correctement localisés quand ils sont retirés du support",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 532.0,
+      "w": 78,
+      "h": 34.60000000000002,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 532.0,
+            "w": 78,
+            "h": 34.60000000000002
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 532.0,
+            "w": 79.1,
+            "h": 34.60000000000002
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1c1b0074",
+      "type": "choice",
+      "label": "Le backup est fait et téléchargé",
+      "group": "Périmètre ACRELEC",
+      "page": 0,
+      "x": 401.9,
+      "y": 566.6,
+      "w": 78,
+      "h": 34.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 0,
+            "x": 401.9,
+            "y": 566.6,
+            "w": 78,
+            "h": 34.5
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 0,
+            "x": 479.9,
+            "y": 566.6,
+            "w": 79.1,
+            "h": 34.5
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7f8b2394",
+      "type": "text",
+      "label": "Nom du technicien",
+      "group": "Signatures",
+      "page": 0,
+      "x": 42,
+      "y": 635,
+      "w": 286,
+      "h": 38,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-name"
+    },
+    {
+      "id": "f84b5b204",
+      "type": "signature",
+      "label": "Signature Technicien",
+      "group": "Signatures",
+      "page": 0,
+      "x": 337,
+      "y": 635,
+      "w": 218,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-signature"
+    },
+    {
+      "id": "f61120a52",
+      "type": "text",
+      "label": "Nom du responsable présent sur site",
+      "group": "Signatures",
+      "page": 0,
+      "x": 42,
+      "y": 710,
+      "w": 286,
+      "h": 46,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa8762c12",
+      "type": "signature",
+      "label": "Signature Responsable",
+      "group": "Signatures",
+      "page": 0,
+      "x": 337,
+      "y": 710,
+      "w": 218,
+      "h": 46,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc48e35a2",
+      "type": "text",
+      "label": "PC serveur – Panel Pc (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 156,
+      "w": 150,
+      "h": 28,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4753aa13",
+      "type": "text",
+      "label": "Kit intérieur (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 204,
+      "w": 150,
+      "h": 43,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1e2e3444",
+      "type": "text",
+      "label": "Kit extérieur (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 267,
+      "w": 150,
+      "h": 44,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd5e3d719",
+      "type": "text",
+      "label": "Distributeur de chevalet – Borne (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 353,
+      "w": 150,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7a8e2e58",
+      "type": "text",
+      "label": "Distributeur de chevalet – Pied (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 411,
+      "w": 150,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0ff8d2a9",
+      "type": "text",
+      "label": "Chevalet (nombre)",
+      "group": "Equipements indispensables",
+      "page": 1,
+      "x": 401.9,
+      "y": 471,
+      "w": 150,
+      "h": 70,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2b5d0521",
+      "type": "text",
+      "label": "Rallonge USB 10m (nombre)",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 401.9,
+      "y": 595,
+      "w": 150,
+      "h": 33,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe22924e9",
+      "type": "text",
+      "label": "Autres ajouts – description",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 173,
+      "y": 633,
+      "w": 218,
+      "h": 38,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcee4dc9a",
+      "type": "text",
+      "label": "Autres ajouts (nombre)",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 401.9,
+      "y": 633,
+      "w": 150,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0d33664b",
+      "type": "text",
+      "label": "Eléments enlevés – description",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 173,
+      "y": 677,
+      "w": 218,
+      "h": 30,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3e667c9d",
+      "type": "text",
+      "label": "Eléments enlevés (nombre)",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 401.9,
+      "y": 677,
+      "w": 150,
+      "h": 30,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb29525eb",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Equipements optionnels",
+      "page": 1,
+      "x": 37.5,
+      "y": 740,
+      "w": 517,
+      "h": 45,
+      "fontSize": 10,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    }
+  ],
+  "annexPhotos": [],
+  "optionalPages": [],
+  "category": "Autre",
+  "clients": [
+    "Burger King"
+  ],
+  "shortName": "SAT"
+}
