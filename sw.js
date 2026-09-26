@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v1";
+const CACHE = "pv-terrain-shell-v2";
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
@@ -6,7 +6,8 @@ const SHELL = [
   "./icon-512.png",
   "./vendor/pdf.min.js",
   "./vendor/pdf.worker.min.js",
-  "./vendor/pdf-lib.min.js"
+  "./vendor/pdf-lib.min.js",
+  "./vendor/zxing-browser.min.js"
 ];
 
 self.addEventListener("install", event => {
