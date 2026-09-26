@@ -129,7 +129,7 @@
     },
     {
       "id": "fb67134d1",
-      "type": "text",
+      "type": "time",
       "label": "Heure d'arrivée (des techniciens)",
       "group": "Pour prestataire ACRELEC",
       "page": 0,
@@ -147,7 +147,7 @@
     },
     {
       "id": "f1a0dd696",
-      "type": "text",
+      "type": "time",
       "label": "Heure de départs (des techniciens)",
       "group": "Pour prestataire ACRELEC",
       "page": 0,
@@ -165,7 +165,7 @@
     },
     {
       "id": "f61c9cf7c",
-      "type": "text",
+      "type": "time",
       "label": "Heure de mise à disposition des palettes Acrelec",
       "group": "Heures d'installation",
       "page": 2,
@@ -183,7 +183,7 @@
     },
     {
       "id": "f99ff7dfe",
-      "type": "text",
+      "type": "time",
       "label": "Heure de la mise sous tension des bornes",
       "group": "Heures d'installation",
       "page": 2,
@@ -201,7 +201,7 @@
     },
     {
       "id": "fcd4c36dc",
-      "type": "text",
+      "type": "time",
       "label": "Heure de fin du paramétrage",
       "group": "Heures d'installation",
       "page": 2,
