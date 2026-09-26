@@ -126,8 +126,9 @@ img{ max-width:100%; }
 .searchwrap{ margin:0 0 22px; }
 .row .title{}
 .empty{ padding:22px 16px; color:var(--ink-2); }
-.progress{ height:6px; background:var(--surface-2); border-radius:3px; overflow:hidden; margin-top:6px; max-width:240px; }
-.progress b{ display:block; height:100%; background:var(--ok); }
+.progress{ position:relative; height:18px; background:var(--surface-2); border-radius:9px; overflow:hidden; margin-top:6px; max-width:240px; }
+.progress b{ display:block; height:100%; background:var(--ok); border-radius:9px; }
+.progress-label{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--ink); }
 
 /* editor */
 .editor{ display:flex; flex-direction:column; height:calc(100vh - 56px); height:calc(100dvh - 56px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); }
@@ -507,7 +508,7 @@ async function bindDraftRows(drafts, tplName){
 function draftRowsHtml(drafts, tpls, tplName){
   return drafts.length ? drafts.map(d => {
     const tpl = tpls.find(t=>t.id===d.templateId); const tot = tpl ? tpl.fields.length : 0; const n = countFilled(d, tpl);
-    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}</div>${tot?`<div class="progress" title="${n} sur ${tot} zones remplies"><b style="width:${Math.round(100*n/tot)}%"></b></div>`:""}</div>
+    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}</div>${tot?`<div class="progress" title="${n} sur ${tot} zones remplies"><b style="width:${Math.round(100*n/tot)}%"></b><span class="progress-label">${n} / ${tot}</span></div>`:""}</div>
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`;}).join("")
     : `<div class="empty">Aucun rapport en cours.</div>`;
 }
