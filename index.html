@@ -187,6 +187,9 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .fill-head{ display:grid; gap:10px; margin:6px 0 16px; }
 .fill-head .inp{ font-size:18px; font-weight:600; }
 .fill-stats{ display:flex; align-items:center; gap:12px; color:var(--ink-2); font-size:14px; flex-wrap:wrap; }
+.pbar{ position:relative; flex:1 1 160px; min-width:140px; height:30px; background:var(--surface-2); border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+.pbar-fill{ position:absolute; inset:0; width:0%; background:var(--vis); border-radius:999px; transition:width .35s ease; }
+.pbar-label{ position:relative; z-index:1; display:flex; align-items:center; justify-content:center; height:100%; font-weight:700; font-size:13px; color:var(--ink); }
 .grp{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r); margin-bottom:10px; }
 .grp > summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 14px; font-weight:700; font-size:17px; }
 .grp > summary::-webkit-details-marker{ display:none; }
@@ -719,7 +722,7 @@ async function openFill(draftId){
   main.innerHTML = `<div class="fill">
     <div class="fill-head">
       <label class="fld" style="margin:0"><span>Nom du rapport</span><input class="inp" id="dName" value="${esc(d.name)}"></label>
-      <div class="fill-stats"><span id="stat"></span><button class="btn sm ghost" id="openAll">Tout déplier</button><button class="btn sm ghost" id="closeAll">Tout replier</button></div>
+      <div class="fill-stats"><div class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="${tpl.fields.length}" aria-valuenow="0" aria-label="Zones remplies"><div class="pbar-fill" id="statFill"></div><span class="pbar-label" id="stat"></span></div><button class="btn sm ghost" id="openAll">Tout déplier</button><button class="btn sm ghost" id="closeAll">Tout replier</button></div>
     </div>
     <div id="groups">${[...groups.entries()].map(([g,fs],gi)=>groupHtml(g,fs,gi)).join("")}</div>
     <details class="grp" open id="annexGrp"><summary><span class="t">Photos jointes au PV</span><span class="cnt" id="annexCnt"></span></summary>
@@ -779,7 +782,8 @@ function draftChanged(){ const ss=$("#ss"); if(ss) ss.textContent="Modifications
 function setVal(fid, v){ if(isFilled(v)) S.draft.values[fid]=v; else delete S.draft.values[fid]; draftChanged(); }
 function updateStats(){
   const tot=S.tpl.fields.length, n=countFilled(S.draft,S.tpl);
-  const st=$("#stat"); if(st) st.textContent = `${n} / ${tot} zones remplies`;
+  const st=$("#stat"); if(st) st.textContent = `${n} / ${tot}`;
+  const sf=$("#statFill"); if(sf){ sf.style.width = `${tot ? Math.round(n/tot*100) : 0}%`; const bar=sf.closest(".pbar"); if(bar) bar.setAttribute("aria-valuenow", n); }
   $$("#groups details").forEach(det => {
     const ids = $$(".q", det).map(q=>q.dataset.q); const k = ids.filter(id=>isFilled(S.draft.values[id])).length;
     const c=$("[data-cnt]", det); c.textContent=`${k}/${ids.length}`; c.classList.toggle("done", k===ids.length);
