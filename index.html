@@ -324,6 +324,8 @@ async function pageSizes(pdf){
 
 /* ============ app state ============ */
 const S = { view:"home", tpl:null, draft:null, manifestIndex:new Map(), syncing:false };
+/* Outil de calibrage des champs — réservé au site de test, jamais en prod */
+const IS_TEST_BUILD = true;
 const main = $("#main"), bar = $("#bar");
 
 const CATEGORIES = ["Borne de commande","Audio","DMB","Drive","Multiservice","Pointeuse","Autre"];
@@ -494,8 +496,9 @@ function renderSearch(tpls){
   const hits = tpls.filter(t => norm(t.name).includes(q) || tplClients(t).some(c => norm(c).includes(q)) || norm(tplCategory(t)).includes(q));
   box.innerHTML = `<div class="sec-h"><h2>${hits.length} résultat${hits.length>1?"s":""}</h2></div>
     <div class="list">${hits.length ? hits.map(t => `<div class="row"><div class="doc-ico"></div><div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${esc(tplClients(t).join(", "))} · ${esc(tplCategory(t))}</div></div>
-      <div class="acts"><button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle ne correspond à « ${esc(S.searchQ)} ».</div>`}</div>`;
+      <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle ne correspond à « ${esc(S.searchQ)} ».</div>`}</div>`;
   $$("[data-new-draft]", box).forEach(b => b.onclick = () => newDraft(b.dataset.newDraft));
+  if (IS_TEST_BUILD) $$("[data-calib]", box).forEach(b => b.onclick = async () => openCalibrate(await Store.get("templates", b.dataset.calib)));
 }
 
 async function showClient(clientName){
@@ -524,9 +527,10 @@ async function showCategory(clientName, categoryName){
   main.innerHTML = `<div class="wrap">
     <div class="sec-h"><h2>${esc(clientName)} · ${esc(categoryName)}</h2></div>
     <div class="list">${tpls.length ? tpls.map(t => `<div class="row"><div class="doc-ico"></div><div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${clientName==="Tous clients"?`${esc(tplClients(t).join(", "))} · `:""}${t.fields.length} zone${t.fields.length>1?"s":""} à remplir${t.annexPhotos&&t.annexPhotos.length?` · ${t.annexPhotos.length} photo${t.annexPhotos.length>1?"s":""} demandée${t.annexPhotos.length>1?"s":""}`:""}</div></div>
-      <div class="acts"><button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle pour l'instant dans cette rubrique.</div>`}</div>
+      <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`).join("") : `<div class="empty">Aucun modèle pour l'instant dans cette rubrique.</div>`}</div>
   </div>`;
   $$("[data-new-draft]").forEach(b => b.onclick = () => newDraft(b.dataset.newDraft));
+  if (IS_TEST_BUILD) $$("[data-calib]").forEach(b => b.onclick = async () => openCalibrate(await Store.get("templates", b.dataset.calib)));
 }
 
 /* ============ PROFIL TECHNICIEN ============ */
@@ -652,7 +656,7 @@ async function openFill(draftId){
       <div class="btnrow" style="margin-top:10px"><button class="btn" id="addPdfs">${ICON.plus} Ajouter un PDF</button></div>
       <p class="kbd">Leurs pages sont ajoutées telles quelles à la fin du PV.</p></div></details>
   </div>
-  <div class="dock"><button class="btn" id="preview">Aperçu du PDF</button><button class="btn primary" id="gen">${canShareFiles()?"Envoyer le PDF":"Télécharger le PDF"}</button></div>`;
+  <div class="dock">${IS_TEST_BUILD?`<button class="btn sm ghost" id="calib">🛠 Calibrer</button>`:""}<button class="btn" id="preview">Aperçu du PDF</button><button class="btn primary" id="gen">${canShareFiles()?"Envoyer le PDF":"Télécharger le PDF"}</button></div>`;
   $("#dName").oninput = e => { d.name=e.target.value; draftChanged(); };
   $("#openAll").onclick = () => $$("#groups details").forEach(x=>x.open=true);
   $("#closeAll").onclick = () => $$("#groups details").forEach(x=>x.open=false);
@@ -660,6 +664,7 @@ async function openFill(draftId){
   $("#addPdfs").onclick = () => $("#pickPdfs").click();
   $("#preview").onclick = () => previewPdf();
   $("#gen").onclick = () => generateAndSave();
+  if (IS_TEST_BUILD) $("#calib").onclick = () => openCalibrate(S.tpl);
   bindFill(); renderAnnex(); renderAnnexFiles(); updateStats();
 }
 function groupHtml(g, fs, gi){
@@ -869,6 +874,7 @@ async function buildPdf(tpl, draft){
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }
     if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
     const r = toPdf(page, f);
+    if (f.eraseBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
     if (f.type==="photo" || f.type==="signature"){
       const im = await embed(v); const s=Math.min(r.w/im.width, r.h/im.height); const w=im.width*s, h=im.height*s;
       page.drawImage(im, {x:r.x+(r.w-w)/2, y:r.y+(r.h-h)/2, width:w, height:h}); continue;
@@ -1000,6 +1006,90 @@ async function generateAndSave(){
   catch(e){ done(); console.error(e); alert("Le PDF n'a pas pu être créé : " + (e.message||e)); return; }
   await showSendReview(bytes);
 }
+/* ============ CALIBRAGE DES CHAMPS (site de test uniquement) ============ */
+async function openCalibrate(tpl){
+  if (!tpl) return;
+  const pdf = await pdfjsLib.getDocument({data: tpl.pdf.slice(0), isEvalSupported:false}).promise;
+  const pages = [...new Set(tpl.fields.map(f=>f.page))].sort((a,b)=>a-b);
+  if (!pages.length){ alert("Ce modèle n'a aucun champ à calibrer."); return; }
+  let pageIdx = 0;
+  const m=document.createElement("div"); m.className="modal";
+  m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Calibrage" style="width:min(1100px,100%)">
+    <div class="sheet-h"><h3>🛠 Calibrer — ${esc(tpl.name)}</h3><button class="btn sm" data-x="close">Fermer</button></div>
+    <div class="sheet-f" style="border-bottom:1px solid var(--line);border-top:none;justify-content:space-between">
+      <div class="btnrow"><button class="btn sm" data-x="prev">◀ Page</button><span id="calLbl" class="kbd"></span><button class="btn sm" data-x="next">Page ▶</button></div>
+      <div class="btnrow"><button class="btn sm" data-x="copy">Copier le JSON</button></div>
+    </div>
+    <div class="sheet-b" id="calBody" style="position:relative;overflow:auto;-webkit-user-select:none;user-select:none;touch-action:none;"></div>
+  </div>`;
+  document.body.appendChild(m);
+  const body = $("#calBody", m);
+
+  async function render(){
+    const p = pages[pageIdx];
+    $("#calLbl", m).textContent = `Page ${p+1} (${pageIdx+1}/${pages.length})`;
+    const pg = await pdf.getPage(p+1);
+    const v1 = pg.getViewport({scale:1});
+    const wAvail = Math.max(320, Math.min(1060, body.clientWidth || 1000));
+    const scale = wAvail / v1.width;
+    const vp = pg.getViewport({scale});
+    body.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.style.cssText = `position:relative;width:${vp.width}px;height:${vp.height}px;margin:0 auto;`;
+    const canvas = document.createElement("canvas");
+    canvas.width = vp.width; canvas.height = vp.height; canvas.style.display="block";
+    await pg.render({canvasContext:canvas.getContext("2d"), viewport:vp}).promise;
+    wrap.appendChild(canvas);
+    body.appendChild(wrap);
+    for (const f of tpl.fields.filter(f=>f.page===p)) mkBox(wrap, f, scale);
+  }
+
+  function mkBox(wrap, f, scale){
+    const box = document.createElement("div");
+    box.style.cssText = `position:absolute;left:${f.x*scale}px;top:${f.y*scale}px;width:${f.w*scale}px;height:${f.h*scale}px;border:1.5px solid #e6522f;background:rgba(230,82,47,.14);cursor:move;font-size:9px;line-height:1.1;color:#c73f1e;overflow:hidden;box-sizing:border-box;padding:1px;font-family:var(--font);`;
+    box.textContent = f.label;
+    const handle = document.createElement("div");
+    handle.style.cssText = "position:absolute;right:-5px;bottom:-5px;width:13px;height:13px;background:#e6522f;border:1.5px solid #fff;border-radius:3px;cursor:nwse-resize;";
+    box.appendChild(handle);
+    wrap.appendChild(box);
+    let mode=null, sx=0, sy=0, ox=0, oy=0, ow=0, oh=0;
+    const ptOf = e => e.touches ? e.touches[0] : e;
+    function start(md){ return e => {
+      mode=md; e.stopPropagation(); e.preventDefault();
+      const pt=ptOf(e); sx=pt.clientX; sy=pt.clientY; ox=f.x; oy=f.y; ow=f.w; oh=f.h;
+      window.addEventListener("mousemove", move); window.addEventListener("mouseup", stop);
+      window.addEventListener("touchmove", move, {passive:false}); window.addEventListener("touchend", stop);
+    };}
+    function move(e){
+      if (!mode) return;
+      const pt=ptOf(e); if (e.touches) e.preventDefault();
+      const dx=(pt.clientX-sx)/scale, dy=(pt.clientY-sy)/scale;
+      if (mode==="drag"){ f.x=Math.round(ox+dx); f.y=Math.round(oy+dy); }
+      else { f.w=Math.max(8,Math.round(ow+dx)); f.h=Math.max(6,Math.round(oh+dy)); }
+      box.style.left=(f.x*scale)+"px"; box.style.top=(f.y*scale)+"px";
+      box.style.width=(f.w*scale)+"px"; box.style.height=(f.h*scale)+"px";
+    }
+    function stop(){ mode=null; window.removeEventListener("mousemove", move); window.removeEventListener("mouseup", stop); window.removeEventListener("touchmove", move); window.removeEventListener("touchend", stop); }
+    box.addEventListener("mousedown", start("drag"));
+    box.addEventListener("touchstart", start("drag"), {passive:false});
+    handle.addEventListener("mousedown", start("resize"));
+    handle.addEventListener("touchstart", start("resize"), {passive:false});
+  }
+
+  await render();
+  m.onclick = async e => {
+    const a = e.target.dataset && e.target.dataset.x;
+    if (a==="close") m.remove();
+    if (a==="prev"){ pageIdx=(pageIdx-1+pages.length)%pages.length; await render(); }
+    if (a==="next"){ pageIdx=(pageIdx+1)%pages.length; await render(); }
+    if (a==="copy"){
+      const out = JSON.stringify(tpl.fields.map(f=>({id:f.id,page:f.page,x:f.x,y:f.y,w:f.w,h:f.h,label:f.label})), null, 2);
+      try{ await navigator.clipboard.writeText(out); alert("Positions copiées — colle-les moi dans le chat pour que je les intègre."); }
+      catch(err){ prompt("Copie ce texte et colle-le moi :", out); }
+    }
+  };
+}
+
 async function previewPdf(){
   await flushDraft();
   const done=busy("Création de l'aperçu…"); let bytes;

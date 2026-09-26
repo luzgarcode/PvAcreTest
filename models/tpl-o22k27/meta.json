@@ -327,6 +327,34 @@
       "auto": ""
     },
     {
+      "id": "fe00a2b15",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 1",
+      "page": 3,
+      "x": 104.5,
+      "y": 264.0,
+      "w": 21.5,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
+    },
+    {
       "id": "fddf6c283",
       "type": "text",
       "label": "Type de borne (sur pied, comptoir, murale)",
@@ -415,6 +443,34 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
+    },
+    {
+      "id": "f57002d58",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 2",
+      "page": 3,
+      "x": 104.5,
+      "y": 291.0,
+      "w": 21.5,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
     },
     {
       "id": "f9403f205",
@@ -507,6 +563,34 @@
       "auto": ""
     },
     {
+      "id": "fecd3ca99",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 3",
+      "page": 3,
+      "x": 104.5,
+      "y": 318.0,
+      "w": 21.5,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
+    },
+    {
       "id": "fc8f1f7a3",
       "type": "text",
       "label": "Type de borne (sur pied, comptoir, murale)",
@@ -595,6 +679,34 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
+    },
+    {
+      "id": "fa09ec314",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 4",
+      "page": 3,
+      "x": 104.5,
+      "y": 346.0,
+      "w": 21.5,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
     },
     {
       "id": "fffbfc96e",
@@ -687,6 +799,34 @@
       "auto": ""
     },
     {
+      "id": "fc1893c12",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 5",
+      "page": 3,
+      "x": 104.5,
+      "y": 373.0,
+      "w": 21.5,
+      "h": 23.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
+    },
+    {
       "id": "fa34330ea",
       "type": "text",
       "label": "Type de borne (sur pied, comptoir, murale)",
@@ -775,6 +915,34 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
+    },
+    {
+      "id": "f2c2461e1",
+      "type": "choice",
+      "label": "Modèle de la borne installée",
+      "group": "Borne 6",
+      "page": 3,
+      "x": 104.5,
+      "y": 400.0,
+      "w": 21.5,
+      "h": 24.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "K22",
+          "box": null
+        },
+        {
+          "label": "K27",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "eraseBg": true
     },
     {
       "id": "f7869f4b5",
