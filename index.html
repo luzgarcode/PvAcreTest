@@ -255,16 +255,6 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 @keyframes spin{ to{ transform:rotate(360deg);} }
 @media (prefers-reduced-motion: reduce){ .busy::before{ animation:none; } .grp > summary::before{ transition:none; } }
 .warn{ background:var(--vis-soft); border:1px solid var(--vis); padding:10px 12px; border-radius:var(--r); font-size:14px; margin-bottom:12px; }
-.install-banner{ position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); z-index:55; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.16); padding:14px 14px; display:flex; gap:12px; align-items:flex-start; animation:instup .25s ease-out; }
-@keyframes instup{ from{ transform:translateY(16px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
-.install-banner .ib-ic{ flex:0 0 auto; width:42px; height:42px; border-radius:10px; background:var(--ink); color:var(--vis); display:flex; align-items:center; justify-content:center; }
-.install-banner .ib-ic svg{ width:24px; height:24px; }
-.install-banner .ib-body{ flex:1; min-width:0; }
-.install-banner .ib-body p{ margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.4; }
-.install-banner .ib-body strong{ display:block; font-size:14.5px; color:var(--ink); margin-bottom:2px; }
-.install-banner .ib-acts{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
-.install-banner .ib-x{ flex:0 0 auto; width:28px; height:28px; padding:0; border:none; background:none; color:var(--ink-2); display:flex; align-items:center; justify-content:center; border-radius:50%; }
-.install-banner .ib-x svg{ width:16px; height:16px; }
 .login-screen{ position:fixed; inset:0; z-index:9999; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px 20px; background:var(--paper); text-align:center; }
 .login-mark{ width:64px; height:64px; border-radius:16px; background:var(--ink); color:var(--vis); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
 .login-mark svg{ width:34px; height:34px; }
@@ -333,8 +323,6 @@ const ICON = {
   logout:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>',
   barcode:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M7 8v8M10 8v8M13 8v3M13 14v2M16 8v8"/></svg>',
   flash:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
-  install:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M12 8v6M9 11l3 3 3-3"/><path d="M9 18h6"/></svg>',
-  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><rect x="4" y="12" width="16" height="9" rx="2"/></svg>',
 };
 const TYPES = {
   text:{label:"Texte", def:[150,16]}, multiline:{label:"Paragraphe", def:[260,50]}, date:{label:"Date", def:[90,16]},
@@ -1333,73 +1321,6 @@ function showLogin(onSuccess){
   pw.focus();
 }
 
-/* ---- proposer l'installation en tant qu'appli ---- */
-const INSTALL_DISMISS_KEY = "pvgo_install_dismiss_at";
-let deferredInstallPrompt = null;
-function isStandalone(){
-  try{
-    return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
-  }catch(e){ return false; }
-}
-function isIOSDevice(){
-  return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-}
-window.addEventListener("beforeinstallprompt", e => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  if (S.view === "home") maybeShowInstallBanner();
-});
-window.addEventListener("appinstalled", () => {
-  deferredInstallPrompt = null;
-  try{ localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now())); }catch(e){}
-  const b = $("#installBanner"); if (b) b.remove();
-});
-function dismissInstallBanner(){
-  try{ localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now())); }catch(e){}
-  const b = $("#installBanner"); if (b) b.remove();
-}
-function maybeShowInstallBanner(){
-  if (isStandalone() || $("#installBanner")) return;
-  const canPromptAndroid = !!deferredInstallPrompt;
-  const iosCandidate = isIOSDevice() && "standalone" in navigator;
-  if (!canPromptAndroid && !iosCandidate) return;
-  try{
-    const last = Number(localStorage.getItem(INSTALL_DISMISS_KEY) || 0);
-    if (last && Date.now() - last < 14*24*60*60*1000) return; // pas plus d'une fois toutes les 2 semaines
-  }catch(e){}
-  const b = document.createElement("div");
-  b.id = "installBanner";
-  b.className = "install-banner";
-  if (canPromptAndroid){
-    b.innerHTML = `<div class="ib-ic">${ICON.install}</div>
-      <div class="ib-body">
-        <strong>Installer PV &amp; Go</strong>
-        <p>Ajoutez l'appli à votre écran d'accueil pour l'ouvrir en un tap, même hors connexion.</p>
-        <div class="ib-acts"><button class="btn primary sm" id="ibInstall">Installer</button><button class="btn sm ghost" id="ibLater">Plus tard</button></div>
-      </div>
-      <button class="ib-x" id="ibClose" aria-label="Fermer">${ICON.check}</button>`;
-  } else {
-    b.innerHTML = `<div class="ib-ic">${ICON.share}</div>
-      <div class="ib-body">
-        <strong>Installer PV &amp; Go</strong>
-        <p>Appuyez sur <b>Partager</b> puis <b>« Sur l'écran d'accueil »</b> pour l'ouvrir en un tap, même hors connexion.</p>
-        <div class="ib-acts"><button class="btn sm ghost" id="ibLater">Compris</button></div>
-      </div>
-      <button class="ib-x" id="ibClose" aria-label="Fermer">${ICON.check}</button>`;
-  }
-  document.body.appendChild(b);
-  $("#ibClose", b).onclick = dismissInstallBanner;
-  const later = $("#ibLater", b); if (later) later.onclick = dismissInstallBanner;
-  const install = $("#ibInstall", b);
-  if (install) install.onclick = async () => {
-    if (!deferredInstallPrompt) return;
-    b.remove();
-    deferredInstallPrompt.prompt();
-    try{ await deferredInstallPrompt.userChoice; }catch(e){}
-    deferredInstallPrompt = null;
-  };
-}
-
 /* ============ boot ============ */
 /* ---- présentation (une seule fois) ---- */
 const ONBOARD_KEY = "pvgo_onboarded";
@@ -1429,7 +1350,6 @@ function maybeShowOnboarding(){
     if (S.view === "home") showHome();
     if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
     if (S.view === "home") maybeShowOnboarding();
-    if (S.view === "home") setTimeout(maybeShowInstallBanner, 1200);
   };
   if (isAuthed()) await start();
   else showLogin(start);
