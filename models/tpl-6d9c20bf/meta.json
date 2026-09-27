@@ -3052,7 +3052,7 @@
     {
       "id": "fa9156f05",
       "type": "choice",
-      "label": "Borne 1 - BORNE",
+      "label": "Aspect borne 1",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 294.8,
@@ -3091,7 +3091,7 @@
     {
       "id": "ff700d421",
       "type": "choice",
-      "label": "Borne 2 - BORNE",
+      "label": "Aspect borne 2",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 351.6,
@@ -3130,7 +3130,7 @@
     {
       "id": "fdf995b4c",
       "type": "choice",
-      "label": "Borne 3 - BORNE",
+      "label": "Aspect borne 3",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 408.3,
@@ -3169,7 +3169,7 @@
     {
       "id": "f043651a0",
       "type": "choice",
-      "label": "Borne 4 - BORNE",
+      "label": "Aspect borne 4",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 465.1,
@@ -3208,7 +3208,7 @@
     {
       "id": "fc376b49d",
       "type": "choice",
-      "label": "Borne 5 - BORNE",
+      "label": "Aspect borne 5",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 521.8,
@@ -3247,7 +3247,7 @@
     {
       "id": "f656091a9",
       "type": "choice",
-      "label": "Borne 6 - BORNE",
+      "label": "Aspect borne 6",
       "group": "Aspect général de la borne",
       "page": 4,
       "x": 578.6,
