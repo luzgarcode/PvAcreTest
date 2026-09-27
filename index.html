@@ -841,7 +841,8 @@ function setVal(fid, v, opts){
       const wasAuto = S.draft.autoFields[emailF.id];
       if (!isFilled(already) || wasAuto){
         const digits = String(v||"").replace(/\D/g,"");
-        setVal(emailF.id, digits ? `fr${digits}@net.mcdonalds.fr` : "", {auto:true});
+        const num = digits ? digits.padStart(4,"0") : "";
+        setVal(emailF.id, num ? `fr${num}@net.mcdonalds.fr` : "", {auto:true});
         refreshField(emailF.id);
       }
     }
