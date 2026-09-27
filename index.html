@@ -784,8 +784,20 @@ function groupHtml(g, fs, gi){
   const hasChoice = fs.some(f=>f.type==="choice");
   return `<details class="grp" data-g="${esc(g)}" ${gi===0?"open":""}><summary><span class="t">${esc(g)}</span><span class="cnt" data-cnt></span></summary>
     <div class="grp-body">
-    ${hasChoice?`<div class="btnrow" style="padding-top:10px"><button class="btn sm" data-allfirst>Tout à « ${esc((fs.find(f=>f.type==="choice").options[0]||{}).label||"")} » (cases vides)</button><button class="btn sm ghost" data-clear>Vider la rubrique</button></div>`:""}
+    ${hasChoice?`<div class="btnrow" style="padding-top:10px"><button class="btn sm" data-allfirst>${esc(allFirstLabel(fs))}</button><button class="btn sm ghost" data-clear>Vider la rubrique</button></div>`:""}
     ${fs.map(f=>fieldHtml(f)).join("")}</div></details>`;
+}
+function allFirstLabel(fs){
+  /* libellés des 1res options de chaque champ « choice » de la rubrique, dédupliqués, OK en tête */
+  const labels = [];
+  fs.forEach(f=>{
+    if (f.type!=="choice") return;
+    const l = (f.options[0]||{}).label;
+    if (l && !labels.includes(l)) labels.push(l);
+  });
+  const i = labels.indexOf("OK");
+  if (i > 0){ labels.splice(i,1); labels.unshift("OK"); }
+  return labels.length ? `Tout à ${labels.join(" & ")} (cases vides)` : "Tout remplir (cases vides)";
 }
 function isSerialField(f){ return f.type==="text" && /s[ée]rie|serial/i.test(f.label||""); }
 function borneNum(label){ const m = /borne\b[\s\S]*?(\d+)\s*(?:[–-]|$)/i.exec(label||""); return m ? m[1] : null; }

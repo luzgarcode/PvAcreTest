@@ -338,8 +338,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
@@ -432,8 +432,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
@@ -526,8 +526,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
@@ -620,8 +620,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
@@ -714,8 +714,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
@@ -808,8 +808,8 @@
       "fontSize": 0,
       "align": "center",
       "options": [
-        { "label": "Sur pied", "box": null },
         { "label": "Comptoir", "box": null },
+        { "label": "Sur pied", "box": null },
         { "label": "Murale", "box": null }
       ],
       "choiceMode": "text",
