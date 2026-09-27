@@ -285,6 +285,31 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 <input type="file" id="pickPdfs" accept="application/pdf" multiple class="hidden">
 <script id="appcode">
 "use strict";
+/* ---- filet de sécurité : affiche toute erreur JS non attrapée directement à
+   l'écran, au lieu de laisser une page blanche muette (utile hors-ligne, sur
+   le terrain, quand on ne peut pas brancher le téléphone à un ordinateur). ---- */
+window.addEventListener("error", e => showFatalError(e.error || e.message));
+window.addEventListener("unhandledrejection", e => showFatalError(e.reason));
+function showFatalError(err){
+  try{
+    const msg = (err && err.message) ? (err.message + (err.stack ? "\n" + String(err.stack).split("\n").slice(0,5).join("\n") : "")) : String(err);
+    let box = document.getElementById("fatalErrBox");
+    if (!box){
+      box = document.createElement("div");
+      box.id = "fatalErrBox";
+      box.style.cssText = "position:fixed;left:0;right:0;bottom:0;max-height:45vh;overflow:auto;background:#c0392b;color:#fff;font:11px/1.4 -apple-system,monospace;padding:10px;white-space:pre-wrap;z-index:999999;box-sizing:border-box";
+      const label = document.createElement("div");
+      label.textContent = "⚠️ Erreur technique (envoie une capture à Dylan) :";
+      label.style.cssText = "font-weight:700;margin-bottom:6px";
+      box.appendChild(label);
+      document.documentElement.appendChild(box);
+    }
+    const line = document.createElement("div");
+    line.textContent = msg;
+    line.style.cssText = "margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.3)";
+    box.appendChild(line);
+  }catch(e){}
+}
 /* ============ utilities ============ */
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
