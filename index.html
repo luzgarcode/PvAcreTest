@@ -826,7 +826,27 @@ function refreshField(fid){
 const flushDraft = async () => { if(!S.draft) return; S.draft.updatedAt=Date.now(); await Store.put("drafts", S.draft); const ss=$("#ss"); if(ss) ss.textContent="Enregistré"; };
 const saveDraftSoon = debounce(flushDraft, 500);
 function draftChanged(){ const ss=$("#ss"); if(ss) ss.textContent="Modifications…"; saveDraftSoon(); updateStats(); }
-function setVal(fid, v){ if(isFilled(v)) S.draft.values[fid]=v; else delete S.draft.values[fid]; draftChanged(); }
+function setVal(fid, v, opts){
+  const auto = !!(opts && opts.auto);
+  if(isFilled(v)) S.draft.values[fid]=v; else delete S.draft.values[fid];
+  if (!S.draft.autoFields) S.draft.autoFields = {};
+  if (auto) S.draft.autoFields[fid] = true; else delete S.draft.autoFields[fid];
+  draftChanged();
+  /* Numéro de site McDo -> déduit l'adresse mail (fr<numéro>@net.mcdonalds.fr) */
+  const f = S.tpl && S.tpl.fields.find(x=>x.id===fid);
+  if (f && f.auto==="site-number"){
+    const emailF = S.tpl.fields.find(x=>x.auto==="site-email-mcdo");
+    if (emailF){
+      const already = S.draft.values[emailF.id];
+      const wasAuto = S.draft.autoFields[emailF.id];
+      if (!isFilled(already) || wasAuto){
+        const digits = String(v||"").replace(/\D/g,"");
+        setVal(emailF.id, digits ? `fr${digits}@net.mcdonalds.fr` : "", {auto:true});
+        refreshField(emailF.id);
+      }
+    }
+  }
+}
 function updateStats(){
   const tot=S.tpl.fields.length, n=countFilled(S.draft,S.tpl);
   const st=$("#stat"); if(st) st.textContent = `${n} / ${tot}`;
