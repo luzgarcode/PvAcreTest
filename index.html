@@ -393,6 +393,14 @@ async function loadMcdoRestaurants(){
     }
   }catch(e){}
 }
+/* Numéro de restaurant Quick -> nom/adresse (chargé une fois, mis en cache par le SW) */
+let QUICK_RESTAURANTS = null;
+async function loadQuickRestaurants(){
+  try{
+    const res = await fetch("./assets/quick-restaurants.json");
+    if (res.ok) QUICK_RESTAURANTS = await res.json();
+  }catch(e){}
+}
 /* Outil de calibrage des champs — réservé au site de test, jamais en prod */
 const IS_TEST_BUILD = true;
 /* Nom/logo affichés — différents sur le site de test pour le distinguer de la prod au premier coup d'œil */
@@ -919,6 +927,21 @@ function setVal(fid, v, opts){
           setVal(numF.id, num, {auto:true});
           refreshField(numF.id);
         }
+      }
+    }
+  }
+  /* Numéro de site Quick -> déduit l'adresse du restaurant (via la liste embarquée) */
+  if (f && f.auto==="site-number-quick" && QUICK_RESTAURANTS){
+    const addrF = S.tpl.fields.find(x=>x.auto==="site-address-quick");
+    if (addrF){
+      const already = S.draft.values[addrF.id];
+      const wasAuto = S.draft.autoFields[addrF.id];
+      if (!isFilled(already) || wasAuto){
+        const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
+        const info = digits ? QUICK_RESTAURANTS[digits] : null;
+        const address = info ? `${info.address}, ${info.zip} ${info.city}` : "";
+        setVal(addrF.id, address, {auto:true});
+        refreshField(addrF.id);
       }
     }
   }
@@ -1537,6 +1560,7 @@ function maybeShowChangelog(){
     if (S.view === "home") showHome();
     if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
     loadMcdoRestaurants();
+    loadQuickRestaurants();
     if (S.view === "home") maybeShowOnboarding();
     if (S.view === "home") maybeShowChangelog();
   };

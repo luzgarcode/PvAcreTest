@@ -17,7 +17,7 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "site-address-quick"
     },
     {
       "id": "f1f421cf6",
@@ -35,7 +35,7 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "site-number-quick"
     },
     {
       "id": "f65517811",
