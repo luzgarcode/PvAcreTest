@@ -368,6 +368,14 @@ async function pageSizes(pdf){
 
 /* ============ app state ============ */
 const S = { view:"home", tpl:null, draft:null, manifestIndex:new Map(), syncing:false };
+/* Numéro de restaurant -> nom, pour l'auto-remplissage McDo (chargé une fois, mis en cache par le SW) */
+let MCDO_RESTAURANTS = null;
+async function loadMcdoRestaurants(){
+  try{
+    const res = await fetch("./assets/mcdo-restaurants.json");
+    if (res.ok) MCDO_RESTAURANTS = await res.json();
+  }catch(e){}
+}
 /* Outil de calibrage des champs — réservé au site de test, jamais en prod */
 const IS_TEST_BUILD = true;
 /* Nom/logo affichés — différents sur le site de test pour le distinguer de la prod au premier coup d'œil */
@@ -860,6 +868,20 @@ function setVal(fid, v, opts){
         const num = digits ? digits.padStart(4,"0") : "";
         setVal(emailF.id, num ? `fr${num}@net.mcdonalds.fr` : "", {auto:true});
         refreshField(emailF.id);
+      }
+    }
+    /* Même numéro -> déduit le nom du restaurant (McDo uniquement, via la liste embarquée) */
+    if (emailF && MCDO_RESTAURANTS){
+      const nameF = S.tpl.fields.find(x=>x.auto==="site-client");
+      if (nameF){
+        const already = S.draft.values[nameF.id];
+        const wasAuto = S.draft.autoFields[nameF.id];
+        if (!isFilled(already) || wasAuto){
+          const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
+          const name = digits ? MCDO_RESTAURANTS[digits] : null;
+          setVal(nameF.id, name || "", {auto:true});
+          refreshField(nameF.id);
+        }
       }
     }
   }
@@ -1476,6 +1498,7 @@ function maybeShowChangelog(){
     S.syncing = false; S.syncError = res.error || null;
     if (S.view === "home") showHome();
     if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
+    loadMcdoRestaurants();
     if (S.view === "home") maybeShowOnboarding();
     if (S.view === "home") maybeShowChangelog();
   };
