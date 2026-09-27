@@ -1504,8 +1504,10 @@ const TUTORIAL_STEPS = [
   { icon:"select", title:"Choisis ton modèle", body:"Sur l'accueil, sélectionne le client, puis la catégorie, puis le modèle de PV concerné (ou utilise la recherche en haut si tu connais son nom)." },
   { icon:"text", title:"Remplis les infos", body:"Renseigne les infos du site, les contrôles et les cases à cocher. « Tout à OUI » et les boutons similaires remplissent d'un coup les réponses qui se ressemblent." },
   { icon:"barcode", title:"Scanne au lieu de taper", body:"Pour un numéro de série ou tout autre code-barres, tape sur le bouton 📷 à côté du champ : la caméra du téléphone s'occupe du reste." },
+  { icon:"magic", title:"Des champs qui se remplissent tout seuls", body:"Sur les fiches McDo, le numéro (ou le nom) du restaurant remplit tout seul le reste. Sur le PV K27 LITE - QUICK, le numéro de restaurant remplit tout seul l'adresse complète." },
   { icon:"signature", title:"Fais signer", body:"Chaque signature (technicien, client, formation…) se fait directement à l'écran, du bout du doigt." },
   { icon:"check", title:"Génère et envoie", body:"Une fois le rapport complet, génère le PDF : il est déposé directement dans le document d'origine, prêt à être envoyé ou téléchargé." },
+  { icon:"sync", title:"En cas de gros bug", body:"Un écran figé ou un affichage cassé ? Va dans Réglages → « Vider le cache et redémarrer l'appli ». Tes rapports en cours ne sont jamais touchés." },
 ];
 function showTutorial(onClose){
   let i = 0;
@@ -1534,7 +1536,7 @@ function showTutorial(onClose){
   };
 }
 /* ---- présentation (une seule fois) ---- */
-const ONBOARD_KEY = "pvgo_onboarded";
+const ONBOARD_KEY = "pvgo_onboarded_v2"; // v2 : bumpé pour refaire passer le tuto à tout le monde (nouveautés Quick/McDo/dépannage)
 function maybeShowOnboarding(){
   try{ if (localStorage.getItem(ONBOARD_KEY) === "1") return; }catch(e){ return; }
   showTutorial(() => { try{ localStorage.setItem(ONBOARD_KEY, "1"); }catch(e){} });
@@ -1588,7 +1590,8 @@ function maybeShowChangelog(){
     loadMcdoRestaurants();
     loadQuickRestaurants();
     if (S.view === "home") maybeShowOnboarding();
-    if (S.view === "home") maybeShowChangelog();
+    // popup automatique de nouveautés retiré : les nouveautés sont désormais intégrées au tuto de démarrage.
+    // (CHANGELOG et showChangelog restent utilisables manuellement via Réglages → « Voir les nouveautés ».)
   };
   if (isAuthed()) await start();
   else showLogin(start);
