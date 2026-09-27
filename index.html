@@ -1543,11 +1543,13 @@ function maybeShowOnboarding(){
 /* ---- nouveautés ---- */
 const CHANGELOG_KEY = "pvgo_changelog_seen";
 const CHANGELOG = [
+  { version:"2026-09-27b", title:"🆕 Quick & dépannage", items:[
+    "Sur le PV K27 LITE - QUICK, le numéro de restaurant déduit maintenant tout seul l'adresse complète (nom + adresse + ville).",
+    "Nouveau dans Réglages : un bouton « Vider le cache et redémarrer l'appli » en cas de gros bug (écran figé, affichage cassé). Tes rapports en cours ne sont jamais touchés.",
+  ]},
   { version:"2026-09-27", title:"🆕 Scanner de codes-barres", items:[
     "Tu peux maintenant scanner un numéro de série (ou tout autre code-barres) avec l'appareil photo au lieu de le taper à la main : cherche le bouton 📷 à côté du champ concerné.",
     "Sur les fiches McDo, le numéro de restaurant déduit maintenant tout seul son nom (et son email). Et ça marche aussi dans l'autre sens : tape les premières lettres du nom dans « Nom du restaurant », une liste te propose les restaurants correspondants, et choisir dedans remplit le numéro pour toi.",
-    "Sur le PV K27 LITE - QUICK, le numéro de restaurant déduit maintenant tout seul l'adresse complète (nom + adresse + ville).",
-    "Nouveau dans Réglages : un bouton « Vider le cache et redémarrer l'appli » en cas de gros bug (écran figé, affichage cassé). Tes rapports en cours ne sont jamais touchés.",
   ]},
 ];
 function showChangelog(entries){
