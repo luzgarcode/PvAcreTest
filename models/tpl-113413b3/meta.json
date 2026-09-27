@@ -1,0 +1,1275 @@
+{
+  "name": "Drive – PV d'installation",
+  "fields": [
+    {
+      "id": "f7af930f7",
+      "type": "text",
+      "label": "Adresse du magasin",
+      "group": "Informations générales du site",
+      "page": 2,
+      "x": 155,
+      "y": 112,
+      "w": 400,
+      "h": 24,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4edcf16d",
+      "type": "text",
+      "label": "Numéro du magasin",
+      "group": "Informations générales du site",
+      "page": 2,
+      "x": 155,
+      "y": 137,
+      "w": 400,
+      "h": 24,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "fc2a28378",
+      "type": "text",
+      "label": "Nom du responsable du magasin (ou du représentant de la direction du magasin)",
+      "group": "Informations générales du site",
+      "page": 2,
+      "x": 40,
+      "y": 186,
+      "w": 370,
+      "h": 12,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f14c46f60",
+      "type": "text",
+      "label": "Téléphone du responsable du magasin",
+      "group": "Informations générales du site",
+      "page": 2,
+      "x": 414,
+      "y": 164,
+      "w": 150,
+      "h": 34,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9aec069f",
+      "type": "text",
+      "label": "Adresse mail",
+      "group": "Informations générales du site",
+      "page": 2,
+      "x": 108,
+      "y": 199,
+      "w": 400,
+      "h": 22,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f260d5e8f",
+      "type": "text",
+      "label": "Nom du technicien",
+      "group": "Pour ACRELEC",
+      "page": 2,
+      "x": 153,
+      "y": 241,
+      "w": 414,
+      "h": 30,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-name"
+    },
+    {
+      "id": "f785ef83f",
+      "type": "date",
+      "label": "Date d'installation",
+      "group": "Pour ACRELEC",
+      "page": 2,
+      "x": 40,
+      "y": 303,
+      "w": 75,
+      "h": 16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4fd115ec",
+      "type": "time",
+      "label": "Heure d'arrivée (technicien installateur)",
+      "group": "Pour ACRELEC",
+      "page": 2,
+      "x": 178,
+      "y": 303,
+      "w": 140,
+      "h": 16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff20707e8",
+      "type": "time",
+      "label": "Heure de départ (technicien installateur)",
+      "group": "Pour ACRELEC",
+      "page": 2,
+      "x": 386,
+      "y": 303,
+      "w": 140,
+      "h": 16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdbdcea32",
+      "type": "text",
+      "label": "N° de série – Borne Speaker Post",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 332,
+      "y": 297,
+      "w": 90,
+      "h": 15,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f477401a3",
+      "type": "text",
+      "label": "N° de série – Audio ACRELEC",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 451,
+      "y": 297,
+      "w": 90,
+      "h": 15,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7fdf2c2f",
+      "type": "choice",
+      "label": "Prérequis électriques présents (Borne Speaker Post)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 335,
+      "y": 326,
+      "w": 68,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Présent",
+          "box": {
+            "page": 3,
+            "x": 335,
+            "y": 326,
+            "w": 68,
+            "h": 13
+          }
+        },
+        {
+          "label": "Non présent",
+          "box": {
+            "page": 3,
+            "x": 335,
+            "y": 340,
+            "w": 68,
+            "h": 13
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f65035da9",
+      "type": "choice",
+      "label": "Prérequis électriques présents (Audio ACRELEC)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 462,
+      "y": 326,
+      "w": 68,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Présent",
+          "box": {
+            "page": 3,
+            "x": 462,
+            "y": 326,
+            "w": 68,
+            "h": 13
+          }
+        },
+        {
+          "label": "Non présent",
+          "box": {
+            "page": 3,
+            "x": 462,
+            "y": 340,
+            "w": 68,
+            "h": 13
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcf80de49",
+      "type": "multiline",
+      "label": "Commentaires (prérequis électriques)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 396,
+      "y": 377,
+      "w": 160,
+      "h": 35,
+      "fontSize": 10,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f08da2f75",
+      "type": "choice",
+      "label": "Prise électrique protégée par disjoncteur 16A + différentiel 30mA (Borne Speaker Post)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 125.2,
+      "y": 482.4,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 3,
+            "x": 125.2,
+            "y": 482.4,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 3,
+            "x": 235.1,
+            "y": 482.4,
+            "w": 19.8,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f41452759",
+      "type": "choice",
+      "label": "Prises électriques protégées par disjoncteur 16A + différentiel 30mA (Audio ACRELEC)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 391.2,
+      "y": 482.4,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 3,
+            "x": 391.2,
+            "y": 482.4,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 3,
+            "x": 492.2,
+            "y": 482.4,
+            "w": 19.9,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1475d3a3",
+      "type": "choice",
+      "label": "Prérequis réseaux présents (Borne Speaker Post)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 335,
+      "y": 532,
+      "w": 68,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Présent",
+          "box": {
+            "page": 3,
+            "x": 335,
+            "y": 532,
+            "w": 68,
+            "h": 13
+          }
+        },
+        {
+          "label": "Non présent",
+          "box": {
+            "page": 3,
+            "x": 335,
+            "y": 546,
+            "w": 68,
+            "h": 13
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f50c387b2",
+      "type": "choice",
+      "label": "Prérequis réseaux présents (Audio ACRELEC)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 462,
+      "y": 532,
+      "w": 68,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Présent",
+          "box": {
+            "page": 3,
+            "x": 462,
+            "y": 532,
+            "w": 68,
+            "h": 13
+          }
+        },
+        {
+          "label": "Non présent",
+          "box": {
+            "page": 3,
+            "x": 462,
+            "y": 546,
+            "w": 68,
+            "h": 13
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3d209fe8",
+      "type": "multiline",
+      "label": "Commentaires (prérequis réseaux)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 396,
+      "y": 581,
+      "w": 160,
+      "h": 35,
+      "fontSize": 10,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd7889f7e",
+      "type": "choice",
+      "label": "Câbles réseaux repérés des deux côtés (Borne Speaker Post)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 140.2,
+      "y": 687.2,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 3,
+            "x": 140.2,
+            "y": 687.2,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 3,
+            "x": 236.2,
+            "y": 687.6,
+            "w": 19.8,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4e1679ce",
+      "type": "choice",
+      "label": "Câble réseau (DHCP) repéré et brassé côté baie de brassage (Audio ACRELEC)",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 401.5,
+      "y": 687.1,
+      "w": 19.9,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 3,
+            "x": 401.5,
+            "y": 687.1,
+            "w": 19.9,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 3,
+            "x": 495.3,
+            "y": 686.9,
+            "w": 19.8,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "facd840c6",
+      "type": "text",
+      "label": "Numéro de la prise réseau DHCP prévu pour la base audio Acrelec",
+      "group": "Contrôle électrique et réseaux",
+      "page": 3,
+      "x": 300,
+      "y": 718,
+      "w": 250,
+      "h": 24,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff3e38966",
+      "type": "choice",
+      "label": "1. La borne Speaker Post est-elle correctement installée et fixée ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 228,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 228,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 228,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe6908c17",
+      "type": "choice",
+      "label": "2. La base Audio ACRELEC est-elle correctement installée et fixée ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 265,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 265,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 265,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f47d5c433",
+      "type": "choice",
+      "label": "3. L'écran est-il correctement installé et fixé ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 302,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 302,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 302,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9050bf39",
+      "type": "choice",
+      "label": "4. Dans le cadre d'une installation avec deux écrans, sont-ils correctement installés et fixés ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 339,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 339,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 339,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcc25a02c",
+      "type": "choice",
+      "label": "5. Le chargeur casque est-il correctement installé et fixé ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 376,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 376,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 376,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdea9f8ad",
+      "type": "choice",
+      "label": "6. Les dongles sont-ils correctement installés, espacés de 1,5 m entre eux ?",
+      "group": "Aspect général de la borne Speaker Post et de la base Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 413,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 413,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 413,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f15afd4a0",
+      "type": "choice",
+      "label": "7. Le système audio ACRELEC (borne + base) est-il correctement branché électriquement (230V) ?",
+      "group": "Contrôle technique et fonctionnel du système Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 476,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 476,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 476,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb7a1019b",
+      "type": "choice",
+      "label": "8. La base audio est-elle correctement branchée au réseau et une adresse IP via DHCP a été assignée par l'IT LM ?",
+      "group": "Contrôle technique et fonctionnel du système Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 513,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 513,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 513,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fff760a96",
+      "type": "choice",
+      "label": "9. Le cardet est-il correctement centré dans la borne et la détection se fait correctement dès la présence d'une voiture ?",
+      "group": "Contrôle technique et fonctionnel du système Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 550,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 550,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 550,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f94b3b5c9",
+      "type": "choice",
+      "label": "10. La qualité audio d'entrée/sortie est-elle d'une compréhension maximale de la parole et un confort d'écoute optimal ?",
+      "group": "Contrôle technique et fonctionnel du système Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 587,
+      "w": 64,
+      "h": 48,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 587,
+            "w": 64,
+            "h": 48
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 587,
+            "w": 61,
+            "h": 48
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f51a90216",
+      "type": "choice",
+      "label": "11. L'affichage de la caméra à l'écran est-il correctement visible et centré ?",
+      "group": "Contrôle technique et fonctionnel du système Audio ACRELEC",
+      "page": 4,
+      "x": 439,
+      "y": 636,
+      "w": 64,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OUI",
+          "box": {
+            "page": 4,
+            "x": 439,
+            "y": 636,
+            "w": 64,
+            "h": 36
+          }
+        },
+        {
+          "label": "NON",
+          "box": {
+            "page": 4,
+            "x": 504,
+            "y": 636,
+            "w": 61,
+            "h": 36
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb0187d3e",
+      "type": "text",
+      "label": "Formation 1 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 208.5,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbfbda068",
+      "type": "signature",
+      "label": "Formation 1 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 208.5,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fea58f7f7",
+      "type": "text",
+      "label": "Formation 2 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 223.6,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2bd201ae",
+      "type": "signature",
+      "label": "Formation 2 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 223.6,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f26fc921f",
+      "type": "text",
+      "label": "Formation 3 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 238.7,
+      "w": 238,
+      "h": 14.7,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fab41eaa2",
+      "type": "signature",
+      "label": "Formation 3 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 238.7,
+      "w": 238,
+      "h": 14.7,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4f9c5d48",
+      "type": "text",
+      "label": "Formation 4 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 253.9,
+      "w": 238,
+      "h": 14.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f19678358",
+      "type": "signature",
+      "label": "Formation 4 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 253.9,
+      "w": 238,
+      "h": 14.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8dace73d",
+      "type": "text",
+      "label": "Formation 5 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 268.9,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc56d9aa4",
+      "type": "signature",
+      "label": "Formation 5 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 268.9,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8f3e0d95",
+      "type": "text",
+      "label": "Formation 6 – Nom",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 52,
+      "y": 284.0,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7c7fcacc",
+      "type": "signature",
+      "label": "Formation 6 – Émargement",
+      "group": "Formation et émargement",
+      "page": 5,
+      "x": 297,
+      "y": 284.0,
+      "w": 238,
+      "h": 14.6,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f235e21e5",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires et signatures",
+      "page": 5,
+      "x": 49,
+      "y": 330,
+      "w": 487,
+      "h": 126,
+      "fontSize": 10,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f03ffdd80",
+      "type": "signature",
+      "label": "Signature du directeur/manager",
+      "group": "Commentaires et signatures",
+      "page": 5,
+      "x": 87,
+      "y": 508,
+      "w": 210,
+      "h": 75,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd7fa813b",
+      "type": "signature",
+      "label": "Signature représentant ACRELEC",
+      "group": "Commentaires et signatures",
+      "page": 5,
+      "x": 349,
+      "y": 508,
+      "w": 210,
+      "h": 75,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-signature"
+    }
+  ],
+  "annexPhotos": [],
+  "optionalPages": [],
+  "category": "Drive",
+  "clients": [
+    "Leroy Merlin"
+  ],
+  "shortName": "Drive LM"
+}
