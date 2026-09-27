@@ -714,6 +714,7 @@ async function showSettings(){
       <div class="ql">Dépannage</div>
       <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">En cas de gros bug (écran figé, boutons qui ne répondent plus, affichage cassé) : vide le cache de l'appli et redémarre proprement. Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
       <button class="btn sm ghost danger" id="hardReset">Vider le cache et redémarrer l'appli</button>
+      <button class="btn sm ghost" id="showDiag" style="margin-top:8px">Diagnostic technique</button>
     </div>
     <p style="text-align:center;color:var(--ink-2);font-size:12px;margin:18px 0 4px">Propulsé par Dylan ⚡</p>
   </div>`;
@@ -741,6 +742,29 @@ async function showSettings(){
       }
     }catch(e){}
     location.reload();
+  };
+  $("#showDiag").onclick = async () => {
+    const btn = $("#showDiag"); btn.disabled = true; const prevText = btn.textContent; btn.textContent = "Analyse…";
+    const report = await runOfflineDiagnostic();
+    btn.disabled = false; btn.textContent = prevText;
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Diagnostic technique">
+      <div class="sheet-h"><h3>Diagnostic technique</h3></div>
+      <div class="sheet-b"><pre style="white-space:pre-wrap;word-break:break-word;font-size:12.5px;background:var(--bg-2,#f4f5f6);padding:12px;border-radius:8px;margin:0">${esc(report)}</pre>
+        <p style="color:var(--ink-2);font-size:13px;margin-top:10px">Envoie-moi une capture d'écran de ce texte.</p></div>
+      <div class="sheet-f" style="justify-content:space-between">
+        <button class="btn sm" data-x="copy">Copier</button>
+        <button class="btn sm primary" data-x="ok">Fermer</button>
+      </div></div>`;
+    document.body.appendChild(m);
+    m.onclick = async e => {
+      const a = e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x);
+      if (a==="ok") m.remove();
+      if (a==="copy"){
+        try{ await navigator.clipboard.writeText(report); toast("Copié"); }
+        catch(err){ prompt("Copie ce texte :", report); }
+      }
+    };
   };
 }
 function applyProfileToDraft(tpl, draft, profile){
@@ -1576,6 +1600,47 @@ function maybeShowChangelog(){
     if (unseen.length) showChangelog(unseen);
   }catch(e){}
 }
+/* ---- diagnostic hors-ligne (visible dans Réglages → Dépannage) ---- */
+const DIAG_KEY = "pvgo_diag";
+async function runOfflineDiagnostic(){
+  const lines = [];
+  lines.push("Date : " + new Date().toLocaleString("fr-FR"));
+  lines.push("En ligne : " + (navigator.onLine ? "oui" : "non"));
+  lines.push("URL : " + location.href);
+  try{
+    if (!("serviceWorker" in navigator)){
+      lines.push("Service worker : NON SUPPORTÉ par ce navigateur.");
+    } else {
+      try{
+        const reg = await navigator.serviceWorker.register("./sw.js");
+        const state = reg.active ? "active" : reg.installing ? "en cours d'installation" : reg.waiting ? "en attente" : "enregistré (état inconnu)";
+        lines.push("Service worker : OK — " + state + (reg.active ? " (scope: " + reg.scope + ")" : ""));
+        lines.push("Contrôle cette page : " + (navigator.serviceWorker.controller ? "oui" : "non — normal juste après l'installation, redemande après avoir rouvert l'appli"));
+      }catch(err){
+        lines.push("Service worker : ÉCHEC D'ENREGISTREMENT — " + (err && err.message ? err.message : String(err)));
+      }
+    }
+    if (!("caches" in window)){
+      lines.push("Cache API : NON SUPPORTÉE par ce navigateur.");
+    } else {
+      const keys = await caches.keys();
+      if (!keys.length){
+        lines.push("Caches : aucun (rien n'est encore mis de côté pour le hors-ligne).");
+      } else {
+        for (const k of keys){
+          const c = await caches.open(k);
+          const n = (await c.keys()).length;
+          lines.push("Cache « " + k + " » : " + n + " fichier(s).");
+        }
+      }
+    }
+  }catch(e){
+    lines.push("Erreur pendant le diagnostic : " + (e && e.message ? e.message : String(e)));
+  }
+  try{ localStorage.setItem(DIAG_KEY, lines.join("\n")); }catch(e){}
+  return lines.join("\n");
+}
+
 (async function boot(){
   if (!window.pdfjsLib || !window.PDFLib){ main.innerHTML=`<div class="wrap"><div class="warn">Les bibliothèques PDF n'ont pas pu se charger. Vérifiez la connexion internet puis rechargez la page.</div></div>`; await homeBar(); return; }
   const start = async () => {
@@ -1586,7 +1651,7 @@ function maybeShowChangelog(){
     const res = await syncManifest();
     S.syncing = false; S.syncError = res.error || null;
     if (S.view === "home") showHome();
-    if ("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
+    runOfflineDiagnostic();
     loadMcdoRestaurants();
     loadQuickRestaurants();
     if (S.view === "home") maybeShowOnboarding();
