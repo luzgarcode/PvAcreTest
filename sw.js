@@ -1,10 +1,13 @@
-const CACHE = "pv-terrain-shell-v7";
+const CACHE = "pv-terrain-shell-v8";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
 // qui est tout-ou-rien : un seul fichier lent ou en échec fait annuler la mise
 // en cache de TOUT, y compris index.html, d'où l'écran blanc en mode avion.
+// "./" est mis en cache en plus de "./index.html" car start_url du manifest
+// pointe maintenant vers la racine (voir plus bas pourquoi).
 const SHELL = [
+  "./",
   "./index.html",
   "./manifest.webmanifest",
   "./icon-192.png",
@@ -77,16 +80,28 @@ self.addEventListener("fetch", event => {
 
   // Page navigation (opening/launching the app, incl. the installed PWA): network first,
   // so a relaunch always picks up the latest index.html when online. Falls back to the
-  // cached shell only when offline, puis à une page de secours locale si même index.html
-  // n'a pas encore été mis en cache (plutôt qu'un écran blanc). Checked BEFORE the shell
-  // cache below, since index.html is also listed in SHELL and would otherwise be served
-  // stale-first even on launch.
+  // cached shell only when offline, en essayant l'URL exacte demandée puis ses alias
+  // ("./" et "./index.html" renvoient le même contenu), puis à une page de secours
+  // locale si rien n'a encore pu être mis en cache (plutôt qu'un écran blanc). Checked
+  // BEFORE the shell cache below, since index.html/./ are also listed in SHELL and
+  // would otherwise be served stale-first even on launch.
   if (req.mode === "navigate") {
     event.respondWith(
       fetch(req).then(res => {
-        if (res.ok) caches.open(CACHE).then(c => c.put("./index.html", res.clone()));
+        if (res.ok) {
+          caches.open(CACHE).then(c => {
+            c.put(req, res.clone());
+            c.put("./index.html", res.clone());
+            c.put("./", res.clone());
+          });
+        }
         return res;
-      }).catch(() => caches.match("./index.html")).then(res => res || caches.match(OFFLINE_URL))
+      }).catch(() =>
+        caches.match(req)
+          .then(r => r || caches.match("./index.html"))
+          .then(r => r || caches.match("./"))
+          .then(r => r || caches.match(OFFLINE_URL))
+      )
     );
     return;
   }

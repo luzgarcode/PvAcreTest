@@ -2,7 +2,7 @@
   "name": "Pv&Test",
   "short_name": "Pv&Test",
   "description": "Remplir les PV d'installation Acrelec sur le terrain",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#EDF0F2",
