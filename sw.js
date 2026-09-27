@@ -1,4 +1,9 @@
-const CACHE = "pv-terrain-shell-v5";
+const CACHE = "pv-terrain-shell-v6";
+// Ordre important : le plus critique en premier. Si l'appli est fermée pendant
+// l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
+// cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
+// qui est tout-ou-rien : un seul fichier lent ou en échec fait annuler la mise
+// en cache de TOUT, y compris index.html, d'où l'écran blanc en mode avion.
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
@@ -12,10 +17,19 @@ const SHELL = [
   "./assets/quick-restaurants.json"
 ];
 
+async function cacheOne(cache, url){
+  try{
+    const res = await fetch(url, {cache:"no-cache"});
+    if (res.ok) await cache.put(url, res);
+  }catch(e){ /* un fichier manquant/lent ne doit pas bloquer les autres */ }
+}
+
 self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())
-  );
+  event.waitUntil((async () => {
+    const c = await caches.open(CACHE);
+    for (const url of SHELL) await cacheOne(c, url); // un par un, dans l'ordre de priorité
+    self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate", event => {
