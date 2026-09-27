@@ -1164,15 +1164,15 @@ async function emailBodyFor(){
 }
 async function showSendReview(bytes){
   const defaultBase = pdfFileName().replace(/\.pdf$/i, "");
-  const defaultMsg = await emailBodyFor();
   const subject = await emailSubjectFor();
+  const defaultMsg = `${subject}\n\n${await emailBodyFor()}`;
   const m=document.createElement("div"); m.className="modal";
   m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Envoyer le PV" style="max-width:560px">
     <div class="sheet-h"><h3>Envoyer le PV</h3></div>
     <div class="sheet-b" style="background:var(--surface)">
       <label class="fld"><span>Nom du fichier</span><input class="inp" id="sendName" value="${esc(defaultBase)}"></label>
-      <label class="fld" style="margin-top:12px"><span>Message</span><textarea class="inp" id="sendMsg" rows="7">${esc(defaultMsg)}</textarea></label>
-      <p class="kbd" style="margin:8px 0 0">Le message est repris si tu envoies par mail, SMS ou une appli de message ; ignoré pour un simple téléchargement.</p>
+      <label class="fld" style="margin-top:12px"><span>Message</span><textarea class="inp" id="sendMsg" rows="8">${esc(defaultMsg)}</textarea></label>
+      <p class="kbd" style="margin:8px 0 0">La 1ère ligne sert d'objet si tu envoies par mail (beaucoup d'applis mail ne permettent pas de le préremplir autrement) ; le reste est le corps du message. Ignoré pour un simple téléchargement.</p>
     </div>
     <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button><button class="btn primary" data-x="send">${canShareFiles()?"Envoyer":"Télécharger"}</button></div>
   </div>`;
