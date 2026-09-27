@@ -279,6 +279,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 <body>
 <header class="bar" id="bar"></header>
 <main id="main"></main>
+<datalist id="mcdoNamesList"></datalist>
 <input type="file" id="pickImg" accept="image/*" class="hidden">
 <input type="file" id="pickImgs" accept="image/*" multiple class="hidden">
 <input type="file" id="pickPdfs" accept="application/pdf" multiple class="hidden">
@@ -370,10 +371,26 @@ async function pageSizes(pdf){
 const S = { view:"home", tpl:null, draft:null, manifestIndex:new Map(), syncing:false };
 /* Numéro de restaurant -> nom, pour l'auto-remplissage McDo (chargé une fois, mis en cache par le SW) */
 let MCDO_RESTAURANTS = null;
+let MCDO_NAME_TO_NUM = null;
+function normMcdoName(s){
+  return String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().trim();
+}
 async function loadMcdoRestaurants(){
   try{
     const res = await fetch("./assets/mcdo-restaurants.json");
-    if (res.ok) MCDO_RESTAURANTS = await res.json();
+    if (res.ok){
+      MCDO_RESTAURANTS = await res.json();
+      MCDO_NAME_TO_NUM = {};
+      for (const num in MCDO_RESTAURANTS){
+        const key = normMcdoName(MCDO_RESTAURANTS[num]);
+        if (key && !(key in MCDO_NAME_TO_NUM)) MCDO_NAME_TO_NUM[key] = num;
+      }
+      const dl = document.getElementById("mcdoNamesList");
+      if (dl){
+        const names = Object.values(MCDO_RESTAURANTS).sort((a,b)=>a.localeCompare(b,"fr"));
+        dl.innerHTML = names.map(n=>`<option value="${esc(n)}">`).join("");
+      }
+    }
   }catch(e){}
 }
 /* Outil de calibrage des champs — réservé au site de test, jamais en prod */
@@ -828,10 +845,14 @@ function fieldHtml(f){
   const v = S.draft.values[f.id]; const id="in_"+f.id;
   let w="";
   switch(f.type){
-    case "text": w = isSerialField(f)
-      ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
-      : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off">`;
+    case "text": {
+      const isMcdoName = f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo");
+      const listAttr = isMcdoName ? ` list="mcdoNamesList"` : "";
+      w = isSerialField(f)
+        ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
+        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}>`;
       break;
+    }
     case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3">${esc(v||"")}</textarea>`; break;
     case "date": w=`<div class="btnrow"><input type="date" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:200px"><button class="btn sm" data-today="${f.id}">Aujourd'hui</button></div>`; break;
     case "time": w=`<div class="btnrow"><input type="time" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:150px"><button class="btn sm" data-now="${f.id}">Maintenant</button></div>`; break;
@@ -881,6 +902,22 @@ function setVal(fid, v, opts){
           const name = digits ? MCDO_RESTAURANTS[digits] : null;
           setVal(nameF.id, name || "", {auto:true});
           refreshField(nameF.id);
+        }
+      }
+    }
+  }
+  /* Nom de restaurant McDo choisi/tapé (via l'autosuggestion) -> déduit le numéro (et en cascade l'email) */
+  if (f && f.auto==="site-client" && !auto && MCDO_NAME_TO_NUM && S.tpl.fields.some(x=>x.auto==="site-email-mcdo")){
+    const numF = S.tpl.fields.find(x=>x.auto==="site-number");
+    if (numF){
+      const key = normMcdoName(v);
+      const num = key ? MCDO_NAME_TO_NUM[key] : null;
+      if (num){
+        const already = S.draft.values[numF.id];
+        const wasAuto = S.draft.autoFields[numF.id];
+        if (!isFilled(already) || wasAuto){
+          setVal(numF.id, num, {auto:true});
+          refreshField(numF.id);
         }
       }
     }
