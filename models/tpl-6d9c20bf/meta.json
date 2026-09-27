@@ -3808,7 +3808,7 @@
     {
       "id": "fda2e91e4",
       "type": "choice",
-      "label": "Borne 1 - ECRAN",
+      "label": "Borne 1 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 295.0,
@@ -3847,7 +3847,7 @@
     {
       "id": "fd400a448",
       "type": "choice",
-      "label": "Borne 2 - ECRAN",
+      "label": "Borne 2 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 351.8,
@@ -3886,7 +3886,7 @@
     {
       "id": "f5f365cfd",
       "type": "choice",
-      "label": "Borne 3 - ECRAN",
+      "label": "Borne 3 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 408.3,
@@ -3925,7 +3925,7 @@
     {
       "id": "f63f9d420",
       "type": "choice",
-      "label": "Borne 4 - ECRAN",
+      "label": "Borne 4 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 465.0,
@@ -3964,7 +3964,7 @@
     {
       "id": "f7ad15c1a",
       "type": "choice",
-      "label": "Borne 5 - ECRAN",
+      "label": "Borne 5 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 521.8,
@@ -4003,7 +4003,7 @@
     {
       "id": "f1edd23f6",
       "type": "choice",
-      "label": "Borne 6 - ECRAN",
+      "label": "Borne 6 - Écran",
       "group": "Contrôle des périphériques",
       "page": 5,
       "x": 578.5,
