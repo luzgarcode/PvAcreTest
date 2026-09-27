@@ -234,9 +234,10 @@
         }
       ],
       "choiceMode": "boxes",
-      "mark": "x",
+      "mark": "strike",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "strikeOpposite": true
     },
     {
       "id": "f65035da9",
@@ -273,9 +274,10 @@
         }
       ],
       "choiceMode": "boxes",
-      "mark": "x",
+      "mark": "strike",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "strikeOpposite": true
     },
     {
       "id": "fcf80de49",
@@ -408,9 +410,10 @@
         }
       ],
       "choiceMode": "boxes",
-      "mark": "x",
+      "mark": "strike",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "strikeOpposite": true
     },
     {
       "id": "f50c387b2",
@@ -447,9 +450,10 @@
         }
       ],
       "choiceMode": "boxes",
-      "mark": "x",
+      "mark": "strike",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "strikeOpposite": true
     },
     {
       "id": "f3d209fe8",
@@ -553,10 +557,10 @@
       "label": "Numéro de la prise réseau DHCP prévu pour la base audio Acrelec",
       "group": "Contrôle électrique et réseaux",
       "page": 3,
-      "x": 331,
-      "y": 719,
-      "w": 215,
-      "h": 39,
+      "x": 383,
+      "y": 723,
+      "w": 118,
+      "h": 26,
       "fontSize": 0,
       "align": "left",
       "options": [],

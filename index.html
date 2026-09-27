@@ -1020,6 +1020,7 @@ function drawMark(page, r, kind){
   const s=Math.min(r.w,r.h,13); const cx=r.x+r.w/2, cy=r.y+r.h/2; const k=s*0.36; const th=Math.max(0.9, s*0.09);
   const c=INK();
   if (kind==="check"){ page.drawLine({start:{x:cx-k,y:cy},end:{x:cx-k*0.25,y:cy-k*0.8},thickness:th,color:c}); page.drawLine({start:{x:cx-k*0.25,y:cy-k*0.8},end:{x:cx+k,y:cy+k*0.9},thickness:th,color:c}); }
+  else if (kind==="strike"){ const th2=Math.max(1,r.h*0.11); page.drawLine({start:{x:r.x+r.w*0.03,y:cy},end:{x:r.x+r.w*0.97,y:cy},thickness:th2,color:c}); }
   else { page.drawLine({start:{x:cx-k,y:cy-k},end:{x:cx+k,y:cy+k},thickness:th,color:c}); page.drawLine({start:{x:cx-k,y:cy+k},end:{x:cx+k,y:cy-k},thickness:th,color:c}); }
 }
 async function buildPdf(tpl, draft){
@@ -1036,7 +1037,7 @@ async function buildPdf(tpl, draft){
     const v = draft.values[f.id]; if(!isFilled(v)) continue;
     const page = pages[f.page]; if(!page) continue;
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }
-    if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
+    if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
     const r = toPdf(page, f);
     if (f.eraseBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
     if (f.type==="photo" || f.type==="signature"){
