@@ -634,6 +634,26 @@ async function showProfile(){
     </div>
     <div class="divider"></div>
     <div class="grp" style="padding:14px">
+      <div class="ql">Réglages</div>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Nouveautés, resynchronisation des modèles…</p>
+      <button class="btn" id="goSettings">Ouvrir les réglages</button>
+    </div>
+  </div>`;
+  const save = debounce(async () => { const cur = await getProfile(); await saveProfile({...cur, name:$("#pfName").value.trim(), phone:$("#pfPhone").value.trim(), email:$("#pfEmail").value.trim(), secteur:$("#pfSecteur").value}); const ss=$("#ss"); if(ss) ss.textContent="Enregistré"; }, 400);
+  const dirty = () => { const ss=$("#ss"); if(ss) ss.textContent="Modifications…"; save(); };
+  $("#pfName").oninput = dirty; $("#pfPhone").oninput = dirty; $("#pfEmail").oninput = dirty; $("#pfSecteur").onchange = dirty;
+  $("#pfSign").onclick = async () => { const png = await signaturePad("Ma signature", 3); if (png){ const cur = await getProfile(); await saveProfile({...cur, signature:png}); showProfile(); } };
+  if ($("#pfSignClear")) $("#pfSignClear").onclick = async () => { const cur = await getProfile(); await saveProfile({...cur, signature:null}); showProfile(); };
+  $("#goSettings").onclick = () => showSettings();
+}
+
+/* ============ RÉGLAGES ============ */
+async function showSettings(){
+  S.view="settings";
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Réglages</div><div class="sp"></div>`);
+  $("#bk").onclick = () => showProfile();
+  main.innerHTML = `<div class="fill" style="max-width:520px">
+    <div class="grp" open style="padding:14px">
       <div class="ql">Nouveautés</div>
       <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Revoir les dernières nouveautés de l'appli.</p>
       <button class="btn" id="showChangelog">Voir les nouveautés</button>
@@ -645,11 +665,6 @@ async function showProfile(){
       <button class="btn" id="hardResync">Forcer une resynchronisation complète</button>
     </div>
   </div>`;
-  const save = debounce(async () => { const cur = await getProfile(); await saveProfile({...cur, name:$("#pfName").value.trim(), phone:$("#pfPhone").value.trim(), email:$("#pfEmail").value.trim(), secteur:$("#pfSecteur").value}); const ss=$("#ss"); if(ss) ss.textContent="Enregistré"; }, 400);
-  const dirty = () => { const ss=$("#ss"); if(ss) ss.textContent="Modifications…"; save(); };
-  $("#pfName").oninput = dirty; $("#pfPhone").oninput = dirty; $("#pfEmail").oninput = dirty; $("#pfSecteur").onchange = dirty;
-  $("#pfSign").onclick = async () => { const png = await signaturePad("Ma signature", 3); if (png){ const cur = await getProfile(); await saveProfile({...cur, signature:png}); showProfile(); } };
-  if ($("#pfSignClear")) $("#pfSignClear").onclick = async () => { const cur = await getProfile(); await saveProfile({...cur, signature:null}); showProfile(); };
   $("#showChangelog").onclick = () => showChangelog(CHANGELOG);
   $("#hardResync").onclick = async () => {
     if (!confirm("Effacer et retélécharger tous les modèles de PV maintenant ?")) return;
@@ -657,7 +672,7 @@ async function showProfile(){
     for (const t of await Store.all("templates")) if (t.published) await Store.del("templates", t.id);
     const res = await syncManifest();
     toast(res.ok ? "Modèles resynchronisés" : "Certains modèles n'ont pas pu être retéléchargés, réessaie");
-    showProfile();
+    showSettings();
   };
 }
 function applyProfileToDraft(tpl, draft, profile){
