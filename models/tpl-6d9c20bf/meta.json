@@ -219,7 +219,7 @@
     },
     {
       "id": "fc7686eaa",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 1 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -229,7 +229,11 @@
       "h": 21.3,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -309,7 +313,7 @@
     },
     {
       "id": "f4a1cafc4",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 2 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -319,7 +323,11 @@
       "h": 21.2,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -399,7 +407,7 @@
     },
     {
       "id": "fbbe448d6",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 3 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -409,7 +417,11 @@
       "h": 21.5,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -489,7 +501,7 @@
     },
     {
       "id": "f7268906e",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 4 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -499,7 +511,11 @@
       "h": 21.2,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -579,7 +595,7 @@
     },
     {
       "id": "f7820c73c",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 5 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -589,7 +605,11 @@
       "h": 21.3,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -669,7 +689,7 @@
     },
     {
       "id": "fef0f8460",
-      "type": "text",
+      "type": "choice",
       "label": "Borne NGK-27 H1 6 – Type de borne",
       "group": "Traçabilité",
       "page": 2,
@@ -679,7 +699,11 @@
       "h": 21.2,
       "fontSize": 0,
       "align": "left",
-      "options": [],
+      "options": [
+        { "label": "Simple", "box": null },
+        { "label": "Double", "box": null },
+        { "label": "Semi-outdoor", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
