@@ -709,6 +709,12 @@ async function showSettings(){
       <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Si un modèle affiche des infos anciennes ou incomplètes malgré « Vérifier les mises à jour », force une resynchronisation complète : ça efface et retélécharge tous les modèles depuis le début. Tes rapports en cours ne sont pas touchés.</p>
       <button class="btn" id="hardResync">Forcer une resynchronisation complète</button>
     </div>
+    <div class="divider"></div>
+    <div class="grp" style="padding:14px">
+      <div class="ql">Dépannage</div>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">En cas de gros bug (écran figé, boutons qui ne répondent plus, affichage cassé) : vide le cache de l'appli et redémarre proprement. Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
+      <button class="btn sm ghost danger" id="hardReset">Vider le cache et redémarrer l'appli</button>
+    </div>
     <p style="text-align:center;color:var(--ink-2);font-size:12px;margin:18px 0 4px">Propulsé par Dylan ⚡</p>
   </div>`;
   $("#showTutorial").onclick = () => showTutorial();
@@ -720,6 +726,21 @@ async function showSettings(){
     const res = await syncManifest();
     toast(res.ok ? "Modèles resynchronisés" : "Certains modèles n'ont pas pu être retéléchargés, réessaie");
     showSettings();
+  };
+  $("#hardReset").onclick = async () => {
+    if (!confirm("Vider le cache et redémarrer l'appli maintenant ? Tes rapports en cours ne seront pas perdus.")) return;
+    const btn = $("#hardReset"); btn.disabled = true; btn.textContent = "Nettoyage…";
+    try{
+      if ("serviceWorker" in navigator){
+        const regs = await navigator.serviceWorker.getRegistrations();
+        for (const r of regs) await r.unregister();
+      }
+      if ("caches" in window){
+        const keys = await caches.keys();
+        for (const k of keys) await caches.delete(k);
+      }
+    }catch(e){}
+    location.reload();
   };
 }
 function applyProfileToDraft(tpl, draft, profile){
