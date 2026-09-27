@@ -788,15 +788,18 @@ function groupHtml(g, fs, gi){
     ${fs.map(f=>fieldHtml(f)).join("")}</div></details>`;
 }
 function allFirstLabel(fs){
-  /* libellés des 1res options de chaque champ « choice » de la rubrique, dédupliqués, OK en tête */
+  /* "OK" (s'il y a des contrôles) + l'option par défaut du champ "Type de borne" (s'il y en a un) */
+  const choiceFields = fs.filter(f=>f.type==="choice");
   const labels = [];
-  fs.forEach(f=>{
-    if (f.type!=="choice") return;
-    const l = (f.options[0]||{}).label;
-    if (l && !labels.includes(l)) labels.push(l);
-  });
-  const i = labels.indexOf("OK");
-  if (i > 0){ labels.splice(i,1); labels.unshift("OK"); }
+  const okLabel = choiceFields.map(f=>(f.options[0]||{}).label).find(l=>/^(ok|oui)$/i.test(l||""));
+  if (okLabel) labels.push(okLabel);
+  const typeF = choiceFields.find(f=>/type de borne/i.test(f.label||""));
+  const extra = typeF ? (typeF.options[0]||{}).label : null;
+  if (extra && extra!==okLabel && !labels.includes(extra)) labels.push(extra);
+  if (!labels.length){
+    const first = choiceFields[0];
+    if (first) labels.push((first.options[0]||{}).label);
+  }
   return labels.length ? `Tout à ${labels.join(" & ")} (cases vides)` : "Tout remplir (cases vides)";
 }
 function isSerialField(f){ return f.type==="text" && /s[ée]rie|serial/i.test(f.label||""); }
