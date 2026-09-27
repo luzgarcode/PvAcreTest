@@ -939,7 +939,7 @@ function setVal(fid, v, opts){
       if (!isFilled(already) || wasAuto){
         const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
         const info = digits ? QUICK_RESTAURANTS[digits] : null;
-        const address = info ? `${info.address}, ${info.zip} ${info.city}` : "";
+        const address = info ? `Quick ${info.name} — ${info.address}, ${info.zip} ${info.city}` : "";
         setVal(addrF.id, address, {auto:true});
         refreshField(addrF.id);
       }
