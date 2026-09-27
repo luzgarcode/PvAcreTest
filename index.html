@@ -877,9 +877,10 @@ function fieldHtml(f){
     case "text": {
       const isMcdoName = f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo");
       const listAttr = isMcdoName ? ` list="mcdoNamesList"` : "";
-      w = isSerialField(f)
+      const hint = f.auto==="site-number-quick" ? `<div style="color:var(--ink-2);font-size:12px;margin-top:4px">💡 À indiquer en priorité : remplit automatiquement l'adresse ci-dessus.</div>` : "";
+      w = (isSerialField(f)
         ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
-        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}>`;
+        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}>`) + hint;
       break;
     }
     case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3">${esc(v||"")}</textarea>`; break;
