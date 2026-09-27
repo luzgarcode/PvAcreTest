@@ -19,6 +19,7 @@
 :root{
   --paper:#EDF0F2; --surface:#FFFFFF; --surface-2:#F6F8F9; --ink:#17212B; --ink-2:#4A5763; --line:#D3DAE0;
   --vis:#F5B700; --vis-ink:#17212B; --vis-soft:#FFF3C4; --blue:#1D4F7C; --blue-soft:#E3EDF6;
+  --logo:var(--vis); --logo-ink:var(--vis-ink);
   --ok:#1E7B4F; --ok-soft:#DDF1E6; --nok:#B3261E; --nok-soft:#F8E0DE;
   --zone:rgba(29,79,124,.16); --zone-line:#1D4F7C; --zone-sel:rgba(245,183,0,.35);
   --r:6px; --font:"Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -53,8 +54,8 @@ img{ max-width:100%; }
 :root[data-theme="dark"] .bar{ background:#0A0F14; }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .bar{ background:#0A0F14; } }
 .mark{ display:flex; align-items:center; gap:10px; font-family:var(--font-c); font-weight:700; font-size:22px; letter-spacing:.2px; white-space:nowrap; }
-.mark i{ width:26px; height:26px; background:var(--vis); border-radius:4px; position:relative; flex:none; }
-.mark i::after{ content:""; position:absolute; left:7px; top:4px; width:8px; height:13px; border:solid var(--vis-ink); border-width:0 3.5px 3.5px 0; transform:rotate(45deg); }
+.mark i{ width:26px; height:26px; background:var(--logo); border-radius:4px; position:relative; flex:none; }
+.mark i::after{ content:""; position:absolute; left:7px; top:4px; width:8px; height:13px; border:solid var(--logo-ink); border-width:0 3.5px 3.5px 0; transform:rotate(45deg); }
 .bar .sp{ flex:1; }
 .bar .title{ font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
 .bar .save-state{ font-size:13px; color:#B9C4CE; white-space:nowrap; }
@@ -256,7 +257,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 @media (prefers-reduced-motion: reduce){ .busy::before{ animation:none; } .grp > summary::before{ transition:none; } }
 .warn{ background:var(--vis-soft); border:1px solid var(--vis); padding:10px 12px; border-radius:var(--r); font-size:14px; margin-bottom:12px; }
 .login-screen{ position:fixed; inset:0; z-index:9999; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px 20px; background:var(--paper); text-align:center; }
-.login-mark{ width:64px; height:64px; border-radius:16px; background:var(--ink); color:var(--vis); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.login-mark{ width:64px; height:64px; border-radius:16px; background:var(--ink); color:var(--logo); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
 .login-mark svg{ width:34px; height:34px; }
 .login-screen h1{ font-family:var(--font-c); font-size:26px; margin:0 0 6px; }
 .login-screen p.sub{ color:var(--ink-2); font-size:14px; margin:0 0 28px; max-width:320px; }
@@ -369,6 +370,11 @@ async function pageSizes(pdf){
 const S = { view:"home", tpl:null, draft:null, manifestIndex:new Map(), syncing:false };
 /* Outil de calibrage des champs — réservé au site de test, jamais en prod */
 const IS_TEST_BUILD = true;
+/* Nom/logo affichés — différents sur le site de test pour le distinguer de la prod au premier coup d'œil */
+let APP_NAME = "PV & Go", LOGO_COLOR = "", LOGO_INK = "";
+if (IS_TEST_BUILD) { APP_NAME = "Pv&Test"; LOGO_COLOR = "#2FAE60"; LOGO_INK = "#0B2B1C"; }
+if (LOGO_COLOR){ document.documentElement.style.setProperty("--logo", LOGO_COLOR); document.documentElement.style.setProperty("--logo-ink", LOGO_INK); }
+document.title = `${APP_NAME} – remplir les PV d'installation`;
 const main = $("#main"), bar = $("#bar");
 
 const CATEGORIES = ["Borne de commande","Audio","DMB","Drive","Multiservice","Pointeuse","Sco/Aco","Autre"];
@@ -461,7 +467,7 @@ async function syncPill(){
 let brandFadeTimer = null;
 async function homeBar(){
   if (brandFadeTimer){ clearTimeout(brandFadeTimer); brandFadeTimer = null; }
-  setBar(`<div class="mark"><i></i><span class="brand-fade">PV &amp; Go</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
+  setBar(`<div class="mark"><i></i><span class="brand-fade">${esc(APP_NAME)}</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
   if (IS_TEST_BUILD) $("#barLogout").onclick = logout;
   // Sur mobile, l'icône seule reste dans la barre ; une fois la synchro confirmée
   // (pas d'erreur, pas en cours), le pill "à jour…" laisse place au nom de l'appli
@@ -1331,7 +1337,7 @@ function showLogin(onSuccess){
   overlay.id = "loginOverlay";
   overlay.className = "login-screen";
   overlay.innerHTML = `<div class="login-mark">${ICON.mark}</div>
-    <h1>PV &amp; Go</h1>
+    <h1>${esc(APP_NAME)}</h1>
     <p class="sub">Application réservée aux techniciens Acrelec. Entrez le mot de passe pour continuer.</p>
     <div class="login-card">
       <p class="login-err" id="loginErr"></p>
