@@ -327,7 +327,7 @@
     },
     {
       "id": "f7aa3b257",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 1",
       "page": 3,
@@ -337,7 +337,11 @@
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -417,7 +421,7 @@
     },
     {
       "id": "f78855d27",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 2",
       "page": 3,
@@ -427,7 +431,11 @@
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -507,7 +515,7 @@
     },
     {
       "id": "f3dcf8f88",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 3",
       "page": 3,
@@ -517,7 +525,11 @@
       "h": 24.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -597,7 +609,7 @@
     },
     {
       "id": "f854f6089",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 4",
       "page": 3,
@@ -607,7 +619,11 @@
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -687,7 +703,7 @@
     },
     {
       "id": "f21a114f8",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 5",
       "page": 3,
@@ -697,7 +713,11 @@
       "h": 23.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
@@ -777,7 +797,7 @@
     },
     {
       "id": "f37d01179",
-      "type": "text",
+      "type": "choice",
       "label": "Type de borne (sur pied, comptoir, murale)",
       "group": "Borne 6",
       "page": 3,
@@ -787,7 +807,11 @@
       "h": 24.0,
       "fontSize": 0,
       "align": "center",
-      "options": [],
+      "options": [
+        { "label": "Sur pied", "box": null },
+        { "label": "Comptoir", "box": null },
+        { "label": "Murale", "box": null }
+      ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
