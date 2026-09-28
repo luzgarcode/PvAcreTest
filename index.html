@@ -405,7 +405,13 @@ const S = { view:"home", tpl:null, draft:null, manifestIndex:new Map(), syncing:
 let MCDO_RESTAURANTS = null;
 let MCDO_NAME_TO_NUM = null;
 function normMcdoName(s){
-  return String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().trim();
+  return String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/-/g," ").toLowerCase().replace(/\s+/g," ").trim();
+}
+/* Les noms de la liste embarquée viennent de l'URL du site McDo (tirets partout, y
+   compris entre des mots qui n'en ont pas dans un nom de ville normal). On les affiche
+   et on les remplit avec des espaces à la place, plus lisible sur un PV. */
+function mcdoDisplayName(raw){
+  return String(raw||"").replace(/-/g," ");
 }
 async function loadMcdoRestaurants(){
   try{
@@ -419,7 +425,7 @@ async function loadMcdoRestaurants(){
       }
       const dl = document.getElementById("mcdoNamesList");
       if (dl){
-        const names = Object.values(MCDO_RESTAURANTS).sort((a,b)=>a.localeCompare(b,"fr"));
+        const names = Object.values(MCDO_RESTAURANTS).map(mcdoDisplayName).sort((a,b)=>a.localeCompare(b,"fr"));
         dl.innerHTML = names.map(n=>`<option value="${esc(n)}">`).join("");
       }
     }
@@ -446,7 +452,7 @@ function renderMcdoSuggest(fid, query){
   const box = document.getElementById("sugg_"+fid); if (!box) return;
   const matches = mcdoMatches(query);
   if (!matches.length){ box.hidden = true; box.innerHTML=""; return; }
-  box.innerHTML = matches.map(n=>`<button type="button" class="mcdo-sugg-item" data-mcdopick="${esc(fid)}" data-mcdoval="${esc(n)}">${esc(n)}</button>`).join("");
+  box.innerHTML = matches.map(n=>{ const d=mcdoDisplayName(n); return `<button type="button" class="mcdo-sugg-item" data-mcdopick="${esc(fid)}" data-mcdoval="${esc(d)}">${esc(d)}</button>`; }).join("");
   box.hidden = false;
 }
 function hideMcdoSuggest(fid){
@@ -1026,7 +1032,7 @@ function setVal(fid, v, opts){
         if (!isFilled(already) || wasAuto){
           const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
           const name = digits ? MCDO_RESTAURANTS[digits] : null;
-          setVal(nameF.id, name || "", {auto:true});
+          setVal(nameF.id, name ? mcdoDisplayName(name) : "", {auto:true});
           refreshField(nameF.id);
         }
       }
