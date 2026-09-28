@@ -206,9 +206,9 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .q > label, .q > .ql{ display:block; font-weight:600; font-size:15px; margin-bottom:6px; }
 .q .inp{ font-size:16px; }
 .mcdo-wrap{ position:relative; }
-.mcdo-sugg{ position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:0 6px 18px rgba(0,0,0,.18); max-height:240px; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
+.mcdo-sugg{ position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:0 6px 18px rgba(0,0,0,.18); max-height:240px; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; touch-action:pan-y; box-sizing:border-box; }
 .mcdo-sugg[hidden]{ display:none; }
-.mcdo-sugg-item{ display:block; width:100%; text-align:left; background:none; border:0; border-bottom:1px dashed var(--line); padding:10px 12px; font:inherit; color:var(--ink); cursor:pointer; }
+.mcdo-sugg-item{ display:block; width:100%; box-sizing:border-box; text-align:left; background:none; border:0; border-bottom:1px dashed var(--line); padding:10px 12px; font:inherit; color:var(--ink); cursor:pointer; white-space:normal; overflow-wrap:anywhere; }
 .mcdo-sugg-item:last-child{ border-bottom:0; }
 .mcdo-sugg-item:hover, .mcdo-sugg-item:active{ background:var(--surface-2); }
 .mcdo-sugg-item .num{ color:var(--ink-2); font-size:12px; margin-left:6px; }
