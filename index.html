@@ -205,6 +205,13 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .q:last-child{ border-bottom:0; }
 .q > label, .q > .ql{ display:block; font-weight:600; font-size:15px; margin-bottom:6px; }
 .q .inp{ font-size:16px; }
+.mcdo-wrap{ position:relative; }
+.mcdo-sugg{ position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:0 6px 18px rgba(0,0,0,.18); max-height:240px; overflow:auto; }
+.mcdo-sugg[hidden]{ display:none; }
+.mcdo-sugg-item{ display:block; width:100%; text-align:left; background:none; border:0; border-bottom:1px dashed var(--line); padding:10px 12px; font:inherit; color:var(--ink); cursor:pointer; }
+.mcdo-sugg-item:last-child{ border-bottom:0; }
+.mcdo-sugg-item:hover, .mcdo-sugg-item:active{ background:var(--surface-2); }
+.mcdo-sugg-item .num{ color:var(--ink-2); font-size:12px; margin-left:6px; }
 .seg{ display:flex; flex-wrap:wrap; gap:6px; }
 .seg button{ border:1.5px solid var(--line); background:var(--surface); border-radius:var(--r); padding:8px 14px; min-height:42px; min-width:64px; font-weight:600; cursor:pointer; }
 .seg button.on{ background:var(--blue); border-color:var(--blue); color:var(--surface); }
@@ -417,6 +424,33 @@ async function loadMcdoRestaurants(){
       }
     }
   }catch(e){}
+}
+/* Suggestions de noms McDo (autocomplétion maison, ne dépend pas du <datalist> natif — peu fiable sur iOS Safari) */
+function mcdoMatches(query){
+  if (!MCDO_RESTAURANTS) return [];
+  const key = normMcdoName(query);
+  if (key.length < 2) return [];
+  const starts = [], contains = [];
+  const seen = new Set();
+  for (const num in MCDO_RESTAURANTS){
+    const name = MCDO_RESTAURANTS[num];
+    const nkey = normMcdoName(name);
+    if (!nkey || seen.has(nkey)) continue;
+    if (nkey.startsWith(key)){ starts.push(name); seen.add(nkey); }
+    else if (nkey.includes(key)){ contains.push(name); seen.add(nkey); }
+  }
+  const cmp = (a,b)=>a.localeCompare(b,"fr");
+  return starts.sort(cmp).concat(contains.sort(cmp)).slice(0,8);
+}
+function renderMcdoSuggest(fid, query){
+  const box = document.getElementById("sugg_"+fid); if (!box) return;
+  const matches = mcdoMatches(query);
+  if (!matches.length){ box.hidden = true; box.innerHTML=""; return; }
+  box.innerHTML = matches.map(n=>`<button type="button" class="mcdo-sugg-item" data-mcdopick="${esc(fid)}" data-mcdoval="${esc(n)}">${esc(n)}</button>`).join("");
+  box.hidden = false;
+}
+function hideMcdoSuggest(fid){
+  const box = document.getElementById("sugg_"+fid); if (box){ box.hidden = true; box.innerHTML=""; }
 }
 /* Numéro de restaurant Quick -> nom/adresse (chargé une fois, mis en cache par le SW) */
 let QUICK_RESTAURANTS = null;
@@ -925,11 +959,13 @@ function fieldHtml(f){
   switch(f.type){
     case "text": {
       const isMcdoName = f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo");
-      const listAttr = isMcdoName ? ` list="mcdoNamesList"` : "";
       const hint = f.auto==="site-number-quick" ? `<div style="color:var(--ink-2);font-size:12px;margin-top:4px">💡 À indiquer en priorité : remplit automatiquement l'adresse ci-dessus.</div>` : "";
-      w = (isSerialField(f)
-        ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
-        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${listAttr}>`) + hint;
+      const input = isSerialField(f)
+        ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
+        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off">`;
+      w = isMcdoName
+        ? `<div class="mcdo-wrap">${input}<div class="mcdo-sugg" id="sugg_${f.id}" hidden></div></div>` + hint
+        : input + hint;
       break;
     }
     case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3">${esc(v||"")}</textarea>`; break;
@@ -1030,7 +1066,23 @@ function updateStats(){
 }
 function bindFill(){
   const G = $("#groups");
-  G.addEventListener("input", e => { const fid=e.target.dataset.f; if(!fid) return; const f=S.tpl.fields.find(x=>x.id===fid); setVal(fid, f.type==="check" ? e.target.checked : e.target.value); });
+  G.addEventListener("input", e => {
+    const fid=e.target.dataset.f; if(!fid) return;
+    const f=S.tpl.fields.find(x=>x.id===fid);
+    setVal(fid, f.type==="check" ? e.target.checked : e.target.value);
+    if (f && f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo")) renderMcdoSuggest(fid, e.target.value);
+  });
+  G.addEventListener("focusout", e => {
+    const fid=e.target.dataset && e.target.dataset.f; if(!fid) return;
+    setTimeout(()=>hideMcdoSuggest(fid), 150);
+  });
+  G.addEventListener("pointerdown", e => {
+    const b = e.target.closest(".mcdo-sugg-item"); if(!b) return;
+    e.preventDefault();
+    const fid = b.dataset.mcdopick, val = b.dataset.mcdoval;
+    setVal(fid, val);
+    refreshField(fid);
+  });
   G.addEventListener("click", async e => {
     const b = e.target.closest("button"); if(!b) return;
     if (b.dataset.choice){ const fid=b.dataset.choice; const cur=S.draft.values[fid]; setVal(fid, cur===b.dataset.val ? "" : b.dataset.val); refreshField(fid); return; }
