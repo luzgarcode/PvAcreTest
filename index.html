@@ -452,6 +452,17 @@ function renderMcdoSuggest(fid, query){
 function hideMcdoSuggest(fid){
   const box = document.getElementById("sugg_"+fid); if (box){ box.hidden = true; box.innerHTML=""; }
 }
+/* Numéro de restaurant McDo -> téléphone (chargé une fois, mis en cache par le SW) */
+let MCDO_PHONES = null;
+async function loadMcdoPhones(){
+  try{
+    const res = await fetch("./assets/mcdo-phones.json");
+    if (res.ok) MCDO_PHONES = await res.json();
+  }catch(e){}
+}
+function formatFrPhone(digits){
+  return String(digits||"").replace(/(\d{2})(?=\d)/g, "$1 ").trim();
+}
 /* Numéro de restaurant Quick -> nom/adresse (chargé une fois, mis en cache par le SW) */
 let QUICK_RESTAURANTS = null;
 async function loadQuickRestaurants(){
@@ -1017,6 +1028,20 @@ function setVal(fid, v, opts){
           const name = digits ? MCDO_RESTAURANTS[digits] : null;
           setVal(nameF.id, name || "", {auto:true});
           refreshField(nameF.id);
+        }
+      }
+    }
+    /* Même numéro -> déduit le téléphone du restaurant (McDo uniquement, via la liste embarquée) */
+    if (emailF && MCDO_PHONES){
+      const phoneF = S.tpl.fields.find(x=>x.auto==="site-phone-mcdo");
+      if (phoneF){
+        const already = S.draft.values[phoneF.id];
+        const wasAuto = S.draft.autoFields[phoneF.id];
+        if (!isFilled(already) || wasAuto){
+          const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
+          const tel = digits ? MCDO_PHONES[digits] : null;
+          setVal(phoneF.id, tel ? formatFrPhone(tel) : "", {auto:true});
+          refreshField(phoneF.id);
         }
       }
     }
@@ -1724,6 +1749,7 @@ async function runOfflineDiagnostic(){
     if (S.view === "home") showHome();
     runOfflineDiagnostic();
     loadMcdoRestaurants();
+    loadMcdoPhones();
     loadQuickRestaurants();
     if (S.view === "home") maybeShowOnboarding();
     // popup automatique de nouveautés retiré : les nouveautés sont désormais intégrées au tuto de démarrage.
