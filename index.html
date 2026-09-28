@@ -206,7 +206,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .q > label, .q > .ql{ display:block; font-weight:600; font-size:15px; margin-bottom:6px; }
 .q .inp{ font-size:16px; }
 .mcdo-wrap{ position:relative; }
-.mcdo-sugg{ position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:0 6px 18px rgba(0,0,0,.18); max-height:240px; overflow:auto; }
+.mcdo-sugg{ position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:0 6px 18px rgba(0,0,0,.18); max-height:240px; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
 .mcdo-sugg[hidden]{ display:none; }
 .mcdo-sugg-item{ display:block; width:100%; text-align:left; background:none; border:0; border-bottom:1px dashed var(--line); padding:10px 12px; font:inherit; color:var(--ink); cursor:pointer; }
 .mcdo-sugg-item:last-child{ border-bottom:0; }
@@ -1074,17 +1074,11 @@ function bindFill(){
   });
   G.addEventListener("focusout", e => {
     const fid=e.target.dataset && e.target.dataset.f; if(!fid) return;
-    setTimeout(()=>hideMcdoSuggest(fid), 150);
-  });
-  G.addEventListener("pointerdown", e => {
-    const b = e.target.closest(".mcdo-sugg-item"); if(!b) return;
-    e.preventDefault();
-    const fid = b.dataset.mcdopick, val = b.dataset.mcdoval;
-    setVal(fid, val);
-    refreshField(fid);
+    setTimeout(()=>hideMcdoSuggest(fid), 300);
   });
   G.addEventListener("click", async e => {
     const b = e.target.closest("button"); if(!b) return;
+    if (b.dataset.mcdopick){ setVal(b.dataset.mcdopick, b.dataset.mcdoval); refreshField(b.dataset.mcdopick); return; }
     if (b.dataset.choice){ const fid=b.dataset.choice; const cur=S.draft.values[fid]; setVal(fid, cur===b.dataset.val ? "" : b.dataset.val); refreshField(fid); return; }
     if (b.dataset.today){ const t=new Date(); const v=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`; setVal(b.dataset.today, v); refreshField(b.dataset.today); return; }
     if (b.dataset.now){ const t=new Date(); const v=`${String(t.getHours()).padStart(2,"0")}:${String(t.getMinutes()).padStart(2,"0")}`; setVal(b.dataset.now, v); refreshField(b.dataset.now); return; }
