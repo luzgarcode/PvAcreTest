@@ -1678,6 +1678,10 @@ function maybeShowOnboarding(){
 /* ---- nouveautés ---- */
 const CHANGELOG_KEY = "pvgo_changelog_seen";
 const CHANGELOG = [
+  { version:"2026-10-02", title:"🆕 Commentaires & envoi du PDF", items:[
+    "Correction : un retour à la ligne tapé dans un champ commentaire ressortait parfois comme un « ? » sur le PDF au lieu d'un vrai saut de ligne. C'est corrigé.",
+    "Le bouton « Envoyer le PDF » devient « Terminé ». Il ouvre une fenêtre qui propose maintenant « Sauvegarder » (le PDF seul) ou « Envoyer » (PDF + message) séparément, pour éviter qu'un fichier .txt parasite se glisse à côté du PDF quand tu sauvegardes dans OneDrive.",
+  ]},
   { version:"2026-09-27b", title:"🆕 Quick & dépannage", items:[
     "Sur le PV K27 LITE - QUICK, le numéro de restaurant déduit maintenant tout seul l'adresse complète (nom + adresse + ville).",
     "Nouveau dans Réglages : un bouton « Vider le cache et redémarrer l'appli » en cas de gros bug (écran figé, affichage cassé). Tes rapports en cours ne sont jamais touchés.",
@@ -1764,9 +1768,10 @@ async function runOfflineDiagnostic(){
     loadMcdoRestaurants();
     loadMcdoPhones();
     loadQuickRestaurants();
-    if (S.view === "home") maybeShowOnboarding();
-    // popup automatique de nouveautés retiré : les nouveautés sont désormais intégrées au tuto de démarrage.
-    // (CHANGELOG et showChangelog restent utilisables manuellement via Réglages → « Voir les nouveautés ».)
+    if (S.view === "home"){ maybeShowOnboarding(); maybeShowChangelog(); }
+    // maybeShowChangelog() ne fait rien tant que le tuto de démarrage n'a pas été vu
+    // (ONBOARD_KEY) : pas de double popup pour les nouveaux utilisateurs, seulement
+    // pour ceux qui connaissent déjà l'appli et reviennent après une mise à jour.
   };
   if (isAuthed()) await start();
   else showLogin(start);
