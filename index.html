@@ -923,7 +923,7 @@ async function openFill(draftId){
       <div class="btnrow" style="margin-top:10px"><button class="btn" id="addPdfs">${ICON.plus} Ajouter un PDF</button></div>
       <p class="kbd">Leurs pages sont ajoutées telles quelles à la fin du PV.</p></div></details>
   </div>
-  <div class="dock">${IS_TEST_BUILD?`<button class="btn sm ghost" id="calib">🛠 Calibrer</button>`:""}<button class="btn" id="preview">Aperçu du PDF</button><button class="btn primary" id="gen">${canShareFiles()?"Envoyer le PDF":"Télécharger le PDF"}</button></div>`;
+  <div class="dock">${IS_TEST_BUILD?`<button class="btn sm ghost" id="calib">🛠 Calibrer</button>`:""}<button class="btn" id="preview">Aperçu du PDF</button><button class="btn primary" id="gen">Terminé</button></div>`;
   $("#dName").oninput = e => { d.name=e.target.value; draftChanged(); };
   $("#openAll").onclick = () => $$("#groups details").forEach(x=>x.open=true);
   $("#closeAll").onclick = () => $$("#groups details").forEach(x=>x.open=false);
@@ -1445,9 +1445,9 @@ async function showSendReview(bytes){
     <div class="sheet-b" style="background:var(--surface)">
       <label class="fld"><span>Nom du fichier</span><input class="inp" id="sendName" value="${esc(defaultBase)}"></label>
       <label class="fld" style="margin-top:12px"><span>Message</span><textarea class="inp" id="sendMsg" rows="8">${esc(defaultMsg)}</textarea></label>
-      <p class="kbd" style="margin:8px 0 0">La 1ère ligne sert d'objet si tu envoies par mail (beaucoup d'applis mail ne permettent pas de le préremplir autrement) ; le reste est le corps du message. Ignoré pour un simple téléchargement.</p>
+      <p class="kbd" style="margin:8px 0 0">La 1ère ligne sert d'objet si tu envoies par mail (beaucoup d'applis mail ne permettent pas de le préremplir autrement) ; le reste est le corps du message. Ignoré si tu choisis "Sauvegarder".</p>
     </div>
-    <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button><button class="btn primary" data-x="send">${canShareFiles()?"Envoyer":"Télécharger"}</button></div>
+    <div class="sheet-f"><button class="btn" data-x="cancel">Annuler</button>${canShareFiles()?`<button class="btn" data-x="save">Sauvegarder</button><button class="btn primary" data-x="send">Envoyer</button>`:`<button class="btn primary" data-x="send">Télécharger</button>`}</div>
   </div>`;
   document.body.appendChild(m);
   const ni = $("#sendName", m); ni.focus(); ni.setSelectionRange(ni.value.length, ni.value.length);
@@ -1455,10 +1455,14 @@ async function showSendReview(bytes){
     m.onclick = async e => {
       const a = e.target.dataset && e.target.dataset.x; if(!a) return;
       if (a==="cancel"){ m.remove(); resolve(false); return; }
-      if (a==="send"){
+      if (a==="save" || a==="send"){
         let name = ($("#sendName", m).value || "").trim() || defaultBase;
         if (!/\.pdf$/i.test(name)) name += ".pdf";
-        const msg = $("#sendMsg", m).value;
+        /* "Sauvegarder" : on ne passe pas de texte, sinon certaines cibles du
+           partage (ex. "Enregistrer dans OneDrive") enregistrent aussi un .txt
+           à côté du PDF avec le corps du message dedans. "Envoyer" garde le
+           texte, utile pour les cibles mail qui s'en servent comme corps. */
+        const msg = a==="send" ? $("#sendMsg", m).value : null;
         m.remove();
         await saveFile(name, bytes, "application/pdf", msg, subject);
         resolve(true);
@@ -1562,7 +1566,7 @@ async function previewPdf(){
   const done=busy("Création de l'aperçu…"); let bytes;
   try{ bytes = await buildPdf(S.tpl, S.draft); }catch(e){ done(); alert("Le PDF n'a pas pu être créé : "+(e.message||e)); return; }
   const m=document.createElement("div"); m.className="modal";
-  m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Aperçu"><div class="sheet-h"><h3>Aperçu</h3><button class="btn sm" data-x="close">Fermer</button></div><div class="sheet-b" id="pv"></div><div class="sheet-f"><button class="btn" data-x="close">Continuer à remplir</button><button class="btn primary" data-x="dl">${canShareFiles()?"Envoyer le PDF":"Télécharger le PDF"}</button></div></div>`;
+  m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Aperçu"><div class="sheet-h"><h3>Aperçu</h3><button class="btn sm" data-x="close">Fermer</button></div><div class="sheet-b" id="pv"></div><div class="sheet-f"><button class="btn" data-x="close">Continuer à remplir</button><button class="btn primary" data-x="dl">Terminé</button></div></div>`;
   document.body.appendChild(m);
   m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="close") m.remove(); if(a==="dl"){ m.remove(); showSendReview(bytes); } };
   try{
