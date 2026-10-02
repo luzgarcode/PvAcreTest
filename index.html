@@ -1293,7 +1293,10 @@ function scanBarcode(){
 const INK = () => PDFLib.rgb(0.06, 0.17, 0.42);
 function makeSafe(font){
   const cache=new Map();
-  return s => { let out=""; for (const ch of String(s)){ if(!cache.has(ch)){ let ok=true; try{ font.encodeText(ch); }catch(e){ ok=false; } cache.set(ch,ok); } out += cache.get(ch) ? ch : (ch==="\u2713"?"v":"?"); } return out; };
+  // \n et \r doivent traverser tels quels : ce ne sont pas des glyphes \u00e0 dessiner
+  // (wrapLines() les utilise ensuite pour couper le texte en paragraphes), donc on
+  // ne les fait pas passer par font.encodeText() qui les remplacerait par "?".
+  return s => { let out=""; for (const ch of String(s)){ if(ch==="\n"||ch==="\r"){ out+=ch; continue; } if(!cache.has(ch)){ let ok=true; try{ font.encodeText(ch); }catch(e){ ok=false; } cache.set(ch,ok); } out += cache.get(ch) ? ch : (ch==="\u2713"?"v":"?"); } return out; };
 }
 function wrapLines(text, font, size, maxW){
   const out=[];
