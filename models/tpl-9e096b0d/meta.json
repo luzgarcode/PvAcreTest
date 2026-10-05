@@ -1,2699 +1,2799 @@
 {
+  "id": "tpl-9e096b0d",
   "name": "Suivi d'installation – Remodel / Ouverture McDo",
   "shortName": "Suivi McDo",
   "clients": [
     "McDonald's"
   ],
   "category": "Autre",
-  "annexPhotos": [],
-  "optionalPages": [],
+  "pages": 2,
   "fields": [
     {
-      "id": "f974444c27",
+      "id": "fc8520cc6",
       "type": "text",
-      "label": "Restaurant :",
-      "group": "Informations générales du site",
+      "label": "Restaurant",
+      "group": "Informations site",
       "page": 0,
-      "x": 44,
-      "y": 160.0,
-      "w": 332.1,
-      "h": 17,
-      "fontSize": 0,
+      "x": 123.51,
+      "y": 60.14,
+      "w": 293.8,
+      "h": 23.47,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": "site-client"
     },
     {
-      "id": "f81a0721b5",
+      "id": "f17703a1f",
       "type": "text",
-      "label": "N° CC (= numéro du restaurant) :",
-      "group": "Informations générales du site",
+      "label": "N° CC",
+      "group": "Informations site",
       "page": 0,
-      "x": 384.1,
-      "y": 160.0,
-      "w": 167.2,
-      "h": 17,
-      "fontSize": 0,
+      "x": 490.7,
+      "y": 60.14,
+      "w": 73.44,
+      "h": 23.47,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": "site-number"
     },
     {
-      "id": "f2668cb568",
-      "type": "multiline",
-      "label": "Adresse complète :",
-      "group": "Informations générales du site",
+      "id": "fd032c38e",
+      "type": "text",
+      "label": "Adresse",
+      "group": "Informations site",
       "page": 0,
-      "x": 44,
-      "y": 196.0,
-      "w": 507.3,
-      "h": 32,
+      "x": 123.51,
+      "y": 83.58,
+      "w": 440.63,
+      "h": 13.82,
       "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 12,
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
       "auto": "site-address-mcdo"
     },
     {
-      "id": "f76527282e",
+      "id": "ffd89ac9a",
       "type": "text",
-      "label": "Téléphone :",
-      "group": "Informations générales du site",
+      "label": "CP",
+      "group": "Informations site",
       "page": 0,
-      "x": 44,
-      "y": 254.0,
-      "w": 249.6,
-      "h": 17,
-      "fontSize": 0,
+      "x": 123.51,
+      "y": 97.38,
+      "w": 146.85,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f03fc95e8",
+      "type": "text",
+      "label": "Ville",
+      "group": "Informations site",
+      "page": 0,
+      "x": 343.82,
+      "y": 97.38,
+      "w": 220.32,
+      "h": 13.82,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f15dd11bb",
+      "type": "text",
+      "label": "Nom responsable",
+      "group": "Informations site",
+      "page": 0,
+      "x": 123.51,
+      "y": 111.17,
+      "w": 146.85,
+      "h": 13.83,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f66afce31",
+      "type": "text",
+      "label": "Téléphone",
+      "group": "Informations site",
+      "page": 0,
+      "x": 343.82,
+      "y": 111.17,
+      "w": 220.32,
+      "h": 13.83,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": "site-phone-mcdo"
     },
     {
-      "id": "f7c186cfe3",
+      "id": "f588aa47c",
       "type": "text",
-      "label": "E-mail :",
-      "group": "Informations générales du site",
+      "label": "E-mail",
+      "group": "Informations site",
       "page": 0,
-      "x": 301.6,
-      "y": 254.0,
-      "w": 249.6,
-      "h": 17,
-      "fontSize": 0,
+      "x": 123.51,
+      "y": 124.97,
+      "w": 440.63,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": "site-email-mcdo"
     },
     {
-      "id": "f7f5a2e27c",
-      "type": "text",
-      "label": "Nom du responsable du site :",
-      "group": "Informations générales du site",
-      "page": 0,
-      "x": 44,
-      "y": 284.0,
-      "w": 507.3,
-      "h": 17,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f9f371637c",
+      "id": "f78bf2f05",
       "type": "date",
-      "label": "Date d'ouverture :",
-      "group": "Informations générales du site",
+      "label": "Date ouverture",
+      "group": "Informations site",
       "page": 0,
-      "x": 44,
-      "y": 314.0,
-      "w": 162.0,
-      "h": 17,
-      "fontSize": 0,
+      "x": 123.51,
+      "y": 138.77,
+      "w": 73.41,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fd5b193bb0",
+      "id": "fced1d397",
       "type": "text",
-      "label": "Turn Over info :",
-      "group": "Informations générales du site",
+      "label": "Turn Over info",
+      "group": "Informations site",
       "page": 0,
-      "x": 214.0,
-      "y": 314.0,
-      "w": 167.2,
-      "h": 17,
-      "fontSize": 0,
+      "x": 270.39,
+      "y": 138.77,
+      "w": 73.41,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f3c94cc576",
+      "id": "f110eebef",
       "type": "date",
-      "label": "Date d'installation :",
-      "group": "Informations générales du site",
+      "label": "Date d'installation",
+      "group": "Informations site",
       "page": 0,
-      "x": 389.2,
-      "y": 314.0,
-      "w": 162.0,
-      "h": 17,
-      "fontSize": 0,
+      "x": 490.7,
+      "y": 138.77,
+      "w": 73.44,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f370762d54",
+      "id": "fcef6a01d",
       "type": "text",
-      "label": "Technicien ACRELEC :",
-      "group": "Pour prestataire ACRELEC",
+      "label": "Technicien ACRELEC",
+      "group": "Informations site",
       "page": 0,
-      "x": 44,
-      "y": 368.0,
-      "w": 507.3,
-      "h": 17,
-      "fontSize": 0,
+      "x": 123.51,
+      "y": 166.36,
+      "w": 440.63,
+      "h": 13.82,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": "tech-name"
     },
     {
-      "id": "fee92c143c",
+      "id": "fd1bd252a",
       "type": "text",
-      "label": "NGK (borne) – Détails",
+      "label": "NGK - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 142.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "feac9ed6f5",
-      "type": "text",
-      "label": "NGK (borne) – Quantité",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 142.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 221.6,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fb48ae8511",
+      "id": "ffa517a92",
       "type": "choice",
-      "label": "NGK (borne) – Livré",
+      "label": "NGK - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 141.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 221.6,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 141.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 141.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f59d1fcfec",
-      "type": "text",
-      "label": "SAT (kiosque) – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 168.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fe2ebeb93f",
+      "id": "fa6200031",
       "type": "text",
-      "label": "SAT (kiosque) – Quantité",
+      "label": "SAT - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 168.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 235.4,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fc01a5fc26",
+      "id": "f5fd16267",
       "type": "choice",
-      "label": "SAT (kiosque) – Livré",
+      "label": "SAT - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 167.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 235.4,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 167.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 167.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fb7a07292f",
-      "type": "text",
-      "label": "Dashboard – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 194.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "ffe53ff00f",
+      "id": "f213c9573",
       "type": "text",
-      "label": "Dashboard – Quantité",
+      "label": "Dashboard - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 194.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 249.2,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fa8dd235b6",
+      "id": "f8b663d11",
       "type": "choice",
-      "label": "Dashboard – Livré",
+      "label": "Dashboard - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 193.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 249.2,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 193.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 193.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fd0c467c95",
-      "type": "text",
-      "label": "Carte Prix – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 220.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f9fac9e3d2",
+      "id": "f6c8004d8",
       "type": "text",
-      "label": "Carte Prix – Quantité",
+      "label": "Carte Prix - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 220.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 263.0,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f9b1236859",
+      "id": "f30e71173",
       "type": "choice",
-      "label": "Carte Prix – Livré",
+      "label": "Carte Prix - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 219.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 263.0,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 219.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 219.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f81ef0ed4e",
-      "type": "text",
-      "label": "ORB Comptoir – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 246.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f5e7a4e2cb",
+      "id": "fff44345d",
       "type": "text",
-      "label": "ORB Comptoir – Quantité",
+      "label": "ORB - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 246.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 276.8,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "ffa52c3bc4",
+      "id": "f2aa29f22",
       "type": "choice",
-      "label": "ORB Comptoir – Livré",
+      "label": "ORB - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 245.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 276.8,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 245.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 245.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f03dace22b",
-      "type": "text",
-      "label": "ORB Vitrine – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 272.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f76d96a42b",
+      "id": "f848bebef",
       "type": "text",
-      "label": "ORB Vitrine – Quantité",
+      "label": "2Check - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 272.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 290.6,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fb2bb60af7",
+      "id": "fe8096008",
       "type": "choice",
-      "label": "ORB Vitrine – Livré",
+      "label": "2Check - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 271.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 290.6,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 271.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 271.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f8a53c433f",
-      "type": "text",
-      "label": "2Check LAD – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 298.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f1a5d82975",
+      "id": "fdf3e3f39",
       "type": "text",
-      "label": "2Check LAD – Quantité",
+      "label": "Drive - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 298.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 304.4,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fbf2eba4d6",
+      "id": "fc07b945e",
       "type": "choice",
-      "label": "2Check LAD – Livré",
+      "label": "Drive - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 297.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 304.4,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 297.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 297.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f0e8e8f08e",
-      "type": "text",
-      "label": "2Check Drive – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 324.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f3e48c09f1",
+      "id": "f023f24f1",
       "type": "text",
-      "label": "2Check Drive – Quantité",
+      "label": "audio drive - Quantité",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 324.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
+      "page": 0,
+      "x": 417.31,
+      "y": 318.2,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f82b4fd60c",
+      "id": "fe8baac96",
       "type": "choice",
-      "label": "2Check Drive – Livré",
+      "label": "audio drive - Livré",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 323.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
+      "page": 0,
+      "x": 490.75,
+      "y": 318.2,
+      "w": 73.44,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
       "options": [
         {
           "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 323.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         },
         {
           "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 323.0,
-            "w": 30.1,
-            "h": 20
-          }
+          "box": null
         }
       ],
-      "choiceMode": "boxes",
+      "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fe171bcb13",
+      "id": "fe8f8d033",
       "type": "text",
-      "label": "Drive (bornes extérieures) – Détails",
+      "label": "NGK - type",
       "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 350.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4a622a2e4",
-      "type": "text",
-      "label": "Drive (bornes extérieures) – Quantité",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 350.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
-      "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f9290dba27",
-      "type": "choice",
-      "label": "Drive (bornes extérieures) – Livré",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 349.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
-      "options": [
-        {
-          "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 349.0,
-            "w": 30.1,
-            "h": 20
-          }
-        },
-        {
-          "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 349.0,
-            "w": 30.1,
-            "h": 20
-          }
-        }
-      ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f68aec48a8",
-      "type": "text",
-      "label": "Audio Drive – Détails",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 198.6,
-      "y": 376.0,
-      "w": 208.4,
-      "h": 18,
-      "fontSize": 0,
-      "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f6757d12cb",
-      "type": "text",
-      "label": "Audio Drive – Quantité",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 415.0,
-      "y": 376.0,
-      "w": 64.1,
-      "h": 18,
-      "fontSize": 0,
-      "align": "center",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f091840048",
-      "type": "choice",
-      "label": "Audio Drive – Livré",
-      "group": "Matériel à installer",
-      "page": 1,
-      "x": 489.1,
-      "y": 375.0,
-      "w": 30.1,
-      "h": 20,
-      "fontSize": 0,
-      "align": "left",
-      "options": [
-        {
-          "label": "OUI",
-          "box": {
-            "page": 1,
-            "x": 489.1,
-            "y": 375.0,
-            "w": 30.1,
-            "h": 20
-          }
-        },
-        {
-          "label": "NON",
-          "box": {
-            "page": 1,
-            "x": 521.2,
-            "y": 375.0,
-            "w": 30.1,
-            "h": 20
-          }
-        }
-      ],
-      "choiceMode": "boxes",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f922005a7d",
-      "type": "choice",
-      "label": "NGK – Positionnement",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 155.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f266e44322",
-      "type": "choice",
-      "label": "NGK – Fixation par 6 chevilles fournies",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 175.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f35cfaa9b8",
-      "type": "choice",
-      "label": "NGK – Mise à niveau / réglages",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 195.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fbfc07bcb0",
-      "type": "choice",
-      "label": "NGK – Raccordement 230V - RJ45",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 215.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f0124f596e",
-      "type": "choice",
-      "label": "NGK – Masterisation & Staging",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 235.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fbd9d0bcc5",
-      "type": "choice",
-      "label": "NGK – Test",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 255.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f905c2bd82",
-      "type": "choice",
-      "label": "SAT – Installation Panel",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 289.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fa57445c48",
-      "type": "choice",
-      "label": "SAT – Mise en place des équipements dans la baie info",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 309.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fea6db8bb3",
-      "type": "choice",
-      "label": "SAT – Installation kits intérieurs",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 329.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "ff1fed1c22",
-      "type": "choice",
-      "label": "SAT – Installation kits extérieurs",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 349.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f87d92d184",
-      "type": "choice",
-      "label": "SAT – Raccordement 230V - RJ45",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 369.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f6bd182125",
-      "type": "choice",
-      "label": "SAT – Mise en place chevalets & supports",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 389.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fe56bfc771",
-      "type": "choice",
-      "label": "SAT – Test",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 409.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fc5187f34e",
-      "type": "choice",
-      "label": "Dashboard – Installation PC & Écran",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 443.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f3afb01d1c",
-      "type": "choice",
-      "label": "Dashboard – Installation Détection entrée Drive (boucle ou banner)",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 463.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f32d4f0746",
-      "type": "choice",
-      "label": "Dashboard – Raccordement Détection bornes",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 483.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fdc2482029",
-      "type": "choice",
-      "label": "Dashboard – Mise en place équipement dans la baie info",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 503.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f213843142",
-      "type": "choice",
-      "label": "Dashboard – Raccordement 230V - RJ45",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 523.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f98cd1685a",
-      "type": "choice",
-      "label": "Dashboard – Test",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 543.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f67aaf3343",
-      "type": "choice",
-      "label": "Dashboard – Récupération données NP6",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 563.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fde1084ef9",
-      "type": "choice",
-      "label": "Carte Prix – Installation caisson dans la niche prévue",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 597.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f8891489ed",
-      "type": "choice",
-      "label": "Carte Prix – Assemblage",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 617.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f9642225c3",
-      "type": "choice",
-      "label": "Carte Prix – Raccordement 230V - RJ45",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 637.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fa2dc1e6f5",
-      "type": "choice",
-      "label": "Carte Prix – Staging",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 657.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f15fdf4176",
-      "type": "choice",
-      "label": "Carte Prix – MàJ CaPAD",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 677.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fe2c9bd89e",
-      "type": "choice",
-      "label": "Carte Prix – Test",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 697.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f147374b02",
-      "type": "choice",
-      "label": "ORB Comptoir – Installation caisson dans la niche prévue",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 731.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4064d511b",
-      "type": "choice",
-      "label": "ORB Comptoir – Assemblage",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 751.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f96a2dc834",
-      "type": "choice",
-      "label": "ORB Comptoir – Paramétrage VXL par Sesam / BlackBox",
-      "group": "Contrôle après installation",
-      "page": 2,
-      "x": 384.1,
-      "y": 771.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f47de6ad10",
-      "type": "choice",
-      "label": "ORB Comptoir – Raccordement 230V",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 141.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4005ea32b",
-      "type": "choice",
-      "label": "ORB Comptoir – Test",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 161.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f1d28cf9c3",
-      "type": "choice",
-      "label": "ORB Vitrine – Installation caisson dans la niche prévue",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 195.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4a97bec2e",
-      "type": "choice",
-      "label": "ORB Vitrine – Assemblage",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 215.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f9acf7fa22",
-      "type": "choice",
-      "label": "ORB Vitrine – Paramétrage VXL par Sesam / BlackBox",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 235.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fd3514e6ee",
-      "type": "choice",
-      "label": "ORB Vitrine – Raccordement 230V",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 255.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f15f0b63b4",
-      "type": "choice",
-      "label": "ORB Vitrine – Test",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 275.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f9f033bbad",
-      "type": "choice",
-      "label": "2Check LAD – Installation balance",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 309.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fbf248409c",
-      "type": "choice",
-      "label": "2Check LAD – Brassage baie informatique",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 329.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fd5a6cb0a3",
-      "type": "choice",
-      "label": "2Check LAD – Raccordement 230V",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 349.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f05d03c2ac",
-      "type": "choice",
-      "label": "2Check LAD – Test",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 369.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "ffad8fc4cd",
-      "type": "choice",
-      "label": "2Check Drive – Installation balance",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 403.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fe4b39612f",
-      "type": "choice",
-      "label": "2Check Drive – Brassage baie informatique",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 423.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f6c6e66eee",
-      "type": "choice",
-      "label": "2Check Drive – Raccordement 230V",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 443.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f774e8d8dd",
-      "type": "choice",
-      "label": "2Check Drive – Test",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 463.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f227fd2013",
-      "type": "choice",
-      "label": "Drive – Extérieur – Installation des speakers",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 497.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f6834f3189",
-      "type": "choice",
-      "label": "Drive – Extérieur – Installation des écrans",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 517.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f03590cc69",
-      "type": "choice",
-      "label": "Drive – Extérieur – Installation caméra Crashpoint",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 537.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f1d6359ef8",
-      "type": "choice",
-      "label": "Drive – Extérieur – Raccordement électrique / RJ45",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 557.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f6abf10ce0",
-      "type": "choice",
-      "label": "Drive – Intérieur – Installation des écrans",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 591.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4f1c3b2ee",
-      "type": "choice",
-      "label": "Drive – Intérieur – Installation NUC",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 611.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f191e0f7b8",
-      "type": "choice",
-      "label": "Drive – Intérieur – Installation des équipements dans la baie informatique",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 631.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fb10d9c155",
-      "type": "choice",
-      "label": "Drive – Intérieur – Installation de la base audio",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 651.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "fea34c48f8",
-      "type": "choice",
-      "label": "Drive – Intérieur – Installation des antennes",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 671.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f42c3c189f",
-      "type": "choice",
-      "label": "Drive – Intérieur – Mise sous tension",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 691.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f4c40a04d3",
-      "type": "choice",
-      "label": "Drive – Intérieur – Test",
-      "group": "Contrôle après installation",
-      "page": 3,
-      "x": 384.1,
-      "y": 711.0,
-      "w": 167.2,
-      "h": 14,
-      "fontSize": 0,
-      "align": "center",
-      "options": [
-        {
-          "label": "OK"
-        },
-        {
-          "label": "NOK"
-        },
-        {
-          "label": "En cours"
-        },
-        {
-          "label": "N/A"
-        }
-      ],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 0,
-      "auto": ""
-    },
-    {
-      "id": "f3956dc393",
-      "type": "multiline",
-      "label": "Remarques / commentaires :",
-      "group": "Remarques",
-      "page": 4,
-      "x": 44,
-      "y": 138.0,
-      "w": 507.3,
-      "h": 112,
+      "page": 0,
+      "x": 196.92,
+      "y": 221.6,
+      "w": 220.39,
+      "h": 13.8,
       "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
-      "lineHeight": 12,
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f0a9b135b5",
-      "type": "signature",
-      "label": "Signature technicien ACRELEC",
-      "group": "Signatures",
-      "page": 4,
-      "x": 44,
-      "y": 292.0,
-      "w": 241.6,
-      "h": 82,
-      "fontSize": 0,
+      "id": "fedb54fab",
+      "type": "text",
+      "label": "SAT - type",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 196.92,
+      "y": 235.4,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff88c4372",
+      "type": "text",
+      "label": "SAT - solution",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 343.8,
+      "y": 235.4,
+      "w": 73.51,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9f76daab",
+      "type": "choice",
+      "label": "ORB - Comptoir",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 196.92,
+      "y": 276.8,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": [
+        {
+          "label": "OUI",
+          "box": null
+        },
+        {
+          "label": "NON",
+          "box": null
+        }
+      ],
       "choiceMode": "text",
       "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fef2b9638",
+      "type": "choice",
+      "label": "ORB - Vitrine",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 343.8,
+      "y": 276.8,
+      "w": 73.51,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": [
+        {
+          "label": "OUI",
+          "box": null
+        },
+        {
+          "label": "NON",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe935dc0f",
+      "type": "choice",
+      "label": "2Check - LAD",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 196.92,
+      "y": 290.6,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": [
+        {
+          "label": "OUI",
+          "box": null
+        },
+        {
+          "label": "NON",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fadc2b45c",
+      "type": "choice",
+      "label": "2Check - Drive",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 343.8,
+      "y": 290.6,
+      "w": 73.51,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": [
+        {
+          "label": "OUI",
+          "box": null
+        },
+        {
+          "label": "NON",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fddca9f5a",
+      "type": "text",
+      "label": "Drive - type",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 196.92,
+      "y": 304.4,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5aefdeb3",
+      "type": "text",
+      "label": "Drive - configuration",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 343.8,
+      "y": 304.4,
+      "w": 73.51,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff725286e",
+      "type": "text",
+      "label": "Audio drive - type",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 196.92,
+      "y": 318.2,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f18d255a9",
+      "type": "text",
+      "label": "Audio drive - nbre d'antennes",
+      "group": "Matériel à installer",
+      "page": 0,
+      "x": 343.8,
+      "y": 318.2,
+      "w": 73.51,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7dbf90df",
+      "type": "choice",
+      "label": "NGK – Positionnement",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 351.2,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f205e81cf",
+      "type": "choice",
+      "label": "NGK – Fixation par 6 chevilles fournies",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 366.15,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0a99d736",
+      "type": "choice",
+      "label": "NGK – Mise à niveau / réglages",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 381.1,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f21815837",
+      "type": "choice",
+      "label": "NGK – Raccordement 230V - RJ45",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 396.06,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffb15aad4",
+      "type": "choice",
+      "label": "NGK – Masterisation & Staging",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 411.01,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f52750b4f",
+      "type": "choice",
+      "label": "NGK – Test",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 490.67,
+      "y": 425.96,
+      "w": 73.47,
+      "h": 14.95,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0d36322b",
+      "type": "choice",
+      "label": "SAT – Installation Panel",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 446.39,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd46240e5",
+      "type": "choice",
+      "label": "SAT – Mise en place des équipements dans la baie info",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 460.19,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f955ec6e6",
+      "type": "choice",
+      "label": "SAT – Installation kits interieurs",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 473.99,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f66ab43e0",
+      "type": "choice",
+      "label": "SAT – Installation kits extérieurs",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 487.79,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc6da7007",
+      "type": "choice",
+      "label": "SAT – Raccordement 230V - RJ45",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 501.59,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd586c0a3",
+      "type": "choice",
+      "label": "SAT – Mise en place chevalets & supports",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 515.39,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa3af627d",
+      "type": "choice",
+      "label": "SAT – Test",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 490.67,
+      "y": 529.19,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "feddf3d03",
+      "type": "choice",
+      "label": "Dashboard – Installation PC & Ecran",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 548.46,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb9feb222",
+      "type": "choice",
+      "label": "Dashboard – Installation Détection entrée Drive (boucle ou banner)",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 562.26,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f90f568ea",
+      "type": "choice",
+      "label": "Dashboard – Raccordement Détection bornes",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 576.06,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe48c5fdb",
+      "type": "choice",
+      "label": "Dashboard – Mise en place équipement dans la baie info",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 589.86,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc21ea231",
+      "type": "choice",
+      "label": "Dashboard – Raccordement 230V - RJ45",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 603.66,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f12d9783c",
+      "type": "choice",
+      "label": "Dashboard – Test",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 617.46,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f16392790",
+      "type": "choice",
+      "label": "Dashboard – Récupération données NP6",
+      "group": "Installation – Dashboard",
+      "page": 0,
+      "x": 490.67,
+      "y": 631.26,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f822164ba",
+      "type": "choice",
+      "label": "Carte Prix – Installation caisson dans la niche prévue",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 650.53,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f71899343",
+      "type": "choice",
+      "label": "Carte Prix – Assemblage",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 664.33,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2f5aaf5b",
+      "type": "choice",
+      "label": "Carte Prix – Raccordement 230V - RJ45",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 678.13,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8963b55a",
+      "type": "choice",
+      "label": "Carte Prix – Staging",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 691.93,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdc3cb257",
+      "type": "choice",
+      "label": "Carte Prix – MàJ CaPAD",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 705.73,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f09bc1af7",
+      "type": "choice",
+      "label": "Carte Prix – Test",
+      "group": "Installation – Carte Prix",
+      "page": 0,
+      "x": 490.67,
+      "y": 719.53,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9ca0a483",
+      "type": "choice",
+      "label": "ORB Comptoir – Installation caisson dans la niche prévue",
+      "group": "Installation – ORB Comptoir",
+      "page": 0,
+      "x": 490.67,
+      "y": 739.52,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd099cf68",
+      "type": "choice",
+      "label": "ORB Comptoir – Assemblage",
+      "group": "Installation – ORB Comptoir",
+      "page": 0,
+      "x": 490.67,
+      "y": 753.32,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f56dd7e32",
+      "type": "choice",
+      "label": "ORB Comptoir – Paramétrage VXL par Sesam / BlackBox",
+      "group": "Installation – ORB Comptoir",
+      "page": 0,
+      "x": 490.67,
+      "y": 767.12,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd17198de",
+      "type": "choice",
+      "label": "ORB Comptoir – Raccordement 230V",
+      "group": "Installation – ORB Comptoir",
+      "page": 0,
+      "x": 490.67,
+      "y": 780.92,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff111a3fc",
+      "type": "choice",
+      "label": "ORB Comptoir – Test",
+      "group": "Installation – ORB Comptoir",
+      "page": 0,
+      "x": 490.67,
+      "y": 794.72,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc6b782a5",
+      "type": "choice",
+      "label": "ORB Vitrine – Installation caisson dans la niche prévue",
+      "group": "Installation – ORB Vitrine",
+      "page": 1,
+      "x": 490.67,
+      "y": 34.42,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f327b948d",
+      "type": "choice",
+      "label": "ORB Vitrine – Assemblage",
+      "group": "Installation – ORB Vitrine",
+      "page": 1,
+      "x": 490.67,
+      "y": 48.22,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f53a8d8e2",
+      "type": "choice",
+      "label": "ORB Vitrine – Paramétrage VXL par Sesam / BlackBox",
+      "group": "Installation – ORB Vitrine",
+      "page": 1,
+      "x": 490.67,
+      "y": 62.02,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb796b3a5",
+      "type": "choice",
+      "label": "ORB Vitrine – Raccordement 230V",
+      "group": "Installation – ORB Vitrine",
+      "page": 1,
+      "x": 490.67,
+      "y": 75.83,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe5ea6ee1",
+      "type": "choice",
+      "label": "ORB Vitrine – Test",
+      "group": "Installation – ORB Vitrine",
+      "page": 1,
+      "x": 490.67,
+      "y": 89.63,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9e2b62f3",
+      "type": "choice",
+      "label": "2Check LAD – Installation balance",
+      "group": "Installation – 2Check LAD",
+      "page": 1,
+      "x": 490.67,
+      "y": 109.61,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6543e4d8",
+      "type": "choice",
+      "label": "2Check LAD – Brassage baie informatique",
+      "group": "Installation – 2Check LAD",
+      "page": 1,
+      "x": 490.67,
+      "y": 123.41,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9f90e5a7",
+      "type": "choice",
+      "label": "2Check LAD – Raccordement 230V",
+      "group": "Installation – 2Check LAD",
+      "page": 1,
+      "x": 490.67,
+      "y": 137.22,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3c6ab42d",
+      "type": "choice",
+      "label": "2Check LAD – Test",
+      "group": "Installation – 2Check LAD",
+      "page": 1,
+      "x": 490.67,
+      "y": 151.02,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f430e9e7f",
+      "type": "choice",
+      "label": "2Check Drive – Installation balance",
+      "group": "Installation – 2Check Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 171.0,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f70b8c36c",
+      "type": "choice",
+      "label": "2Check Drive – Brassage baie informatique",
+      "group": "Installation – 2Check Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 184.8,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f36de1a88",
+      "type": "choice",
+      "label": "2Check Drive – Raccordement 230V",
+      "group": "Installation – 2Check Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 198.61,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f32a15c77",
+      "type": "choice",
+      "label": "2Check Drive – Test",
+      "group": "Installation – 2Check Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 212.41,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5da5eb33",
+      "type": "choice",
+      "label": "Drive – Ext. - Installation des speakers",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 246.18,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8543859c",
+      "type": "choice",
+      "label": "Drive – Ext. - Installation des écrans",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 259.98,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3370df17",
+      "type": "choice",
+      "label": "Drive – Ext. - Installation caméra Crashpoint",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 273.78,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f44bb4e8b",
+      "type": "choice",
+      "label": "Drive – Ext. - Raccordement électrique / RJ45",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 287.57,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff3129e09",
+      "type": "choice",
+      "label": "Drive – Int. - Installation des écrans",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 301.37,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2a8e0838",
+      "type": "choice",
+      "label": "Drive – Int. - Installation NUC",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 315.17,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0fd01306",
+      "type": "choice",
+      "label": "Drive – Int. - Installation des équipements dans la baie informatique",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 328.97,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f20cf929c",
+      "type": "choice",
+      "label": "Drive – Int. - Installation de la base",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 342.77,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f89544118",
+      "type": "choice",
+      "label": "Drive – Int. - Installation des antennes",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 356.57,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc9cf2fb2",
+      "type": "choice",
+      "label": "Drive – Mise sous tension",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 370.36,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "feeba46d0",
+      "type": "choice",
+      "label": "Drive – Test",
+      "group": "Installation – Drive",
+      "page": 1,
+      "x": 490.67,
+      "y": 384.16,
+      "w": 73.47,
+      "h": 13.8,
+      "fontSize": 9,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": null
+        },
+        {
+          "label": "NOK",
+          "box": null
+        },
+        {
+          "label": "En cours",
+          "box": null
+        },
+        {
+          "label": "N/A",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd521d2aa",
+      "type": "multiline",
+      "label": "Remarques / Commentaires",
+      "group": "Remarques",
+      "page": 1,
+      "x": 30.85,
+      "y": 418.02,
+      "w": 533.29,
+      "h": 82.77,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f73487578",
+      "type": "signature",
+      "label": "Signature technicien",
+      "group": "Signatures",
+      "page": 1,
+      "x": 30.85,
+      "y": 520.79,
+      "w": 239.59,
+      "h": 82.78,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "tech-signature",
       "lineHeight": 0,
       "auto": "tech-signature"
     },
     {
-      "id": "fe1903b152",
+      "id": "f557da8f3",
       "type": "signature",
-      "label": "Signature client (fin de chantier)",
+      "label": "Signature client fin de chantier",
       "group": "Signatures",
-      "page": 4,
-      "x": 309.6,
-      "y": 292.0,
-      "w": 241.6,
-      "h": 82,
-      "fontSize": 0,
+      "page": 1,
+      "x": 270.44,
+      "y": 520.79,
+      "w": 293.7,
+      "h": 82.78,
+      "fontSize": 9,
       "align": "left",
-      "options": [],
-      "choiceMode": "text",
-      "mark": "x",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
       "lineHeight": 0,
       "auto": ""
     }
