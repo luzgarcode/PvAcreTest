@@ -44,7 +44,7 @@ endobj
 endobj
 5 0 obj
 <<
-/Length 48599
+/Length 50351
 >>
 stream
 q
@@ -2015,17 +2015,9 @@ BT
 T*
 ET
 BT
-/F1-0 9.12 Tf
-10.944 TL
-ET
-BT
 1 0 0 1 310.8 563.02 Tm
 (Vitrine\040\072\040) Tj
 T*
-ET
-BT
-/F1-0 9.12 Tf
-10.944 TL
 ET
 BT
 1 0 0 1 316.08 549.82 Tm
@@ -2033,21 +2025,143 @@ BT
 T*
 ET
 BT
-/F1-0 9.12 Tf
-10.944 TL
-ET
-BT
 1 0 0 1 286.08 536.62 Tm
 (configuration\040\072\040) Tj
 T*
 ET
 BT
-/F1-0 9.12 Tf
-10.944 TL
-ET
-BT
 1 0 0 1 274.92 523.42 Tm
 (nbre\040d\047antennes\040\072\040) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 490.55 Tm
+(Positionnement\040) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 476.03 Tm
+(Fixation\040par\0406\040chevilles\040fournies) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 461.51 Tm
+(Mise\040à\040niveau\040\057\040réglages) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 446.99 Tm
+(Raccordement\040230V\040\055\040RJ45) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 432.47 Tm
+(Masterisation\040\046\040Staging) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 418.67 Tm
+(Test) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 400.19 Tm
+(Installation\040Panel) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 386.99 Tm
+(Mise\040en\040place\040des\040équipements\040dans\040la\040baie\040info) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 373.79 Tm
+(Installation\040kits\040interieurs) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 360.59 Tm
+(Installation\040kits\040extérieurs) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 347.39 Tm
+(Raccordement\040230V\040\055\040RJ45) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 334.19 Tm
+(Mise\040en\040place\040chevalets\040\046\040supports) Tj
+T*
+ET
+BT
+1 0 0 1 197.52 320.99 Tm
+(Test) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 302.51 Tm
+(Installation\040PC\040\046\040Ecran) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 289.31 Tm
+(Installation\040Détection\040entrée\040Drive\040\050boucle\040ou\040banner\051) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 276.11 Tm
+(Raccordement\040Détection\040bornes) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 262.91 Tm
+(Mise\040en\040place\040équipement\040dans\040la\040baie\040info) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 249.71 Tm
+(Raccordement\040230V\040\055\040RJ45) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 236.51 Tm
+(Test) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 223.31 Tm
+(Récupération\040données\040NP6) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 205.31 Tm
+(Installation\040caisson\040dans\040la\040niche\040prévue) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 192.11 Tm
+(Assemblage) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 178.91 Tm
+(Raccordement\040230V\040\055\040RJ45) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 165.71 Tm
+(Staging) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 152.51 Tm
+(MàJ\040CaPAD) Tj
+T*
+ET
+BT
+1 0 0 1 123.48 139.31 Tm
+(Test) Tj
 T*
 ET
 Q
@@ -4217,7 +4331,7 @@ endobj
 endobj
 35 0 obj
 <<
-/Length 25601
+/Length 26582
 >>
 stream
 q
@@ -5185,11 +5299,11 @@ n
 f*
 1 1 1 rg
 n
-295.04 605.55 24.41 11.55 re
+295.04 605.55 68.41 11.55 re
 f*
 1 1 1 rg
 n
-344.64 605.55 42.12 11.55 re
+344.64 605.55 106.12 11.55 re
 f*
 0.85098 0.85098 0.85098 rg
 n
@@ -5208,6 +5322,80 @@ n
 491.88 459.36 74.16 145.32 re
 f*
 0 0 0 rg
+BT
+/F1-0 9.12 Tf
+10.944 TL
+ET
+BT
+1 0 0 1 201.48 607.55 Tm
+(Configuration\040\040\072\040) Tj
+T*
+ET
+BT
+1 0 0 1 152.04 515.63 Tm
+(Int\056) Tj
+T*
+ET
+BT
+1 0 0 1 299.04 581.63 Tm
+(Installation\040des\040écrans) Tj
+T*
+ET
+BT
+1 0 0 1 279.6 555.23 Tm
+(Raccordement\040électrique\040\057\040RJ45) Tj
+T*
+ET
+BT
+1 0 0 1 299.04 542.03 Tm
+(Installation\040des\040écrans) Tj
+T*
+ET
+BT
+1 0 0 1 311.4 528.83 Tm
+(Installation\040NUC) Tj
+T*
+ET
+BT
+1 0 0 1 232.68 515.63 Tm
+(Installation\040des\040équipements\040dans\040la\040baie\040informatique) Tj
+T*
+ET
+BT
+1 0 0 1 151.08 574.91 Tm
+(Ext\056) Tj
+T*
+ET
+BT
+1 0 0 1 270.96 476.03 Tm
+(Mise\040sous\040tension) Tj
+T*
+ET
+BT
+1 0 0 1 298.8 462.83 Tm
+(Test) Tj
+T*
+ET
+BT
+1 0 0 1 294.48 594.83 Tm
+(Installation\040des\040speakers) Tj
+T*
+ET
+BT
+1 0 0 1 293.4 489.23 Tm
+(Installation\040des\040antennes) Tj
+T*
+ET
+BT
+1 0 0 1 251.4 502.43 Tm
+(Installation\040de\040la\040base\040) Tj
+T*
+ET
+BT
+1 0 0 1 282.12 568.43 Tm
+(Installation\040caméra\040Crashpoint) Tj
+T*
+ET
 Q
 
 
@@ -5230,37 +5418,37 @@ xref
 0000000120 00000 n 
 0000000169 00000 n 
 0000000504 00000 n 
-0000049156 00000 n 
-0000049630 00000 n 
-0000049656 00000 n 
-0000049679 00000 n 
-0000049716 00000 n 
-0000240032 00000 n 
-0000240052 00000 n 
-0000240608 00000 n 
-0000241657 00000 n 
-0000241765 00000 n 
-0000242243 00000 n 
-0000242270 00000 n 
-0000242294 00000 n 
-0000242332 00000 n 
-0000452338 00000 n 
-0000452358 00000 n 
-0000453108 00000 n 
-0000454368 00000 n 
-0000454846 00000 n 
-0000454873 00000 n 
-0000454897 00000 n 
-0000454935 00000 n 
-0000564985 00000 n 
-0000565005 00000 n 
-0000565239 00000 n 
-0000565896 00000 n 
-0000573391 00000 n 
-0000573662 00000 n 
-0000594213 00000 n 
-0000594494 00000 n 
-0000620149 00000 n 
+0000050908 00000 n 
+0000051382 00000 n 
+0000051408 00000 n 
+0000051431 00000 n 
+0000051468 00000 n 
+0000241784 00000 n 
+0000241804 00000 n 
+0000242360 00000 n 
+0000243409 00000 n 
+0000243517 00000 n 
+0000243995 00000 n 
+0000244022 00000 n 
+0000244046 00000 n 
+0000244084 00000 n 
+0000454090 00000 n 
+0000454110 00000 n 
+0000454860 00000 n 
+0000456120 00000 n 
+0000456598 00000 n 
+0000456625 00000 n 
+0000456649 00000 n 
+0000456687 00000 n 
+0000566737 00000 n 
+0000566757 00000 n 
+0000566991 00000 n 
+0000567648 00000 n 
+0000575143 00000 n 
+0000575414 00000 n 
+0000595965 00000 n 
+0000596246 00000 n 
+0000622882 00000 n 
 trailer
 <<
 /Size 37
@@ -5268,5 +5456,5 @@ trailer
 /Info 2 0 R
 >>
 startxref
-620257
+622990
 %%EOF
