@@ -1406,7 +1406,23 @@ async function buildPdf(tpl, draft){
     if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
     if (f.type==="choice" && f.choiceMode==="color"){
       const o = f.options.find(o=>o.label===v);
-      if (o && o.color){ const r=toPdf(page,f); const hex=o.color.replace("#",""); const cr=parseInt(hex.slice(0,2),16)/255, cg=parseInt(hex.slice(2,4),16)/255, cb=parseInt(hex.slice(4,6),16)/255; page.drawRectangle({x:r.x,y:r.y,width:r.w,height:r.h,color:rgb(cr,cg,cb)}); }
+      if (o && o.color){
+        const r=toPdf(page,f); const hex=o.color.replace("#",""); const cr=parseInt(hex.slice(0,2),16)/255, cg=parseInt(hex.slice(2,4),16)/255, cb=parseInt(hex.slice(4,6),16)/255;
+        page.drawRectangle({x:r.x,y:r.y,width:r.w,height:r.h,color:rgb(cr,cg,cb)});
+        // le libellé (OK/NOK/En cours/N/A) est redessiné par-dessus la pastille,
+        // sauf quand le champ force fontSize:0 (pastille volontairement trop
+        // étroite pour du texte, ex. le suivi Turn Over) ; couleur du texte
+        // choisie selon le contraste de la couleur de fond
+        if (f.fontSize !== 0){
+          const lum = 0.299*cr*255 + 0.587*cg*255 + 0.114*cb*255;
+          const txtColor = lum < 150 ? rgb(1,1,1) : rgb(0,0,0);
+          const label = safeB(v); const pad=3;
+          let size = Math.min(f.fontSize || 9.5, Math.max(6, r.h*0.68));
+          while (bold.widthOfTextAtSize(label,size) > r.w-2*pad && size>5) size -= 0.25;
+          const tw = bold.widthOfTextAtSize(label,size);
+          page.drawText(label, {x:r.x+(r.w-tw)/2, y:r.y+(r.h-size*0.72)/2, size, font:bold, color:txtColor});
+        }
+      }
       continue;
     }
     const r = toPdf(page, f);
