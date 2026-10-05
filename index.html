@@ -469,6 +469,14 @@ async function loadMcdoPhones(){
 function formatFrPhone(digits){
   return String(digits||"").replace(/(\d{2})(?=\d)/g, "$1 ").trim();
 }
+/* Numéro de restaurant McDo -> adresse complète (chargé une fois, mis en cache par le SW) */
+let MCDO_ADDRESSES = null;
+async function loadMcdoAddresses(){
+  try{
+    const res = await fetch("./assets/mcdo-addresses.json");
+    if (res.ok) MCDO_ADDRESSES = await res.json();
+  }catch(e){}
+}
 /* Numéro de restaurant Quick -> nom/adresse (chargé une fois, mis en cache par le SW) */
 let QUICK_RESTAURANTS = null;
 async function loadQuickRestaurants(){
@@ -1048,6 +1056,22 @@ function setVal(fid, v, opts){
           const tel = digits ? MCDO_PHONES[digits] : null;
           setVal(phoneF.id, tel ? formatFrPhone(tel) : "", {auto:true});
           refreshField(phoneF.id);
+        }
+      }
+    }
+    /* Même numéro -> déduit l'adresse du restaurant (McDo uniquement, via la liste embarquée).
+       Pas conditionné à la présence d'un champ email-mcdo : certains PV McDo (Dashboard, Double
+       Check) n'ont pas de champ email mais ont un champ Adresse. */
+    if (MCDO_ADDRESSES){
+      const addrF = S.tpl.fields.find(x=>x.auto==="site-address-mcdo");
+      if (addrF){
+        const already = S.draft.values[addrF.id];
+        const wasAuto = S.draft.autoFields[addrF.id];
+        if (!isFilled(already) || wasAuto){
+          const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
+          const address = digits ? MCDO_ADDRESSES[digits] : null;
+          setVal(addrF.id, address || "", {auto:true});
+          refreshField(addrF.id);
         }
       }
     }
@@ -1767,6 +1791,7 @@ async function runOfflineDiagnostic(){
     runOfflineDiagnostic();
     loadMcdoRestaurants();
     loadMcdoPhones();
+    loadMcdoAddresses();
     loadQuickRestaurants();
     if (S.view === "home"){ maybeShowOnboarding(); maybeShowChangelog(); }
     // maybeShowChangelog() ne fait rien tant que le tuto de démarrage n'a pas été vu

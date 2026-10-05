@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v10";
+const CACHE = "pv-terrain-shell-v11";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
@@ -18,6 +18,7 @@ const SHELL = [
   "./vendor/zxing-browser.min.js",
   "./assets/mcdo-restaurants.json",
   "./assets/mcdo-phones.json",
+  "./assets/mcdo-addresses.json",
   "./assets/quick-restaurants.json"
 ];
 
