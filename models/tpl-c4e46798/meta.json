@@ -1,0 +1,5558 @@
+{
+  "id": "tpl-c4e46798",
+  "name": "PV d'installation – Drive Coates McDo",
+  "shortName": "Drive Coates",
+  "clients": [
+    "McDonald's"
+  ],
+  "category": "Autre",
+  "pages": 5,
+  "fields": [
+    {
+      "id": "f73f2cfdc",
+      "type": "text",
+      "label": "RESTAURANT",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 81.7,
+      "w": 222.6,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "fe8f25d5b",
+      "type": "text",
+      "label": "Cost Center",
+      "group": "Informations site",
+      "page": 0,
+      "x": 397.0,
+      "y": 81.7,
+      "w": 44.7,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f995692e1",
+      "type": "text",
+      "label": "NB SITE",
+      "group": "Informations site",
+      "page": 0,
+      "x": 514.0,
+      "y": 81.7,
+      "w": 42.7,
+      "h": 14.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "fda9373cc",
+      "type": "text",
+      "label": "ADRESSE",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 95.5,
+      "w": 326.5,
+      "h": 24.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-address-mcdo"
+    },
+    {
+      "id": "f808bd960",
+      "type": "text",
+      "label": "CP",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 119.8,
+      "w": 118.0,
+      "h": 8.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4feed945",
+      "type": "text",
+      "label": "VILLE",
+      "group": "Informations site",
+      "page": 0,
+      "x": 278.6,
+      "y": 119.8,
+      "w": 163.1,
+      "h": 8.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9a2603ce",
+      "type": "text",
+      "label": "TELEPHONE",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 127.9,
+      "w": 118.0,
+      "h": 8.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-phone-mcdo"
+    },
+    {
+      "id": "fd24de100",
+      "type": "date",
+      "label": "DATE INSTALL.",
+      "group": "Informations site",
+      "page": 0,
+      "x": 278.6,
+      "y": 127.9,
+      "w": 163.1,
+      "h": 8.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4d5d7dab",
+      "type": "text",
+      "label": "NOM SIGNATAIRE",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 136.1,
+      "w": 326.5,
+      "h": 8.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f43379098",
+      "type": "text",
+      "label": "E MAIL",
+      "group": "Informations site",
+      "page": 0,
+      "x": 115.2,
+      "y": 144.3,
+      "w": 326.5,
+      "h": 8.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-email-mcdo"
+    },
+    {
+      "id": "f3c2b6ebd",
+      "type": "choice",
+      "label": "Type de Drive",
+      "group": "Type de Drive",
+      "page": 0,
+      "x": 174.3,
+      "y": 166.2,
+      "w": 59.3,
+      "h": 8.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": [
+        {
+          "label": "Single Drive",
+          "box": {
+            "page": 0,
+            "x": 174.3,
+            "y": 166.2,
+            "w": 59.29999999999998,
+            "h": 8.300000000000011
+          }
+        },
+        {
+          "label": "Dual Lane",
+          "box": {
+            "page": 0,
+            "x": 278.6,
+            "y": 166.2,
+            "w": 59.299999999999955,
+            "h": 8.300000000000011
+          }
+        },
+        {
+          "label": "Tandem",
+          "box": {
+            "page": 0,
+            "x": 396.9,
+            "y": 166.2,
+            "w": 44.80000000000001,
+            "h": 8.300000000000011
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5665e185",
+      "type": "date",
+      "label": "Date (ligne 1)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 57.7,
+      "y": 197.54,
+      "w": 57.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1bc277ab",
+      "type": "text",
+      "label": "Description (ligne 1)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 115.2,
+      "y": 197.54,
+      "w": 326.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc93a2277",
+      "type": "date",
+      "label": "Date (ligne 2)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 57.7,
+      "y": 205.7,
+      "w": 57.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f45f7705d",
+      "type": "text",
+      "label": "Description (ligne 2)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 115.2,
+      "y": 205.7,
+      "w": 326.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffc0052f5",
+      "type": "date",
+      "label": "Date (ligne 3)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 57.7,
+      "y": 213.86,
+      "w": 57.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f99423b88",
+      "type": "text",
+      "label": "Description (ligne 3)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 115.2,
+      "y": 213.86,
+      "w": 326.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbd67c040",
+      "type": "date",
+      "label": "Date (ligne 4)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 57.7,
+      "y": 222.02,
+      "w": 57.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3343d481",
+      "type": "text",
+      "label": "Description (ligne 4)",
+      "group": "Détail des prestations réalisées",
+      "page": 0,
+      "x": 115.2,
+      "y": 222.02,
+      "w": 326.5,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fda8449f4",
+      "type": "text",
+      "label": "Speaker Post – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 253.97,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fafb66bcc",
+      "type": "text",
+      "label": "NGCOD – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 262.13,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3ea0b90b",
+      "type": "text",
+      "label": "Ecrans NGCOD (46 pouces) – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 270.29,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcb9a51a9",
+      "type": "text",
+      "label": "Centrale HME – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 278.45,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe193d75b",
+      "type": "text",
+      "label": "Camera Crash Point – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 286.61,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f32a3fab9",
+      "type": "text",
+      "label": "Ecrans Equipiers – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 294.77,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8cd219b4",
+      "type": "text",
+      "label": "Players Equipiers – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 302.93,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb718e563",
+      "type": "text",
+      "label": "IM Video Wall – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 311.09,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f92ba8292",
+      "type": "text",
+      "label": "Ecrans Video Wall (49 pouces) – Quantité",
+      "group": "Matériel installé",
+      "page": 0,
+      "x": 396.9,
+      "y": 319.25,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9bd643ab",
+      "type": "text",
+      "label": "Speaker voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 359.33,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcbf05634",
+      "type": "text",
+      "label": "Speaker voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 359.33,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5b26a194",
+      "type": "text",
+      "label": "Caméra CrashPoint – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 367.49,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7aed9593",
+      "type": "text",
+      "label": "Caméra CrashPoint – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 367.49,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f64d7a6fd",
+      "type": "text",
+      "label": "Seneca 1 voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 375.65,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb6b4f3ba",
+      "type": "text",
+      "label": "Seneca 1 voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 375.65,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fccef00d2",
+      "type": "text",
+      "label": "Ecran 1 voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 383.81,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f00f335c8",
+      "type": "text",
+      "label": "Ecran 1 voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 383.81,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f72806c7a",
+      "type": "text",
+      "label": "Ecran Guichet voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 391.97,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fec31b411",
+      "type": "text",
+      "label": "Ecran Guichet voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 391.97,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f65c43a5d",
+      "type": "text",
+      "label": "Seneca 2 voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 400.13,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa930c1cc",
+      "type": "text",
+      "label": "Seneca 2 voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 400.13,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f54cd29b6",
+      "type": "text",
+      "label": "Ecran 2 voie 1 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 408.29,
+      "w": 59.2,
+      "h": 8.18,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f177e44ba",
+      "type": "text",
+      "label": "Ecran 2 voie 1 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 408.29,
+      "w": 44.8,
+      "h": 8.18,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4328bdd7",
+      "type": "text",
+      "label": "Ecran Merch – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 416.47,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3f1c988a",
+      "type": "text",
+      "label": "Ecran Merch – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 416.47,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0160b607",
+      "type": "text",
+      "label": "Drive ID BOX voie 1 – Côté matériel",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 337.8,
+      "y": 424.63,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f63d5f1a9",
+      "type": "text",
+      "label": "Drive ID BOX voie 1 – Côté baie info",
+      "group": "Brassage réseau – Voie 1",
+      "page": 0,
+      "x": 396.9,
+      "y": 424.63,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f37b6fcc8",
+      "type": "text",
+      "label": "Speaker voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 434.35,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f27679230",
+      "type": "text",
+      "label": "Speaker voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 434.35,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f25058c77",
+      "type": "text",
+      "label": "Seneca 1 voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 442.51,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f838e4dc2",
+      "type": "text",
+      "label": "Seneca 1 voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 442.51,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fc5c55abd",
+      "type": "text",
+      "label": "Ecran 1 voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 450.67,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f7367adcd",
+      "type": "text",
+      "label": "Ecran 1 voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 450.67,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fa7999729",
+      "type": "text",
+      "label": "Ecran Guichet voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 458.83,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f6bd8e250",
+      "type": "text",
+      "label": "Ecran Guichet voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 458.83,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f229eadbb",
+      "type": "text",
+      "label": "Seneca 2 voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 466.99,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f50debd29",
+      "type": "text",
+      "label": "Seneca 2 voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 466.99,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f67450590",
+      "type": "text",
+      "label": "Ecran 2 voie 2 (ou écran merch) – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 475.15,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f5877d545",
+      "type": "text",
+      "label": "Ecran 2 voie 2 (ou écran merch) – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 475.15,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f20e52b65",
+      "type": "text",
+      "label": "Ecran Merch – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 483.31,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f0a0c535e",
+      "type": "text",
+      "label": "Ecran Merch – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 483.31,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f1d04023d",
+      "type": "text",
+      "label": "Drive ID BOX voie 2 – Côté matériel",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 337.8,
+      "y": 491.47,
+      "w": 59.2,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fadfcdd8a",
+      "type": "text",
+      "label": "Drive ID BOX voie 2 – Côté baie info",
+      "group": "Brassage réseau – Voie 2",
+      "page": 0,
+      "x": 396.9,
+      "y": 491.47,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fe3e444c0",
+      "type": "choice",
+      "label": "Installation Caméra",
+      "group": "Installation extérieure – Caméra Crash Point",
+      "page": 1,
+      "x": 396.9,
+      "y": 19.44,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane"
+        ]
+      }
+    },
+    {
+      "id": "f97c0fcaa",
+      "type": "choice",
+      "label": "Connexion Réseau",
+      "group": "Installation extérieure – Caméra Crash Point",
+      "page": 1,
+      "x": 396.9,
+      "y": 26.76,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane"
+        ]
+      }
+    },
+    {
+      "id": "f11711f49",
+      "type": "choice",
+      "label": "Installation POE",
+      "group": "Installation extérieure – Caméra Crash Point",
+      "page": 1,
+      "x": 396.9,
+      "y": 34.08,
+      "w": 44.8,
+      "h": 7.74,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane"
+        ]
+      }
+    },
+    {
+      "id": "fb6148311",
+      "type": "choice",
+      "label": "Installation Speaker Post Piste 1",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 42.24,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f180376a3",
+      "type": "choice",
+      "label": "Connexion Electrique",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 49.08,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd2d378e6",
+      "type": "choice",
+      "label": "Connexion Audio Micro",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 55.92,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f833910ef",
+      "type": "choice",
+      "label": "Conenxion Audio Haut Parleur",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 62.76,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2082766a",
+      "type": "choice",
+      "label": "Conexion Réseau",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 69.6,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4d67a1c1",
+      "type": "choice",
+      "label": "Connexion USB Extendeur",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 76.44,
+      "w": 44.8,
+      "h": 6.86,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f30bb7492",
+      "type": "choice",
+      "label": "Connexion Drive ID BOX",
+      "group": "Installation extérieure – Speaker Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 83.3,
+      "w": 44.8,
+      "h": 7.26,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd4aac3f6",
+      "type": "choice",
+      "label": "Installation Speaker Post Piste 2",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 90.98,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fad5e97ee",
+      "type": "choice",
+      "label": "Connexion Electrique",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 98.3,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fe063e928",
+      "type": "choice",
+      "label": "Connexion Audio Micro",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 105.62,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f926f967c",
+      "type": "choice",
+      "label": "Conenxion Audio Haut Parleur",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 112.94,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fbd714cf8",
+      "type": "choice",
+      "label": "Conexion Réseau",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 120.26,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f419b9421",
+      "type": "choice",
+      "label": "Connexion USB Extendeur",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 127.58,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f73d09d56",
+      "type": "choice",
+      "label": "Connexion Drive ID BOX",
+      "group": "Installation extérieure – Speaker Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 134.9,
+      "w": 44.8,
+      "h": 7.74,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f0a8cdebf",
+      "type": "choice",
+      "label": "TYPE NGCOD",
+      "group": "Paramètres NGCOD",
+      "page": 1,
+      "x": 444.7,
+      "y": 142.5,
+      "w": 112.0,
+      "h": 8.5,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "SUCETTE",
+          "box": null
+        }
+      ],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f36cee1cd",
+      "type": "choice",
+      "label": "NCOD 11 – Installation NGCOD",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 143.06,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4e0efe76",
+      "type": "choice",
+      "label": "NCOD 11 – Installation Player",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 150.38,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f211186a1",
+      "type": "choice",
+      "label": "NCOD 11 – Connexion Electrique",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 157.7,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f32108385",
+      "type": "choice",
+      "label": "NCOD 11 – Connexion Réseau Player",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 165.02,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f49a6ef70",
+      "type": "choice",
+      "label": "NCOD 11 – Connexion USB Extendeur",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 172.34,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3792f446",
+      "type": "choice",
+      "label": "NCOD 11 – Installation Ecran",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 179.66,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f93a640ab",
+      "type": "choice",
+      "label": "NCOD 11 – Connexion Réseau Ecran",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 186.98,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffaf43755",
+      "type": "choice",
+      "label": "NCOD 12 – Installation NGCOD",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 194.3,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8f1b0dec",
+      "type": "choice",
+      "label": "NCOD 12 – Installation Player",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 201.62,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb7245a51",
+      "type": "choice",
+      "label": "NCOD 12 – Connexion Electrique",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 208.94,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7c58ae1b",
+      "type": "choice",
+      "label": "NCOD 12 – Connexion Réseau Player",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 216.26,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe5898c91",
+      "type": "choice",
+      "label": "NCOD 12 – Installation Ecran",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 223.58,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f19cc2a4a",
+      "type": "choice",
+      "label": "NCOD 12 – Connexion Réseau Ecran",
+      "group": "Installation extérieure – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 230.9,
+      "w": 44.8,
+      "h": 7.74,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4496cc66",
+      "type": "choice",
+      "label": "NCOD 13 – Installation NGCOD",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 239.06,
+      "w": 44.8,
+      "h": 6.86,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fdb252f84",
+      "type": "choice",
+      "label": "NCOD 13 – Installation Player",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 245.92,
+      "w": 44.8,
+      "h": 6.85,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f9b64291f",
+      "type": "choice",
+      "label": "NCOD 13 – Connexion Electrique",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 252.77,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "ffe42398d",
+      "type": "choice",
+      "label": "NCOD 13 – Connexion Réseau Player",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 259.61,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fda7a74af",
+      "type": "choice",
+      "label": "NCOD 13 – Connexion USB Extendeur",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 266.45,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f286acd78",
+      "type": "choice",
+      "label": "NCOD 13 – Installation Ecran",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 273.29,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fc99a3043",
+      "type": "choice",
+      "label": "NCOD 13 – Connexion Réseau Ecran",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 280.13,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "ff47ff568",
+      "type": "choice",
+      "label": "NCOD 14 – Installation NGCOD",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 286.97,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f64b8477b",
+      "type": "choice",
+      "label": "NCOD 14 – Installation Player",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 293.81,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f4ef540eb",
+      "type": "choice",
+      "label": "NCOD 14 – Connexion Electrique",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 300.65,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fe4ab70f0",
+      "type": "choice",
+      "label": "NCOD 14 – Connexion Réseau Player",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 307.49,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f7ae3a8cc",
+      "type": "choice",
+      "label": "NCOD 14 – Installation Ecran",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 314.33,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fe0e817e1",
+      "type": "choice",
+      "label": "NCOD 14 – Connexion Réseau Ecran",
+      "group": "Installation extérieure – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 321.17,
+      "w": 44.8,
+      "h": 6.84,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f789b8889",
+      "type": "choice",
+      "label": "NCOD 11 – Clés de montage intégrées dans la porte",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 337.25,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f15800a93",
+      "type": "choice",
+      "label": "NCOD 11 – Porte gauche vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 344.57,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5b5ad985",
+      "type": "choice",
+      "label": "NCOD 11 – Porte droite vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 351.89,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fec13629f",
+      "type": "choice",
+      "label": "NCOD 11 – Porte centrale vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 359.21,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9efe8716",
+      "type": "choice",
+      "label": "NCOD 11 – Plaque arrière vissée logo non apparent",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 366.53,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fff2aa4e3",
+      "type": "choice",
+      "label": "NCOD 12 – Clés de montage intégrées dans la porte",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 373.85,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f42d08010",
+      "type": "choice",
+      "label": "NCOD 12 – Porte gauche vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 381.17,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fda7b924a",
+      "type": "choice",
+      "label": "NCOD 12 – Porte droite vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 388.49,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff1afbc81",
+      "type": "choice",
+      "label": "NCOD 12 – Porte centrale vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 395.81,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f72e5916d",
+      "type": "choice",
+      "label": "NCOD 12 – Plaque arrière vissée logo non apparent",
+      "group": "Finalisation montage – NGCOD Lane 1",
+      "page": 1,
+      "x": 396.9,
+      "y": 403.13,
+      "w": 44.8,
+      "h": 7.74,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f31e94078",
+      "type": "choice",
+      "label": "NCOD 13 – Clés de montage intégrées dans la porte",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 411.29,
+      "w": 44.8,
+      "h": 7.34,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f8b201fa6",
+      "type": "choice",
+      "label": "NCOD 13 – Porte gauche vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 418.63,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f26b0726a",
+      "type": "choice",
+      "label": "NCOD 13 – Porte droite vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 425.95,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f14a14885",
+      "type": "choice",
+      "label": "NCOD 13 – Porte centrale vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 433.27,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f6e737f7b",
+      "type": "choice",
+      "label": "NCOD 13 – Plaque arrière vissée logo non apparent",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 440.59,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "ff128f939",
+      "type": "choice",
+      "label": "NCOD 14 – Clés de montage intégrées dans la porte",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 447.91,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f56fa2c67",
+      "type": "choice",
+      "label": "NCOD 14 – Porte gauche vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 455.23,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f725cc8aa",
+      "type": "choice",
+      "label": "NCOD 14 – Porte droite vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 462.55,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f40f7408c",
+      "type": "choice",
+      "label": "NCOD 14 – Porte centrale vérouillée",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 469.87,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f87b8da0a",
+      "type": "choice",
+      "label": "NCOD 14 – Plaque arrière vissée logo non apparent",
+      "group": "Finalisation montage – NGCOD Lane 2",
+      "page": 1,
+      "x": 396.9,
+      "y": 477.19,
+      "w": 44.8,
+      "h": 7.32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f140bab5e",
+      "type": "choice",
+      "label": "Brassage des équipements COATES en baie",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 22.0,
+      "w": 44.8,
+      "h": 8.2,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fcf9ced79",
+      "type": "choice",
+      "label": "Fixation Centrale HME",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 30.96,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd32f264c",
+      "type": "choice",
+      "label": "Fixation Rack Casques",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 39.12,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2580c977",
+      "type": "choice",
+      "label": "Connexion Cable audio Piste 1",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 47.28,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4d52ee28",
+      "type": "choice",
+      "label": "Connexion Cable audio Piste 2",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 55.44,
+      "w": 44.8,
+      "h": 8.58,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb1f522a8",
+      "type": "choice",
+      "label": "Installation des 2 écrans au mur",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 64.44,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa9bf2e73",
+      "type": "choice",
+      "label": "Installation du player",
+      "group": "Intérieur du restaurant",
+      "page": 2,
+      "x": 396.9,
+      "y": 72.6,
+      "w": 44.8,
+      "h": 8.18,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4e217eeb",
+      "type": "choice",
+      "label": "Test micro",
+      "group": "Tests – Speaker Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 93.38,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc77ce233",
+      "type": "choice",
+      "label": "Test haut parleur",
+      "group": "Tests – Speaker Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 101.54,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3a3810c5",
+      "type": "choice",
+      "label": "Test scanner",
+      "group": "Tests – Speaker Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 109.7,
+      "w": 44.8,
+      "h": 8.58,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9b244430",
+      "type": "choice",
+      "label": "Test micro",
+      "group": "Tests – Speaker Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 118.7,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f25745ecb",
+      "type": "choice",
+      "label": "Test haut parleur",
+      "group": "Tests – Speaker Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 126.86,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fa7c16e1c",
+      "type": "choice",
+      "label": "Test scanner",
+      "group": "Tests – Speaker Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 135.02,
+      "w": 44.8,
+      "h": 8.58,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fd2bd6b07",
+      "type": "choice",
+      "label": "NCOD 11 – Test affichage",
+      "group": "Tests – NGCOD Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 144.02,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4847f5a0",
+      "type": "choice",
+      "label": "NCOD 11 – (ligne libre)",
+      "group": "Tests – NGCOD Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 152.18,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f452904da",
+      "type": "choice",
+      "label": "NCOD 12 – Test affichage",
+      "group": "Tests – NGCOD Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 160.34,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9f5d876f",
+      "type": "choice",
+      "label": "NCOD 12 – (ligne libre)",
+      "group": "Tests – NGCOD Lane 1",
+      "page": 2,
+      "x": 396.9,
+      "y": 168.5,
+      "w": 44.8,
+      "h": 8.58,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9ec4df26",
+      "type": "choice",
+      "label": "NCOD 13 – Test affichage",
+      "group": "Tests – NGCOD Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 177.5,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "fbd569b6d",
+      "type": "choice",
+      "label": "NCOD 13 – (ligne libre)",
+      "group": "Tests – NGCOD Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 185.66,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f42722f70",
+      "type": "choice",
+      "label": "NCOD 14 – Test affichage",
+      "group": "Tests – NGCOD Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 193.82,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f458585c3",
+      "type": "choice",
+      "label": "NCOD 14 – (ligne libre)",
+      "group": "Tests – NGCOD Lane 2",
+      "page": 2,
+      "x": 396.9,
+      "y": 201.98,
+      "w": 44.8,
+      "h": 8.58,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "visibleIf": {
+        "field": "f3c2b6ebd",
+        "equalsAny": [
+          "Dual Lane",
+          "Tandem"
+        ]
+      }
+    },
+    {
+      "id": "f917a0cea",
+      "type": "choice",
+      "label": "Bon fonctionnement des écrans équipiers",
+      "group": "Tests – Écrans équipiers",
+      "page": 2,
+      "x": 396.9,
+      "y": 210.98,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1cc48d22",
+      "type": "choice",
+      "label": "Bon fonctionnement des écrans équipiers (2)",
+      "group": "Tests – Écrans équipiers",
+      "page": 2,
+      "x": 396.9,
+      "y": 219.14,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbc8a1822",
+      "type": "choice",
+      "label": "Bon fonctionnement des écrans équipiers (3)",
+      "group": "Tests – Écrans équipiers",
+      "page": 2,
+      "x": 396.9,
+      "y": 227.3,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe515faa7",
+      "type": "choice",
+      "label": "Retirer les films plastiques des écrans des NGCOD",
+      "group": "Propreté du chantier",
+      "page": 2,
+      "x": 396.9,
+      "y": 248.09,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f72996dd0",
+      "type": "choice",
+      "label": "Propreté du chantier au niveau des speakers",
+      "group": "Propreté du chantier",
+      "page": 2,
+      "x": 396.9,
+      "y": 256.25,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f19d25134",
+      "type": "choice",
+      "label": "Propreté du chantier au niveau des NCGOD",
+      "group": "Propreté du chantier",
+      "page": 2,
+      "x": 396.9,
+      "y": 264.41,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f933bbf64",
+      "type": "choice",
+      "label": "Propreté du chantier au niveau des écrans équipiers",
+      "group": "Propreté du chantier",
+      "page": 2,
+      "x": 396.9,
+      "y": 272.57,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fac871014",
+      "type": "choice",
+      "label": "Remise d'un jeu de clés au Directeur du site",
+      "group": "Remise des accessoires",
+      "page": 2,
+      "x": 396.9,
+      "y": 293.33,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd6859f54",
+      "type": "choice",
+      "label": "Remise des télécommandes des écrans",
+      "group": "Remise des accessoires",
+      "page": 2,
+      "x": 396.9,
+      "y": 301.49,
+      "w": 44.8,
+      "h": 8.16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f44739dea",
+      "type": "choice",
+      "label": "Autre accessoire remis",
+      "group": "Remise des accessoires",
+      "page": 2,
+      "x": 396.9,
+      "y": 309.65,
+      "w": 44.8,
+      "h": 8.64,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "color": "#00B050"
+        },
+        {
+          "label": "En cours",
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
+        },
+        {
+          "label": "N/A",
+          "color": "#D9D9D9"
+        }
+      ],
+      "choiceMode": "color",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f98e49e6e",
+      "type": "multiline",
+      "label": "Points en cours",
+      "group": "Points en cours",
+      "page": 2,
+      "x": 57.7,
+      "y": 331.0,
+      "w": 384.0,
+      "h": 81.7,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f31835c8c",
+      "type": "multiline",
+      "label": "Remarques",
+      "group": "Remarques",
+      "page": 2,
+      "x": 57.7,
+      "y": 425.2,
+      "w": 384.0,
+      "h": 64.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffe8c5442",
+      "type": "text",
+      "label": "Nom du signataire – Installateur Acrelec",
+      "group": "Signatures – Jour 1",
+      "page": 3,
+      "x": 115.1,
+      "y": 47.0,
+      "w": 118.1,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f94ef0615",
+      "type": "text",
+      "label": "Nom du signataire – Client",
+      "group": "Signatures – Jour 1",
+      "page": 3,
+      "x": 337.8,
+      "y": 47.0,
+      "w": 103.9,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc8e3659d",
+      "type": "signature",
+      "label": "Signature – Installateur Acrelec",
+      "group": "Signatures – Jour 1",
+      "page": 3,
+      "x": 57.7,
+      "y": 63.4,
+      "w": 175.5,
+      "h": 46.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f53faf8d1",
+      "type": "signature",
+      "label": "Signature & cachet – Client",
+      "group": "Signatures – Jour 1",
+      "page": 3,
+      "x": 233.2,
+      "y": 63.4,
+      "w": 208.5,
+      "h": 46.3,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1853aefe",
+      "type": "text",
+      "label": "Nom du signataire – Installateur Acrelec",
+      "group": "Signatures – Jour 2",
+      "page": 3,
+      "x": 115.1,
+      "y": 134.5,
+      "w": 118.1,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd35c0e1f",
+      "type": "text",
+      "label": "Nom du signataire – Client",
+      "group": "Signatures – Jour 2",
+      "page": 3,
+      "x": 337.8,
+      "y": 134.5,
+      "w": 103.9,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc46a4925",
+      "type": "signature",
+      "label": "Signature – Installateur Acrelec",
+      "group": "Signatures – Jour 2",
+      "page": 3,
+      "x": 57.7,
+      "y": 148.0,
+      "w": 175.5,
+      "h": 41.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb9228d86",
+      "type": "signature",
+      "label": "Signature & cachet – Client",
+      "group": "Signatures – Jour 2",
+      "page": 3,
+      "x": 233.2,
+      "y": 148.0,
+      "w": 208.5,
+      "h": 41.6,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2260b2b5",
+      "type": "text",
+      "label": "Nom du signataire – Installateur Acrelec",
+      "group": "Signatures – Jour 3",
+      "page": 3,
+      "x": 115.1,
+      "y": 214.4,
+      "w": 118.1,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f55406d0b",
+      "type": "text",
+      "label": "Nom du signataire – Client",
+      "group": "Signatures – Jour 3",
+      "page": 3,
+      "x": 337.8,
+      "y": 214.4,
+      "w": 103.9,
+      "h": 6.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fedf48586",
+      "type": "signature",
+      "label": "Signature – Installateur Acrelec",
+      "group": "Signatures – Jour 3",
+      "page": 3,
+      "x": 57.7,
+      "y": 261.5,
+      "w": 175.5,
+      "h": 34.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7e946440",
+      "type": "signature",
+      "label": "Signature & cachet – Client",
+      "group": "Signatures – Jour 3",
+      "page": 3,
+      "x": 233.2,
+      "y": 261.5,
+      "w": 208.5,
+      "h": 34.1,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f92438591",
+      "type": "photo",
+      "label": "Photo 1",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 57.7,
+      "y": 310.2,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f29b9cb2a",
+      "type": "photo",
+      "label": "Photo 2",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 154.2,
+      "y": 310.2,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb054d93d",
+      "type": "photo",
+      "label": "Photo 3",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 250.7,
+      "y": 310.2,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa1f11c7f",
+      "type": "photo",
+      "label": "Photo 4",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 347.2,
+      "y": 310.2,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffc0efabd",
+      "type": "photo",
+      "label": "Photo 5",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 57.7,
+      "y": 425.4,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc4205ef5",
+      "type": "photo",
+      "label": "Photo 6",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 154.2,
+      "y": 425.4,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc8d99a41",
+      "type": "photo",
+      "label": "Photo 7",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 250.7,
+      "y": 425.4,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f0dc9a023",
+      "type": "photo",
+      "label": "Photo 8",
+      "group": "Photos – Jour 1",
+      "page": 3,
+      "x": 347.2,
+      "y": 425.4,
+      "w": 94.5,
+      "h": 113.2,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5ed5831a",
+      "type": "photo",
+      "label": "Photo 1",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 57.5,
+      "y": 11.5,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f937bfbb7",
+      "type": "photo",
+      "label": "Photo 2",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 154.07,
+      "y": 11.5,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6d1b16e0",
+      "type": "photo",
+      "label": "Photo 3",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 250.65,
+      "y": 11.5,
+      "w": 94.58,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4762bdfe",
+      "type": "photo",
+      "label": "Photo 4",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 347.23,
+      "y": 11.5,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f56eae1d9",
+      "type": "photo",
+      "label": "Photo 5",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 57.5,
+      "y": 127.0,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb72a68d8",
+      "type": "photo",
+      "label": "Photo 6",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 154.07,
+      "y": 127.0,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f60490d99",
+      "type": "photo",
+      "label": "Photo 7",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 250.65,
+      "y": 127.0,
+      "w": 94.58,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f137ba121",
+      "type": "photo",
+      "label": "Photo 8",
+      "group": "Photos – Jour 2",
+      "page": 4,
+      "x": 347.23,
+      "y": 127.0,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb7f96f3a",
+      "type": "photo",
+      "label": "Photo 1",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 57.5,
+      "y": 242.4,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f17eb8efe",
+      "type": "photo",
+      "label": "Photo 2",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 154.07,
+      "y": 242.4,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4442fc51",
+      "type": "photo",
+      "label": "Photo 3",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 250.65,
+      "y": 242.4,
+      "w": 94.58,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc89184f5",
+      "type": "photo",
+      "label": "Photo 4",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 347.23,
+      "y": 242.4,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f664c11b2",
+      "type": "photo",
+      "label": "Photo 5",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 57.5,
+      "y": 357.9,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2a2e83a3",
+      "type": "photo",
+      "label": "Photo 6",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 154.07,
+      "y": 357.9,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f682688e4",
+      "type": "photo",
+      "label": "Photo 7",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 250.65,
+      "y": 357.9,
+      "w": 94.58,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa6daad5b",
+      "type": "photo",
+      "label": "Photo 8",
+      "group": "Photos – Jour 3",
+      "page": 4,
+      "x": 347.23,
+      "y": 357.9,
+      "w": 94.57,
+      "h": 113.5,
+      "fontSize": 0,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": ""
+    }
+  ],
+  "annexPhotos": [
+    "Caméra crash Point",
+    "Boite de dérivation Dashboard",
+    "Ecrans équipiers 1 et 2",
+    "Boite de dérivation HME",
+    "Playeur équipiers",
+    "Photos Ensemble du Drive",
+    "Voie 1",
+    "Voie 2",
+    "Mise en situation Voie 1",
+    "Mise en situation Voie 2"
+  ],
+  "optionalPages": []
+}

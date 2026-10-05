@@ -907,7 +907,11 @@ function countFilled(d, tpl){ if(!tpl) return 0; return countableFields(tpl).fil
 // un champ avec visibleIf ne s'affiche dans le formulaire que si le champ qu'il
 // référence a déjà la valeur attendue (ex. une checklist "ORB Comptoir" qui ne
 // s'affiche que si "ORB - Comptoir" a été répondu "OUI" dans le Matériel)
-function isFieldVisible(f, values){ return !f.visibleIf || values[f.visibleIf.field]===f.visibleIf.equals; }
+function isFieldVisible(f, values){
+  if (!f.visibleIf) return true;
+  const v = values[f.visibleIf.field];
+  return f.visibleIf.equalsAny ? f.visibleIf.equalsAny.includes(v) : v===f.visibleIf.equals;
+}
 function visibleGroups(tpl, values){
   const groups = orderedGroups(tpl);
   const out = new Map();
