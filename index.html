@@ -217,6 +217,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .seg button.on{ background:var(--blue); border-color:var(--blue); color:var(--surface); }
 .seg button.on.v-ok{ background:var(--ok); border-color:var(--ok); }
 .seg button.on.v-nok{ background:var(--nok); border-color:var(--nok); }
+.seg button.on.v-warn{ background:var(--vis); border-color:var(--vis); color:var(--vis-ink); }
 .toggle{ display:flex; align-items:center; gap:10px; cursor:pointer; font-weight:600; }
 .toggle input{ width:24px; height:24px; accent-color:var(--blue); }
 .media{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
@@ -997,7 +998,7 @@ function fieldHtml(f){
     case "date": w=`<div class="btnrow"><input type="date" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:200px"><button class="btn sm" data-today="${f.id}">Aujourd'hui</button></div>`; break;
     case "time": w=`<div class="btnrow"><input type="time" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:150px"><button class="btn sm" data-now="${f.id}">Maintenant</button></div>`; break;
     case "check": w=`<label class="toggle"><input type="checkbox" id="${id}" data-f="${f.id}" ${v?"checked":""}> Oui</label>`; break;
-    case "choice": w=`<div class="seg" role="group" aria-label="${esc(f.label)}">${f.options.map(o=>{ const on=v===o.label; const tone=/^(ok|oui|présent|conforme)$/i.test(o.label)?"v-ok":/^(nok|non|non présent|non conforme)$/i.test(o.label)?"v-nok":""; return `<button type="button" class="${on?"on ":""}${tone}" data-choice="${f.id}" data-val="${esc(o.label)}" aria-pressed="${on}">${esc(o.label)}</button>`; }).join("")}</div>`; break;
+    case "choice": w=`<div class="seg" role="group" aria-label="${esc(f.label)}">${f.options.map(o=>{ const on=v===o.label; const tone=/^(ok|oui|présent|conforme|fonctionnement ok)$/i.test(o.label)?"v-ok":/^(nok|non|non présent|non conforme|ne fonctionne pas)$/i.test(o.label)?"v-nok":/^(dégradé|fonctionnement dégradé|degrade)$/i.test(o.label)?"v-warn":""; return `<button type="button" class="${on?"on ":""}${tone}" data-choice="${f.id}" data-val="${esc(o.label)}" aria-pressed="${on}" ${o.color?`style="${on?`background:${esc(o.color)};border-color:${esc(o.color)}`:`border-color:${esc(o.color)};color:${esc(o.color)}`}"`:""}>${esc(o.label)}</button>`; }).join("")}</div>`; break;
     case "photo": w=`<div class="media">${v?`<img src="${v}" alt="">`:""}<button class="btn sm" data-photo="${f.id}">${v?"Remplacer":"Prendre ou choisir une photo"}</button>${v?`<button class="btn sm ghost danger" data-clearf="${f.id}">Retirer</button>`:""}</div>`; break;
     case "signature": w=`<div class="media">${v?`<img class="sig-prev" src="${v}" alt="Signature">`:""}<button class="btn sm" data-sign="${f.id}">${v?"Refaire la signature":"Signer"}</button>${v?`<button class="btn sm ghost danger" data-clearf="${f.id}">Effacer</button>`:""}</div>`; break;
   }
@@ -1367,6 +1368,11 @@ async function buildPdf(tpl, draft){
     const page = pages[f.page]; if(!page) continue;
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }
     if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
+    if (f.type==="choice" && f.choiceMode==="color"){
+      const o = f.options.find(o=>o.label===v);
+      if (o && o.color){ const r=toPdf(page,f); const hex=o.color.replace("#",""); const cr=parseInt(hex.slice(0,2),16)/255, cg=parseInt(hex.slice(2,4),16)/255, cb=parseInt(hex.slice(4,6),16)/255; page.drawRectangle({x:r.x,y:r.y,width:r.w,height:r.h,color:rgb(cr,cg,cb)}); }
+      continue;
+    }
     const r = toPdf(page, f);
     if (f.eraseBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
     if (f.type==="photo" || f.type==="signature"){
