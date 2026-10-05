@@ -9,7 +9,7 @@
   "pages": 2,
   "fields": [
     {
-      "id": "fbbaa9b78",
+      "id": "f7c154f90",
       "type": "text",
       "label": "Restaurant",
       "group": "Informations site",
@@ -27,7 +27,7 @@
       "auto": "site-client"
     },
     {
-      "id": "fdddb2e8a",
+      "id": "fc67e9c98",
       "type": "text",
       "label": "N° CC",
       "group": "Informations site",
@@ -45,7 +45,7 @@
       "auto": "site-number"
     },
     {
-      "id": "f8f310b6b",
+      "id": "f8afc7b7e",
       "type": "text",
       "label": "Adresse",
       "group": "Informations site",
@@ -63,7 +63,7 @@
       "auto": "site-address-mcdo"
     },
     {
-      "id": "f9228a658",
+      "id": "f25ac77cd",
       "type": "text",
       "label": "CP",
       "group": "Informations site",
@@ -81,7 +81,7 @@
       "auto": ""
     },
     {
-      "id": "fcf724a3a",
+      "id": "fc7cfcf3d",
       "type": "text",
       "label": "Ville",
       "group": "Informations site",
@@ -99,7 +99,7 @@
       "auto": ""
     },
     {
-      "id": "f1ffc06da",
+      "id": "f1b4e6e1d",
       "type": "text",
       "label": "Nom responsable",
       "group": "Informations site",
@@ -117,7 +117,7 @@
       "auto": ""
     },
     {
-      "id": "f8e955d93",
+      "id": "fd1c9de64",
       "type": "text",
       "label": "Téléphone",
       "group": "Informations site",
@@ -135,7 +135,7 @@
       "auto": "site-phone-mcdo"
     },
     {
-      "id": "feaec06e0",
+      "id": "f2c01de4d",
       "type": "text",
       "label": "E-mail",
       "group": "Informations site",
@@ -153,7 +153,7 @@
       "auto": "site-email-mcdo"
     },
     {
-      "id": "fd2a4848b",
+      "id": "fdbde9644",
       "type": "date",
       "label": "Date ouverture",
       "group": "Informations site",
@@ -171,7 +171,7 @@
       "auto": ""
     },
     {
-      "id": "f19ef2d3e",
+      "id": "f4bbc4d23",
       "type": "text",
       "label": "Turn Over info",
       "group": "Informations site",
@@ -189,7 +189,7 @@
       "auto": ""
     },
     {
-      "id": "f1dd5bd15",
+      "id": "fa0443bb5",
       "type": "date",
       "label": "Date d'installation",
       "group": "Informations site",
@@ -207,7 +207,7 @@
       "auto": ""
     },
     {
-      "id": "fba71b730",
+      "id": "fba0f0164",
       "type": "text",
       "label": "Technicien ACRELEC",
       "group": "Informations site",
@@ -225,7 +225,7 @@
       "auto": "tech-name"
     },
     {
-      "id": "f5c2b8536",
+      "id": "f410778ef",
       "type": "text",
       "label": "NGK - Quantité",
       "group": "Matériel à installer",
@@ -243,7 +243,7 @@
       "auto": ""
     },
     {
-      "id": "f403e7887",
+      "id": "f8706c2b6",
       "type": "choice",
       "label": "NGK - Livré",
       "group": "Matériel à installer",
@@ -270,7 +270,7 @@
       "auto": ""
     },
     {
-      "id": "f40ab2fd1",
+      "id": "fb802d7a7",
       "type": "text",
       "label": "SAT - Quantité",
       "group": "Matériel à installer",
@@ -288,7 +288,7 @@
       "auto": ""
     },
     {
-      "id": "f1d045da2",
+      "id": "f367ce994",
       "type": "choice",
       "label": "SAT - Livré",
       "group": "Matériel à installer",
@@ -315,7 +315,7 @@
       "auto": ""
     },
     {
-      "id": "fdb7f9968",
+      "id": "f9afd9017",
       "type": "text",
       "label": "Dashboard - Quantité",
       "group": "Matériel à installer",
@@ -333,7 +333,7 @@
       "auto": ""
     },
     {
-      "id": "f74722275",
+      "id": "f62490143",
       "type": "choice",
       "label": "Dashboard - Livré",
       "group": "Matériel à installer",
@@ -360,7 +360,7 @@
       "auto": ""
     },
     {
-      "id": "f24245fda",
+      "id": "f554725a8",
       "type": "text",
       "label": "Carte Prix - Quantité",
       "group": "Matériel à installer",
@@ -378,7 +378,7 @@
       "auto": ""
     },
     {
-      "id": "f4b76fbe0",
+      "id": "fa3578b17",
       "type": "choice",
       "label": "Carte Prix - Livré",
       "group": "Matériel à installer",
@@ -405,7 +405,7 @@
       "auto": ""
     },
     {
-      "id": "f3e39710c",
+      "id": "ff77d78e4",
       "type": "text",
       "label": "ORB - Quantité",
       "group": "Matériel à installer",
@@ -423,7 +423,7 @@
       "auto": ""
     },
     {
-      "id": "fd3420023",
+      "id": "f4dff144d",
       "type": "choice",
       "label": "ORB - Livré",
       "group": "Matériel à installer",
@@ -450,7 +450,7 @@
       "auto": ""
     },
     {
-      "id": "f7641e214",
+      "id": "f6c4657ea",
       "type": "text",
       "label": "2Check - Quantité",
       "group": "Matériel à installer",
@@ -468,7 +468,7 @@
       "auto": ""
     },
     {
-      "id": "f539311d3",
+      "id": "fa8374b03",
       "type": "choice",
       "label": "2Check - Livré",
       "group": "Matériel à installer",
@@ -495,7 +495,7 @@
       "auto": ""
     },
     {
-      "id": "fe1e4d965",
+      "id": "f5192659e",
       "type": "text",
       "label": "Drive - Quantité",
       "group": "Matériel à installer",
@@ -513,7 +513,7 @@
       "auto": ""
     },
     {
-      "id": "f2cb3b148",
+      "id": "feb598bc1",
       "type": "choice",
       "label": "Drive - Livré",
       "group": "Matériel à installer",
@@ -540,7 +540,7 @@
       "auto": ""
     },
     {
-      "id": "f077fbc46",
+      "id": "fed02a9b7",
       "type": "text",
       "label": "audio drive - Quantité",
       "group": "Matériel à installer",
@@ -558,7 +558,7 @@
       "auto": ""
     },
     {
-      "id": "f50f61df7",
+      "id": "fbd108749",
       "type": "choice",
       "label": "audio drive - Livré",
       "group": "Matériel à installer",
@@ -585,7 +585,7 @@
       "auto": ""
     },
     {
-      "id": "ffeee9886",
+      "id": "f73947271",
       "type": "choice",
       "label": "NGK - type",
       "group": "Matériel à installer",
@@ -616,7 +616,7 @@
       "auto": ""
     },
     {
-      "id": "fab1310d9",
+      "id": "f1bcb49e6",
       "type": "choice",
       "label": "SAT - type",
       "group": "Matériel à installer",
@@ -643,7 +643,7 @@
       "auto": ""
     },
     {
-      "id": "f70f58911",
+      "id": "ffae39842",
       "type": "choice",
       "label": "SAT - solution",
       "group": "Matériel à installer",
@@ -674,7 +674,7 @@
       "auto": ""
     },
     {
-      "id": "f9828182b",
+      "id": "f941ba06a",
       "type": "choice",
       "label": "ORB - Comptoir",
       "group": "Matériel à installer",
@@ -701,7 +701,7 @@
       "auto": ""
     },
     {
-      "id": "f7e82e5b8",
+      "id": "f59f60374",
       "type": "choice",
       "label": "ORB - Vitrine",
       "group": "Matériel à installer",
@@ -728,7 +728,7 @@
       "auto": ""
     },
     {
-      "id": "f9c2088ff",
+      "id": "f5ff4d866",
       "type": "choice",
       "label": "2Check - LAD",
       "group": "Matériel à installer",
@@ -755,7 +755,7 @@
       "auto": ""
     },
     {
-      "id": "ff2ab5703",
+      "id": "fd4332805",
       "type": "choice",
       "label": "2Check - Drive",
       "group": "Matériel à installer",
@@ -782,7 +782,7 @@
       "auto": ""
     },
     {
-      "id": "f6f433c34",
+      "id": "f4593091b",
       "type": "choice",
       "label": "Drive - type",
       "group": "Matériel à installer",
@@ -813,7 +813,7 @@
       "auto": ""
     },
     {
-      "id": "faf00b4a1",
+      "id": "f563d6715",
       "type": "choice",
       "label": "Drive - configuration",
       "group": "Matériel à installer",
@@ -844,7 +844,7 @@
       "auto": ""
     },
     {
-      "id": "f95a04fbc",
+      "id": "fdc462171",
       "type": "choice",
       "label": "Audio drive - type",
       "group": "Matériel à installer",
@@ -871,7 +871,7 @@
       "auto": ""
     },
     {
-      "id": "f9be365de",
+      "id": "f78561dec",
       "type": "choice",
       "label": "Audio drive - nbre d'antennes",
       "group": "Matériel à installer",
@@ -906,7 +906,7 @@
       "auto": ""
     },
     {
-      "id": "f535f4773",
+      "id": "f66cd6d72",
       "type": "choice",
       "label": "NGK – Positionnement",
       "group": "Installation – NGK",
@@ -920,28 +920,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fb12175d1",
+      "id": "fef357759",
       "type": "choice",
       "label": "NGK – Fixation par 6 chevilles fournies",
       "group": "Installation – NGK",
@@ -955,28 +955,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f852e99c3",
+      "id": "fedf587da",
       "type": "choice",
       "label": "NGK – Mise à niveau / réglages",
       "group": "Installation – NGK",
@@ -990,28 +990,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f5d7b5a50",
+      "id": "fd74189e3",
       "type": "choice",
       "label": "NGK – Raccordement 230V - RJ45",
       "group": "Installation – NGK",
@@ -1025,28 +1025,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f4134c369",
+      "id": "f3c66e236",
       "type": "choice",
       "label": "NGK – Masterisation & Staging",
       "group": "Installation – NGK",
@@ -1060,28 +1060,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fb7a0e1d9",
+      "id": "fdf2b2195",
       "type": "choice",
       "label": "NGK – Test",
       "group": "Installation – NGK",
@@ -1095,28 +1095,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "ff7b47abc",
+      "id": "f2829fa3e",
       "type": "choice",
       "label": "SAT – Installation Panel",
       "group": "Installation – SAT",
@@ -1130,28 +1130,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f73976b4c",
+      "id": "fdd3c84b7",
       "type": "choice",
       "label": "SAT – Mise en place des équipements dans la baie info",
       "group": "Installation – SAT",
@@ -1165,28 +1165,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f5d321119",
+      "id": "f5649bc1c",
       "type": "choice",
       "label": "SAT – Installation kits interieurs",
       "group": "Installation – SAT",
@@ -1200,28 +1200,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fdcbd6d22",
+      "id": "f2b441dcc",
       "type": "choice",
       "label": "SAT – Installation kits extérieurs",
       "group": "Installation – SAT",
@@ -1235,28 +1235,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fab7e6879",
+      "id": "fcab9c3f3",
       "type": "choice",
       "label": "SAT – Raccordement 230V - RJ45",
       "group": "Installation – SAT",
@@ -1270,28 +1270,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f13d0a1bf",
+      "id": "fd5b784e0",
       "type": "choice",
       "label": "SAT – Mise en place chevalets & supports",
       "group": "Installation – SAT",
@@ -1305,28 +1305,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fad6c6b00",
+      "id": "f6af49d9e",
       "type": "choice",
       "label": "SAT – Test",
       "group": "Installation – SAT",
@@ -1340,28 +1340,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f86559545",
+      "id": "fcfafdf6d",
       "type": "choice",
       "label": "Dashboard – Installation PC & Ecran",
       "group": "Installation – Dashboard",
@@ -1375,28 +1375,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f0d378bdc",
+      "id": "fbfbce2df",
       "type": "choice",
       "label": "Dashboard – Installation Détection entrée Drive (boucle ou banner)",
       "group": "Installation – Dashboard",
@@ -1410,28 +1410,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f4618754d",
+      "id": "fed3c2b18",
       "type": "choice",
       "label": "Dashboard – Raccordement Détection bornes",
       "group": "Installation – Dashboard",
@@ -1445,28 +1445,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f35560b89",
+      "id": "f0ba72a01",
       "type": "choice",
       "label": "Dashboard – Mise en place équipement dans la baie info",
       "group": "Installation – Dashboard",
@@ -1480,28 +1480,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fce85c39e",
+      "id": "f12fbd57d",
       "type": "choice",
       "label": "Dashboard – Raccordement 230V - RJ45",
       "group": "Installation – Dashboard",
@@ -1515,28 +1515,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f05785094",
+      "id": "f5256e143",
       "type": "choice",
       "label": "Dashboard – Test",
       "group": "Installation – Dashboard",
@@ -1550,28 +1550,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fd9231946",
+      "id": "f17df6384",
       "type": "choice",
       "label": "Dashboard – Récupération données NP6",
       "group": "Installation – Dashboard",
@@ -1585,28 +1585,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fcdbd9218",
+      "id": "f12920bd0",
       "type": "choice",
       "label": "Carte Prix – Installation caisson dans la niche prévue",
       "group": "Installation – Carte Prix",
@@ -1620,28 +1620,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f388d0319",
+      "id": "f27ea8358",
       "type": "choice",
       "label": "Carte Prix – Assemblage",
       "group": "Installation – Carte Prix",
@@ -1655,28 +1655,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f42091b9c",
+      "id": "f01548bd2",
       "type": "choice",
       "label": "Carte Prix – Raccordement 230V - RJ45",
       "group": "Installation – Carte Prix",
@@ -1690,28 +1690,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fcc6a9ecb",
+      "id": "f0effb4d7",
       "type": "choice",
       "label": "Carte Prix – Staging",
       "group": "Installation – Carte Prix",
@@ -1725,28 +1725,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f9bea5f1e",
+      "id": "f2b093164",
       "type": "choice",
       "label": "Carte Prix – MàJ CaPAD",
       "group": "Installation – Carte Prix",
@@ -1760,28 +1760,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f70458a19",
+      "id": "fc0fb2306",
       "type": "choice",
       "label": "Carte Prix – Test",
       "group": "Installation – Carte Prix",
@@ -1795,28 +1795,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fea7eeff4",
+      "id": "fa0a3dd4c",
       "type": "choice",
       "label": "ORB Comptoir – Installation caisson dans la niche prévue",
       "group": "Installation – ORB Comptoir",
@@ -1830,28 +1830,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f941ba06a",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fc2af3657",
+      "id": "fb2baa41b",
       "type": "choice",
       "label": "ORB Comptoir – Assemblage",
       "group": "Installation – ORB Comptoir",
@@ -1865,28 +1869,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f941ba06a",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f1477615a",
+      "id": "f89e0f899",
       "type": "choice",
       "label": "ORB Comptoir – Paramétrage VXL par Sesam / BlackBox",
       "group": "Installation – ORB Comptoir",
@@ -1900,28 +1908,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f941ba06a",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f2af72140",
+      "id": "f45a03b59",
       "type": "choice",
       "label": "ORB Comptoir – Raccordement 230V",
       "group": "Installation – ORB Comptoir",
@@ -1935,28 +1947,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f941ba06a",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f9fd7a809",
+      "id": "ff869e90e",
       "type": "choice",
       "label": "ORB Comptoir – Test",
       "group": "Installation – ORB Comptoir",
@@ -1970,28 +1986,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f941ba06a",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fb1129927",
+      "id": "f997d5139",
       "type": "choice",
       "label": "ORB Vitrine – Installation caisson dans la niche prévue",
       "group": "Installation – ORB Vitrine",
@@ -2005,28 +2025,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f59f60374",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f6ae420a4",
+      "id": "f70acb270",
       "type": "choice",
       "label": "ORB Vitrine – Assemblage",
       "group": "Installation – ORB Vitrine",
@@ -2040,28 +2064,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f59f60374",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fd3a8e431",
+      "id": "fe9269905",
       "type": "choice",
       "label": "ORB Vitrine – Paramétrage VXL par Sesam / BlackBox",
       "group": "Installation – ORB Vitrine",
@@ -2075,28 +2103,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f59f60374",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f9af8b1ca",
+      "id": "f94a0e543",
       "type": "choice",
       "label": "ORB Vitrine – Raccordement 230V",
       "group": "Installation – ORB Vitrine",
@@ -2110,28 +2142,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f59f60374",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "ffd2dfd1f",
+      "id": "f5289573a",
       "type": "choice",
       "label": "ORB Vitrine – Test",
       "group": "Installation – ORB Vitrine",
@@ -2145,28 +2181,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f59f60374",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fc5598d87",
+      "id": "f1c8d7ab0",
       "type": "choice",
       "label": "2Check LAD – Installation balance",
       "group": "Installation – 2Check LAD",
@@ -2180,28 +2220,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f5ff4d866",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f17fe2e03",
+      "id": "f0e4d244c",
       "type": "choice",
       "label": "2Check LAD – Brassage baie informatique",
       "group": "Installation – 2Check LAD",
@@ -2215,28 +2259,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f5ff4d866",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f9d0ce5ac",
+      "id": "f5b8a8491",
       "type": "choice",
       "label": "2Check LAD – Raccordement 230V",
       "group": "Installation – 2Check LAD",
@@ -2250,28 +2298,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f5ff4d866",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fd44f7f0b",
+      "id": "f63c184a7",
       "type": "choice",
       "label": "2Check LAD – Test",
       "group": "Installation – 2Check LAD",
@@ -2285,28 +2337,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "f5ff4d866",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "fa5d63822",
+      "id": "fd0a02c55",
       "type": "choice",
       "label": "2Check Drive – Installation balance",
       "group": "Installation – 2Check Drive",
@@ -2320,28 +2376,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "fd4332805",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f0473aca2",
+      "id": "f7ca0df7b",
       "type": "choice",
       "label": "2Check Drive – Brassage baie informatique",
       "group": "Installation – 2Check Drive",
@@ -2355,28 +2415,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "fd4332805",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f1f530ffb",
+      "id": "f41a1b704",
       "type": "choice",
       "label": "2Check Drive – Raccordement 230V",
       "group": "Installation – 2Check Drive",
@@ -2390,28 +2454,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "fd4332805",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f0c8544ba",
+      "id": "fac4c135b",
       "type": "choice",
       "label": "2Check Drive – Test",
       "group": "Installation – 2Check Drive",
@@ -2425,28 +2493,32 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "visibleIf": {
+        "field": "fd4332805",
+        "equals": "OUI"
+      }
     },
     {
-      "id": "f168ff1cc",
+      "id": "f9502ae2f",
       "type": "choice",
       "label": "Drive Ext. – Installation des speakers",
       "group": "Installation – Drive Ext.",
@@ -2460,28 +2532,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f020ed1df",
+      "id": "f4fbbd9d1",
       "type": "choice",
       "label": "Drive Ext. – Installation des écrans",
       "group": "Installation – Drive Ext.",
@@ -2495,28 +2567,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f23d7b572",
+      "id": "f1f4abdc0",
       "type": "choice",
       "label": "Drive Ext. – Installation caméra Crashpoint",
       "group": "Installation – Drive Ext.",
@@ -2530,28 +2602,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f2f25bc6b",
+      "id": "f8c01eebf",
       "type": "choice",
       "label": "Drive Ext. – Raccordement électrique / RJ45",
       "group": "Installation – Drive Ext.",
@@ -2565,28 +2637,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f5fe95c04",
+      "id": "fb8ff199c",
       "type": "choice",
       "label": "Drive Int. – Installation des écrans",
       "group": "Installation – Drive Int.",
@@ -2600,28 +2672,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f71323294",
+      "id": "f1671a866",
       "type": "choice",
       "label": "Drive Int. – Installation NUC",
       "group": "Installation – Drive Int.",
@@ -2635,28 +2707,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f09751fc5",
+      "id": "f722dfa72",
       "type": "choice",
       "label": "Drive Int. – Installation des équipements dans la baie informatique",
       "group": "Installation – Drive Int.",
@@ -2670,28 +2742,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fd896f131",
+      "id": "f621a3c0d",
       "type": "choice",
       "label": "Drive Int. – Installation de la base",
       "group": "Installation – Drive Int.",
@@ -2705,28 +2777,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f76f3bda2",
+      "id": "fbddd6f5d",
       "type": "choice",
       "label": "Drive Int. – Installation des antennes",
       "group": "Installation – Drive Int.",
@@ -2740,28 +2812,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f49fb0e15",
+      "id": "f793e4974",
       "type": "choice",
       "label": "Drive – Mise sous tension",
       "group": "Installation – Drive",
@@ -2775,28 +2847,28 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "f75122ea2",
+      "id": "f095e81e4",
       "type": "choice",
       "label": "Drive – Test",
       "group": "Installation – Drive",
@@ -2810,28 +2882,85 @@
       "options": [
         {
           "label": "OK",
-          "box": null
-        },
-        {
-          "label": "NOK",
-          "box": null
+          "color": "#00B050"
         },
         {
           "label": "En cours",
-          "box": null
+          "color": "#B1A0C7"
+        },
+        {
+          "label": "NOK",
+          "color": "#FF0000"
         },
         {
           "label": "N/A",
-          "box": null
+          "color": "#D9D9D9"
         }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
       "auto": ""
     },
     {
-      "id": "fe9ee0e13",
+      "id": "f76d9eeb7",
+      "type": "mirror",
+      "label": "NGK – type installé",
+      "group": "Installation – NGK",
+      "page": 0,
+      "x": 144.0,
+      "y": 374.5,
+      "w": 51.72,
+      "h": 15.5,
+      "fontSize": 9,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "source": "f73947271"
+    },
+    {
+      "id": "f9a48dc17",
+      "type": "mirror",
+      "label": "SAT – type installé",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 144.0,
+      "y": 476.0,
+      "w": 51.72,
+      "h": 12.0,
+      "fontSize": 9,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "source": "f1bcb49e6"
+    },
+    {
+      "id": "fa3a410ae",
+      "type": "mirror",
+      "label": "SAT – solution installée",
+      "group": "Installation – SAT",
+      "page": 0,
+      "x": 144.0,
+      "y": 490.8,
+      "w": 51.72,
+      "h": 12.15,
+      "fontSize": 9,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "",
+      "source": "ffae39842"
+    },
+    {
+      "id": "fb32a8353",
       "type": "multiline",
       "label": "Remarques / Commentaires",
       "group": "Remarques",
@@ -2849,7 +2978,7 @@
       "auto": ""
     },
     {
-      "id": "fcedec351",
+      "id": "f78652a65",
       "type": "signature",
       "label": "Signature technicien",
       "group": "Signatures",
@@ -2867,7 +2996,7 @@
       "auto": "tech-signature"
     },
     {
-      "id": "f20cde808",
+      "id": "ff9e94810",
       "type": "signature",
       "label": "Signature client fin de chantier",
       "group": "Signatures",
