@@ -9,7 +9,43 @@
   "pages": 1,
   "fields": [
     {
-      "id": "fd29c5bb5",
+      "id": "ffcf15d39",
+      "type": "text",
+      "label": "Restaurant",
+      "group": "Informations site",
+      "page": 0,
+      "x": 140,
+      "y": 55.55,
+      "w": 280,
+      "h": 11.11,
+      "fontSize": 9,
+      "align": "left",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "fb3228670",
+      "type": "text",
+      "label": "N° CC",
+      "group": "Informations site",
+      "page": 0,
+      "x": 430,
+      "y": 55.55,
+      "w": 105.08,
+      "h": 11.11,
+      "fontSize": 9,
+      "align": "center",
+      "options": null,
+      "choiceMode": "",
+      "mark": "",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "f979635e1",
       "type": "choice",
       "label": "Bornes",
       "group": "Drive",
@@ -40,7 +76,7 @@
       "auto": ""
     },
     {
-      "id": "fbd6ba3bc",
+      "id": "f3f980586",
       "type": "text",
       "label": "Bornes – config",
       "group": "Drive",
@@ -58,7 +94,7 @@
       "auto": ""
     },
     {
-      "id": "f8cd78d37",
+      "id": "f45038493",
       "type": "choice",
       "label": "Test fid",
       "group": "Drive",
@@ -89,7 +125,7 @@
       "auto": ""
     },
     {
-      "id": "fe57e46c4",
+      "id": "f94af83de",
       "type": "choice",
       "label": "Pas d'inversion voie 1 / voie 2",
       "group": "Drive",
@@ -120,7 +156,7 @@
       "auto": ""
     },
     {
-      "id": "f0e0f7056",
+      "id": "fac7501fc",
       "type": "choice",
       "label": "Casque",
       "group": "Drive",
@@ -151,7 +187,7 @@
       "auto": ""
     },
     {
-      "id": "f2d440192",
+      "id": "fadebca4f",
       "type": "text",
       "label": "Casques (nombre)",
       "group": "Drive",
@@ -169,7 +205,7 @@
       "auto": ""
     },
     {
-      "id": "fae17bcc4",
+      "id": "fe8d1c8d7",
       "type": "text",
       "label": "Batteries (nombre)",
       "group": "Drive",
@@ -187,7 +223,7 @@
       "auto": ""
     },
     {
-      "id": "fb7a85a63",
+      "id": "f9581b5f5",
       "type": "choice",
       "label": "Nb Antennes",
       "group": "Drive",
@@ -218,7 +254,7 @@
       "auto": ""
     },
     {
-      "id": "fc5027b5d",
+      "id": "f1f73471e",
       "type": "text",
       "label": "Nb Antennes – valeur",
       "group": "Drive",
@@ -236,7 +272,7 @@
       "auto": ""
     },
     {
-      "id": "ffe953728",
+      "id": "fef7ecc2c",
       "type": "choice",
       "label": "Caméra crashpoint",
       "group": "Drive",
@@ -267,7 +303,7 @@
       "auto": ""
     },
     {
-      "id": "ffdc88129",
+      "id": "fc9442e33",
       "type": "choice",
       "label": "Support casque HME",
       "group": "Drive",
@@ -298,7 +334,7 @@
       "auto": ""
     },
     {
-      "id": "fbd82617c",
+      "id": "f31e58ad4",
       "type": "choice",
       "label": "Accès CMS depuis pc SIR",
       "group": "Drive",
@@ -329,7 +365,7 @@
       "auto": ""
     },
     {
-      "id": "f8e191fba",
+      "id": "f206b996c",
       "type": "choice",
       "label": "Heure fonctionnement NGCOD",
       "group": "Drive",
@@ -360,7 +396,7 @@
       "auto": ""
     },
     {
-      "id": "f9ebcd252",
+      "id": "f2d0e2093",
       "type": "time",
       "label": "Heure allumage",
       "group": "Drive",
@@ -378,7 +414,7 @@
       "auto": ""
     },
     {
-      "id": "fe52934c9",
+      "id": "f889e0a72",
       "type": "time",
       "label": "Heure extinction",
       "group": "Drive",
@@ -396,7 +432,7 @@
       "auto": ""
     },
     {
-      "id": "f192dd9c8",
+      "id": "f9d4fb8ec",
       "type": "choice",
       "label": "Carte prix",
       "group": "Carte prix",
@@ -427,7 +463,7 @@
       "auto": ""
     },
     {
-      "id": "f51639404",
+      "id": "f9a0c1014",
       "type": "choice",
       "label": "Paramétrage Impression Capad",
       "group": "Carte prix",
@@ -458,7 +494,7 @@
       "auto": ""
     },
     {
-      "id": "f5378a88f",
+      "id": "f1e74cb65",
       "type": "choice",
       "label": "Dashboard Restaurant",
       "group": "Dashboard",
@@ -489,7 +525,7 @@
       "auto": ""
     },
     {
-      "id": "f405a08ed",
+      "id": "f05db6155",
       "type": "choice",
       "label": "Identifiants envoyés",
       "group": "Dashboard",
@@ -520,7 +556,7 @@
       "auto": ""
     },
     {
-      "id": "f2efd0b92",
+      "id": "f6b815d92",
       "type": "choice",
       "label": "RCT Plugin",
       "group": "NGK",
@@ -551,7 +587,7 @@
       "auto": ""
     },
     {
-      "id": "fde6a1f97",
+      "id": "fe45f866b",
       "type": "text",
       "label": "RCT Plugin – mot de passe",
       "group": "NGK",
@@ -569,7 +605,7 @@
       "auto": ""
     },
     {
-      "id": "fc846a07a",
+      "id": "f498d1480",
       "type": "choice",
       "label": "Type Bornes",
       "group": "NGK",
@@ -600,7 +636,7 @@
       "auto": ""
     },
     {
-      "id": "f77ab0ada",
+      "id": "f7ca9850b",
       "type": "text",
       "label": "Type Bornes – valeur",
       "group": "NGK",
@@ -618,7 +654,7 @@
       "auto": ""
     },
     {
-      "id": "fa6510fba",
+      "id": "fc9ab12f2",
       "type": "choice",
       "label": "Correctif affichage réduit",
       "group": "NGK",
@@ -649,7 +685,7 @@
       "auto": ""
     },
     {
-      "id": "f3997d9be",
+      "id": "f5813a2e6",
       "type": "choice",
       "label": "Kit campagne ok",
       "group": "NGK",
@@ -680,7 +716,7 @@
       "auto": ""
     },
     {
-      "id": "f232994bc",
+      "id": "f2434d565",
       "type": "choice",
       "label": "Tous visuels ok",
       "group": "NGK",
@@ -711,7 +747,7 @@
       "auto": ""
     },
     {
-      "id": "f19333536",
+      "id": "f8aea9bc3",
       "type": "choice",
       "label": "Tous chevalets détectés",
       "group": "NGK",
@@ -742,7 +778,7 @@
       "auto": ""
     },
     {
-      "id": "ffb7661ac",
+      "id": "fa74b4737",
       "type": "choice",
       "label": "Fonctionnement des TPE",
       "group": "NGK",
@@ -773,7 +809,7 @@
       "auto": ""
     },
     {
-      "id": "f112fcf73",
+      "id": "f3092ae77",
       "type": "choice",
       "label": "Table Tent",
       "group": "NGK",
@@ -804,7 +840,7 @@
       "auto": ""
     },
     {
-      "id": "f4f151ade",
+      "id": "faadfefeb",
       "type": "text",
       "label": "Table Tent – type",
       "group": "NGK",
@@ -822,7 +858,7 @@
       "auto": ""
     },
     {
-      "id": "fca1eb263",
+      "id": "f80d3fefe",
       "type": "choice",
       "label": "Balance Drive – Installation et Test",
       "group": "Autres équipements",
@@ -853,7 +889,7 @@
       "auto": ""
     },
     {
-      "id": "f99a3aaca",
+      "id": "fa0c0cfe8",
       "type": "choice",
       "label": "Balance LAD – Installation et Test",
       "group": "Autres équipements",
@@ -884,7 +920,7 @@
       "auto": ""
     },
     {
-      "id": "f5da6f7a1",
+      "id": "f0a5c159a",
       "type": "choice",
       "label": "ORB à emporter – Installation et fonctionnement",
       "group": "Autres équipements",
@@ -915,7 +951,7 @@
       "auto": ""
     },
     {
-      "id": "f94ac723f",
+      "id": "f8756fbee",
       "type": "choice",
       "label": "ORB LAD – Installation et fonctionnement",
       "group": "Autres équipements",
@@ -946,7 +982,7 @@
       "auto": ""
     },
     {
-      "id": "ff61ce4ba",
+      "id": "fdf21e117",
       "type": "choice",
       "label": "A J-1 – Tester Fid avec les points sur NGCOD",
       "group": "A J-1",
