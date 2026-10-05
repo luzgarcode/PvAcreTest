@@ -1002,15 +1002,16 @@ function fieldHtml(f){
     case "text": {
       const isMcdoName = f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo");
       const hint = f.auto==="site-number-quick" ? `<div style="color:var(--ink-2);font-size:12px;margin-top:4px">💡 À indiquer en priorité : remplit automatiquement l'adresse ci-dessus.</div>` : "";
+      const ph = f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : "";
       const input = isSerialField(f)
-        ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
-        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off">`;
+        ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${ph}><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
+        : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${ph}>`;
       w = isMcdoName
         ? `<div class="mcdo-wrap">${input}<div class="mcdo-sugg" id="sugg_${f.id}" hidden></div></div>` + hint
         : input + hint;
       break;
     }
-    case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3">${esc(v||"")}</textarea>`; break;
+    case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3"${f.placeholder?` placeholder="${esc(f.placeholder)}"`:""}>${esc(v||"")}</textarea>`; break;
     case "date": w=`<div class="btnrow"><input type="date" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:200px"><button class="btn sm" data-today="${f.id}">Aujourd'hui</button></div>`; break;
     case "time": w=`<div class="btnrow"><input type="time" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:150px"><button class="btn sm" data-now="${f.id}">Maintenant</button></div>`; break;
     case "check": w=`<label class="toggle"><input type="checkbox" id="${id}" data-f="${f.id}" ${v?"checked":""}> Oui</label>`; break;

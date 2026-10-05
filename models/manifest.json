@@ -1,12 +1,12 @@
 [
     {
         "id": "seed-k27",
-        "name": "K27 \u2013 PV d'installation",
+        "name": "K27 – PV d'installation",
         "updatedAt": 1790339256653
     },
     {
         "id": "seed-semi-outdoor",
-        "name": "Bornes semi-outdoor \u2013 PV d'installation",
+        "name": "Bornes semi-outdoor – PV d'installation",
         "updatedAt": 1790339256653
     },
     {
@@ -16,12 +16,12 @@
     },
     {
         "id": "tpl-4d1f992a",
-        "name": "K22 \u2013 PV d'installation",
+        "name": "K22 – PV d'installation",
         "updatedAt": 1790519779961
     },
     {
         "id": "tpl-fe1ced90",
-        "name": "Pointeuse RHIS \u2013 PV d'installation",
+        "name": "Pointeuse RHIS – PV d'installation",
         "updatedAt": 1790339256653
     },
     {
@@ -36,52 +36,52 @@
     },
     {
         "id": "tpl-016acbb2",
-        "name": "K27 LITE - QUICK \u2013 PV d'installation",
+        "name": "K27 LITE - QUICK – PV d'installation",
         "updatedAt": 1790529779961
     },
     {
         "id": "tpl-o22k27",
-        "name": "K22-K27 \u2013 PV d'installation combin\u00e9",
+        "name": "K22-K27 – PV d'installation combiné",
         "updatedAt": 1790519779961
     },
     {
         "id": "tpl-f9c787bb",
-        "name": "Double Check \u2013 PV d'installation",
+        "name": "Double Check – PV d'installation",
         "updatedAt": 1791192337236
     },
     {
         "id": "tpl-6d9c20bf",
-        "name": "NGK-27 H1 \u2013 PV d'installation",
+        "name": "NGK-27 H1 – PV d'installation",
         "updatedAt": 1791192337236
     },
     {
         "id": "tpl-8568fb2c",
-        "name": "Dashboard \u2013 PV d'installation",
+        "name": "Dashboard – PV d'installation",
         "updatedAt": 1791192337236
     },
     {
         "id": "tpl-edf1fce2",
-        "name": "Service \u00e0 Table \u2013 PV d'installation",
+        "name": "Service à Table – PV d'installation",
         "updatedAt": 1790463063985
     },
     {
         "id": "tpl-1b4ee5ca",
-        "name": "ACO \u2013 PV d'installation",
+        "name": "ACO – PV d'installation",
         "updatedAt": 1790464317997
     },
     {
         "id": "tpl-113413b3",
-        "name": "Drive \u2013 PV d'installation",
+        "name": "Drive – PV d'installation",
         "updatedAt": 1790481205984
     },
     {
         "id": "tpl-9e096b0d",
-        "name": "Suivi d'installation \u2013 Remodel / Ouverture McDo",
-        "updatedAt": 1791219344391
+        "name": "Suivi d'installation – Remodel / Ouverture McDo",
+        "updatedAt": 1791221347672
     },
     {
         "id": "tpl-5a21f6c3",
-        "name": "Suivi d'installation & Turn Over \u2013 McDo",
-        "updatedAt": 1791220079879
+        "name": "Suivi d'installation & Turn Over – McDo",
+        "updatedAt": 1791221347672
     }
 ]

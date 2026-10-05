@@ -9,7 +9,7 @@
   "pages": 2,
   "fields": [
     {
-      "id": "f7557acde",
+      "id": "f8869db0a",
       "type": "text",
       "label": "Restaurant",
       "group": "Informations site",
@@ -27,7 +27,7 @@
       "auto": "site-client"
     },
     {
-      "id": "f3e995037",
+      "id": "fb8db96c6",
       "type": "text",
       "label": "N° CC",
       "group": "Informations site",
@@ -45,7 +45,7 @@
       "auto": "site-number"
     },
     {
-      "id": "f12ecd9ed",
+      "id": "f4aa633e2",
       "type": "text",
       "label": "Adresse",
       "group": "Informations site",
@@ -63,7 +63,7 @@
       "auto": "site-address-mcdo"
     },
     {
-      "id": "f48f8ddc7",
+      "id": "fb22ffee3",
       "type": "text",
       "label": "CP",
       "group": "Informations site",
@@ -81,7 +81,7 @@
       "auto": ""
     },
     {
-      "id": "f157a9a3c",
+      "id": "f3833f3b8",
       "type": "text",
       "label": "Ville",
       "group": "Informations site",
@@ -99,7 +99,7 @@
       "auto": ""
     },
     {
-      "id": "f9247c4ee",
+      "id": "fba3d5d06",
       "type": "text",
       "label": "Nom responsable",
       "group": "Informations site",
@@ -117,7 +117,7 @@
       "auto": ""
     },
     {
-      "id": "fda469261",
+      "id": "f0406ac57",
       "type": "text",
       "label": "Téléphone",
       "group": "Informations site",
@@ -135,7 +135,7 @@
       "auto": "site-phone-mcdo"
     },
     {
-      "id": "f7c178a18",
+      "id": "f5a7e8d4b",
       "type": "text",
       "label": "E-mail",
       "group": "Informations site",
@@ -153,7 +153,7 @@
       "auto": "site-email-mcdo"
     },
     {
-      "id": "f9a492ba1",
+      "id": "fa33518a0",
       "type": "date",
       "label": "Date ouverture",
       "group": "Informations site",
@@ -171,7 +171,7 @@
       "auto": ""
     },
     {
-      "id": "f0506981f",
+      "id": "f9ce5540c",
       "type": "date",
       "label": "Turn Over info",
       "group": "Informations site",
@@ -189,7 +189,7 @@
       "auto": ""
     },
     {
-      "id": "fe3fac928",
+      "id": "fe0a885c0",
       "type": "date",
       "label": "Date d'installation",
       "group": "Informations site",
@@ -207,7 +207,7 @@
       "auto": ""
     },
     {
-      "id": "f67bb1c65",
+      "id": "f7ae491f5",
       "type": "text",
       "label": "Technicien ACRELEC",
       "group": "Informations site",
@@ -225,7 +225,7 @@
       "auto": "tech-name"
     },
     {
-      "id": "f5511c359",
+      "id": "f229d89bb",
       "type": "text",
       "label": "NGK - Quantité",
       "group": "Matériel à installer",
@@ -240,10 +240,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "Nombre de bornes doubles simple"
     },
     {
-      "id": "f67e61c47",
+      "id": "fd49b7408",
       "type": "choice",
       "label": "NGK - Livré",
       "group": "Matériel à installer",
@@ -270,7 +271,7 @@
       "auto": ""
     },
     {
-      "id": "fbd670bbd",
+      "id": "f77ed3bdf",
       "type": "text",
       "label": "SAT - Quantité",
       "group": "Matériel à installer",
@@ -285,10 +286,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "nombre de SAT"
     },
     {
-      "id": "fef2f3be5",
+      "id": "f97eb873e",
       "type": "choice",
       "label": "SAT - Livré",
       "group": "Matériel à installer",
@@ -315,7 +317,7 @@
       "auto": ""
     },
     {
-      "id": "fabeec2e3",
+      "id": "fad895524",
       "type": "text",
       "label": "Dashboard - Quantité",
       "group": "Matériel à installer",
@@ -330,10 +332,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "Nombre de Dashboard"
     },
     {
-      "id": "f90e51b55",
+      "id": "f5a403a50",
       "type": "choice",
       "label": "Dashboard - Livré",
       "group": "Matériel à installer",
@@ -360,7 +363,7 @@
       "auto": ""
     },
     {
-      "id": "f660c20c4",
+      "id": "f28c0f6ac",
       "type": "text",
       "label": "Carte Prix - Quantité",
       "group": "Matériel à installer",
@@ -375,10 +378,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "nombre de Carte Prix"
     },
     {
-      "id": "f92ab595f",
+      "id": "f328a6aea",
       "type": "choice",
       "label": "Carte Prix - Livré",
       "group": "Matériel à installer",
@@ -405,7 +409,7 @@
       "auto": ""
     },
     {
-      "id": "f6ef1216d",
+      "id": "f190e51b1",
       "type": "text",
       "label": "ORB - Quantité",
       "group": "Matériel à installer",
@@ -423,7 +427,7 @@
       "auto": ""
     },
     {
-      "id": "feb5fc345",
+      "id": "fd18fead4",
       "type": "choice",
       "label": "ORB - Livré",
       "group": "Matériel à installer",
@@ -450,7 +454,7 @@
       "auto": ""
     },
     {
-      "id": "fbf7ebbcc",
+      "id": "fd8815fc7",
       "type": "text",
       "label": "2Check - Quantité",
       "group": "Matériel à installer",
@@ -468,7 +472,7 @@
       "auto": ""
     },
     {
-      "id": "f4048ab69",
+      "id": "f98a07dfc",
       "type": "choice",
       "label": "2Check - Livré",
       "group": "Matériel à installer",
@@ -495,7 +499,7 @@
       "auto": ""
     },
     {
-      "id": "fd3c996e1",
+      "id": "f56970951",
       "type": "text",
       "label": "Drive - Quantité",
       "group": "Matériel à installer",
@@ -510,10 +514,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "Nombre de borne drive"
     },
     {
-      "id": "fdd962bdd",
+      "id": "fdf38ff24",
       "type": "choice",
       "label": "Drive - Livré",
       "group": "Matériel à installer",
@@ -540,7 +545,7 @@
       "auto": ""
     },
     {
-      "id": "fa6e3052a",
+      "id": "fabe81ae0",
       "type": "text",
       "label": "audio drive - Quantité",
       "group": "Matériel à installer",
@@ -555,10 +560,11 @@
       "choiceMode": "",
       "mark": "",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "placeholder": "nombre de central"
     },
     {
-      "id": "fb22c2758",
+      "id": "fea5b2cb4",
       "type": "choice",
       "label": "audio drive - Livré",
       "group": "Matériel à installer",
@@ -585,7 +591,7 @@
       "auto": ""
     },
     {
-      "id": "fb9bf72df",
+      "id": "f0c44d8c7",
       "type": "choice",
       "label": "NGK - type",
       "group": "Matériel à installer",
@@ -616,7 +622,7 @@
       "auto": ""
     },
     {
-      "id": "f85374b31",
+      "id": "f7689e0f2",
       "type": "choice",
       "label": "SAT - type",
       "group": "Matériel à installer",
@@ -643,7 +649,7 @@
       "auto": ""
     },
     {
-      "id": "fb018ad39",
+      "id": "fa3351840",
       "type": "choice",
       "label": "SAT - solution",
       "group": "Matériel à installer",
@@ -674,7 +680,7 @@
       "auto": ""
     },
     {
-      "id": "f64d990bf",
+      "id": "f128f714e",
       "type": "choice",
       "label": "ORB - Comptoir",
       "group": "Matériel à installer",
@@ -701,7 +707,7 @@
       "auto": ""
     },
     {
-      "id": "f8dfe1ea2",
+      "id": "f80965677",
       "type": "choice",
       "label": "ORB - Vitrine",
       "group": "Matériel à installer",
@@ -728,7 +734,7 @@
       "auto": ""
     },
     {
-      "id": "f861bf64d",
+      "id": "f7257de55",
       "type": "choice",
       "label": "2Check - LAD",
       "group": "Matériel à installer",
@@ -755,7 +761,7 @@
       "auto": ""
     },
     {
-      "id": "f964e91ad",
+      "id": "f5af5d89a",
       "type": "choice",
       "label": "2Check - Drive",
       "group": "Matériel à installer",
@@ -782,7 +788,7 @@
       "auto": ""
     },
     {
-      "id": "fd9256e11",
+      "id": "fd535ca06",
       "type": "choice",
       "label": "Drive - type",
       "group": "Matériel à installer",
@@ -813,7 +819,7 @@
       "auto": ""
     },
     {
-      "id": "f5b61fbbd",
+      "id": "fa363f2f7",
       "type": "choice",
       "label": "Drive - configuration",
       "group": "Matériel à installer",
@@ -844,7 +850,7 @@
       "auto": ""
     },
     {
-      "id": "f67570a84",
+      "id": "f444375e0",
       "type": "choice",
       "label": "Audio drive - type",
       "group": "Matériel à installer",
@@ -871,7 +877,7 @@
       "auto": ""
     },
     {
-      "id": "fa232e0ea",
+      "id": "f75b99d9f",
       "type": "choice",
       "label": "Audio drive - nbre d'antennes",
       "group": "Matériel à installer",
@@ -906,7 +912,7 @@
       "auto": ""
     },
     {
-      "id": "f137297f7",
+      "id": "f8fc74889",
       "type": "choice",
       "label": "NGK – Positionnement",
       "group": "Installation – NGK",
@@ -941,7 +947,7 @@
       "auto": ""
     },
     {
-      "id": "f8290d275",
+      "id": "ff8aef6dd",
       "type": "choice",
       "label": "NGK – Fixation par 6 chevilles fournies",
       "group": "Installation – NGK",
@@ -976,7 +982,7 @@
       "auto": ""
     },
     {
-      "id": "f309638d4",
+      "id": "f0bd35cf5",
       "type": "choice",
       "label": "NGK – Mise à niveau / réglages",
       "group": "Installation – NGK",
@@ -1011,7 +1017,7 @@
       "auto": ""
     },
     {
-      "id": "ff2a285ff",
+      "id": "f4c053246",
       "type": "choice",
       "label": "NGK – Raccordement 230V - RJ45",
       "group": "Installation – NGK",
@@ -1046,7 +1052,7 @@
       "auto": ""
     },
     {
-      "id": "f44a4c795",
+      "id": "f67e4107f",
       "type": "choice",
       "label": "NGK – Masterisation & Staging",
       "group": "Installation – NGK",
@@ -1081,7 +1087,7 @@
       "auto": ""
     },
     {
-      "id": "f7d5cec5c",
+      "id": "f45787259",
       "type": "choice",
       "label": "NGK – Test",
       "group": "Installation – NGK",
@@ -1116,7 +1122,7 @@
       "auto": ""
     },
     {
-      "id": "f28aa2b19",
+      "id": "f6a1b9a33",
       "type": "choice",
       "label": "SAT – Installation Panel",
       "group": "Installation – SAT",
@@ -1151,7 +1157,7 @@
       "auto": ""
     },
     {
-      "id": "fec2e470d",
+      "id": "f4402e823",
       "type": "choice",
       "label": "SAT – Mise en place des équipements dans la baie info",
       "group": "Installation – SAT",
@@ -1186,7 +1192,7 @@
       "auto": ""
     },
     {
-      "id": "fb36a650b",
+      "id": "fb2e5336b",
       "type": "choice",
       "label": "SAT – Installation kits interieurs",
       "group": "Installation – SAT",
@@ -1221,7 +1227,7 @@
       "auto": ""
     },
     {
-      "id": "f7e1ebe72",
+      "id": "f9360bb39",
       "type": "choice",
       "label": "SAT – Installation kits extérieurs",
       "group": "Installation – SAT",
@@ -1256,7 +1262,7 @@
       "auto": ""
     },
     {
-      "id": "fb19ca326",
+      "id": "f54ef286f",
       "type": "choice",
       "label": "SAT – Raccordement 230V - RJ45",
       "group": "Installation – SAT",
@@ -1291,7 +1297,7 @@
       "auto": ""
     },
     {
-      "id": "fe672a957",
+      "id": "faf0218e4",
       "type": "choice",
       "label": "SAT – Mise en place chevalets & supports",
       "group": "Installation – SAT",
@@ -1326,7 +1332,7 @@
       "auto": ""
     },
     {
-      "id": "f0c9d9a6c",
+      "id": "fcace84d9",
       "type": "choice",
       "label": "SAT – Test",
       "group": "Installation – SAT",
@@ -1361,7 +1367,7 @@
       "auto": ""
     },
     {
-      "id": "fbf574cca",
+      "id": "f083c6482",
       "type": "choice",
       "label": "Dashboard – Installation PC & Ecran",
       "group": "Installation – Dashboard",
@@ -1396,7 +1402,7 @@
       "auto": ""
     },
     {
-      "id": "f09babfd2",
+      "id": "f22295d44",
       "type": "choice",
       "label": "Dashboard – Installation Détection entrée Drive (boucle ou banner)",
       "group": "Installation – Dashboard",
@@ -1431,7 +1437,7 @@
       "auto": ""
     },
     {
-      "id": "fb5a8dca0",
+      "id": "f9e68f01b",
       "type": "choice",
       "label": "Dashboard – Raccordement Détection bornes",
       "group": "Installation – Dashboard",
@@ -1466,7 +1472,7 @@
       "auto": ""
     },
     {
-      "id": "f1eacf67b",
+      "id": "fd4396cc6",
       "type": "choice",
       "label": "Dashboard – Mise en place équipement dans la baie info",
       "group": "Installation – Dashboard",
@@ -1501,7 +1507,7 @@
       "auto": ""
     },
     {
-      "id": "f45424ac7",
+      "id": "fc8404990",
       "type": "choice",
       "label": "Dashboard – Raccordement 230V - RJ45",
       "group": "Installation – Dashboard",
@@ -1536,7 +1542,7 @@
       "auto": ""
     },
     {
-      "id": "fb86d395b",
+      "id": "fe3cf03ff",
       "type": "choice",
       "label": "Dashboard – Test",
       "group": "Installation – Dashboard",
@@ -1571,7 +1577,7 @@
       "auto": ""
     },
     {
-      "id": "ff61f62ed",
+      "id": "f13a66de7",
       "type": "choice",
       "label": "Dashboard – Récupération données NP6",
       "group": "Installation – Dashboard",
@@ -1606,7 +1612,7 @@
       "auto": ""
     },
     {
-      "id": "f052b1ff2",
+      "id": "f26711301",
       "type": "choice",
       "label": "Carte Prix – Installation caisson dans la niche prévue",
       "group": "Installation – Carte Prix",
@@ -1641,7 +1647,7 @@
       "auto": ""
     },
     {
-      "id": "f465bbf5d",
+      "id": "f064572d0",
       "type": "choice",
       "label": "Carte Prix – Assemblage",
       "group": "Installation – Carte Prix",
@@ -1676,7 +1682,7 @@
       "auto": ""
     },
     {
-      "id": "f86f70208",
+      "id": "fd15fa20f",
       "type": "choice",
       "label": "Carte Prix – Raccordement 230V - RJ45",
       "group": "Installation – Carte Prix",
@@ -1711,7 +1717,7 @@
       "auto": ""
     },
     {
-      "id": "fc2358519",
+      "id": "f667822c0",
       "type": "choice",
       "label": "Carte Prix – Staging",
       "group": "Installation – Carte Prix",
@@ -1746,7 +1752,7 @@
       "auto": ""
     },
     {
-      "id": "f91e6bc5c",
+      "id": "fad9c64a3",
       "type": "choice",
       "label": "Carte Prix – MàJ CaPAD",
       "group": "Installation – Carte Prix",
@@ -1781,7 +1787,7 @@
       "auto": ""
     },
     {
-      "id": "f5cd1cf2f",
+      "id": "f48fd699d",
       "type": "choice",
       "label": "Carte Prix – Test",
       "group": "Installation – Carte Prix",
@@ -1816,7 +1822,7 @@
       "auto": ""
     },
     {
-      "id": "fef1784a6",
+      "id": "f13e71349",
       "type": "choice",
       "label": "ORB Comptoir – Installation caisson dans la niche prévue",
       "group": "Installation – ORB Comptoir",
@@ -1850,12 +1856,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f64d990bf",
+        "field": "f128f714e",
         "equals": "OUI"
       }
     },
     {
-      "id": "f099b56ea",
+      "id": "f47142ead",
       "type": "choice",
       "label": "ORB Comptoir – Assemblage",
       "group": "Installation – ORB Comptoir",
@@ -1889,12 +1895,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f64d990bf",
+        "field": "f128f714e",
         "equals": "OUI"
       }
     },
     {
-      "id": "f9673f43d",
+      "id": "fad812bbe",
       "type": "choice",
       "label": "ORB Comptoir – Paramétrage VXL par Sesam / BlackBox",
       "group": "Installation – ORB Comptoir",
@@ -1928,12 +1934,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f64d990bf",
+        "field": "f128f714e",
         "equals": "OUI"
       }
     },
     {
-      "id": "f0798abf5",
+      "id": "f945ff3bd",
       "type": "choice",
       "label": "ORB Comptoir – Raccordement 230V",
       "group": "Installation – ORB Comptoir",
@@ -1967,12 +1973,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f64d990bf",
+        "field": "f128f714e",
         "equals": "OUI"
       }
     },
     {
-      "id": "f550827b4",
+      "id": "f0693591f",
       "type": "choice",
       "label": "ORB Comptoir – Test",
       "group": "Installation – ORB Comptoir",
@@ -2006,12 +2012,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f64d990bf",
+        "field": "f128f714e",
         "equals": "OUI"
       }
     },
     {
-      "id": "fa38ebc5b",
+      "id": "f1c3cb198",
       "type": "choice",
       "label": "ORB Vitrine – Installation caisson dans la niche prévue",
       "group": "Installation – ORB Vitrine",
@@ -2045,12 +2051,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f8dfe1ea2",
+        "field": "f80965677",
         "equals": "OUI"
       }
     },
     {
-      "id": "fc10fa984",
+      "id": "f54adc7b8",
       "type": "choice",
       "label": "ORB Vitrine – Assemblage",
       "group": "Installation – ORB Vitrine",
@@ -2084,12 +2090,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f8dfe1ea2",
+        "field": "f80965677",
         "equals": "OUI"
       }
     },
     {
-      "id": "ff93107e9",
+      "id": "f3658a079",
       "type": "choice",
       "label": "ORB Vitrine – Paramétrage VXL par Sesam / BlackBox",
       "group": "Installation – ORB Vitrine",
@@ -2123,12 +2129,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f8dfe1ea2",
+        "field": "f80965677",
         "equals": "OUI"
       }
     },
     {
-      "id": "f6190dc83",
+      "id": "fdd59a987",
       "type": "choice",
       "label": "ORB Vitrine – Raccordement 230V",
       "group": "Installation – ORB Vitrine",
@@ -2162,12 +2168,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f8dfe1ea2",
+        "field": "f80965677",
         "equals": "OUI"
       }
     },
     {
-      "id": "fc5a1344b",
+      "id": "f35660203",
       "type": "choice",
       "label": "ORB Vitrine – Test",
       "group": "Installation – ORB Vitrine",
@@ -2201,12 +2207,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f8dfe1ea2",
+        "field": "f80965677",
         "equals": "OUI"
       }
     },
     {
-      "id": "f6f77852f",
+      "id": "fb6a3dbf9",
       "type": "choice",
       "label": "2Check LAD – Installation balance",
       "group": "Installation – 2Check LAD",
@@ -2240,12 +2246,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f861bf64d",
+        "field": "f7257de55",
         "equals": "OUI"
       }
     },
     {
-      "id": "f8f7a46fa",
+      "id": "f69f72d83",
       "type": "choice",
       "label": "2Check LAD – Brassage baie informatique",
       "group": "Installation – 2Check LAD",
@@ -2279,12 +2285,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f861bf64d",
+        "field": "f7257de55",
         "equals": "OUI"
       }
     },
     {
-      "id": "fa8329249",
+      "id": "f0d121e61",
       "type": "choice",
       "label": "2Check LAD – Raccordement 230V",
       "group": "Installation – 2Check LAD",
@@ -2318,12 +2324,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f861bf64d",
+        "field": "f7257de55",
         "equals": "OUI"
       }
     },
     {
-      "id": "fc25f4d2b",
+      "id": "f4843b1f6",
       "type": "choice",
       "label": "2Check LAD – Test",
       "group": "Installation – 2Check LAD",
@@ -2357,12 +2363,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f861bf64d",
+        "field": "f7257de55",
         "equals": "OUI"
       }
     },
     {
-      "id": "f5aaac137",
+      "id": "f33b5a33c",
       "type": "choice",
       "label": "2Check Drive – Installation balance",
       "group": "Installation – 2Check Drive",
@@ -2396,12 +2402,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f964e91ad",
+        "field": "f5af5d89a",
         "equals": "OUI"
       }
     },
     {
-      "id": "f2ef01f81",
+      "id": "f6cf07526",
       "type": "choice",
       "label": "2Check Drive – Brassage baie informatique",
       "group": "Installation – 2Check Drive",
@@ -2435,12 +2441,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f964e91ad",
+        "field": "f5af5d89a",
         "equals": "OUI"
       }
     },
     {
-      "id": "f7278ec93",
+      "id": "f07d4bb89",
       "type": "choice",
       "label": "2Check Drive – Raccordement 230V",
       "group": "Installation – 2Check Drive",
@@ -2474,12 +2480,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f964e91ad",
+        "field": "f5af5d89a",
         "equals": "OUI"
       }
     },
     {
-      "id": "f4f2633ff",
+      "id": "f6db6347c",
       "type": "choice",
       "label": "2Check Drive – Test",
       "group": "Installation – 2Check Drive",
@@ -2513,12 +2519,12 @@
       "lineHeight": 0,
       "auto": "",
       "visibleIf": {
-        "field": "f964e91ad",
+        "field": "f5af5d89a",
         "equals": "OUI"
       }
     },
     {
-      "id": "f4e949bfd",
+      "id": "f23dd8c55",
       "type": "choice",
       "label": "Drive Ext. – Installation des speakers",
       "group": "Installation – Drive Ext.",
@@ -2553,7 +2559,7 @@
       "auto": ""
     },
     {
-      "id": "f5f9f12f1",
+      "id": "fd524aed5",
       "type": "choice",
       "label": "Drive Ext. – Installation des écrans",
       "group": "Installation – Drive Ext.",
@@ -2588,7 +2594,7 @@
       "auto": ""
     },
     {
-      "id": "f6ede6b16",
+      "id": "ff14b78e2",
       "type": "choice",
       "label": "Drive Ext. – Installation caméra Crashpoint",
       "group": "Installation – Drive Ext.",
@@ -2623,7 +2629,7 @@
       "auto": ""
     },
     {
-      "id": "fe529d8bd",
+      "id": "fde3e1744",
       "type": "choice",
       "label": "Drive Ext. – Raccordement électrique / RJ45",
       "group": "Installation – Drive Ext.",
@@ -2658,7 +2664,7 @@
       "auto": ""
     },
     {
-      "id": "f21829a75",
+      "id": "fcd84f797",
       "type": "choice",
       "label": "Drive Int. – Installation des écrans",
       "group": "Installation – Drive Int.",
@@ -2693,7 +2699,7 @@
       "auto": ""
     },
     {
-      "id": "f5849d13d",
+      "id": "f546f592b",
       "type": "choice",
       "label": "Drive Int. – Installation NUC",
       "group": "Installation – Drive Int.",
@@ -2728,7 +2734,7 @@
       "auto": ""
     },
     {
-      "id": "f8ce5d1e9",
+      "id": "f80acee99",
       "type": "choice",
       "label": "Drive Int. – Installation des équipements dans la baie informatique",
       "group": "Installation – Drive Int.",
@@ -2763,7 +2769,7 @@
       "auto": ""
     },
     {
-      "id": "fae1428de",
+      "id": "f0d5d391a",
       "type": "choice",
       "label": "Drive Int. – Installation de la base",
       "group": "Installation – Drive Int.",
@@ -2798,7 +2804,7 @@
       "auto": ""
     },
     {
-      "id": "f18608ee0",
+      "id": "fcda29c1f",
       "type": "choice",
       "label": "Drive Int. – Installation des antennes",
       "group": "Installation – Drive Int.",
@@ -2833,7 +2839,7 @@
       "auto": ""
     },
     {
-      "id": "f6f6c0798",
+      "id": "fae40c4ba",
       "type": "choice",
       "label": "Drive – Mise sous tension",
       "group": "Installation – Drive",
@@ -2868,7 +2874,7 @@
       "auto": ""
     },
     {
-      "id": "f6d929cfa",
+      "id": "ff3cff619",
       "type": "choice",
       "label": "Drive – Test",
       "group": "Installation – Drive",
@@ -2903,7 +2909,7 @@
       "auto": ""
     },
     {
-      "id": "f01d5de7f",
+      "id": "f3b108eef",
       "type": "mirror",
       "label": "NGK – type installé",
       "group": "Installation – NGK",
@@ -2919,10 +2925,10 @@
       "mark": "",
       "lineHeight": 0,
       "auto": "",
-      "source": "fb9bf72df"
+      "source": "f0c44d8c7"
     },
     {
-      "id": "fd161e8fb",
+      "id": "ff559550d",
       "type": "mirror",
       "label": "SAT – type installé",
       "group": "Installation – SAT",
@@ -2938,10 +2944,10 @@
       "mark": "",
       "lineHeight": 0,
       "auto": "",
-      "source": "f85374b31"
+      "source": "f7689e0f2"
     },
     {
-      "id": "f6dbbbfd3",
+      "id": "fe713b74e",
       "type": "mirror",
       "label": "SAT – solution installée",
       "group": "Installation – SAT",
@@ -2957,10 +2963,10 @@
       "mark": "",
       "lineHeight": 0,
       "auto": "",
-      "source": "fb018ad39"
+      "source": "fa3351840"
     },
     {
-      "id": "f21ca7b26",
+      "id": "fd6679c99",
       "type": "mirror",
       "label": "Drive – type installé",
       "group": "Installation – Drive",
@@ -2976,10 +2982,10 @@
       "mark": "",
       "lineHeight": 0,
       "auto": "",
-      "source": "fd9256e11"
+      "source": "fd535ca06"
     },
     {
-      "id": "fbea585cc",
+      "id": "f5026366a",
       "type": "mirror",
       "label": "Drive – configuration installée",
       "group": "Installation – Drive",
@@ -2995,10 +3001,10 @@
       "mark": "",
       "lineHeight": 0,
       "auto": "",
-      "source": "f5b61fbbd"
+      "source": "fa363f2f7"
     },
     {
-      "id": "f9d152757",
+      "id": "f4b7de45e",
       "type": "multiline",
       "label": "Remarques / Commentaires",
       "group": "Remarques",
@@ -3016,7 +3022,7 @@
       "auto": ""
     },
     {
-      "id": "fe3c0704e",
+      "id": "fe66ab5d9",
       "type": "signature",
       "label": "Signature technicien",
       "group": "Signatures",
@@ -3034,7 +3040,7 @@
       "auto": "tech-signature"
     },
     {
-      "id": "fd5c21278",
+      "id": "fce7185e9",
       "type": "signature",
       "label": "Signature client fin de chantier",
       "group": "Signatures",
