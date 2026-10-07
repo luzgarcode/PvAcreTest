@@ -1930,6 +1930,7 @@ async function previewPdf(){
 
 /* ============ accès (mot de passe local) ============ */
 const AUTH_PASSWORD = "AcreTech";
+const AUTH_REQUIRED = true; // false sur la nouvelle adresse : l'accès y est protégé par Cloudflare Access
 const AUTH_KEY = "pvgo_auth_ok";
 const AUTH_AT_KEY = "pvgo_auth_at";
 const AUTH_MAX_AGE = 30*24*60*60*1000; // 30 jours
@@ -2132,7 +2133,7 @@ async function runOfflineDiagnostic(){
     // pour ceux qui connaissent déjà l'appli et reviennent après une mise à jour.
   };
   // Ancien site en phase « export seulement » : pas de mot de passe, pour que personne ne soit bloqué hors de ses données.
-  if (migrationPhase() === 2 || isAuthed()) await start();
+  if (!AUTH_REQUIRED || migrationPhase() === 2 || isAuthed()) await start();
   else showLogin(start);
 })();
 </script>
