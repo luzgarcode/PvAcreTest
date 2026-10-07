@@ -131,6 +131,10 @@ img{ max-width:100%; }
 .progress b{ display:block; height:100%; background:var(--ok); border-radius:9px; }
 .progress-label{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--ink); }
 .sent-badge{ color:var(--ok); font-weight:700; }
+.sent-banner{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; background:var(--ok-soft); color:var(--ok); border-radius:var(--r); padding:10px 14px; font-weight:700; margin-bottom:12px; }
+.archive-month{ margin-top:10px; }
+.archive-month:first-child{ margin-top:0; }
+.archive-month-h{ font-weight:700; font-size:13px; color:var(--ink-2); text-transform:uppercase; letter-spacing:.02em; margin:0 0 6px 2px; }
 
 /* editor */
 .editor{ display:flex; flex-direction:column; height:calc(100vh - 56px); height:calc(100dvh - 56px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); }
@@ -536,6 +540,30 @@ async function saveFile(filename, bytes, mime, text, shareTitle){
 }
 function canShareFiles(){ try{ return !!(navigator.canShare && navigator.canShare({files:[new File([""],"t.pdf",{type:"application/pdf"})]})); }catch(e){ return false; } }
 
+/* ============ SAUVEGARDE / RESTAURATION (rapports + profil restent uniquement sur l'appareil) ============ */
+async function exportBackup(){
+  const [drafts, profile] = await Promise.all([Store.all("drafts"), getProfile()]);
+  const payload = {app:"pv-go-backup", version:1, exportedAt:Date.now(), profile, drafts};
+  const stamp = new Date().toISOString().slice(0,10);
+  const result = await saveFile(`pv-go-sauvegarde-${stamp}.json`, JSON.stringify(payload), "application/json");
+  if (result==="shared") toast("Sauvegarde exportée");
+  else if (result==="downloaded") toast("Sauvegarde téléchargée");
+}
+async function importBackupFile(file){
+  let payload;
+  try{ payload = JSON.parse(await file.text()); }
+  catch(e){ alert("Ce fichier n'est pas une sauvegarde valide."); return; }
+  if (!payload || !Array.isArray(payload.drafts)){ alert("Ce fichier n'est pas une sauvegarde valide."); return; }
+  const n = payload.drafts.length;
+  if (!confirm(`Importer ${n} rapport${n>1?"s":""} depuis cette sauvegarde ?\n\nUn rapport déjà présent sur cet appareil avec le même identifiant sera remplacé par celui de la sauvegarde.`)) return;
+  for (const d of payload.drafts) await Store.put("drafts", d);
+  if (payload.profile && confirm("Restaurer aussi le profil technicien (nom, téléphone, email, secteur, signature) de cette sauvegarde ?\n\nIl remplacera le profil actuel de cet appareil.")){
+    await saveProfile(payload.profile);
+  }
+  toast(`${n} rapport${n>1?"s":""} importé${n>1?"s":""}`);
+  showSettings();
+}
+
 /* ============ SYNCHRONISATION DES MODÈLES ============ */
 async function fetchJson(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); }
 async function fetchBuf(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.arrayBuffer(); }
@@ -646,9 +674,69 @@ function draftRowsHtml(drafts, tpls, tplName){
     : `<div class="empty">Aucun rapport en cours.</div>`;
 }
 
+/* ============ ARCHIVE DES RAPPORTS ENVOYÉS ============ */
+function monthLabel(ts){
+  const s = new Date(ts).toLocaleDateString("fr-FR", {month:"long", year:"numeric"});
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+// regroupe les rapports envoyés par client (McDo/BK/etc., comme sur l'accueil) puis par mois,
+// du plus récent au plus ancien ; un modèle supprimé entre-temps tombe dans son propre groupe
+function groupSentDrafts(drafts, tpls){
+  const byClient = new Map();
+  for (const d of drafts){
+    const tpl = tpls.find(t=>t.id===d.templateId);
+    const client = tpl ? (tplClients(tpl)[0] || "Tous clients") : "Modèle supprimé";
+    if (!byClient.has(client)) byClient.set(client, new Map());
+    const monthMap = byClient.get(client);
+    const dt = new Date(d.sentAt);
+    const key = `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}`;
+    if (!monthMap.has(key)) monthMap.set(key, {label: monthLabel(d.sentAt), items: []});
+    monthMap.get(key).items.push(d);
+  }
+  for (const monthMap of byClient.values()) for (const bucket of monthMap.values()) bucket.items.sort((a,b)=>b.sentAt-a.sentAt);
+  return byClient;
+}
+function archiveRowsHtml(items, tplName){
+  return items.map(d => `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span></div></div>
+    <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn sm ghost" data-unsend-draft="${d.id}">Remettre en cours</button><button class="btn sm danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`).join("");
+}
+async function showArchive(){
+  S.view = "archive";
+  const [tpls, allDrafts] = await Promise.all([Store.all("templates"), Store.all("drafts")]);
+  const sent = allDrafts.filter(d=>d.sentAt);
+  const tplName = id => (tpls.find(t=>t.id===id)||{}).name || "Modèle supprimé";
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Rapports envoyés</div><div class="sp"></div>`);
+  $("#bk").onclick = () => showProfile();
+  const byClient = groupSentDrafts(sent, tpls);
+  const clientKeys = [...byClient.keys()].sort((a,b)=> a==="Modèle supprimé" ? 1 : b==="Modèle supprimé" ? -1 : a.localeCompare(b,"fr"));
+  main.innerHTML = `<div class="wrap">
+    ${sent.length ? clientKeys.map(client => {
+      const monthMap = byClient.get(client);
+      const monthEntries = [...monthMap.entries()].sort((a,b)=>b[0].localeCompare(a[0]));
+      const total = [...monthMap.values()].reduce((s,b)=>s+b.items.length,0);
+      return `<details class="grp" style="margin-bottom:14px"><summary>${clientIconHtml(client)}<span class="t">${esc(client)} (${total})</span></summary>
+        <div class="grp-body">${monthEntries.map(([key,bucket]) => `<div class="archive-month"><div class="archive-month-h">${esc(bucket.label)}</div>
+          <div class="list">${archiveRowsHtml(bucket.items, tplName)}</div></div>`).join("")}</div></details>`;
+    }).join("") : `<div class="empty">Aucun rapport envoyé pour l'instant.</div>`}
+  </div>`;
+  $$("[data-open-draft]").forEach(b => b.onclick = () => openFill(b.dataset.openDraft));
+  $$("[data-del-draft]").forEach(b => b.onclick = async () => {
+    const d = await Store.get("drafts", b.dataset.delDraft);
+    if (!d || !confirm(`Supprimer le rapport « ${d.name} » ?`)) return;
+    await Store.del("drafts", d.id); showArchive();
+  });
+  $$("[data-unsend-draft]").forEach(b => b.onclick = async () => {
+    const d = await Store.get("drafts", b.dataset.unsendDraft);
+    if (!d) return;
+    delete d.sentAt; await Store.put("drafts", d);
+    toast("Remis dans les rapports en cours"); showArchive();
+  });
+}
+
 async function showHome(){
   S.view="home"; S.tpl=null; S.draft=null; S.client=null; S.category=null; S.searchQ=""; await homeBar();
-  const [tpls, drafts, profile] = await Promise.all([Store.all("templates"), Store.all("drafts"), getProfile()]);
+  const [tpls, allDrafts, profile] = await Promise.all([Store.all("templates"), Store.all("drafts"), getProfile()]);
+  const drafts = allDrafts.filter(d=>!d.sentAt);
   drafts.sort((a,b)=>b.updatedAt-a.updatedAt);
   const tplName = id => (tpls.find(t=>t.id===id)||{}).name || "Modèle supprimé";
   const openCount = drafts.length;
@@ -739,6 +827,7 @@ async function showCategory(clientName, categoryName){
 async function showProfile(){
   S.view="profile";
   const p = await getProfile();
+  const sentCount = (await Store.all("drafts")).filter(d=>d.sentAt).length;
   setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Mon profil technicien</div><div class="sp"></div><span class="save-state" id="ss">Enregistré</span>`);
   $("#bk").onclick = () => showHome();
   main.innerHTML = `<div class="fill" style="max-width:520px">
@@ -759,8 +848,14 @@ async function showProfile(){
     </div>
     <div class="divider"></div>
     <div class="grp" style="padding:14px">
+      <div class="ql">Rapports envoyés</div>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">${sentCount ? `${sentCount} rapport${sentCount>1?"s":""} envoyé${sentCount>1?"s":""}, classé${sentCount>1?"s":""} par client puis par mois.` : "Aucun rapport envoyé pour l'instant."}</p>
+      <button class="btn" id="goArchive">Voir les rapports envoyés</button>
+    </div>
+    <div class="divider"></div>
+    <div class="grp" style="padding:14px">
       <div class="ql">Réglages</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Nouveautés, resynchronisation des modèles…</p>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Nouveautés, resynchronisation des modèles, sauvegarde…</p>
       <button class="btn" id="goSettings">Ouvrir les réglages</button>
     </div>
   </div>`;
@@ -770,6 +865,7 @@ async function showProfile(){
   $("#pfSign").onclick = async () => { const png = await signaturePad("Ma signature", 3); if (png){ const cur = await getProfile(); await saveProfile({...cur, signature:png}); showProfile(); } };
   if ($("#pfSignClear")) $("#pfSignClear").onclick = async () => { const cur = await getProfile(); await saveProfile({...cur, signature:null}); showProfile(); };
   $("#goSettings").onclick = () => showSettings();
+  $("#goArchive").onclick = () => showArchive();
 }
 
 /* ============ RÉGLAGES ============ */
@@ -797,6 +893,13 @@ async function showSettings(){
     </div>
     <div class="divider"></div>
     <div class="grp" style="padding:14px">
+      <div class="ql">Sauvegarde</div>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Tes rapports (en cours et envoyés) et ton profil restent uniquement sur ce téléphone : si tu vides les données du navigateur ou changes d'appareil, tout disparaît. Exporte un fichier de sauvegarde de temps en temps pour pouvoir tout récupérer.</p>
+      <div class="btnrow"><button class="btn" id="exportBackup">Exporter mes rapports</button><button class="btn ghost" id="importBackup">Importer une sauvegarde</button></div>
+      <input type="file" id="importBackupFile" accept="application/json" hidden>
+    </div>
+    <div class="divider"></div>
+    <div class="grp" style="padding:14px">
       <div class="ql">Dépannage</div>
       <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">En cas de gros bug (écran figé, boutons qui ne répondent plus, affichage cassé) : vide le cache de l'appli et redémarre proprement. Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
       <button class="btn sm ghost danger" id="hardReset">Vider le cache et redémarrer l'appli</button>
@@ -806,6 +909,12 @@ async function showSettings(){
   </div>`;
   $("#showTutorial").onclick = () => showTutorial();
   $("#showChangelog").onclick = () => showChangelog(CHANGELOG);
+  $("#exportBackup").onclick = () => exportBackup();
+  $("#importBackup").onclick = () => $("#importBackupFile").click();
+  $("#importBackupFile").onchange = async e => {
+    const file = e.target.files && e.target.files[0]; e.target.value = "";
+    if (file) await importBackupFile(file);
+  };
   $("#hardResync").onclick = async () => {
     if (!confirm("Effacer et retélécharger tous les modèles de PV maintenant ?")) return;
     const btn = $("#hardResync"); btn.disabled = true; btn.textContent = "Resynchronisation…";
@@ -940,6 +1049,7 @@ async function openFill(draftId){
   $("#bk").onclick = async () => { await flushDraft(); showHome(); };
   main.innerHTML = `<div class="fill">
     <div class="fill-head">
+      ${d.sentAt?`<div class="sent-banner">✓ Envoyé le ${fmtDate(d.sentAt)}<button class="btn sm ghost" id="unsend">Remettre en rapport en cours</button></div>`:""}
       <label class="fld" style="margin:0"><span>Nom du rapport</span><input class="inp" id="dName" value="${esc(d.name)}"></label>
       <div class="fill-stats"><div class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="${countableFields(tpl).length}" aria-valuenow="0" aria-label="Zones remplies"><div class="pbar-fill" id="statFill"></div><span class="pbar-label" id="stat"></span></div><button class="btn sm ghost" id="openAll">Tout déplier</button><button class="btn sm ghost" id="closeAll">Tout replier</button></div>
     </div>
@@ -962,6 +1072,9 @@ async function openFill(draftId){
   $("#preview").onclick = () => previewPdf();
   $("#gen").onclick = () => generateAndSave();
   if (IS_TEST_BUILD) $("#calib").onclick = () => openCalibrate(S.tpl);
+  if ($("#unsend")) $("#unsend").onclick = async () => {
+    delete S.draft.sentAt; await Store.put("drafts", S.draft); toast("Remis dans les rapports en cours"); openFill(S.draft.id);
+  };
   bindFill(); renderAnnex(); renderAnnexFiles(); updateStats();
 }
 function groupHtml(g, fs, gi){
