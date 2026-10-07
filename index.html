@@ -551,24 +551,121 @@ async function exportBackup(){
   if (result==="shared") toast("Sauvegarde exportée");
   else if (result==="downloaded") toast("Sauvegarde téléchargée");
 }
-async function importBackupFile(file){
+// opts.fresh : appareil vide (premier lancement) → pas de confirmations, le profil est restauré d'office.
+// opts.onDone : appelé après l'import (par défaut : retour aux Réglages). Renvoie true si importé.
+async function importBackupFile(file, opts){
+  opts = opts || {};
   let payload;
   try{ payload = JSON.parse(await file.text()); }
-  catch(e){ alert("Ce fichier n'est pas une sauvegarde valide."); return; }
-  if (!payload || !Array.isArray(payload.drafts)){ alert("Ce fichier n'est pas une sauvegarde valide."); return; }
+  catch(e){ alert("Ce fichier n'est pas une sauvegarde valide."); return false; }
+  if (!payload || !Array.isArray(payload.drafts)){ alert("Ce fichier n'est pas une sauvegarde valide."); return false; }
   const n = payload.drafts.length;
-  if (!confirm(`Importer ${n} rapport${n>1?"s":""} depuis cette sauvegarde ?\n\nUn rapport déjà présent sur cet appareil avec le même identifiant sera remplacé par celui de la sauvegarde.`)) return;
+  if (!opts.fresh && !confirm(`Importer ${n} rapport${n>1?"s":""} depuis cette sauvegarde ?\n\nUn rapport déjà présent sur cet appareil avec le même identifiant sera remplacé par celui de la sauvegarde.`)) return false;
   for (const d of payload.drafts) await Store.put("drafts", d);
-  if (payload.profile && confirm("Restaurer aussi le profil technicien (nom, téléphone, email, secteur, signature) de cette sauvegarde ?\n\nIl remplacera le profil actuel de cet appareil.")){
+  if (payload.profile && (opts.fresh || confirm("Restaurer aussi le profil technicien (nom, téléphone, email, secteur, signature) de cette sauvegarde ?\n\nIl remplacera le profil actuel de cet appareil."))){
     await saveProfile(payload.profile);
   }
   toast(`${n} rapport${n>1?"s":""} importé${n>1?"s":""}`);
-  showSettings();
+  if (opts.onDone) opts.onDone(); else showSettings();
+  return true;
+}
+
+/* ---- migration vers une nouvelle adresse (ne sert que sur l'ANCIEN site ; null = désactivé) ----
+   Phase 1 (dès bannerFrom) : bandeau sur l'accueil. Phase 2 (dès lockFrom) : écran « export seulement ». */
+const MIGRATION = null; // ex. {newUrl:"https://pvngo.app", bannerFrom:"2026-10-08", lockFrom:"2026-10-15"}
+function migrationPhase(){
+  if (!MIGRATION) return 0;
+  const now = Date.now();
+  if (now >= new Date(MIGRATION.lockFrom + "T00:00:00").getTime()) return 2;
+  if (now >= new Date(MIGRATION.bannerFrom + "T00:00:00").getTime()) return 1;
+  return 0;
+}
+function migrationBannerHtml(draftCount){
+  if (migrationPhase() !== 1) return "";
+  return `<div class="warn" id="migBanner"><strong>${esc(APP_NAME)} change d'adresse.</strong> Exporte ta sauvegarde (rapports, profil, signature), puis installe la nouvelle appli et importe-la. Cette version passera en « export seulement » le ${esc(new Date(MIGRATION.lockFrom + "T00:00:00").toLocaleDateString("fr-FR"))}.${draftCount?` <span style="color:var(--ink-2)">(${draftCount} rapport${draftCount>1?"s":""} sur cet appareil)</span>`:""}
+    <div class="btnrow" style="margin-top:8px"><button class="btn primary sm" id="migExport">Exporter ma sauvegarde</button><a class="btn sm" id="migOpen" href="${esc(MIGRATION.newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div></div>`;
+}
+function bindMigrationBanner(){
+  if ($("#migExport")) $("#migExport").onclick = () => exportBackup();
+}
+async function showMigrationLock(){
+  S.view = "migration";
+  setBar(`<div class="mark"><i></i><span>${esc(APP_NAME)}</span></div><div class="sp"></div>`);
+  const [drafts, profile] = await Promise.all([Store.all("drafts"), getProfile()]);
+  const n = drafts.length;
+  main.innerHTML = `<div class="wrap">
+    <div class="sec-h"><h2>${esc(APP_NAME)} a changé d'adresse</h2></div>
+    <p>Cette version n'est plus utilisable pour remplir des rapports. Ta sauvegarde reste possible tant que tu es sur cet appareil :</p>
+    <ol style="padding-left:20px;margin:0 0 16px;color:var(--ink-2)">
+      <li style="margin-bottom:6px"><strong>Exporte ta sauvegarde</strong> (${n} rapport${n>1?"s":""}${profileFilled(profile)?", profil et signature":""}).</li>
+      <li style="margin-bottom:6px"><strong>Ouvre la nouvelle appli</strong> et connecte-toi avec ton adresse mail.</li>
+      <li><strong>Importe</strong> le fichier de sauvegarde quand elle te le propose.</li>
+    </ol>
+    <div class="btnrow"><button class="btn primary" id="migExport">Exporter ma sauvegarde</button><a class="btn" id="migOpen" href="${esc(MIGRATION.newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div>
+    <p class="kbd" style="margin-top:18px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
+  </div>`;
+  bindMigrationBanner();
+}
+
+/* ---- premier lancement sur un appareil vide : proposer d'importer une sauvegarde ----
+   Utile surtout au changement d'adresse de l'appli (les données sont liées à l'adresse du site). */
+const IMPORT_WELCOME_KEY = "pvgo_import_welcome_done";
+async function needsImportWelcome(){
+  try{
+    if (MIGRATION) return false; // ancien site : c'est lui qu'on exporte, rien à importer ici
+    if (localStorage.getItem(IMPORT_WELCOME_KEY) === "1") return false;
+    if (localStorage.getItem(ONBOARD_KEY) === "1") return false; // déjà utilisé sur cet appareil
+    const [drafts, profile] = await Promise.all([Store.all("drafts"), getProfile()]);
+    return drafts.length === 0 && !profileFilled(profile);
+  }catch(e){ return false; }
+}
+function showImportWelcome(onClose){
+  const m = document.createElement("div"); m.className = "modal";
+  m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Bienvenue">
+    <div class="sheet-h"><h3>Bienvenue sur ${esc(APP_NAME)}</h3></div>
+    <div class="sheet-b">
+      <p style="margin:0 0 12px">Tu viens de l'<strong>ancienne version</strong> de l'appli ? Tu peux récupérer tes rapports en cours, ton profil et ta signature en important ta sauvegarde.</p>
+      <p style="margin:0;color:var(--ink-2);font-size:14px">Pas encore de sauvegarde ? Ouvre l'ancienne appli → Réglages → « Exporter mes rapports », enregistre le fichier, puis reviens ici.</p>
+      <input type="file" id="welcomeFile" accept="application/json" hidden>
+    </div>
+    <div class="sheet-f" style="justify-content:space-between;gap:8px">
+      <button class="btn ghost" data-x="skip">Je commence à neuf</button>
+      <button class="btn primary" data-x="import">Importer ma sauvegarde</button>
+    </div></div>`;
+  document.body.appendChild(m);
+  const finish = () => { try{ localStorage.setItem(IMPORT_WELCOME_KEY, "1"); }catch(e){} m.remove(); if (onClose) onClose(); };
+  const fileInp = m.querySelector("#welcomeFile");
+  fileInp.onchange = async () => {
+    const f = fileInp.files && fileInp.files[0]; if (!f) return;
+    const ok = await importBackupFile(f, {fresh:true, onDone:()=>{}});
+    fileInp.value = "";
+    if (ok){
+      // quelqu'un qui importe une sauvegarde connaît déjà l'appli : pas de tuto ni de nouveautés à la suite
+      try{ localStorage.setItem(ONBOARD_KEY, "1"); localStorage.setItem(CHANGELOG_KEY, CHANGELOG[0].version); }catch(e){}
+      finish();
+    }
+  };
+  m.onclick = e => {
+    const a = e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x);
+    if (a === "import") fileInp.click();
+    else if (a === "skip") finish();
+  };
 }
 
 /* ============ SYNCHRONISATION DES MODÈLES ============ */
 async function fetchJson(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); }
 async function fetchBuf(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.arrayBuffer(); }
+/* Quand le site est protégé par Cloudflare Access et que la session a expiré, les requêtes sont
+   redirigées vers la page de connexion (ou refusées en 401/403). Côté appli, une redirection
+   vers un autre domaine ressemble à une panne réseau : on la distingue avec redirect:"manual"
+   (réponse « opaqueredirect »). Hors-ligne, le test échoue simplement : ce n'est PAS une session expirée. */
+async function accessSessionExpired(){
+  if (!navigator.onLine) return false;
+  try{
+    const r = await fetch("./models/manifest.json?probe=" + Date.now(), {cache:"no-store", redirect:"manual"}); // hors du cache du service worker (models/* n'est jamais servi depuis le cache)
+    return r.type === "opaqueredirect" || r.status === 401 || r.status === 403;
+  }catch(e){ return false; }
+}
 async function syncManifest(){
   S.syncing = true;
   let manifest; let failures = 0;
@@ -576,8 +673,13 @@ async function syncManifest(){
     manifest = await fetchJson("./models/manifest.json?t=" + Date.now());
   }catch(e){
     S.syncing = false; console.error("syncManifest (manifest)", e);
+    if (await accessSessionExpired()){
+      S.sessionExpired = true;
+      return {ok:false, expired:true, error:"Session expirée : reconnecte-toi pour récupérer les mises à jour."};
+    }
     return {ok:false, error:(e&&e.message)||String(e)};
   }
+  S.sessionExpired = false;
   S.manifestIndex = new Map(manifest.map(t => [t.id, t.updatedAt||0]));
   for (const m of manifest){
     try{
@@ -608,6 +710,7 @@ function setBar(html){ bar.innerHTML = html; }
 async function syncPill(){
   const last = await Store.get("meta","lastSync");
   if (S.syncing) return `<span class="rolepill checking">Vérification des mises à jour…</span>`;
+  if (S.sessionExpired) return `<span class="rolepill err" title="${esc(S.syncError||"")}">Session expirée</span>`;
   if (S.syncError) return `<span class="rolepill err" title="${esc(S.syncError)}">Mise à jour impossible</span>`;
   if (!last) return "";
   const mins = Math.round((Date.now()-last.v)/60000);
@@ -747,6 +850,8 @@ async function showHome(){
   main.innerHTML = `
   <div class="wrap">
     ${Store.persistent?"":`<div class="warn">Le stockage du navigateur n'est pas disponible ici : vos rapports seront perdus en fermant la page.</div>`}
+    ${migrationBannerHtml(allDrafts.length)}
+    ${S.sessionExpired?`<div class="warn" id="sessionWarn"><strong>Ta session a expiré.</strong> Tes rapports sont intacts et tu peux continuer à travailler. Reconnecte-toi (avec du réseau) pour récupérer les mises à jour des modèles.<div class="btnrow" style="margin-top:8px"><button class="btn primary sm" id="reauthBtn">Se reconnecter</button></div></div>`:""}
     ${profileFilled(profile)?"":`<div class="profcard" id="profCard">
       <div class="avatar">${ICON.user}</div>
       <div class="main">
@@ -769,6 +874,8 @@ async function showHome(){
     <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
   </div>`;
+  if ($("#reauthBtn")) $("#reauthBtn").onclick = () => location.reload(); // la navigation repasse par la page de connexion
+  bindMigrationBanner();
   if ($("#editProfile")) $("#editProfile").onclick = () => showProfile();
   if ($("#profCard")) $("#profCard").addEventListener("click", e => { if (e.target.id!=="editProfile") showProfile(); });
   $("#barProfile").onclick = () => showProfile();
@@ -2004,11 +2111,15 @@ async function runOfflineDiagnostic(){
   if (!window.pdfjsLib || !window.PDFLib){ main.innerHTML=`<div class="wrap"><div class="warn">Les bibliothèques PDF n'ont pas pu se charger. Vérifiez la connexion internet puis rechargez la page.</div></div>`; await homeBar(); return; }
   const start = async () => {
     await Store.open();
+    if (migrationPhase() === 2){ await showMigrationLock(); return; } // ancien site : export seulement
     const hadAny = (await Store.all("templates")).length > 0;
     if (!hadAny) S.syncing = true;
     showHome();
+    // Appareil vide (nouvelle adresse) : proposer d'importer une sauvegarde avant le tuto
+    const welcomeDone = (await needsImportWelcome()) ? new Promise(res => showImportWelcome(res)) : Promise.resolve();
     const res = await syncManifest();
     S.syncing = false; S.syncError = res.error || null;
+    await welcomeDone;
     if (S.view === "home") showHome();
     runOfflineDiagnostic();
     loadMcdoRestaurants();
@@ -2020,7 +2131,8 @@ async function runOfflineDiagnostic(){
     // (ONBOARD_KEY) : pas de double popup pour les nouveaux utilisateurs, seulement
     // pour ceux qui connaissent déjà l'appli et reviennent après une mise à jour.
   };
-  if (isAuthed()) await start();
+  // Ancien site en phase « export seulement » : pas de mot de passe, pour que personne ne soit bloqué hors de ses données.
+  if (migrationPhase() === 2 || isAuthed()) await start();
   else showLogin(start);
 })();
 </script>
