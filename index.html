@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Dylan Lagneau – Crimson Compass Soft">
+<meta name="copyright" content="© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.">
 <title>PV &amp; Go – remplir les PV d'installation</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="theme-color" content="#17212B">
@@ -764,6 +766,7 @@ async function showHome(){
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
     <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.</p>
+    <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
   </div>`;
   if ($("#editProfile")) $("#editProfile").onclick = () => showProfile();
@@ -908,6 +911,7 @@ async function showSettings(){
       <button class="btn sm ghost" id="showDiag" style="margin-top:8px">Diagnostic technique</button>
     </div>
     <p style="text-align:center;color:var(--ink-2);font-size:12px;margin:18px 0 4px">Propulsé par Dylan ⚡</p>
+    <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:0 0 4px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
   </div>`;
   $("#showTutorial").onclick = () => showTutorial();
   $("#showChangelog").onclick = () => showChangelog(CHANGELOG);
@@ -1852,7 +1856,8 @@ function showLogin(onSuccess){
       <label class="fld"><span>Mot de passe</span><input class="inp" id="loginPw" type="password" inputmode="text" autocomplete="current-password" placeholder="••••••••"></label>
       <button class="btn primary" id="loginBtn">Accéder à l'application</button>
     </div>
-    <p class="kbd" style="margin-top:16px">En cas de besoin du mot de passe, demander à vos collègues techniciens ou à Dylan Lagneau</p>`;
+    <p class="kbd" style="margin-top:16px">En cas de besoin du mot de passe, demander à vos collègues techniciens ou à Dylan Lagneau</p>
+    <p class="kbd" style="margin-top:10px;font-size:11px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>`;
   document.body.appendChild(overlay);
   const pw = overlay.querySelector("#loginPw");
   const err = overlay.querySelector("#loginErr");
