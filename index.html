@@ -130,6 +130,7 @@ img{ max-width:100%; }
 .progress{ position:relative; height:18px; background:var(--surface-2); border-radius:9px; overflow:hidden; margin-top:6px; max-width:240px; }
 .progress b{ display:block; height:100%; background:var(--ok); border-radius:9px; }
 .progress-label{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--ink); }
+.sent-badge{ color:var(--ok); font-weight:700; }
 
 /* editor */
 .editor{ display:flex; flex-direction:column; height:calc(100vh - 56px); height:calc(100dvh - 56px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); }
@@ -527,10 +528,11 @@ async function saveFile(filename, bytes, mime, text, shareTitle){
   let file = null;
   try{ file = new File([blob], filename, {type:mime}); }catch(e){}
   if (file && navigator.canShare && navigator.canShare({files:[file]})){
-    try{ const payload = {files:[file], title:shareTitle||filename}; if (text) payload.text = text; await navigator.share(payload); return; }
-    catch(e){ if (e && e.name === "AbortError") return; }
+    try{ const payload = {files:[file], title:shareTitle||filename}; if (text) payload.text = text; await navigator.share(payload); return "shared"; }
+    catch(e){ if (e && e.name === "AbortError") return "aborted"; }
   }
   const url = URL.createObjectURL(blob); const a=document.createElement("a"); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url), 8000);
+  return "downloaded";
 }
 function canShareFiles(){ try{ return !!(navigator.canShare && navigator.canShare({files:[new File([""],"t.pdf",{type:"application/pdf"})]})); }catch(e){ return false; } }
 
@@ -639,8 +641,7 @@ async function bindDraftRows(drafts, tplName){
 }
 function draftRowsHtml(drafts, tpls, tplName){
   return drafts.length ? drafts.map(d => {
-    const tpl = tpls.find(t=>t.id===d.templateId); const tot = tpl ? countableFields(tpl).length : 0; const n = countFilled(d, tpl);
-    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}</div>${tot?`<div class="progress" title="${n} sur ${tot} zones remplies"><b style="width:${Math.round(100*n/tot)}%"></b><span class="progress-label">${n} / ${tot}</span></div>`:""}</div>
+    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}${d.sentAt?` · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span>`:""}</div></div>
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`;}).join("")
     : `<div class="empty">Aucun rapport en cours.</div>`;
 }
@@ -669,8 +670,8 @@ async function showHome(){
     <div id="searchResults"></div>
 
     <div id="normalSections" class="${S.searchQ?"hidden":""}">
-    ${openCount?`<div class="sec-h"><h2>Rapports en cours</h2></div>
-    <div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div>`:""}
+    ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"><summary><span class="t">Rapports en cours (${openCount})</span></summary>
+    <div class="grp-body"><div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div></div></details>`:""}
 
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
@@ -1054,7 +1055,7 @@ function setVal(fid, v, opts){
   if (!S.draft.autoFields) S.draft.autoFields = {};
   if (auto) S.draft.autoFields[fid] = true; else delete S.draft.autoFields[fid];
   draftChanged();
-  /* Numéro de site McDo -> déduit l'adresse mail (fr<numéro>@net.mcdonalds.fr) */
+  /* Numéro de site McDo -> déduit l'adresse mail (<numéro sur 4 chiffres>@net.mcdonalds.fr) */
   const f = S.tpl && S.tpl.fields.find(x=>x.id===fid);
   if (f && f.auto==="site-number"){
     const emailF = S.tpl.fields.find(x=>x.auto==="site-email-mcdo");
@@ -1064,7 +1065,7 @@ function setVal(fid, v, opts){
       if (!isFilled(already) || wasAuto){
         const digits = String(v||"").replace(/\D/g,"");
         const num = digits ? digits.padStart(4,"0") : "";
-        setVal(emailF.id, num ? `fr${num}@net.mcdonalds.fr` : "", {auto:true});
+        setVal(emailF.id, num ? `${num}@net.mcdonalds.fr` : "", {auto:true});
         refreshField(emailF.id);
       }
     }
@@ -1098,17 +1099,33 @@ function setVal(fid, v, opts){
     }
     /* Même numéro -> déduit l'adresse du restaurant (McDo uniquement, via la liste embarquée).
        Pas conditionné à la présence d'un champ email-mcdo : certains PV McDo (Dashboard, Double
-       Check) n'ont pas de champ email mais ont un champ Adresse. */
+       Check) n'ont pas de champ email mais ont un champ Adresse.
+       Quand le modèle a des champs CP / Ville séparés (ex. Remodel/Ouverture, Drive Coates), on
+       découpe la chaîne d'adresse embarquée (qui se termine toujours par "<code postal> <ville>")
+       pour ne mettre que la rue dans "Adresse" et remplir CP/Ville à part, plutôt que de tout
+       dupliquer dans un seul champ. */
     if (MCDO_ADDRESSES){
       const addrF = S.tpl.fields.find(x=>x.auto==="site-address-mcdo");
+      const cpF = S.tpl.fields.find(x=>x.auto==="site-cp-mcdo");
+      const villeF = S.tpl.fields.find(x=>x.auto==="site-ville-mcdo");
       if (addrF){
         const already = S.draft.values[addrF.id];
         const wasAuto = S.draft.autoFields[addrF.id];
         if (!isFilled(already) || wasAuto){
           const digits = String(v||"").replace(/\D/g,"").replace(/^0+/,"");
           const address = digits ? MCDO_ADDRESSES[digits] : null;
-          setVal(addrF.id, address || "", {auto:true});
-          refreshField(addrF.id);
+          if ((cpF || villeF) && address){
+            const m = address.match(/^(.*?),?\s*(\d{5})\s+(.+)$/);
+            setVal(addrF.id, m ? m[1] : address, {auto:true});
+            refreshField(addrF.id);
+            if (cpF){ setVal(cpF.id, m ? m[2] : "", {auto:true}); refreshField(cpF.id); }
+            if (villeF){ setVal(villeF.id, m ? m[3] : "", {auto:true}); refreshField(villeF.id); }
+          } else {
+            setVal(addrF.id, address || "", {auto:true});
+            refreshField(addrF.id);
+            if (cpF){ setVal(cpF.id, "", {auto:true}); refreshField(cpF.id); }
+            if (villeF){ setVal(villeF.id, "", {auto:true}); refreshField(villeF.id); }
+          }
         }
       }
     }
@@ -1544,7 +1561,7 @@ async function showSendReview(bytes){
   return new Promise(resolve => {
     m.onclick = async e => {
       const a = e.target.dataset && e.target.dataset.x; if(!a) return;
-      if (a==="cancel"){ m.remove(); resolve(false); return; }
+      if (a==="cancel"){ m.remove(); resolve({action:"cancel"}); return; }
       if (a==="save" || a==="send"){
         let name = ($("#sendName", m).value || "").trim() || defaultBase;
         if (!/\.pdf$/i.test(name)) name += ".pdf";
@@ -1554,8 +1571,8 @@ async function showSendReview(bytes){
            texte, utile pour les cibles mail qui s'en servent comme corps. */
         const msg = a==="send" ? $("#sendMsg", m).value : null;
         m.remove();
-        await saveFile(name, bytes, "application/pdf", msg, subject);
-        resolve(true);
+        const result = await saveFile(name, bytes, "application/pdf", msg, subject);
+        resolve({action:a, result});
       }
     };
   });
@@ -1565,7 +1582,22 @@ async function generateAndSave(){
   const done=busy("Création du PDF…"); let bytes;
   try{ bytes = await buildPdf(S.tpl, S.draft); done(); }
   catch(e){ done(); console.error(e); alert("Le PDF n'a pas pu être créé : " + (e.message||e)); return; }
-  await showSendReview(bytes);
+  await applySendOutcome(await showSendReview(bytes));
+}
+/* "shared" = la feuille de partage du téléphone a transmis le PDF à l'appli choisie avec succès
+   (SMS, mail, WhatsApp…) — c'est le seul signal que le web donne ; il n'y a aucun moyen de savoir
+   si la personne a ensuite vraiment appuyé sur "Envoyer" dans cette appli. */
+async function applySendOutcome(outcome){
+  if (!outcome) return;
+  if (outcome.action==="send" && outcome.result==="shared"){
+    S.draft.sentAt = Date.now();
+    await Store.put("drafts", S.draft);
+    toast("PV envoyé ✓");
+  } else if (outcome.action==="send" && outcome.result==="downloaded"){
+    toast("PDF téléchargé");
+  } else if (outcome.action==="save" && (outcome.result==="shared" || outcome.result==="downloaded")){
+    toast("PDF sauvegardé");
+  }
 }
 /* ============ CALIBRAGE DES CHAMPS (site de test uniquement) ============ */
 async function openCalibrate(tpl){
@@ -1658,7 +1690,7 @@ async function previewPdf(){
   const m=document.createElement("div"); m.className="modal";
   m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Aperçu"><div class="sheet-h"><h3>Aperçu</h3><button class="btn sm" data-x="close">Fermer</button></div><div class="sheet-b" id="pv"></div><div class="sheet-f"><button class="btn" data-x="close">Continuer à remplir</button><button class="btn primary" data-x="dl">Terminé</button></div></div>`;
   document.body.appendChild(m);
-  m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="close") m.remove(); if(a==="dl"){ m.remove(); showSendReview(bytes); } };
+  m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="close") m.remove(); if(a==="dl"){ m.remove(); showSendReview(bytes).then(applySendOutcome); } };
   try{
     const pdf = await pdfjsLib.getDocument({data:bytes.slice(0), isEvalSupported:false}).promise; done();
     const host=$("#pv",m); const wAvail=Math.min(860, host.clientWidth-28);
