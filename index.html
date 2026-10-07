@@ -834,11 +834,9 @@ async function showProfile(){
   setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Mon profil technicien</div><div class="sp"></div><span class="save-state" id="ss">Enregistré</span>`);
   $("#bk").onclick = () => showHome();
   main.innerHTML = `<div class="fill" style="max-width:520px">
-    <div class="fill-head" style="margin-top:6px">
-      <p style="margin:0;color:var(--ink-2)">Ces infos sont reprises automatiquement dans les champs concernant le technicien (nom, téléphone, email, signature) à chaque nouveau rapport. Elles restent uniquement sur cet appareil.</p>
-    </div>
-    <details class="grp" id="pfInfoGrp" ${profileComplete?"":"open"}><summary><span class="t">Mes informations</span></summary>
+    <details class="grp" id="pfInfoGrp" style="margin-top:6px" ${profileComplete?"":"open"}><summary><span class="t">Mes informations</span></summary>
     <div class="grp-body">
+      <p style="margin:10px 0 4px;color:var(--ink-2);font-size:14px">Ces infos sont reprises automatiquement dans les champs concernant le technicien (nom, téléphone, email, signature) à chaque nouveau rapport. Elles restent uniquement sur cet appareil.</p>
       <div class="q"><label for="pfName">Nom complet</label><input class="inp" id="pfName" value="${esc(p.name)}" placeholder="Ex. Jean Dupré" autocomplete="name"></div>
       <div class="q"><label for="pfPhone">Téléphone</label><input class="inp" id="pfPhone" type="tel" value="${esc(p.phone)}" placeholder="06 12 34 56 78" autocomplete="tel"></div>
       <div class="q"><label for="pfEmail">Email</label><input class="inp" id="pfEmail" type="email" value="${esc(p.email)}" placeholder="jean.dupre@exemple.fr" autocomplete="email"></div>
