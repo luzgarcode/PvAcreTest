@@ -592,7 +592,7 @@ function migrationPhase(){
 }
 function migrationBannerHtml(draftCount){
   if (migrationPhase() !== 1) return "";
-  return `<div class="warn" id="migBanner"><strong>${esc(APP_NAME)} change d'adresse.</strong> Exporte ta sauvegarde (rapports, profil, signature), puis ouvre la nouvelle appli : connecte-toi avec ton adresse mail (tu recevras un code par mail — n'utilise pas le bouton « Cloudflare »), installe-la sur ton écran d'accueil et importe ta sauvegarde. Cette version passera en « export seulement » le ${esc(new Date(migCfg().lockFrom + "T00:00:00").toLocaleDateString("fr-FR"))}.${draftCount?` <span style="color:var(--ink-2)">(${draftCount} rapport${draftCount>1?"s":""} sur cet appareil)</span>`:""}
+  return `<div class="warn" id="migBanner"><strong>${esc(APP_NAME)} change d'adresse.</strong> Exporte ta sauvegarde (rapports, profil, signature), puis ouvre la nouvelle appli : connecte-toi avec ton adresse mail (tu recevras un code par mail), installe-la sur ton écran d'accueil et importe ta sauvegarde. Cette version passera en « export seulement » le ${esc(new Date(migCfg().lockFrom + "T00:00:00").toLocaleDateString("fr-FR"))}.${draftCount?` <span style="color:var(--ink-2)">(${draftCount} rapport${draftCount>1?"s":""} sur cet appareil)</span>`:""}
     <div class="btnrow" style="margin-top:8px"><button class="btn primary sm" id="migExport">Exporter ma sauvegarde</button><a class="btn sm" id="migOpen" href="${esc(migCfg().newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div></div>`;
 }
 function bindMigrationBanner(){
@@ -608,7 +608,7 @@ async function showMigrationLock(){
     <p>Cette version n'est plus utilisable pour remplir des rapports. Ta sauvegarde reste possible tant que tu es sur cet appareil :</p>
     <ol style="padding-left:20px;margin:0 0 16px;color:var(--ink-2)">
       <li style="margin-bottom:6px"><strong>Exporte ta sauvegarde</strong> (${n} rapport${n>1?"s":""}${profileFilled(profile)?", profil et signature":""}).</li>
-      <li style="margin-bottom:6px"><strong>Ouvre la nouvelle appli</strong> et connecte-toi avec <strong>ton adresse mail</strong> : tu recevras un <strong>code par mail</strong> à saisir. N'utilise pas le bouton « Cloudflare ».</li>
+      <li style="margin-bottom:6px"><strong>Ouvre la nouvelle appli</strong> et connecte-toi avec <strong>ton adresse mail</strong> : tu recevras un <strong>code par mail</strong> à saisir.</li>
       <li><strong>Importe</strong> le fichier de sauvegarde quand elle te le propose.</li>
     </ol>
     <div class="btnrow"><button class="btn primary" id="migExport">Exporter ma sauvegarde</button><a class="btn" id="migOpen" href="${esc(migCfg().newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div>
