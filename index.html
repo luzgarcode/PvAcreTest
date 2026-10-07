@@ -1910,6 +1910,14 @@ function maybeShowOnboarding(){
 /* ---- nouveautés ---- */
 const CHANGELOG_KEY = "pvgo_changelog_seen";
 const CHANGELOG = [
+  { version:"2026-10-07", title:"🆕 Rapports envoyés & sauvegarde", items:[
+    "Nouveau PV : Drive Coates McDo, avec remplissage automatique complet à partir du numéro de site (nom, adresse, téléphone, email).",
+    "Correction : l'email auto-rempli des sites McDo avait un « fr » en trop devant le numéro (ex. fr1664@...) — c'est corrigé.",
+    "Sur les PV avec un code postal et une ville séparés (Remodel/Ouverture, Drive Coates), l'adresse auto-remplie ne duplique plus le code postal et la ville dedans.",
+    "Un PV envoyé affiche maintenant un vrai retour : toast « PV envoyé ✓ » et badge sur sa carte. Et les PV envoyés ont leur propre espace : Mon profil → « Rapports envoyés », classés par client puis par mois — l'accueil ne garde que les rapports en cours.",
+    "Réglages → Sauvegarde : exporte tous tes rapports (et ton profil) dans un fichier, et réimporte-les — utile si tu changes de téléphone ou si tu vides les données du navigateur par erreur.",
+    "Accueil allégé : « Rapports en cours » est repliée par défaut, et la barre de progression inutile a été retirée de chaque carte.",
+  ]},
   { version:"2026-10-02", title:"🆕 Commentaires & envoi du PDF", items:[
     "Correction : un retour à la ligne tapé dans un champ commentaire ressortait parfois comme un « ? » sur le PDF au lieu d'un vrai saut de ligne. C'est corrigé.",
     "Le bouton « Envoyer le PDF » devient « Terminé ». Il ouvre une fenêtre qui propose maintenant « Sauvegarder » (le PDF seul) ou « Envoyer » (PDF + message) séparément, pour éviter qu'un fichier .txt parasite se glisse à côté du PDF quand tu sauvegardes dans OneDrive.",

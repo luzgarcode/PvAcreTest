@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v20";
+const CACHE = "pv-terrain-shell-v21";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
