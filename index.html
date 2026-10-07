@@ -572,18 +572,28 @@ async function importBackupFile(file, opts){
 
 /* ---- migration vers une nouvelle adresse (ne sert que sur l'ANCIEN site ; null = désactivé) ----
    Phase 1 (dès bannerFrom) : bandeau sur l'accueil. Phase 2 (dès lockFrom) : écran « export seulement ». */
-const MIGRATION = null; // ex. {newUrl:"https://pvngo.app", bannerFrom:"2026-10-08", lockFrom:"2026-10-15"}
+const MIGRATION_BASE = {newUrl:"https://pvngo.app", bannerFrom:"2026-10-07", lockFrom:"2026-10-15"}; // null = désactivé (nouvelle adresse)
+/* TEST-ONLY : sur le site test, ?mig=0 coupe la migration, ?mig=1 force le bandeau, ?mig=2 force l'écran « export seulement » */
+function migCfg(){
+  if (IS_TEST_BUILD){
+    const q = new URLSearchParams(location.search).get("mig");
+    if (q === "0") return null;
+    if (q === "1" && MIGRATION_BASE) return Object.assign({}, MIGRATION_BASE, {bannerFrom:"2000-01-01", lockFrom:"2999-01-01"});
+    if (q === "2" && MIGRATION_BASE) return Object.assign({}, MIGRATION_BASE, {bannerFrom:"2000-01-01", lockFrom:"2000-01-02"});
+  }
+  return MIGRATION_BASE;
+}
 function migrationPhase(){
-  if (!MIGRATION) return 0;
+  if (!migCfg()) return 0;
   const now = Date.now();
-  if (now >= new Date(MIGRATION.lockFrom + "T00:00:00").getTime()) return 2;
-  if (now >= new Date(MIGRATION.bannerFrom + "T00:00:00").getTime()) return 1;
+  if (now >= new Date(migCfg().lockFrom + "T00:00:00").getTime()) return 2;
+  if (now >= new Date(migCfg().bannerFrom + "T00:00:00").getTime()) return 1;
   return 0;
 }
 function migrationBannerHtml(draftCount){
   if (migrationPhase() !== 1) return "";
-  return `<div class="warn" id="migBanner"><strong>${esc(APP_NAME)} change d'adresse.</strong> Exporte ta sauvegarde (rapports, profil, signature), puis installe la nouvelle appli et importe-la. Cette version passera en « export seulement » le ${esc(new Date(MIGRATION.lockFrom + "T00:00:00").toLocaleDateString("fr-FR"))}.${draftCount?` <span style="color:var(--ink-2)">(${draftCount} rapport${draftCount>1?"s":""} sur cet appareil)</span>`:""}
-    <div class="btnrow" style="margin-top:8px"><button class="btn primary sm" id="migExport">Exporter ma sauvegarde</button><a class="btn sm" id="migOpen" href="${esc(MIGRATION.newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div></div>`;
+  return `<div class="warn" id="migBanner"><strong>${esc(APP_NAME)} change d'adresse.</strong> Exporte ta sauvegarde (rapports, profil, signature), puis installe la nouvelle appli et importe-la. Cette version passera en « export seulement » le ${esc(new Date(migCfg().lockFrom + "T00:00:00").toLocaleDateString("fr-FR"))}.${draftCount?` <span style="color:var(--ink-2)">(${draftCount} rapport${draftCount>1?"s":""} sur cet appareil)</span>`:""}
+    <div class="btnrow" style="margin-top:8px"><button class="btn primary sm" id="migExport">Exporter ma sauvegarde</button><a class="btn sm" id="migOpen" href="${esc(migCfg().newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div></div>`;
 }
 function bindMigrationBanner(){
   if ($("#migExport")) $("#migExport").onclick = () => exportBackup();
@@ -601,7 +611,7 @@ async function showMigrationLock(){
       <li style="margin-bottom:6px"><strong>Ouvre la nouvelle appli</strong> et connecte-toi avec ton adresse mail.</li>
       <li><strong>Importe</strong> le fichier de sauvegarde quand elle te le propose.</li>
     </ol>
-    <div class="btnrow"><button class="btn primary" id="migExport">Exporter ma sauvegarde</button><a class="btn" id="migOpen" href="${esc(MIGRATION.newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div>
+    <div class="btnrow"><button class="btn primary" id="migExport">Exporter ma sauvegarde</button><a class="btn" id="migOpen" href="${esc(migCfg().newUrl)}" target="_blank" rel="noopener">Ouvrir la nouvelle appli</a></div>
     <p class="kbd" style="margin-top:18px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
   </div>`;
   bindMigrationBanner();
@@ -612,7 +622,7 @@ async function showMigrationLock(){
 const IMPORT_WELCOME_KEY = "pvgo_import_welcome_done";
 async function needsImportWelcome(){
   try{
-    if (MIGRATION) return false; // ancien site : c'est lui qu'on exporte, rien à importer ici
+    if (migCfg()) return false; // ancien site : c'est lui qu'on exporte, rien à importer ici
     if (localStorage.getItem(IMPORT_WELCOME_KEY) === "1") return false;
     if (localStorage.getItem(ONBOARD_KEY) === "1") return false; // déjà utilisé sur cet appareil
     const [drafts, profile] = await Promise.all([Store.all("drafts"), getProfile()]);
