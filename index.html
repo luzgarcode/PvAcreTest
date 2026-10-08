@@ -1347,6 +1347,8 @@ function refreshVisibility(changedFid){
 const flushDraft = async () => { if(!S.draft) return; S.draft.updatedAt=Date.now(); await Store.put("drafts", S.draft); const ss=$("#ss"); if(ss) ss.textContent="Enregistré"; };
 const saveDraftSoon = debounce(flushDraft, 500);
 function draftChanged(){ const ss=$("#ss"); if(ss) ss.textContent="Modifications…"; saveDraftSoon(); updateStats(); }
+/* Modèle McDo (même sans champ e-mail) : le nom du restaurant se déduit du numéro de site, et inversement */
+function isMcdoTpl(tpl){ const c = tplClients(tpl); return c.length===1 && c[0]==="McDonald's"; }
 function setVal(fid, v, opts){
   const auto = !!(opts && opts.auto);
   if(isFilled(v)) S.draft.values[fid]=v; else delete S.draft.values[fid];
@@ -1368,7 +1370,7 @@ function setVal(fid, v, opts){
       }
     }
     /* Même numéro -> déduit le nom du restaurant (McDo uniquement, via la liste embarquée) */
-    if (emailF && MCDO_RESTAURANTS){
+    if ((emailF || isMcdoTpl(S.tpl)) && MCDO_RESTAURANTS){
       const nameF = S.tpl.fields.find(x=>x.auto==="site-client");
       if (nameF){
         const already = S.draft.values[nameF.id];
@@ -1429,7 +1431,7 @@ function setVal(fid, v, opts){
     }
   }
   /* Nom de restaurant McDo choisi/tapé (via l'autosuggestion) -> déduit le numéro (et en cascade l'email) */
-  if (f && f.auto==="site-client" && !auto && MCDO_NAME_TO_NUM && S.tpl.fields.some(x=>x.auto==="site-email-mcdo")){
+  if (f && f.auto==="site-client" && !auto && MCDO_NAME_TO_NUM && (isMcdoTpl(S.tpl) || S.tpl.fields.some(x=>x.auto==="site-email-mcdo"))){
     const numF = S.tpl.fields.find(x=>x.auto==="site-number");
     if (numF){
       const key = normMcdoName(v);
