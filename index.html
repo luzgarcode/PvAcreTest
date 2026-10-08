@@ -740,7 +740,7 @@ async function syncManifest(){
         fetchBuf(`./models/${m.id}/${m.id}.pdf?v=${m.updatedAt||0}`)
       ]);
       const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-      await Store.put("templates", {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true});
+      await Store.put("templates", {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true});
     }catch(e){
       // One template failing to fetch (flaky connection) must never block the others,
       // nor block cleanup below — it's simply retried on the next sync.
@@ -1802,11 +1802,26 @@ function siteTokens(){
   const valOf = role => { const f = tpl.fields.find(f => f.auto === role); if (!f) return ""; const v = draft.values[f.id]; return (typeof v === "string" && v.trim()) ? v.trim() : ""; };
   return {client: valOf("site-client"), number: valOf("site-number")};
 }
+/* PV sur plusieurs jours (ex. Drive Coates) : "J1", "J2"… selon la dernière ligne journalière remplie,
+   ou "assistance" si un des textes des lignes contient ce mot. Rien tant qu'aucune ligne n'est remplie. */
+function multiDayTag(){
+  const cfg = S.tpl && S.tpl.multiDay; if (!cfg || !S.draft) return "";
+  let last = 0, assist = false;
+  cfg.lines.forEach(([dId, tId], i) => {
+    const d = S.draft.values[dId], tx = S.draft.values[tId];
+    if (isFilled(d) || isFilled(tx)) last = i+1;
+    if (/assistance/i.test(String(tx||"")) || /assistance/i.test(String(d||""))) assist = true;
+  });
+  return assist ? "assistance" : (last ? "J"+last : "");
+}
 function pdfFileName(){
   const tpl = S.tpl; const {client, number} = siteTokens();
   const siteToken = [client, number].filter(Boolean).join("");
   const shortName = tpl.shortName || tpl.name;
-  if (siteToken) return `PV-${slug(siteToken)}-${slug(shortName)}.pdf`;
+  if (siteToken){
+    const tag = multiDayTag();
+    return `PV-${tag?tag+"-":""}${slug(siteToken)}-${slug(shortName)}.pdf`;
+  }
   return slug(S.draft.name || tpl.name) + ".pdf";
 }
 function locFor(tpl){ const {client, number} = siteTokens(); return [client, number ? "n°"+number : ""].filter(Boolean).join(" "); }
@@ -1868,9 +1883,27 @@ async function generateAndSave(){
 /* "shared" = la feuille de partage du téléphone a transmis le PDF à l'appli choisie avec succès
    (SMS, mail, WhatsApp…) — c'est le seul signal que le web donne ; il n'y a aucun moyen de savoir
    si la personne a ensuite vraiment appuyé sur "Envoyer" dans cette appli. */
+/* PV multi-jours : après l'envoi, on demande s'il est terminé (archivé) ou repris un autre jour. true = terminé. */
+function askFinishOrContinue(){
+  return new Promise(resolve => {
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="PV terminé ?" style="max-width:480px">
+      <div class="sheet-h"><h3>Ce PV est-il terminé ?</h3></div>
+      <div class="sheet-b" style="background:var(--surface)"><p style="margin:0">Il peut continuer sur plusieurs jours. Si tu le gardes en cours, tu le retrouves dans « Rapports en cours » pour remplir la ligne suivante et le renvoyer.</p></div>
+      <div class="sheet-f"><button class="btn" data-x="go">Je continue demain</button><button class="btn primary" data-x="done">Terminé</button></div>
+    </div>`;
+    document.body.appendChild(m);
+    m.onclick = e => { const a = e.target.dataset && e.target.dataset.x; if (!a) return; m.remove(); resolve(a==="done"); };
+  });
+}
 async function applySendOutcome(outcome){
   if (!outcome) return;
   if (outcome.action==="send" && outcome.result==="shared"){
+    if (S.tpl && S.tpl.multiDay && !(await askFinishOrContinue())){
+      S.draft.lastSentAt = Date.now(); await Store.put("drafts", S.draft);
+      sentCheck("PV envoyé — reste en cours");
+      return;
+    }
     S.draft.sentAt = Date.now();
     await Store.put("drafts", S.draft);
     sentCheck("PV envoyé");
