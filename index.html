@@ -612,7 +612,7 @@ async function importBackupFile(file, opts){
 
 /* ---- migration vers une nouvelle adresse (ne sert que sur l'ANCIEN site ; null = désactivé) ----
    Phase 1 (dès bannerFrom) : bandeau sur l'accueil. Phase 2 (dès lockFrom) : écran « export seulement ». */
-const MIGRATION_BASE = {newUrl:"https://pvngo.app", bannerFrom:"2026-10-07", lockFrom:"2026-10-15"}; // null = désactivé (nouvelle adresse)
+const MIGRATION_BASE = null; // null = désactivé (plus de bandeau ni d'écran « export seulement » sur le site test)
 /* TEST-ONLY : sur le site test, ?mig=0 coupe la migration, ?mig=1 force le bandeau, ?mig=2 force l'écran « export seulement » */
 function migCfg(){
   if (IS_TEST_BUILD){
