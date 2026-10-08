@@ -1303,7 +1303,7 @@ function fieldHtml(f){
   let w="";
   switch(f.type){
     case "text": {
-      const isMcdoName = f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo");
+      const isMcdoName = f.auto==="site-client" && (isMcdoTpl(S.tpl) || S.tpl.fields.some(x=>x.auto==="site-email-mcdo"));
       const hint = f.auto==="site-number-quick" ? `<div style="color:var(--ink-2);font-size:12px;margin-top:4px">💡 À indiquer en priorité : remplit automatiquement l'adresse ci-dessus.</div>` : "";
       const ph = f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : "";
       const input = isSerialField(f)
@@ -1479,7 +1479,7 @@ function bindFill(){
     const fid=e.target.dataset.f; if(!fid) return;
     const f=S.tpl.fields.find(x=>x.id===fid);
     setVal(fid, f.type==="check" ? e.target.checked : e.target.value);
-    if (f && f.auto==="site-client" && S.tpl.fields.some(x=>x.auto==="site-email-mcdo")) renderMcdoSuggest(fid, e.target.value);
+    if (f && f.auto==="site-client" && (isMcdoTpl(S.tpl) || S.tpl.fields.some(x=>x.auto==="site-email-mcdo"))) renderMcdoSuggest(fid, e.target.value);
   });
   G.addEventListener("focusout", e => {
     const fid=e.target.dataset && e.target.dataset.f; if(!fid) return;
