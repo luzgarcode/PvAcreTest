@@ -56,8 +56,7 @@ img{ max-width:100%; }
 :root[data-theme="dark"] .bar{ background:#0A0F14; }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .bar{ background:#0A0F14; } }
 .mark{ display:flex; align-items:center; gap:10px; font-family:var(--font-c); font-weight:700; font-size:22px; letter-spacing:.2px; white-space:nowrap; }
-.mark i{ width:26px; height:26px; background:var(--logo); border-radius:4px; position:relative; flex:none; }
-.mark i::after{ content:""; position:absolute; left:7px; top:4px; width:8px; height:13px; border:solid var(--logo-ink); border-width:0 3.5px 3.5px 0; transform:rotate(45deg); }
+.mark i{ width:24px; height:29px; background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='110 70 310 372'><path d='M130 90H282L400 190V235A75 75 0 0 1 325 310H205V408Q205 422 191 422H144Q130 422 130 408Z' fill='%23F5B400'/><path d='M344 90V148Q344 170 366 170H400Z' fill='%2317212B' opacity='.3'/><path d='M178 212L224 258L308 172' fill='none' stroke='%2317212B' stroke-width='40' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat; flex:none; }
 .bar .sp{ flex:1; }
 .bar .title{ font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
 .bar .save-state{ font-size:13px; color:#B9C4CE; white-space:nowrap; }
@@ -102,6 +101,22 @@ img{ max-width:100%; }
 .rolepill.err{ color:#F08A83; border-color:#F08A83; cursor:help; }
 .rolepill{ white-space:nowrap; transition:opacity .6s ease; }
 .rolepill.pill-out{ opacity:0; }
+.barsearch{ flex:1; min-width:0; max-width:none; display:flex; align-items:center; gap:8px; height:40px; padding:0 10px; background:rgba(255,255,255,.10); border:1px solid #3A4754; border-radius:10px; color:#B9C4CE; }
+@media (min-width:700px){ .barsearch{ max-width:560px; } }
+.barsearch:focus-within{ border-color:var(--vis); background:rgba(255,255,255,.14); }
+.barsearch svg{ width:18px; height:18px; flex:none; }
+.barsearch input{ flex:1; min-width:0; width:100%; background:transparent; border:0; outline:0; color:#fff; font:inherit; font-size:16px; }
+.barsearch input::placeholder{ color:#8FA0AF; }
+.barsearch input::-webkit-search-cancel-button{ filter:invert(1); cursor:pointer; }
+.bar .btn.st-ok{ color:#4ADE80; border-color:#2E6B49; }
+.bar .btn.st-wait{ color:#FB923C; border-color:#7A4A25; animation:stpulse 1.2s ease-in-out infinite; }
+.bar .btn.st-off{ color:#9AA7B2; border-color:#3A4754; }
+.bar .btn.st-err{ color:#F87171; border-color:#7A3535; }
+@keyframes stpulse{ 50%{ opacity:.55; } }
+@media (prefers-reduced-motion: reduce){ .bar .btn.st-wait{ animation:none; } }
+.syncline{ display:flex; justify-content:flex-end; margin:0 0 12px; }
+.syncline .rolepill{ color:var(--ink-2); border-color:var(--line); }
+.syncline .rolepill.err{ color:#B3261E; border-color:#B3261E; }
 .mark span.brand-fade{ opacity:0; transition:opacity .6s ease; }
 .mark span.brand-fade.brand-in{ opacity:1; }
 .sec-h{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:28px 0 12px; }
@@ -289,6 +304,21 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
   .bar .save-state{ display:none; }
   .mark span{ display:none; }
 }
+.okov{ position:fixed; inset:0; z-index:300; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; background:rgba(16,22,28,.58); opacity:0; animation:okIn .2s ease forwards, okOut .3s ease 1.75s forwards; }
+.okc{ position:relative; width:120px; height:120px; border-radius:50%; background:#F5B400; display:flex; align-items:center; justify-content:center; transform:scale(.4); animation:okPop .45s cubic-bezier(.2,1.5,.4,1) .05s forwards; }
+.okc::after{ content:""; position:absolute; inset:0; border-radius:50%; border:3px solid #F5B400; opacity:0; animation:okRing .7s ease-out .35s forwards; }
+.okc svg{ width:64px; height:64px; }
+.okc svg path{ stroke:#17212B; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; fill:none; stroke-dasharray:60; stroke-dashoffset:60; animation:okDraw .4s ease-out .4s forwards; }
+.okt{ color:#fff; font-weight:700; font-size:22px; font-family:inherit; opacity:0; transform:translateY(8px); animation:okTxt .3s ease .75s forwards; }
+.okd{ position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px; border-radius:50%; background:#F5B400; opacity:0; animation:okDot .65s ease-out .45s forwards; }
+@keyframes okIn{ to{ opacity:1; } }
+@keyframes okOut{ to{ opacity:0; } }
+@keyframes okPop{ to{ transform:scale(1); } }
+@keyframes okRing{ 0%{ opacity:.9; transform:scale(1); } 100%{ opacity:0; transform:scale(1.7); } }
+@keyframes okDraw{ to{ stroke-dashoffset:0; } }
+@keyframes okTxt{ to{ opacity:1; transform:none; } }
+@keyframes okDot{ 0%{ opacity:1; transform:translate(0,0) scale(.4); } 100%{ opacity:0; transform:translate(var(--x),var(--y)) scale(1); } }
+@media (prefers-reduced-motion: reduce){ .okov, .okov *{ animation-duration:.01s !important; animation-delay:0s !important; } }
 </style>
 </head>
 <body>
@@ -338,6 +368,14 @@ function bufToB64(buf){ const u = new Uint8Array(buf); let s=""; const CH=0x8000
 function dataUrlToBytes(d){ return new Uint8Array(b64ToBuf(d.split(",")[1])); }
 function debounce(fn, ms){ let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
 function toast(msg, ms=2600){ const t = document.createElement("div"); t.className="toast"; t.textContent=msg; t.setAttribute("role","status"); document.body.appendChild(t); setTimeout(()=>t.remove(), ms); }
+function sentCheck(text){
+  const ov = document.createElement("div"); ov.className = "okov"; ov.setAttribute("role","status");
+  const dots = [[0,-84],[60,-60],[84,0],[60,60],[0,84],[-60,60],[-84,0],[-60,-60]].map(([x,y]) => `<i class="okd" style="--x:${x}px;--y:${y}px"></i>`).join("");
+  ov.innerHTML = `<div class="okc">${dots}<svg viewBox="0 0 64 64"><path d="M16 34l12 12 22-26"/></svg></div><div class="okt">${text}</div>`;
+  document.body.appendChild(ov);
+  try{ if (navigator.vibrate) navigator.vibrate(30); }catch(e){}
+  setTimeout(() => ov.remove(), 2100);
+}
 function busy(msg){ const b=document.createElement("div"); b.className="busy"; b.textContent=msg; document.body.appendChild(b); return () => b.remove(); }
 function parsePages(s, n){ const out=new Set(); for (const part of String(s||"").split(/[,;\s]+/)){ const m=part.match(/^(\d+)(?:-(\d+))?$/); if(!m) continue; const a=+m[1], b=m[2]?+m[2]:a; for (let i=Math.min(a,b); i<=Math.max(a,b) && i<=n; i++) if(i>=1) out.add(i-1); } return [...out].sort((x,y)=>x-y); }
 function fmtPages(arr){ if(!arr||!arr.length) return ""; const s=[...arr].sort((a,b)=>a-b).map(x=>x+1); const out=[]; let st=s[0], pv=s[0]; for (let i=1;i<=s.length;i++){ if (s[i]===pv+1){ pv=s[i]; continue; } out.push(st===pv?`${st}`:`${st}-${pv}`); st=pv=s[i]; } return out.join(", "); }
@@ -355,8 +393,10 @@ const ICON = {
   signature:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c3-6 5-9 6-8s-3 7-1 7 3-4 5-4 1 4 3 4 3-2 5-2"/><path d="M3 21h18"/></svg>',
   magic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L15 9M13 7l2-2 4 4-2 2z"/><path d="M6 4v3M4.5 5.5h3M19 14v3M17.5 15.5h3M10 2.5v2M9 3.5h2"/></svg>',
   back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>',
+  ghost:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V11a7 7 0 0 1 14 0v10l-2.4-2-2.3 2-2.3-2-2.3 2-2.3-2z"/><circle cx="9.5" cy="11" r=".6" fill="currentColor"/><circle cx="14.5" cy="11" r=".6" fill="currentColor"/></svg>',
   user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>',
-  mark:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 12.5l3 3 5.5-6" stroke="var(--paper)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  mark:'<svg viewBox="100 70 330 372" fill="currentColor"><path d="M130 90H282L400 190V235A75 75 0 0 1 325 310H205V408Q205 422 191 422H144Q130 422 130 408Z"/><path d="M344 90V148Q344 170 366 170H400Z" fill="var(--ink)" opacity=".3"/><path d="M178 212L224 258L308 172" fill="none" stroke="var(--ink)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   sync:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>',
   plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
   zin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5 5M7 10h6M10 7v6"/></svg>',
@@ -677,7 +717,7 @@ async function accessSessionExpired(){
   }catch(e){ return false; }
 }
 async function syncManifest(){
-  S.syncing = true;
+  S.syncing = true; paintSyncState();
   let manifest; let failures = 0;
   try{
     manifest = await fetchJson("./models/manifest.json?t=" + Date.now());
@@ -712,11 +752,29 @@ async function syncManifest(){
   }catch(e){ console.error("syncManifest (cleanup)", e); }
   S.syncing = false;
   await Store.put("meta", {k:"lastSync", v:Date.now()});
+  paintSyncState();
   return failures ? {ok:false, error:`${failures} modèle${failures>1?"s":""} non synchronisé${failures>1?"s":""} (réessaiera automatiquement)`} : {ok:true};
 }
 
 /* ============ HOME ============ */
-function setBar(html){ bar.innerHTML = html; }
+function setBar(html){ bar.innerHTML = html; paintSyncState(); }
+// Pastille d'état dans la barre : le bouton profil change de couleur
+// (vert = à jour, orange = vérification en cours, rouge = hors ligne / session expirée / mise à jour impossible).
+async function paintSyncState(){
+  const btn = document.getElementById("barProfile"); if (!btn) return;
+  let cls = "", label = "";
+  if (navigator.onLine === false){ cls = "st-off"; label = "hors ligne (tes rapports restent disponibles)"; }
+  else if (S.syncing){ cls = "st-wait"; label = "vérification des mises à jour en cours"; }
+  else if (S.sessionExpired){ cls = "st-err"; label = "session expirée"; }
+  else if (S.syncError){ cls = "st-err"; label = "mise à jour impossible"; }
+  else { const last = await Store.get("meta","lastSync"); if (last){ cls = "st-ok"; label = "à jour"; } }
+  btn.classList.remove("st-ok","st-wait","st-err","st-off"); if (cls) btn.classList.add(cls);
+  const ico = btn.querySelector("svg"), ghost = cls === "st-off";
+  if (ico && ico.dataset.ghost !== (ghost ? "1" : "0")){ ico.outerHTML = ghost ? ICON.ghost : ICON.user; const n = btn.querySelector("svg"); if (n) n.dataset.ghost = ghost ? "1" : "0"; }
+  btn.setAttribute("aria-label", "Mon profil" + (label ? " — " + label : ""));
+  btn.title = label ? "Mon profil — " + label : "Mon profil";
+}
+window.addEventListener("online", paintSyncState); window.addEventListener("offline", paintSyncState);
 async function syncPill(){
   const last = await Store.get("meta","lastSync");
   if (S.syncing) return `<span class="rolepill checking">Vérification des mises à jour…</span>`;
@@ -727,23 +785,9 @@ async function syncPill(){
   const txt = mins < 2 ? "à jour à l'instant" : mins < 60 ? `à jour il y a ${mins} min` : `à jour depuis le ${fmtDate(last.v)}`;
   return `<span class="rolepill" title="Les modèles sont vérifiés à chaque ouverture">${esc(txt)}</span>`;
 }
-let brandFadeTimer = null;
 async function homeBar(){
-  if (brandFadeTimer){ clearTimeout(brandFadeTimer); brandFadeTimer = null; }
-  setBar(`<div class="mark"><i></i><span class="brand-fade">${esc(APP_NAME)}</span></div>${await syncPill()}<div class="sp"></div>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
+  setBar(`<div class="mark"><i></i><span>${esc(APP_NAME)}</span></div><label class="barsearch">${ICON.search}<input id="tplSearch" type="search" inputmode="search" placeholder="Rechercher un modèle…" aria-label="Rechercher un modèle" autocomplete="off" value="${esc(S.searchQ||"")}"></label>${IS_TEST_BUILD?`<button class="btn sm" id="barLogout" aria-label="Se déconnecter">${ICON.logout||""}<span class="hide-sm">Déconnexion</span></button>`:""}<button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}<span class="hide-sm">Mon profil</span></button>`);
   if (IS_TEST_BUILD) $("#barLogout").onclick = logout;
-  // Sur mobile, l'icône seule reste dans la barre ; une fois la synchro confirmée
-  // (pas d'erreur, pas en cours), le pill "à jour…" laisse place au nom de l'appli
-  // après quelques secondes. En cas d'échec/hors-ligne, le pill d'état reste affiché.
-  if (!S.syncing && !S.syncError){
-    brandFadeTimer = setTimeout(() => {
-      const pill = bar.querySelector(".rolepill");
-      const span = bar.querySelector(".mark span");
-      if (pill) pill.classList.add("pill-out");
-      if (span){ span.style.display = "inline-block"; requestAnimationFrame(() => span.classList.add("brand-in")); }
-      if (pill) setTimeout(() => { if (pill.isConnected) pill.style.display = "none"; }, 650);
-    }, 3500);
-  }
 }
 
 const emptyProfile = () => ({name:"", phone:"", email:"", signature:null, secteur:""});
@@ -871,7 +915,6 @@ async function showHome(){
       <button class="btn primary" id="editProfile">Renseigner mon profil</button>
     </div>`}
 
-    <div class="searchwrap"><label class="fld" style="margin:0"><span>Rechercher un modèle</span><input class="inp" id="tplSearch" type="search" inputmode="search" placeholder="Ex. McDo borne, K27, fiche…" value="${esc(S.searchQ||"")}" autocomplete="off"></label></div>
     <div id="searchResults"></div>
 
     <div id="normalSections" class="${S.searchQ?"hidden":""}">
@@ -889,13 +932,12 @@ async function showHome(){
   if ($("#editProfile")) $("#editProfile").onclick = () => showProfile();
   if ($("#profCard")) $("#profCard").addEventListener("click", e => { if (e.target.id!=="editProfile") showProfile(); });
   $("#barProfile").onclick = () => showProfile();
-  $("#refreshBtn").onclick = async () => { S.syncing=true; await homeBar(); S.syncError=(await syncManifest()).error||null; showHome(); };
+  $("#refreshBtn").onclick = async () => { S.syncing=true; paintSyncState(); S.syncError=(await syncManifest()).error||null; showHome(); };
   $$(".client-row").forEach(el => { const go=()=>showClient(el.dataset.client); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
   bindDraftRows(drafts, tplName);
   renderSearch(tpls);
   const si = $("#tplSearch");
   si.oninput = () => { S.searchQ = si.value; renderSearch(tpls); $("#normalSections").classList.toggle("hidden", !!S.searchQ); };
-  si.focus({preventScroll:true}); si.setSelectionRange(si.value.length, si.value.length);
 }
 function renderSearch(tpls){
   const box = $("#searchResults"); if(!box) return;
@@ -1828,7 +1870,7 @@ async function applySendOutcome(outcome){
   if (outcome.action==="send" && outcome.result==="shared"){
     S.draft.sentAt = Date.now();
     await Store.put("drafts", S.draft);
-    toast("PV envoyé ✓");
+    sentCheck("PV envoyé");
   } else if (outcome.action==="send" && outcome.result==="downloaded"){
     toast("PDF téléchargé");
   } else if (outcome.action==="save" && (outcome.result==="shared" || outcome.result==="downloaded")){
@@ -1997,6 +2039,7 @@ const TUTORIAL_STEPS = [
   { icon:"magic", title:"Des champs qui se remplissent tout seuls", body:"Sur les fiches McDo, le numéro (ou le nom) du restaurant remplit tout seul le reste. Sur le PV K27 LITE - QUICK, le numéro de restaurant remplit tout seul l'adresse complète." },
   { icon:"signature", title:"Fais signer", body:"Chaque signature (technicien, client, formation…) se fait directement à l'écran, du bout du doigt." },
   { icon:"check", title:"Génère et envoie", body:"Une fois le rapport complet, génère le PDF : il est déposé directement dans le document d'origine, prêt à être envoyé ou téléchargé." },
+  { icon:"user", title:"Le voyant de ton profil", html: [["#4ADE80","user","Vert","Tout est à jour."],["#FB923C","user","Orange","Vérification des mises à jour en cours."],["#F87171","user","Rouge","Session expirée ou mise à jour impossible. Reconnecte-toi avec du réseau : tes rapports restent intacts."],["#9AA7B2","ghost","Fantôme gris","Tu es hors ligne. Pas de souci, tu peux continuer à remplir tes rapports."]].map(([c,ic,t,d]) => `<div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 12px;text-align:left"><span style="flex:none;width:40px;height:40px;border-radius:10px;background:#17212B;border:1px solid ${c};color:${c};display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;display:block">${ICON[ic]}</span></span><div style="color:var(--ink-2);line-height:1.4"><b style="color:var(--ink)">${t}</b><br>${d}</div></div>`).join("") },
   { icon:"sync", title:"En cas de gros bug", body:"Un écran figé ou un affichage cassé ? Va dans Réglages → « Vider le cache et redémarrer l'appli ». Tes rapports en cours ne sont jamais touchés." },
 ];
 function showTutorial(onClose){
@@ -2010,7 +2053,7 @@ function showTutorial(onClose){
       <div class="sheet-b" style="text-align:center">
         <div class="login-mark" style="margin:0 auto 16px">${ICON[s.icon]||ICON.mark}</div>
         <h3 style="margin:0 0 10px">${esc(s.title)}</h3>
-        <p style="color:var(--ink-2);margin:0 0 18px">${esc(s.body)}</p>
+        ${s.html ? `<div style="margin:0 0 18px">${s.html}</div>` : `<p style="color:var(--ink-2);margin:0 0 18px">${esc(s.body)}</p>`}
         <div style="display:flex;justify-content:center;gap:5px">${dots}</div>
       </div>
       <div class="sheet-f" style="justify-content:space-between">
@@ -2035,6 +2078,12 @@ function maybeShowOnboarding(){
 /* ---- nouveautés ---- */
 const CHANGELOG_KEY = "pvgo_changelog_seen";
 const CHANGELOG = [
+  { version:"2026-10-07b", title:"🆕 Nouveau look", items:[
+    "Nouveau logo PV & Go, sur l'écran d'accueil de ton téléphone comme dans l'appli.",
+    "La recherche de modèles est maintenant dans la barre du haut : toujours visible, même quand tu fais défiler la page.",
+    "Le bouton profil devient ton voyant : vert = à jour, orange = vérification en cours, rouge = session expirée ou mise à jour impossible, petit fantôme = hors ligne (tes rapports restent disponibles).",
+    "Quand ton PV est bien envoyé, une coche animée s'affiche.",
+  ]},
   { version:"2026-10-07", title:"🆕 Rapports envoyés & sauvegarde", items:[
     "Nouveau PV : Drive Coates McDo, avec remplissage automatique complet à partir du numéro de site (nom, adresse, téléphone, email).",
     "Correction : l'email auto-rempli des sites McDo avait un « fr » en trop devant le numéro (ex. fr1664@...) — c'est corrigé.",
@@ -2056,9 +2105,14 @@ const CHANGELOG = [
     "Sur les fiches McDo, le numéro de restaurant déduit maintenant tout seul son nom (et son email). Et ça marche aussi dans l'autre sens : tape les premières lettres du nom dans « Nom du restaurant », une liste te propose les restaurants correspondants, et choisir dedans remplit le numéro pour toi.",
   ]},
 ];
+function changelogDate(v){
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(v||""); if (!m) return "";
+  const d = new Date(+m[1], +m[2]-1, +m[3]);
+  return `<span style="flex:none;font-size:12px;color:var(--ink-2);white-space:nowrap">${esc(d.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"}))}</span>`;
+}
 function showChangelog(entries){
   const m=document.createElement("div"); m.className="modal";
-  const body = entries.map(e => `<div style="margin-bottom:16px"><div style="font-weight:700;margin-bottom:6px">${esc(e.title)}</div><ul style="margin:0;padding-left:18px;color:var(--ink-2)">${e.items.map(i=>`<li style="margin-bottom:5px">${esc(i)}</li>`).join("")}</ul></div>`).join("");
+  const body = entries.map(e => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px"><div style="font-weight:700">${esc(e.title)}</div>${changelogDate(e.version)}</div><ul style="margin:0;padding-left:18px;color:var(--ink-2)">${e.items.map(i=>`<li style="margin-bottom:5px">${esc(i)}</li>`).join("")}</ul></div>`).join("");
   m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Nouveautés">
     <div class="sheet-h"><h3>Nouveautés</h3></div>
     <div class="sheet-b">${body}</div>
@@ -2130,7 +2184,7 @@ async function runOfflineDiagnostic(){
     // Appareil vide (nouvelle adresse) : proposer d'importer une sauvegarde avant le tuto
     const welcomeDone = (await needsImportWelcome()) ? new Promise(res => showImportWelcome(res)) : Promise.resolve();
     const res = await syncManifest();
-    S.syncing = false; S.syncError = res.error || null;
+    S.syncing = false; S.syncError = res.error || null; paintSyncState();
     await welcomeDone;
     if (S.view === "home") showHome();
     runOfflineDiagnostic();
