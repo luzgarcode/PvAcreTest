@@ -810,9 +810,11 @@ function tplClients(t){
 }
 function templatesForClient(tpls, clientName){ return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
 function tplCategory(t){ const c = t.category; return CATEGORIES.includes(c) ? c : "Autre"; }
-const CATEGORY_ICONS = { "Drive": "assets/logos/drive-coates.jpg", "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png" };
-function categoryIconHtml(cat){
-  const icon = CATEGORY_ICONS[cat];
+const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png" };
+/* Icônes propres à un client + catégorie (ex. Drive de McDonald's) ; sinon l'icône de la catégorie */
+const CLIENT_CATEGORY_ICONS = { "McDonald's|Drive": "assets/logos/drive-coates.jpg" };
+function categoryIconHtml(cat, client){
+  const icon = CLIENT_CATEGORY_ICONS[client+"|"+cat] || CATEGORY_ICONS[cat];
   if (icon) return `<div class="doc-ico doc-ico-img"><img src="${esc(icon)}" alt="" loading="lazy"></div>`;
   return `<div class="doc-ico"></div>`;
 }
@@ -964,7 +966,7 @@ async function showClient(clientName){
   const nonEmptyCategories = cd.categories.filter(cat => countFor(cat) > 0);
   main.innerHTML = `<div class="wrap">
     <div class="sec-h"><h2>${esc(clientName)}</h2></div>
-    <div class="list">${nonEmptyCategories.map(cat => `<div class="row client-row" data-cat="${esc(cat)}" role="button" tabindex="0">${categoryIconHtml(cat)}<div class="main"><div class="name">${esc(cat)}</div><div class="meta">${countFor(cat)} modèle${countFor(cat)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
+    <div class="list">${nonEmptyCategories.map(cat => `<div class="row client-row" data-cat="${esc(cat)}" role="button" tabindex="0">${categoryIconHtml(cat, clientName)}<div class="main"><div class="name">${esc(cat)}</div><div class="meta">${countFor(cat)} modèle${countFor(cat)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
   </div>`;
   $$(".client-row").forEach(el => { const go=()=>showCategory(clientName, el.dataset.cat); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
 }
