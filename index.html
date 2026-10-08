@@ -844,7 +844,7 @@ function groupSentDrafts(drafts, tpls){
   const byClient = new Map();
   for (const d of drafts){
     const tpl = tpls.find(t=>t.id===d.templateId);
-    const client = tpl ? (tplClients(tpl)[0] || "Tous clients") : "Modèle supprimé";
+    const client = tpl ? (d.client || tplClients(tpl)[0] || "Tous clients") : "Modèle supprimé";
     if (!byClient.has(client)) byClient.set(client, new Map());
     const monthMap = byClient.get(client);
     const dt = new Date(d.sentAt);
@@ -1197,10 +1197,30 @@ function visibleGroups(tpl, values){
   return out;
 }
 
+/* Modèle rattaché à plusieurs clients (ex. K22 : KFC / O'Tacos) : on demande pour quel client avant de créer le rapport,
+   sauf si l'on vient déjà de la fiche d'un client précis. Renvoie le nom du client, ou null si annulé. */
+function askClient(clients){
+  return new Promise(resolve => {
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Quel client ?" style="max-width:480px">
+      <div class="sheet-h"><h3>Quel client ?</h3><button class="btn sm" data-x="cancel">Annuler</button></div>
+      <div class="sheet-b" style="background:var(--surface);padding:0"><div class="list">${clients.map(c => `<button class="row" data-c="${esc(c)}" style="width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);font:inherit;color:inherit;cursor:pointer">${clientIconHtml(c)}<div class="main"><div class="name" style="font-size:18px">${esc(c)}</div></div></button>`).join("")}</div></div>
+    </div>`;
+    document.body.appendChild(m);
+    m.onclick = e => {
+      const b = e.target.closest("[data-c]"); if (b){ m.remove(); resolve(b.dataset.c); return; }
+      if ((e.target.dataset && e.target.dataset.x==="cancel") || e.target===m){ m.remove(); resolve(null); }
+    };
+  });
+}
 async function newDraft(tplId){
   const tpl = await Store.get("templates", tplId);
+  const clients = tplClients(tpl).filter(c => c!=="Tous clients");
+  let client = (S.client && clients.includes(S.client)) ? S.client : null;
+  if (!client && clients.length>1){ client = await askClient(clients); if (!client) return; }
+  if (!client) client = clients[0] || null;
   const today = new Date().toLocaleDateString("fr-FR");
-  const d = {id:uid(), templateId:tplId, name:`${tpl.name} – ${today}`, values:{}, annex:(tpl.annexPhotos||[]).map(l=>({id:uid(), caption:l, photo:null})), annexFiles:[], createdAt:Date.now(), updatedAt:Date.now()};
+  const d = {id:uid(), templateId:tplId, client, name:`${tpl.name} – ${today}`, values:{}, annex:(tpl.annexPhotos||[]).map(l=>({id:uid(), caption:l, photo:null})), annexFiles:[], createdAt:Date.now(), updatedAt:Date.now()};
   applyProfileToDraft(tpl, d, await getProfile());
   await Store.put("drafts", d);
   openFill(d.id);
