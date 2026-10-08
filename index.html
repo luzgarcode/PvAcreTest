@@ -1851,14 +1851,15 @@ async function emailSubjectFor(){
   const tpl = S.tpl; const loc = locFor(tpl);
   const profile = await getProfile();
   const sector = sectorInfo(profile.secteur);
-  const base = `PV${loc?` ${loc}`:""} — ${tpl.name}`;
+  const md = multiDayTag(); const mdLabel = md==="assistance" ? "Assistance" : md;
+  const base = `PV${mdLabel?` ${mdLabel}`:""}${loc?` ${loc}`:""} — ${tpl.name}`;
   return sector.tag ? `${sector.tag} ${base}` : base;
 }
 async function emailBodyFor(){
   const tpl = S.tpl; const loc = locFor(tpl);
   const profile = await getProfile();
   const signature = profile && profile.name ? `\n\nCordialement,\n${profile.name}` : "\n\nCordialement,";
-  return `Bonjour,\n\nCi-joint le PV pour ${loc || "le site"} — ${tpl.name}.${signature}`;
+  return `Bonjour,\n\nCi-joint le PV${multiDayTag()==="assistance"?" d'assistance":(multiDayTag()?" "+multiDayTag():"")} pour ${loc || "le site"} — ${tpl.name}.${signature}`;
 }
 async function showSendReview(bytes){
   const defaultBase = pdfFileName().replace(/\.pdf$/i, "");
