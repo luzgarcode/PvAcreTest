@@ -1204,7 +1204,7 @@ function askClient(clients){
     const m=document.createElement("div"); m.className="modal";
     m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Quel client ?" style="max-width:480px">
       <div class="sheet-h"><h3>Quel client ?</h3><button class="btn sm" data-x="cancel">Annuler</button></div>
-      <div class="sheet-b" style="background:var(--surface);padding:0"><div class="list">${clients.map(c => `<button class="row" data-c="${esc(c)}" style="width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);font:inherit;color:inherit;cursor:pointer">${clientIconHtml(c)}<div class="main"><div class="name" style="font-size:18px">${esc(c)}</div></div></button>`).join("")}</div></div>
+      <div class="sheet-b" style="background:var(--surface)"><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">${clients.map(c => `<button data-c="${esc(c)}" style="aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:12px;background:var(--surface-2);border:2px solid var(--line);border-radius:16px;font:inherit;color:inherit;cursor:pointer">${CLIENT_LOGOS[c]?`<img src="${esc(CLIENT_LOGOS[c])}" alt="" style="width:64%;height:50%;object-fit:contain">`:`<span style="font-size:34px;font-weight:700">${esc(initialsClient(c))}</span>`}<span style="font-size:18px;font-weight:700">${esc(c)}</span></button>`).join("")}</div></div>
     </div>`;
     document.body.appendChild(m);
     m.onclick = e => {
