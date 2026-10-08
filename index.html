@@ -1384,7 +1384,7 @@ function setVal(fid, v, opts){
       }
     }
     /* Même numéro -> déduit le téléphone du restaurant (McDo uniquement, via la liste embarquée) */
-    if (emailF && MCDO_PHONES){
+    if ((emailF || isMcdoTpl(S.tpl)) && MCDO_PHONES){
       const phoneF = S.tpl.fields.find(x=>x.auto==="site-phone-mcdo");
       if (phoneF){
         const already = S.draft.values[phoneF.id];
