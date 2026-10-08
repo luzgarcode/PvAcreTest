@@ -1243,7 +1243,7 @@ async function openFill(draftId){
   bindFill(); renderAnnex(); renderAnnexFiles(); updateStats();
 }
 function groupHtml(g, fs, gi){
-  const hasChoice = fs.some(f=>f.type==="choice");
+  const hasChoice = fs.filter(f=>f.type==="choice").length >= 2; // un seul choix dans la rubrique : « tout à… » n'a aucun intérêt
   return `<details class="grp" data-g="${esc(g)}" ${gi===0?"open":""}><summary><span class="t">${esc(g)}</span><span class="cnt" data-cnt></span></summary>
     <div class="grp-body">
     ${hasChoice?`<div class="btnrow" style="padding-top:10px"><button class="btn sm" data-allfirst>${esc(allFirstLabel(fs))}</button><button class="btn sm ghost" data-clear>Vider la rubrique</button></div>`:""}
