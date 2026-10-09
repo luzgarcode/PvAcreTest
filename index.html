@@ -1844,11 +1844,23 @@ function pdfFileName(){
   const shortName = tpl.shortName || tpl.name;
   if (siteToken){
     const tag = multiDayTag();
-    return `PV-${tag?tag+"-":""}${slug(siteToken)}-${slug(shortName)}.pdf`;
+    const brand = brandToken();
+    return `PV-${tag?tag+"-":""}${brand?slug(brand)+"-":""}${slug(siteToken)}-${slug(shortName)}.pdf`;
   }
   return slug(S.draft.name || tpl.name) + ".pdf";
 }
-function locFor(tpl){ const {client, number} = siteTokens(); return [client, number ? "n°"+number : ""].filter(Boolean).join(" "); }
+/* Enseigne à afficher dans le nom du fichier et l'objet du mail : le client choisi (ou l'unique client du modèle),
+   sauf McDonald's (déjà dans le nom des modèles) et si le nom du modèle la contient déjà. */
+function brandToken(){
+  const tpl = S.tpl, d = S.draft; if (!tpl) return "";
+  const cl = tplClients(tpl).filter(c => c!=="Tous clients");
+  const b = (d && d.client) || (cl.length===1 ? cl[0] : "");
+  if (!b || b==="McDonald's") return "";
+  const norm = s => String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+  if (norm((tpl.name||"")+" "+(tpl.shortName||"")).includes(norm(b))) return "";
+  return b;
+}
+function locFor(tpl){ const {client, number} = siteTokens(); return [brandToken(), client, number ? "n°"+number : ""].filter(Boolean).join(" "); }
 async function emailSubjectFor(){
   const tpl = S.tpl; const loc = locFor(tpl);
   const profile = await getProfile();
