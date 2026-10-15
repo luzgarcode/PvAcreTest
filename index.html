@@ -591,6 +591,16 @@ async function exportBackup(){
   if (result==="shared") toast("Sauvegarde exportée");
   else if (result==="downloaded") toast("Sauvegarde téléchargée");
 }
+/* Relais : exporte UN rapport (photos et signatures comprises) pour qu'un collègue le reprenne sur son téléphone.
+   Le profil du technicien n'est pas inclus. */
+async function exportRelay(draft){
+  const profile = await getProfile();
+  const payload = {app:"pv-go-backup", kind:"relay", version:1, exportedAt:Date.now(), fromName:(profile&&profile.name)||"", drafts:[draft]};
+  const result = await saveFile(`relais-${slug(draft.name)}.json`, JSON.stringify(payload), "application/json", "PV en cours à reprendre dans PV & Go : ouvre l'appli → « Récupérer un PV reçu » → choisis ce fichier.", `Relais PV – ${draft.name}`);
+  if (result==="shared") toast("PV prêt pour ton collègue");
+  else if (result==="downloaded") toast("Fichier de relais téléchargé");
+  return result;
+}
 // opts.fresh : appareil vide (premier lancement) → pas de confirmations, le profil est restauré d'office.
 // opts.onDone : appelé après l'import (par défaut : retour aux Réglages). Renvoie true si importé.
 async function importBackupFile(file, opts){
@@ -600,6 +610,20 @@ async function importBackupFile(file, opts){
   catch(e){ alert("Ce fichier n'est pas une sauvegarde valide."); return false; }
   if (!payload || !Array.isArray(payload.drafts)){ alert("Ce fichier n'est pas une sauvegarde valide."); return false; }
   const n = payload.drafts.length;
+  if (payload.kind==="relay"){
+    const d = payload.drafts[0];
+    if (!d || !d.templateId){ alert("Ce fichier de relais est vide ou invalide."); return false; }
+    if (!(await Store.get("templates", d.templateId))){ alert("Ce PV utilise un modèle que ton appli n'a pas encore. Touche « Vérifier les mises à jour » sur l'accueil (avec du réseau), puis réessaie."); return false; }
+    const cur = await Store.get("drafts", d.id);
+    const from = payload.fromName ? ` de ${payload.fromName}` : "";
+    const warn = cur ? `\n\nAttention : une version de ce PV existe déjà sur cet appareil${(cur.updatedAt||0) > (d.updatedAt||0) ? " et elle est PLUS RÉCENTE" : ""}. Elle sera remplacée.` : "";
+    if (!confirm(`Récupérer le PV « ${d.name} »${from} ?${warn}`)) return false;
+    d.relayFrom = payload.fromName || ""; d.relayAt = Date.now(); delete d.sentAt;
+    await Store.put("drafts", d);
+    toast("PV récupéré — il est dans « Rapports en cours »");
+    if (opts.onDone) opts.onDone(); else showHome();
+    return true;
+  }
   if (!opts.fresh && !confirm(`Importer ${n} rapport${n>1?"s":""} depuis cette sauvegarde ?\n\nUn rapport déjà présent sur cet appareil avec le même identifiant sera remplacé par celui de la sauvegarde.`)) return false;
   for (const d of payload.drafts) await Store.put("drafts", d);
   if (payload.profile && (opts.fresh || confirm("Restaurer aussi le profil technicien (nom, téléphone, email, secteur, signature) de cette sauvegarde ?\n\nIl remplacera le profil actuel de cet appareil."))){
@@ -827,11 +851,13 @@ function templateIconHtml(t){
 async function bindDraftRows(drafts, tplName){
   $$("[data-open-draft]").forEach(b => b.onclick = () => openFill(b.dataset.openDraft));
   $$("[data-del-draft]").forEach(b => b.onclick = async () => { const d=drafts.find(x=>x.id===b.dataset.delDraft); if(!confirm(`Supprimer le rapport « ${d.name} » ?`)) return; await Store.del("drafts", d.id); showHome(); });
+  $$("[data-relay-draft]").forEach(b => b.onclick = async () => { const d=await Store.get("drafts", b.dataset.relayDraft); if (d) await exportRelay(d); });
 }
 function draftRowsHtml(drafts, tpls, tplName){
   return drafts.length ? drafts.map(d => {
-    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}${d.sentAt?` · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span>`:""}</div></div>
-    <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`;}).join("")
+    const multi = !!((tpls.find(t=>t.id===d.templateId)||{}).multiDay);
+    return `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · modifié le ${fmtDate(d.updatedAt)}${d.relayFrom?` · reçu de ${esc(d.relayFrom)}`:""}${d.sentAt?` · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span>`:""}</div></div>
+    <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button>${multi?`<button class="btn sm" data-relay-draft="${d.id}">Passer à un collègue</button>`:""}<button class="btn danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`;}).join("")
     : `<div class="empty">Aucun rapport en cours.</div>`;
 }
 
@@ -923,6 +949,7 @@ async function showHome(){
     ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"><summary><span class="t">Rapports en cours (${openCount})</span></summary>
     <div class="grp-body"><div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div></div></details>`:""}
 
+    <div style="margin:0 0 14px"><button class="btn sm ghost" id="importRelay">Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
     <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.</p>
@@ -937,6 +964,8 @@ async function showHome(){
   $("#refreshBtn").onclick = async () => { S.syncing=true; paintSyncState(); S.syncError=(await syncManifest()).error||null; showHome(); };
   $$(".client-row").forEach(el => { const go=()=>showClient(el.dataset.client); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
   bindDraftRows(drafts, tplName);
+  $("#importRelay").onclick = () => $("#importRelayFile").click();
+  $("#importRelayFile").onchange = async e => { const f = e.target.files && e.target.files[0]; e.target.value = ""; if (f) await importBackupFile(f, {onDone:()=>showHome()}); };
   renderSearch(tpls);
   const si = $("#tplSearch");
   si.oninput = () => { S.searchQ = si.value; renderSearch(tpls); $("#normalSections").classList.toggle("hidden", !!S.searchQ); };
@@ -1920,24 +1949,26 @@ async function generateAndSave(){
 /* "shared" = la feuille de partage du téléphone a transmis le PDF à l'appli choisie avec succès
    (SMS, mail, WhatsApp…) — c'est le seul signal que le web donne ; il n'y a aucun moyen de savoir
    si la personne a ensuite vraiment appuyé sur "Envoyer" dans cette appli. */
-/* PV multi-jours : après l'envoi, on demande s'il est terminé (archivé) ou repris un autre jour. true = terminé. */
+/* PV multi-jours : après l'envoi, on demande s'il est terminé (archivé) ou repris un autre jour. Renvoie "done", "go" ou "relay". */
 function askFinishOrContinue(){
   return new Promise(resolve => {
     const m=document.createElement("div"); m.className="modal";
     m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="PV terminé ?" style="max-width:480px">
       <div class="sheet-h"><h3>Ce PV est-il terminé ?</h3></div>
-      <div class="sheet-b" style="background:var(--surface)"><p style="margin:0">Il peut continuer sur plusieurs jours. Si tu le gardes en cours, tu le retrouves dans « Rapports en cours » pour remplir la ligne suivante et le renvoyer.</p></div>
-      <div class="sheet-f"><button class="btn" data-x="go">Je continue demain</button><button class="btn primary" data-x="done">Terminé</button></div>
+      <div class="sheet-b" style="background:var(--surface)"><p style="margin:0">Il peut continuer sur plusieurs jours. Si tu le gardes en cours, tu le retrouves dans « Rapports en cours » pour remplir la ligne suivante et le renvoyer. Si c'est un collègue qui prend la suite, « Passer à un collègue » ouvre le partage pour lui envoyer le PV avec tes photos et signatures.</p></div>
+      <div class="sheet-f"><button class="btn" data-x="relay">Passer à un collègue</button><button class="btn" data-x="go">Je continue demain</button><button class="btn primary" data-x="done">Terminé</button></div>
     </div>`;
     document.body.appendChild(m);
-    m.onclick = e => { const a = e.target.dataset && e.target.dataset.x; if (!a) return; m.remove(); resolve(a==="done"); };
+    m.onclick = e => { const a = e.target.dataset && e.target.dataset.x; if (!a) return; m.remove(); resolve(a); };
   });
 }
 async function applySendOutcome(outcome){
   if (!outcome) return;
   if (outcome.action==="send" && outcome.result==="shared"){
-    if (S.tpl && S.tpl.multiDay && !(await askFinishOrContinue())){
+    const fin = (S.tpl && S.tpl.multiDay) ? await askFinishOrContinue() : "done";
+    if (fin !== "done"){
       S.draft.lastSentAt = Date.now(); await Store.put("drafts", S.draft);
+      if (fin==="relay") await exportRelay(S.draft);
       sentCheck("PV envoyé — reste en cours");
       return;
     }
