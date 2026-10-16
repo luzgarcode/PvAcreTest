@@ -1765,6 +1765,22 @@ function drawMark(page, r, kind){
   else if (kind==="strike"){ const th2=Math.max(1,r.h*0.11); page.drawLine({start:{x:r.x+r.w*0.03,y:cy},end:{x:r.x+r.w*0.97,y:cy},thickness:th2,color:c}); }
   else { page.drawLine({start:{x:cx-k,y:cy-k},end:{x:cx+k,y:cy+k},thickness:th,color:c}); page.drawLine({start:{x:cx-k,y:cy+k},end:{x:cx+k,y:cy-k},thickness:th,color:c}); }
 }
+/* Allègement automatique : quand les photos d'un PV pèsent très lourd, on les ré-encode plus petit
+   uniquement dans le PDF généré (les photos du rapport restent intactes sur le téléphone). */
+const PHOTO_SHRINK_TIERS = [ {over:12e6, max:1000, q:0.65}, {over:6e6, max:1280, q:0.72} ]; // octets de photos → réglage
+function photoShrinkLevel(draft){
+  const all = [...Object.values(draft.values||{}), ...(draft.annex||[]).map(a=>a.photo)];
+  const total = all.reduce((n,v) => n + ((typeof v==="string" && v.startsWith("data:image/jpeg")) ? Math.round(v.length*0.75) : 0), 0);
+  return PHOTO_SHRINK_TIERS.find(t => total > t.over) || null;
+}
+async function shrinkJpegData(d, max, q){
+  const img = await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=d; });
+  const s = Math.min(1, max/Math.max(img.naturalWidth, img.naturalHeight));
+  const c=document.createElement("canvas"); c.width=Math.round(img.naturalWidth*s); c.height=Math.round(img.naturalHeight*s);
+  const x=c.getContext("2d"); x.fillStyle="#fff"; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height);
+  const out = c.toDataURL("image/jpeg", q);
+  return out.length < d.length ? out : d;
+}
 async function buildPdf(tpl, draft){
   const { PDFDocument, StandardFonts, rgb } = PDFLib;
   const doc = await PDFDocument.load(tpl.pdf.slice(0), {ignoreEncryption:true});
@@ -1774,7 +1790,8 @@ async function buildPdf(tpl, draft){
   const pages = doc.getPages();
   const toPdf = (page, r) => { const cb=page.getCropBox(); return {x:cb.x+r.x, y:cb.y+cb.height-r.y-r.h, w:r.w, h:r.h}; };
   const imgCache = new Map();
-  const embed = async d => { if(imgCache.has(d)) return imgCache.get(d); const bytes=dataUrlToBytes(d); const im = d.startsWith("data:image/png") ? await doc.embedPng(bytes) : await doc.embedJpg(bytes); imgCache.set(d,im); return im; };
+  const shrink = photoShrinkLevel(draft);
+  const embed = async d0 => { if(imgCache.has(d0)) return imgCache.get(d0); let d=d0; if (shrink && d.startsWith("data:image/jpeg")){ try{ d = await shrinkJpegData(d, shrink.max, shrink.q); }catch(e){} } const bytes=dataUrlToBytes(d); const im = d.startsWith("data:image/png") ? await doc.embedPng(bytes) : await doc.embedJpg(bytes); imgCache.set(d0,im); return im; };
   for (const f of tpl.fields){
     // un champ "mirror" n'a pas sa propre valeur : il réaffiche celle d'un autre
     // champ du modèle (ex. le type NGK/SAT choisi dans le Matériel, recopié dans
