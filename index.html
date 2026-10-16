@@ -967,6 +967,8 @@ function archiveRowsHtml(items, tplName){
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn sm ghost" data-unsend-draft="${d.id}">Remettre en cours</button><button class="btn sm danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`).join("");
 }
 async function showArchive(){
+  // si on était déjà dans « Rapports envoyés » (suppression, remise en cours), les clients ouverts le restent
+  const keepOpen = S.view==="archive" ? new Set([...document.querySelectorAll("details.grp[data-k][open]")].map(d=>d.dataset.k)) : new Set();
   S.view = "archive";
   const [tpls, allDrafts] = await Promise.all([Store.all("templates"), Store.all("drafts")]);
   const sent = allDrafts.filter(d=>d.sentAt);
@@ -980,7 +982,7 @@ async function showArchive(){
       const monthMap = byClient.get(client);
       const monthEntries = [...monthMap.entries()].sort((a,b)=>b[0].localeCompare(a[0]));
       const total = [...monthMap.values()].reduce((s,b)=>s+b.items.length,0);
-      return `<details class="grp" style="margin-bottom:14px"><summary>${clientIconHtml(client)}<span class="t">${esc(client)} (${total})</span></summary>
+      return `<details class="grp" data-k="${esc(client)}" ${keepOpen.has(client)?"open":""} style="margin-bottom:14px"><summary>${clientIconHtml(client)}<span class="t">${esc(client)} (${total})</span></summary>
         <div class="grp-body">${monthEntries.map(([key,bucket]) => `<div class="archive-month"><div class="archive-month-h">${esc(bucket.label)}</div>
           <div class="list">${archiveRowsHtml(bucket.items, tplName)}</div></div>`).join("")}</div></details>`;
     }).join("") : `<div class="empty">Aucun rapport envoyé pour l'instant.</div>`}
@@ -1000,6 +1002,8 @@ async function showArchive(){
 }
 
 async function showHome(){
+  // si on était déjà sur l'accueil (suppression d'un PV, mise à jour…), « Rapports en cours » reste ouvert
+  const keepDraftsOpen = S.view==="home" && !!(document.querySelector("#draftsGrp") || {}).open;
   S.view="home"; S.tpl=null; S.draft=null; S.client=null; S.category=null; S.searchQ=""; await homeBar();
   const [tpls, allDrafts, profile] = await Promise.all([Store.all("templates"), Store.all("drafts"), getProfile()]);
   const drafts = allDrafts.filter(d=>!d.sentAt);
@@ -1025,7 +1029,7 @@ async function showHome(){
     <div id="searchResults"></div>
 
     <div id="normalSections" class="${S.searchQ?"hidden":""}">
-    ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"><summary><span class="t">Rapports en cours (${openCount})</span></summary>
+    ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"${keepDraftsOpen?" open":""}><summary><span class="t">Rapports en cours (${openCount})</span></summary>
     <div class="grp-body"><div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div></div></details>`:""}
 
     <div style="margin:0 0 14px"><button class="btn sm ghost" id="importRelay">Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
