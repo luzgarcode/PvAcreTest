@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v61";
+const CACHE = "pv-terrain-shell-v62";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
@@ -119,6 +119,18 @@ self.addEventListener("fetch", event => {
         return cached || fresh;
       })
     );
+    return;
+  }
+
+  // Logos / icônes des catégories : cache d'abord (ils changent rarement ; un changement de version
+  // du cache les renouvelle). Évite de les retélécharger à chaque ouverture et les garde hors-ligne.
+  if (url.origin === self.location.origin && url.pathname.includes("/assets/logos/")) {
+    event.respondWith(caches.open(CACHE).then(async c => {
+      const hit = await c.match(req);
+      if (hit) return hit;
+      try{ const res = await fetch(req); if (res.ok) c.put(req, res.clone()); return res; }
+      catch(e){ return Response.error(); }
+    }));
     return;
   }
 
