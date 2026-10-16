@@ -593,6 +593,21 @@ async function exportBackup(){
 }
 /* Relais : exporte UN rapport (photos et signatures comprises) pour qu'un collègue le reprenne sur son téléphone.
    Le profil du technicien n'est pas inclus. */
+ICON.share = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7.5 7.5L12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
+/* Quand un PV est repris par un autre technicien : garde-t-on le technicien d'origine ou met-on le nouveau ? "me" | "keep" */
+function askReplaceTech(fromName){
+  return new Promise(resolve => {
+    const who = fromName ? esc(fromName) : "l'autre technicien";
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Technicien du PV" style="max-width:480px">
+      <div class="sheet-h"><h3>Qui signe ce PV ?</h3></div>
+      <div class="sheet-b" style="background:var(--surface)"><p style="margin:0">Ce PV a été commencé par ${who}. Le technicien (nom, téléphone, email et signature) est-il remplacé par toi ? Les photos et toutes les autres infos sont conservées dans les deux cas.</p></div>
+      <div class="sheet-f"><button class="btn" data-x="keep">Garder ${who}</button><button class="btn primary" data-x="me">Mettre mes infos</button></div>
+    </div>`;
+    document.body.appendChild(m);
+    m.onclick = e => { const a = e.target.dataset && e.target.dataset.x; if (!a) return; m.remove(); resolve(a); };
+  });
+}
 async function exportRelay(draft){
   const profile = await getProfile();
   const payload = {app:"pv-go-backup", kind:"relay", version:1, exportedAt:Date.now(), fromName:(profile&&profile.name)||"", drafts:[draft]};
@@ -618,6 +633,18 @@ async function importBackupFile(file, opts){
     const from = payload.fromName ? ` de ${payload.fromName}` : "";
     const warn = cur ? `\n\nAttention : une version de ce PV existe déjà sur cet appareil${(cur.updatedAt||0) > (d.updatedAt||0) ? " et elle est PLUS RÉCENTE" : ""}. Elle sera remplacée.` : "";
     if (!confirm(`Récupérer le PV « ${d.name} »${from} ?${warn}`)) return false;
+    const tpl = await Store.get("templates", d.templateId);
+    const techFields = (tpl.fields||[]).filter(f => /^tech-/.test(f.auto||""));
+    const me = await getProfile();
+    /* PV à une seule zone technicien (pas les multi-jours, qui ont un bloc de signatures par jour) */
+    if (!tpl.multiDay && techFields.length && (payload.fromName||"") !== (me.name||"")){
+      if (await askReplaceTech(payload.fromName) === "me"){
+        for (const f of techFields){
+          const v = f.auto==="tech-name" ? me.name : f.auto==="tech-phone" ? me.phone : f.auto==="tech-email" ? me.email : f.auto==="tech-signature" ? me.signature : "";
+          if (v) d.values[f.id] = v; else delete d.values[f.id];
+        }
+      }
+    }
     d.relayFrom = payload.fromName || ""; d.relayAt = Date.now(); delete d.sentAt;
     await Store.put("drafts", d);
     toast("PV récupéré — il est dans « Rapports en cours »");
@@ -1261,8 +1288,9 @@ async function openFill(draftId){
   const tpl = await Store.get("templates", d.templateId);
   if (!tpl){ alert("Le modèle de ce rapport a été supprimé."); return showHome(); }
   S.view="fill"; S.draft=d; S.tpl=tpl;
-  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">${esc(tpl.name)}</div><div class="sp"></div><span class="save-state" id="ss">Enregistré</span>`);
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">${esc(tpl.name)}</div><div class="sp"></div><span class="save-state" id="ss">Enregistré</span><button class="btn sm" id="barRelay" aria-label="Exporter ce PV ou le passer à un collègue" title="Exporter / passer à un collègue">${ICON.share}</button>`);
   $("#bk").onclick = async () => { await flushDraft(); showHome(); };
+  $("#barRelay").onclick = async () => { await flushDraft(); await exportRelay(S.draft); };
   main.innerHTML = `<div class="fill">
     <div class="fill-head">
       ${d.sentAt?`<div class="sent-banner">✓ Envoyé le ${fmtDate(d.sentAt)}<button class="btn sm ghost" id="unsend">Remettre en rapport en cours</button></div>`:""}
