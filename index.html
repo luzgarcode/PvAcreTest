@@ -285,6 +285,16 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 @keyframes focusring{ 0%{ transform:scale(1.3); opacity:1; } 100%{ transform:scale(1); opacity:0; } }
 
 .toast{ position:fixed; left:50%; bottom:calc(84px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:6px; z-index:60; font-weight:600; max-width:90vw; }
+.resync-ov{ position:fixed; inset:0; z-index:200; background:var(--paper); display:flex; align-items:center; justify-content:center; padding:24px; touch-action:none; }
+.resync-box{ width:min(340px,100%); text-align:center; display:grid; gap:16px; justify-items:center; }
+.resync-logo{ width:96px; height:116px; background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='110 70 310 372'><path d='M130 90H282L400 190V235A75 75 0 0 1 325 310H205V408Q205 422 191 422H144Q130 422 130 408Z' fill='%23F5B400'/><path d='M344 90V148Q344 170 366 170H400Z' fill='%2317212B' opacity='.3'/><path d='M178 212L224 258L308 172' fill='none' stroke='%2317212B' stroke-width='40' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat; animation:resyncPulse 1.4s ease-in-out infinite; }
+@keyframes resyncPulse{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.12); opacity:.65; } }
+.resync-t{ font-family:var(--font-c); font-weight:700; font-size:24px; color:var(--ink); }
+.resync-bar{ width:100%; height:10px; border-radius:6px; background:var(--line); overflow:hidden; }
+.resync-bar i{ display:block; height:100%; width:4%; background:var(--vis); border-radius:6px; transition:width .3s ease; }
+.resync-n{ font-weight:600; color:var(--ink); }
+.resync-h{ font-size:13px; color:var(--ink-2); }
+@media (prefers-reduced-motion: reduce){ .resync-logo{ animation:none; } }
 .busy{ position:fixed; inset:0; z-index:70; background:rgba(10,15,20,.45); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:18px; }
 .busy::before{ content:""; width:22px; height:22px; border:3px solid #fff; border-right-color:transparent; border-radius:50%; margin-right:12px; animation:spin .8s linear infinite; }
 @keyframes spin{ to{ transform:rotate(360deg);} }
@@ -379,6 +389,15 @@ function sentCheck(text){
   document.body.appendChild(ov);
   try{ if (navigator.vibrate) navigator.vibrate(30); }catch(e){}
   setTimeout(() => ov.remove(), 2100);
+}
+/* Écran bloquant (logo qui pulse + barre) pendant la resynchronisation : rien d'autre n'est utilisable. */
+function showResyncOverlay(){
+  const o = document.createElement("div"); o.className = "resync-ov"; o.setAttribute("role","alertdialog"); o.setAttribute("aria-label","Resynchronisation en cours");
+  o.innerHTML = `<div class="resync-box"><div class="resync-logo"></div><div class="resync-t">Resynchronisation en cours…</div>
+    <div class="resync-bar"><i id="resyncFill"></i></div><div class="resync-n" id="resyncN">Connexion…</div>
+    <div class="resync-h">Ne ferme pas l'appli. Tes rapports ne sont pas touchés.</div></div>`;
+  document.body.appendChild(o);
+  return { update(done, total){ const f=$("#resyncFill",o), n=$("#resyncN",o); if(f) f.style.width = Math.round(done/total*100)+"%"; if(n) n.textContent = `${done} / ${total} modèles`; }, close(){ o.remove(); } };
 }
 function busy(msg){ const b=document.createElement("div"); b.className="busy"; b.textContent=msg; document.body.appendChild(b); return () => b.remove(); }
 function parsePages(s, n){ const out=new Set(); for (const part of String(s||"").split(/[,;\s]+/)){ const m=part.match(/^(\d+)(?:-(\d+))?$/); if(!m) continue; const a=+m[1], b=m[2]?+m[2]:a; for (let i=Math.min(a,b); i<=Math.max(a,b) && i<=n; i++) if(i>=1) out.add(i-1); } return [...out].sort((x,y)=>x-y); }
@@ -771,7 +790,19 @@ async function accessSessionExpired(){
     return r.type === "opaqueredirect" || r.status === 401 || r.status === 403;
   }catch(e){ return false; }
 }
-async function syncManifest(){
+/* opts.force : retélécharge TOUS les modèles. Rien n'est écrit tant que tout n'est pas arrivé en entier :
+   si le réseau coupe en route, les modèles déjà présents restent intacts. opts.onProgress(fait, total). */
+async function fetchWithTimeout(url, kind, ms){
+  const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms);
+  try{ const r = await fetch(url, {cache:"no-store", signal:ac.signal}); if(!r.ok) throw new Error("HTTP "+r.status); return kind==="json" ? await r.json() : await r.arrayBuffer(); }
+  finally{ clearTimeout(t); }
+}
+function tplRecord(m, meta, pdf, cur){
+  const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true};
+}
+async function syncManifest(opts){
+  opts = opts || {};
   S.syncing = true; paintSyncState();
   let manifest; let failures = 0;
   try{
@@ -786,6 +817,24 @@ async function syncManifest(){
   }
   S.sessionExpired = false;
   S.manifestIndex = new Map(manifest.map(t => [t.id, t.updatedAt||0]));
+  if (opts.force){
+    const staged = [];
+    try{
+      for (let i=0; i<manifest.length; i++){
+        const m = manifest[i], v = `${m.updatedAt||0}&f=${Date.now()}`;
+        const [meta, pdf] = await Promise.all([ fetchWithTimeout(`./models/${m.id}/meta.json?v=${v}`, "json", 60000), fetchWithTimeout(`./models/${m.id}/${m.id}.pdf?v=${v}`, "buf", 60000) ]);
+        staged.push({m, meta, pdf});
+        if (opts.onProgress) opts.onProgress(i+1, manifest.length);
+      }
+    }catch(e){
+      console.error("syncManifest (force)", e); S.syncing = false; paintSyncState();
+      return {ok:false, aborted:true, error:"Resynchronisation interrompue (réseau trop faible ou coupé) : rien n'a été modifié, tes modèles sont intacts."};
+    }
+    for (const x of staged) await Store.put("templates", tplRecord(x.m, x.meta, x.pdf, await Store.get("templates", x.m.id)));
+    try{ for (const t of await Store.all("templates")) if (t.published && !S.manifestIndex.has(t.id)) await Store.del("templates", t.id); }catch(e){}
+    S.syncing = false; await Store.put("meta", {k:"lastSync", v:Date.now()}); paintSyncState();
+    return {ok:true};
+  }
   for (const m of manifest){
     try{
       const cur = await Store.get("templates", m.id);
@@ -794,8 +843,7 @@ async function syncManifest(){
         fetchJson(`./models/${m.id}/meta.json?v=${m.updatedAt||0}`),
         fetchBuf(`./models/${m.id}/${m.id}.pdf?v=${m.updatedAt||0}`)
       ]);
-      const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-      await Store.put("templates", {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true});
+      await Store.put("templates", tplRecord(m, meta, pdf, cur));
     }catch(e){
       // One template failing to fetch (flaky connection) must never block the others,
       // nor block cleanup below — it's simply retried on the next sync.
@@ -1143,11 +1191,12 @@ async function showSettings(){
     if (file) await importBackupFile(file);
   };
   $("#hardResync").onclick = async () => {
-    if (!confirm("Effacer et retélécharger tous les modèles de PV maintenant ?")) return;
-    const btn = $("#hardResync"); btn.disabled = true; btn.textContent = "Resynchronisation…";
-    for (const t of await Store.all("templates")) if (t.published) await Store.del("templates", t.id);
-    const res = await syncManifest();
-    toast(res.ok ? "Modèles resynchronisés" : "Certains modèles n'ont pas pu être retéléchargés, réessaie");
+    if (!confirm("Retélécharger tous les modèles de PV maintenant (environ 10 Mo) ?\n\nL'appli sera bloquée pendant le téléchargement. Si le réseau coupe, tes modèles actuels restent intacts. Tes rapports ne sont pas touchés.")) return;
+    const ov = showResyncOverlay();
+    const res = await syncManifest({force:true, onProgress:(d,t)=>ov.update(d,t)});
+    ov.close();
+    if (res.ok) toast("Modèles resynchronisés");
+    else alert(res.error || "La resynchronisation n'a pas abouti : rien n'a été modifié, réessaie avec du réseau.");
     showSettings();
   };
   $("#hardReset").onclick = async () => {
