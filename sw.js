@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v62";
+const CACHE = "pv-terrain-shell-v63";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
@@ -19,7 +19,13 @@ const SHELL = [
   "./assets/mcdo-restaurants.json",
   "./assets/mcdo-phones.json",
   "./assets/mcdo-addresses.json",
-  "./assets/quick-restaurants.json"
+  "./assets/quick-restaurants.json",
+  "./assets/fonts/barlow-latin-400-normal.woff2",
+  "./assets/fonts/barlow-latin-500-normal.woff2",
+  "./assets/fonts/barlow-latin-600-normal.woff2",
+  "./assets/fonts/barlow-latin-700-normal.woff2",
+  "./assets/fonts/barlow-condensed-latin-600-normal.woff2",
+  "./assets/fonts/barlow-condensed-latin-700-normal.woff2"
 ];
 
 // Page de secours 100% locale (pas de requête réseau) : sur iOS notamment, la toute
@@ -88,23 +94,29 @@ self.addEventListener("fetch", event => {
   // BEFORE the shell cache below, since index.html/./ are also listed in SHELL and
   // would otherwise be served stale-first even on launch.
   if (req.mode === "navigate") {
-    event.respondWith(
-      fetch(req).then(res => {
+    event.respondWith((async () => {
+      const cachedPage = async () =>
+        (await caches.match(req)) || (await caches.match("./index.html")) || (await caches.match("./"));
+      const net = fetch(req).then(res => {
         if (res.ok) {
-          caches.open(CACHE).then(c => {
-            c.put(req, res.clone());
-            c.put("./index.html", res.clone());
-            c.put("./", res.clone());
-          });
+          const a = res.clone(), b = res.clone(), d = res.clone();
+          caches.open(CACHE).then(c => { c.put(req, a); c.put("./index.html", b); c.put("./", d); });
         }
         return res;
-      }).catch(() =>
-        caches.match(req)
-          .then(r => r || caches.match("./index.html"))
-          .then(r => r || caches.match("./"))
-          .then(r => r || caches.match(OFFLINE_URL))
-      )
-    );
+      });
+      // Réseau faible (3G…) : le réseau ne répond pas assez vite → après 4 s on affiche la version en cache
+      // (le téléchargement continue en arrière-plan pour la prochaine ouverture) au lieu d'un écran blanc.
+      const slow = new Promise(r => setTimeout(() => r(null), 4000));
+      try{
+        const first = await Promise.race([net.catch(() => null), slow]);
+        if (first) return first;
+        const cached = await cachedPage();
+        if (cached){ event.waitUntil(net.catch(() => {})); return cached; }
+        return await net; // rien en cache : on attend le réseau
+      }catch(e){
+        return (await cachedPage()) || (await caches.match(OFFLINE_URL));
+      }
+    })());
     return;
   }
 

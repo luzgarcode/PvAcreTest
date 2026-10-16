@@ -10,14 +10,18 @@
 <meta name="theme-color" content="#17212B">
 <link rel="icon" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <script src="./vendor/pdf.worker.min.js"></script>
 <script src="./vendor/pdf.min.js"></script>
 <script src="./vendor/pdf-lib.min.js"></script>
 <script src="./vendor/zxing-browser.min.js"></script>
 <style id="appstyle">
+/* Polices hébergées avec l'appli (plus de requête vers Google : pas d'écran blanc sur réseau faible) */
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url("./assets/fonts/barlow-latin-400-normal.woff2") format("woff2");}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:500;font-display:swap;src:url("./assets/fonts/barlow-latin-500-normal.woff2") format("woff2");}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url("./assets/fonts/barlow-latin-600-normal.woff2") format("woff2");}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:700;font-display:swap;src:url("./assets/fonts/barlow-latin-700-normal.woff2") format("woff2");}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("./assets/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("./assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2");}
 :root{
   --paper:#EDF0F2; --surface:#FFFFFF; --surface-2:#F6F8F9; --ink:#17212B; --ink-2:#4A5763; --line:#D3DAE0;
   --vis:#F5B700; --vis-ink:#17212B; --vis-soft:#FFF3C4; --blue:#1D4F7C; --blue-soft:#E3EDF6;
