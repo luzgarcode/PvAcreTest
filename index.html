@@ -1191,7 +1191,7 @@ async function showSettings(){
     if (file) await importBackupFile(file);
   };
   $("#hardResync").onclick = async () => {
-    if (!confirm("Retélécharger tous les modèles de PV maintenant (environ 10 Mo) ?\n\nL'appli sera bloquée pendant le téléchargement. Si le réseau coupe, tes modèles actuels restent intacts. Tes rapports ne sont pas touchés.")) return;
+    if (!confirm("Retélécharger tous les modèles de PV maintenant (environ 10 Mo) ?\n\nL'appli sera bloquée pendant le téléchargement. Tes rapports ne sont pas touchés.")) return;
     const ov = showResyncOverlay();
     const res = await syncManifest({force:true, onProgress:(d,t)=>ov.update(d,t)});
     ov.close();
