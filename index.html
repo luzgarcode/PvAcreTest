@@ -1790,7 +1790,7 @@ async function buildPdf(tpl, draft){
   const pages = doc.getPages();
   const toPdf = (page, r) => { const cb=page.getCropBox(); return {x:cb.x+r.x, y:cb.y+cb.height-r.y-r.h, w:r.w, h:r.h}; };
   const imgCache = new Map();
-  const shrink = photoShrinkLevel(draft);
+  const shrink = photoShrinkLevel(draft); S.lastShrink = shrink;
   const embed = async d0 => { if(imgCache.has(d0)) return imgCache.get(d0); let d=d0; if (shrink && d.startsWith("data:image/jpeg")){ try{ d = await shrinkJpegData(d, shrink.max, shrink.q); }catch(e){} } const bytes=dataUrlToBytes(d); const im = d.startsWith("data:image/png") ? await doc.embedPng(bytes) : await doc.embedJpg(bytes); imgCache.set(d0,im); return im; };
   for (const f of tpl.fields){
     // un champ "mirror" n'a pas sa propre valeur : il réaffiche celle d'un autre
@@ -1957,6 +1957,7 @@ async function showSendReview(bytes){
   m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Envoyer le PV" style="max-width:560px">
     <div class="sheet-h"><h3>Envoyer le PV</h3></div>
     <div class="sheet-b" style="background:var(--surface)">
+      <p class="kbd" style="margin:0 0 10px">Taille du PDF : <strong>${(bytes.length/1e6).toFixed(1).replace(".",",")} Mo</strong>${S.lastShrink?` — <span style="color:var(--ink)">ce PV contient beaucoup de photos : elles ont été allégées automatiquement dans le PDF pour qu'il reste facile à envoyer (tes photos d'origine restent dans le rapport).</span>`:""}</p>
       <label class="fld"><span>Nom du fichier</span><input class="inp" id="sendName" value="${esc(defaultBase)}"></label>
       <label class="fld" style="margin-top:12px"><span>Message</span><textarea class="inp" id="sendMsg" rows="8">${esc(defaultMsg)}</textarea></label>
       <p class="kbd" style="margin:8px 0 0">La 1ère ligne sert d'objet si tu envoies par mail (beaucoup d'applis mail ne permettent pas de le préremplir autrement) ; le reste est le corps du message. Ignoré si tu choisis "Sauvegarder".</p>
