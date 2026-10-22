@@ -529,6 +529,45 @@ function renderMcdoSuggest(fid, query){
 function hideMcdoSuggest(fid){
   const box = document.getElementById("sugg_"+fid); if (box){ box.hidden = true; box.innerHTML=""; }
 }
+/* Quick : sur un PV multi-clients (ex. Pointeuse) créé pour le client Quick, le champ « Restaurant »
+   propose les restaurants Quick par leur nom ; en choisir un remplit aussi l'adresse (champ auto "site-address-quick"). */
+function quickIsNameField(f){
+  return !!(f && f.auto==="site-client" && S.draft && S.draft.client==="Quick" && !isMcdoTpl(S.tpl) && !S.tpl.fields.some(x=>x.auto==="site-email-mcdo"));
+}
+function quickLabel(r){ return /^quick\b/i.test(r.name) ? r.name : "Quick " + r.name; }
+function quickMatches(query){
+  if (!QUICK_RESTAURANTS) return [];
+  const key = normMcdoName(query);
+  if (key.length < 2) return [];
+  const starts = [], contains = [];
+  for (const num in QUICK_RESTAURANTS){
+    const r = QUICK_RESTAURANTS[num]; const nkey = normMcdoName(r.name);
+    if (!nkey) continue;
+    if (nkey.startsWith(key)) starts.push({num, r});
+    else if (nkey.includes(key) || normMcdoName(r.city).includes(key)) contains.push({num, r});
+  }
+  const cmp = (a,b) => a.r.name.localeCompare(b.r.name,"fr");
+  return starts.sort(cmp).concat(contains.sort(cmp)).slice(0,8);
+}
+function renderQuickSuggest(fid, query){
+  const box = document.getElementById("sugg_"+fid); if (!box) return;
+  const matches = quickMatches(query);
+  if (!matches.length){ box.hidden = true; box.innerHTML=""; return; }
+  box.innerHTML = matches.map(m=>`<button type="button" class="mcdo-sugg-item" data-quickpick="${esc(fid)}" data-quicknum="${esc(m.num)}">${esc(quickLabel(m.r))}</button>`).join("");
+  box.hidden = false;
+}
+function pickQuickRestaurant(fid, num){
+  const r = QUICK_RESTAURANTS && QUICK_RESTAURANTS[num]; if (!r) return;
+  setVal(fid, quickLabel(r)); refreshField(fid);
+  const addrF = S.tpl.fields.find(x=>x.auto==="site-address-quick");
+  if (addrF){
+    const already = S.draft.values[addrF.id], wasAuto = (S.draft.autoFields||{})[addrF.id];
+    if (!isFilled(already) || wasAuto){
+      setVal(addrF.id, [r.address, [r.zip, r.city].filter(Boolean).join(" ")].filter(Boolean).join(", "), {auto:true});
+      refreshField(addrF.id);
+    }
+  }
+}
 /* Numéro de restaurant McDo -> téléphone (chargé une fois, mis en cache par le SW) */
 let MCDO_PHONES = null;
 async function loadMcdoPhones(){
@@ -1425,7 +1464,7 @@ function fieldHtml(f){
       const input = isSerialField(f)
         ? `<div class="scanrow"><input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${ph}><button type="button" class="btn sm scanbtn" data-scan="${f.id}" aria-label="Scanner un code-barres">${ICON.barcode}</button></div>`
         : `<input class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" autocomplete="off"${ph}>`;
-      w = isMcdoName
+      w = (isMcdoName || quickIsNameField(f))
         ? `<div class="mcdo-wrap">${input}<div class="mcdo-sugg" id="sugg_${f.id}" hidden></div></div>` + hint
         : input + hint;
       break;
@@ -1596,6 +1635,7 @@ function bindFill(){
     const f=S.tpl.fields.find(x=>x.id===fid);
     setVal(fid, f.type==="check" ? e.target.checked : e.target.value);
     if (f && f.auto==="site-client" && (isMcdoTpl(S.tpl) || S.tpl.fields.some(x=>x.auto==="site-email-mcdo"))) renderMcdoSuggest(fid, e.target.value);
+    else if (quickIsNameField(f)) renderQuickSuggest(fid, e.target.value);
   });
   G.addEventListener("focusout", e => {
     const fid=e.target.dataset && e.target.dataset.f; if(!fid) return;
@@ -1604,6 +1644,7 @@ function bindFill(){
   G.addEventListener("click", async e => {
     const b = e.target.closest("button"); if(!b) return;
     if (b.dataset.mcdopick){ setVal(b.dataset.mcdopick, b.dataset.mcdoval); refreshField(b.dataset.mcdopick); return; }
+    if (b.dataset.quickpick){ pickQuickRestaurant(b.dataset.quickpick, b.dataset.quicknum); return; }
     if (b.dataset.choice){ const fid=b.dataset.choice; const cur=S.draft.values[fid]; setVal(fid, cur===b.dataset.val ? "" : b.dataset.val); refreshField(fid); refreshVisibility(fid); return; }
     if (b.dataset.today){ const t=new Date(); const v=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`; setVal(b.dataset.today, v); refreshField(b.dataset.today); return; }
     if (b.dataset.now){ const t=new Date(); const v=`${String(t.getHours()).padStart(2,"0")}:${String(t.getMinutes()).padStart(2,"0")}`; setVal(b.dataset.now, v); refreshField(b.dataset.now); return; }
