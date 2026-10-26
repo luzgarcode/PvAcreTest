@@ -1797,9 +1797,19 @@ function scanBarcode(){
     let controls=null, done=false, torchOn=false, torchBusy=false;
     const close=v=>{ if(done) return; done=true; try{ controls && controls.stop(); }catch(e){} m.remove(); resolve(v); };
     let reader;
-    try{ reader = new ZXingBrowser.BrowserMultiFormatReader(); }
+    // Lecture « poussée » (TRY_HARDER = 3) limitée aux formats utilisés sur les étiquettes (POSSIBLE_FORMATS = 2),
+    // essai toutes les 120 ms ; caméra arrière en haute résolution (par défaut iOS donne ~640x480, trop flou pour
+    // un code-barres fin) avec mise au point continue.
+    try{
+      const F = ZXingBrowser.BarcodeFormat;
+      const hints = new Map([[3,true],[2,[F.CODE_128,F.CODE_39,F.CODE_93,F.EAN_13,F.EAN_8,F.UPC_A,F.UPC_E,F.ITF,F.CODABAR,F.QR_CODE,F.DATA_MATRIX,F.PDF_417]]]);
+      reader = new ZXingBrowser.BrowserMultiFormatReader(hints, {delayBetweenScanAttempts:120});
+    }
     catch(e){ toast("Scanner indisponible sur cet appareil"); m.remove(); resolve(null); return; }
-    reader.decodeFromVideoDevice(undefined, video, (result) => { if (result && !done) close(result.getText()); })
+    const onDecode = (result) => { if (result && !done) close(result.getText()); };
+    const hiRes = { video:{ facingMode:{ideal:"environment"}, width:{ideal:1920}, height:{ideal:1080}, advanced:[{focusMode:"continuous"}] } };
+    reader.decodeFromConstraints(hiRes, video, onDecode)
+      .catch(() => reader.decodeFromVideoDevice(undefined, video, onDecode)) // repli : réglages par défaut si la caméra refuse
       .then(c => {
         controls=c;
         try{
