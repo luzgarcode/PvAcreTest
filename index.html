@@ -1798,7 +1798,7 @@ function scanBarcode(){
     const video=$("video",m), msg=$("#scanMsg",m), torchBtn=$(".scan-torch",m), zoomBtn=$(".scan-zoom",m), frame=$(".scan-frame",m);
     let zoomSteps=[], zoomIdx=0;
     let controls=null, done=false, torchOn=false, torchBusy=false;
-    const close=v=>{ if(done) return; done=true; try{ controls && controls.stop(); }catch(e){} m.remove(); resolve(v); };
+    const close=v=>{ if(done) return; done=true; clearTimeout(loopT); try{ controls && controls.stop(); }catch(e){} m.remove(); resolve(v); };
     let reader;
     // Lecture « poussée » (TRY_HARDER = 3) limitée aux formats utilisés sur les étiquettes (POSSIBLE_FORMATS = 2),
     // essai toutes les 120 ms ; caméra arrière en haute résolution (par défaut iOS donne ~640x480, trop flou pour
@@ -1806,11 +1806,11 @@ function scanBarcode(){
     try{
       const F = ZXingBrowser.BarcodeFormat;
       const hints = new Map([[3,true],[2,[F.CODE_128,F.CODE_39,F.CODE_93,F.EAN_13,F.EAN_8,F.UPC_A,F.UPC_E,F.ITF,F.CODABAR,F.QR_CODE,F.DATA_MATRIX,F.PDF_417]]]);
-      reader = new ZXingBrowser.BrowserMultiFormatReader(hints, {delayBetweenScanAttempts:120});
+      reader = new ZXingBrowser.BrowserMultiFormatReader(hints, {delayBetweenScanAttempts:3600000}); // la lecture automatique de la bibliothèque est mise en veille : on lit nous-mêmes la zone centrale (voir scanLoop)
     }
     catch(e){ toast("Scanner indisponible sur cet appareil"); m.remove(); resolve(null); return; }
     const onDecode = (result) => { if (result && !done) close(result.getText()); };
-    const hiRes = { video:{ facingMode:{ideal:"environment"}, width:{ideal:1920}, height:{ideal:1080}, advanced:[{focusMode:"continuous"}] } };
+    const hiRes = { video:{ facingMode:{ideal:"environment"}, width:{ideal:3840}, height:{ideal:2160}, advanced:[{focusMode:"continuous"}] } };
     reader.decodeFromConstraints(hiRes, video, onDecode)
       .catch(() => reader.decodeFromVideoDevice(undefined, video, onDecode)) // repli : réglages par défaut si la caméra refuse
       .then(c => {
@@ -1827,6 +1827,29 @@ function scanBarcode(){
         }catch(e){}
       })
       .catch(e => { msg.textContent = e && e.name==="NotAllowedError" ? "Accès à la caméra refusé." : e && e.name==="NotFoundError" ? "Aucune caméra détectée sur cet appareil." : "Impossible d'ouvrir la caméra."; });
+    // Lecture maison : un code-barres dense (barres très fines) a besoin de tous les pixels de la caméra, mais
+    // décoder une image 4K entière est lent. On ne lit donc que la zone centrale, en alternant une passe rapide
+    // (réduite à 1600 px de large) et une passe en pleine résolution.
+    const cv=document.createElement("canvas"), cx=cv.getContext("2d",{willReadFrequently:true});
+    let busy=false, pass=0, loopT=null;
+    const scanLoop = () => {
+      if (done) return;
+      loopT=setTimeout(scanLoop, 90);
+      if (busy || !controls || video.readyState<2 || !video.videoWidth) return;
+      busy=true;
+      try{
+        const vw=video.videoWidth, vh=video.videoHeight;
+        const sx=Math.round(vw*0.04), sy=Math.round(vh*0.18), sw=Math.round(vw*0.92), sh=Math.round(vh*0.64);
+        const scale = (pass%2===0) ? Math.min(1, 1600/sw) : 1;
+        cv.width=Math.round(sw*scale); cv.height=Math.round(sh*scale);
+        cx.drawImage(video, sx,sy,sw,sh, 0,0,cv.width,cv.height);
+        pass++;
+        let r=null; try{ r=reader.decodeFromCanvas(cv); }catch(e){ /* rien trouvé sur cette image */ }
+        if (r && !done) close(r.getText());
+      }catch(e){}
+      busy=false;
+    };
+    scanLoop();
     const focusRing = (x,y) => { const r=document.createElement("div"); r.className="scan-focus-ring"; r.style.left=x+"px"; r.style.top=y+"px"; frame.appendChild(r); setTimeout(()=>r.remove(), 650); };
     frame.addEventListener("click", e => {
       if (e.target.closest(".scan-torch") || e.target.closest(".scan-zoom")) return;
