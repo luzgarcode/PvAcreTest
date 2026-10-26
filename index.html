@@ -1084,7 +1084,7 @@ async function showHome(){
     <div style="margin:0 0 14px"><button class="btn sm ghost" id="importRelay">Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
-    <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.</p>
+    <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?` Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos.`:""}</p>
     <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
   </div>`;
@@ -2180,16 +2180,54 @@ function askFinishOrContinue(){
     m.onclick = e => { const a = e.target.dataset && e.target.dataset.x; if (!a) return; m.remove(); resolve(a); };
   });
 }
+/* ============ COMPTEUR DE PV ENVOYÉS ============
+   À chaque envoi réussi, l'appli note « un PV a été envoyé » (type de PV, client, date, terminé ou non).
+   Le serveur y associe le mail de connexion Cloudflare Access. Aucun contenu de PV, aucune photo.
+   Les envois faits hors ligne attendent dans une petite file sur le téléphone ; chaque envoi a un
+   identifiant, donc un envoi réessayé ne compte qu'une fois. Inactif sur le site de test (GitHub Pages). */
+const COUNTER_ON = !/\.github\.io$/.test(location.hostname);
+const OUTBOX_KEY = "pvgo_outbox";
+function outboxRead(){ try{ const a = JSON.parse(localStorage.getItem(OUTBOX_KEY)||"[]"); return Array.isArray(a) ? a : []; }catch(e){ return []; } }
+function outboxWrite(a){ try{ localStorage.setItem(OUTBOX_KEY, JSON.stringify(a.slice(-300))); }catch(e){} }
+let outboxBusy = false;
+async function flushOutbox(){
+  if (!COUNTER_ON || outboxBusy || !navigator.onLine) return;
+  outboxBusy = true;
+  try{
+    for (const ev of outboxRead()){
+      let r;
+      try{ r = await fetch("/api/sent", {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(ev), credentials:"same-origin", cache:"no-store"}); }
+      catch(e){ break; }                                   // pas de réseau / session Access expirée : on réessaiera
+      if (r.ok || r.status===400 || r.status===413){ outboxWrite(outboxRead().filter(x=>x.id!==ev.id)); continue; }   // compté, ou refusé définitivement
+      if (r.status===404 || r.status===405){ outboxWrite([]); break; }                                              // pas de compteur sur ce serveur
+      break;                                               // 401 / 5xx : plus tard
+    }
+  } finally { outboxBusy = false; }
+}
+function trackSend(final){
+  if (!COUNTER_ON || !S.tpl || !S.draft) return;
+  try{
+    const ev = {id: uid()+uid(), tpl: S.tpl.id, client: S.draft.client||"", final: !!final, ts: Date.now()};
+    outboxWrite(outboxRead().concat([ev]));
+  }catch(e){}
+  flushOutbox();
+}
+window.addEventListener("online", () => flushOutbox());
+document.addEventListener("visibilitychange", () => { if (document.visibilityState==="visible") flushOutbox(); });
+setTimeout(() => flushOutbox(), 4000);
+
 async function applySendOutcome(outcome){
   if (!outcome) return;
   if (outcome.action==="send" && outcome.result==="shared"){
     const fin = (S.tpl && S.tpl.multiDay) ? await askFinishOrContinue() : "done";
     if (fin !== "done"){
+      trackSend(false);
       S.draft.lastSentAt = Date.now(); await Store.put("drafts", S.draft);
       if (fin==="relay") await exportRelay(S.draft);
       sentCheck("PV envoyé — reste en cours");
       return;
     }
+    trackSend(true);
     S.draft.sentAt = Date.now();
     await Store.put("drafts", S.draft);
     sentCheck("PV envoyé");

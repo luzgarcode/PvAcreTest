@@ -1,4 +1,4 @@
-const CACHE = "pv-terrain-shell-v85";
+const CACHE = "pv-terrain-shell-v86";
 // Ordre important : le plus critique en premier. Si l'appli est fermée pendant
 // l'installation (réseau lent sur le terrain), tout ce qui a déjà été mis en
 // cache reste utilisable hors-ligne — contrairement à un simple c.addAll(SHELL),
@@ -85,6 +85,8 @@ self.addEventListener("fetch", event => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  // Page d'administration du suivi des envois : jamais mise en cache comme si c'était l'appli
+  if (url.origin === self.location.origin && /^\/(admin|api)(\/|$)/.test(url.pathname)) return;
 
   // Page navigation (opening/launching the app, incl. the installed PWA): network first,
   // so a relaunch always picks up the latest index.html when online. Falls back to the
