@@ -1338,6 +1338,9 @@ function countFilled(d, tpl){ if(!tpl) return 0; return countableFields(tpl).fil
 // s'affiche que si "ORB - Comptoir" a été répondu "OUI" dans le Matériel)
 function isFieldVisible(f, values){
   if (!f.visibleIf) return true;
+  // visibleIf.anyOf : plusieurs conditions {field, equals|equalsAny}, une seule suffit (ex. commentaire d'une
+  // ligne de contrôle affiché dès qu'une borne est notée NOK). Un champ déjà rempli reste toujours visible.
+  if (f.visibleIf.anyOf) return f.visibleIf.anyOf.some(c => c.equalsAny ? c.equalsAny.includes(values[c.field]) : values[c.field]===c.equals) || isFilled(values[f.id]);
   const v = values[f.visibleIf.field];
   return f.visibleIf.equalsAny ? f.visibleIf.equalsAny.includes(v) : v===f.visibleIf.equals;
 }
@@ -1488,9 +1491,13 @@ function refreshField(fid){
 // rubrique (ex. "ORB - Comptoir": OUI/NON) pour faire apparaître/disparaître
 // la checklist correspondante, sans perdre l'état ouvert/fermé des autres rubriques
 function refreshVisibility(changedFid){
-  const controls = S.tpl.fields.some(f=>f.visibleIf && f.visibleIf.field===changedFid);
+  const controls = S.tpl.fields.some(f=>f.visibleIf && (f.visibleIf.field===changedFid || (f.visibleIf.anyOf||[]).some(c=>c.field===changedFid)));
   if (!controls) return;
   const el = $("#groups"); if(!el) return;
+  // rien à reconstruire si l'ensemble des champs conditionnels visibles n'a pas changé (évite de redessiner tout le formulaire à chaque OK/NOK)
+  const visSig = S.tpl.fields.filter(f=>f.visibleIf && isFieldVisible(f, S.draft.values)).map(f=>f.id).join(",");
+  if (S._visSig && S._visSig.id===S.draft.id && S._visSig.sig===visSig) return;
+  S._visSig = {id:S.draft.id, sig:visSig};
   const prevOpen = new Map($$("#groups details").map(x=>[x.dataset.g, x.open]));
   const groups = visibleGroups(S.tpl, S.draft.values);
   el.innerHTML = [...groups.entries()].map(([g,fs],gi)=>groupHtml(g,fs,gi)).join("");
