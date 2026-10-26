@@ -612,12 +612,11 @@ if (LOGO_COLOR){ document.documentElement.style.setProperty("--logo", LOGO_COLOR
 document.title = `${APP_NAME} – remplir les PV d'installation`;
 const main = $("#main"), bar = $("#bar");
 
-const CATEGORIES = ["Borne de commande","Audio","DMB","Drive","Multiservice","Pointeuse","Sco/Aco","Ouverture","KFC","Autre"];
+const CATEGORIES = ["Borne de commande","Audio","DMB","Drive","Multiservice","Pointeuse","Sco/Aco","Ouverture","Red Biscuit","Autre"];
 const TAXONOMY = [
   {client:"Tous clients", categories:CATEGORIES},
   {client:"McDonald's", categories:CATEGORIES},
   {client:"KFC", categories:CATEGORIES},
-  {client:"Red Biscuit", categories:CATEGORIES},
   {client:"Burger King", categories:CATEGORIES},
   {client:"O'Tacos", categories:CATEGORIES},
   {client:"Quick", categories:CATEGORIES},
@@ -629,7 +628,6 @@ const CLIENT_LOGOS = {
   "Tous clients": "assets/logos/acrelec.jpg",
   "McDonald's": "assets/logos/mcdonalds.png",
   "KFC": "assets/logos/kfc.png",
-  "Red Biscuit": "assets/logos/redbiscuit-client.jpg",
   "Burger King": "assets/logos/burgerking.jpg",
   "O'Tacos": "assets/logos/otacos.png",
   "Quick": "assets/logos/quick.png",
@@ -962,7 +960,7 @@ function tplClients(t){
 }
 function templatesForClient(tpls, clientName){ return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
 function tplCategory(t){ const c = t.category; return CATEGORIES.includes(c) ? c : "Autre"; }
-const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png", "KFC": "assets/logos/kfc.png" };
+const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png", "Red Biscuit": "assets/logos/redbiscuit.jpg" };
 /* Icônes propres à un client + catégorie (ex. Drive de McDonald's) ; sinon l'icône de la catégorie */
 const CLIENT_CATEGORY_ICONS = { "McDonald's|Drive": "assets/logos/drive-coates.jpg" };
 function categoryIconHtml(cat, client){
