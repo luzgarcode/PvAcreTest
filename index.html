@@ -2025,12 +2025,16 @@ async function buildPdf(tpl, draft){
       const sub = safe(draft.name||""); let ss=9; while(font.widthOfTextAtSize(sub,ss)>W-2*M-200 && ss>6) ss-=0.5;
       pg.drawText(sub,{x:W-M-font.widthOfTextAtSize(sub,ss),y:H-29,size:ss,font,color:rgb(0.8,0.84,0.88)});
       const a = photos[i];
-      const capH = 30, top = H-46-16, boxH = top-M-capH;
+      // légende : à la ligne (jusqu'à 4 lignes, police lisible) au lieu d'une seule ligne réduite à une taille minuscule
+      const cap = safe(`${i+1}. ${photos[i].caption||"Photo"}`);
+      let cs=12, capLines=wrapLines(cap, bold, cs, W-2*M);
+      while (capLines.length>4 && cs>8){ cs-=0.5; capLines=wrapLines(cap, bold, cs, W-2*M); }
+      if (capLines.length>4){ capLines=capLines.slice(0,4); capLines[3]=capLines[3].replace(/.{0,3}$/,"…"); }
+      const capLH = cs*1.22;
+      const capH = Math.max(30, capLines.length*capLH+14), top = H-46-16, boxH = top-M-capH;
       const im=await embed(a.photo); const s=Math.min((W-2*M)/im.width, boxH/im.height); const w=im.width*s, h=im.height*s;
       pg.drawImage(im,{x:(W-w)/2, y:M+capH+(boxH-h)/2, width:w, height:h});
-      const cap = safe(`${i+1}. ${a.caption||"Photo"}`);
-      let cs=12; while(bold.widthOfTextAtSize(cap,cs)>W-2*M && cs>7) cs-=0.5;
-      pg.drawText(cap,{x:M,y:M+(capH-cs)/2,size:cs,font:bold,color:rgb(0.09,0.13,0.17)});
+      capLines.forEach((ln,k)=>{ pg.drawText(ln,{x:M,y:M+capH-7-cs*0.85-k*capLH,size:cs,font:bold,color:rgb(0.09,0.13,0.17)}); });
     }
   }
   // fichiers PDF joints — pages ajoutées telles quelles, à la fin, avec une légende sur la 1ère page
