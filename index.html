@@ -266,6 +266,9 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .sheet-h h3{ margin:0; flex:1; font-family:var(--font-c); font-size:22px; overflow-wrap:anywhere; min-width:0; }
 .sheet-b{ overflow:auto; padding:14px; background:var(--paper); }
 .sheet-f{ display:flex; gap:8px; padding:12px 14px; border-top:1px solid var(--line); justify-content:flex-end; flex-wrap:wrap; }
+.prev-zoom{ display:flex; align-items:center; gap:6px; }
+.prev-zoom span{ min-width:44px; text-align:center; font-size:13px; font-weight:700; color:var(--ink-2); }
+#pv.zoomable{ touch-action:pan-x pan-y; -webkit-overflow-scrolling:touch; }
 .prev-pg{ display:block; margin:0 auto 12px; max-width:100%; box-shadow:0 0 0 1px var(--line); background:#fff; }
 .sig-pad{ width:100%; height:min(46vh,320px); background:#fff; border:1px solid var(--line); border-radius:6px; touch-action:none; display:block; }
 .sig-line{ position:relative; }
@@ -2283,17 +2286,44 @@ async function previewPdf(){
   const done=busy("Création de l'aperçu…"); let bytes;
   try{ bytes = await buildPdf(S.tpl, S.draft); }catch(e){ done(); alert("Le PDF n'a pas pu être créé : "+(e.message||e)); return; }
   const m=document.createElement("div"); m.className="modal";
-  m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Aperçu"><div class="sheet-h"><h3>Aperçu</h3><button class="btn sm" data-x="close">Fermer</button></div><div class="sheet-b" id="pv"></div><div class="sheet-f"><button class="btn" data-x="close">Continuer à remplir</button><button class="btn primary" data-x="dl">Terminé</button></div></div>`;
+  m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Aperçu"><div class="sheet-h"><h3>Aperçu</h3><div class="prev-zoom"><button class="btn sm" data-x="zout" aria-label="Zoom arrière">−</button><span id="pvZl">100%</span><button class="btn sm" data-x="zin" aria-label="Zoom avant">+</button></div><button class="btn sm" data-x="close">Fermer</button></div><div class="sheet-b zoomable" id="pv"></div><div class="sheet-f"><button class="btn" data-x="close">Continuer à remplir</button><button class="btn primary" data-x="dl">Terminé</button></div></div>`;
   document.body.appendChild(m);
-  m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="close") m.remove(); if(a==="dl"){ m.remove(); showSendReview(bytes).then(applySendOutcome); } };
+  let zoomBy=()=>{};
+  m.onclick=e=>{ const a=e.target.dataset && e.target.dataset.x; if(a==="close") m.remove(); if(a==="dl"){ m.remove(); showSendReview(bytes).then(applySendOutcome); } if(a==="zin") zoomBy(1.4); if(a==="zout") zoomBy(1/1.4); };
   try{
     const pdf = await pdfjsLib.getDocument({data:bytes.slice(0), isEvalSupported:false}).promise; done();
     const host=$("#pv",m); const wAvail=Math.min(860, host.clientWidth-28);
+    // Zoom DANS l'aperçu (pincer avec deux doigts ou boutons − / +) : seul le PDF grossit, pas toute la page de l'appli.
+    let Z=1, rTimer=null, rBusy=false; const items=[]; const dpr=Math.min(2,window.devicePixelRatio||1); const MAXPX=3200;
+    const zl=$("#pvZl",m);
+    const scaleFor = it => { let sc=(wAvail*Z/it.v1.width)*dpr; if (it.v1.width*sc>MAXPX) sc=MAXPX/it.v1.width; return sc; };
+    const paint = async it => { // (re)dessine une page à la netteté voulue, sans clignoter
+      const sc=scaleFor(it); if (it.sc && Math.abs(it.sc-sc)<0.02) return; it.sc=sc;
+      const vp=it.pg.getViewport({scale:sc}); const t=document.createElement("canvas"); t.width=vp.width; t.height=vp.height;
+      await it.pg.render({canvasContext:t.getContext("2d"),viewport:vp}).promise;
+      it.c.width=t.width; it.c.height=t.height; it.c.getContext("2d").drawImage(t,0,0);
+    };
+    const visibleItems = () => { const hr=host.getBoundingClientRect(); return items.filter(it=>{ const r=it.c.getBoundingClientRect(); return r.bottom>hr.top-80 && r.top<hr.bottom+80; }); };
+    const sharpen = () => { clearTimeout(rTimer); rTimer=setTimeout(async()=>{ if(rBusy||!m.isConnected) return; rBusy=true; try{ for (const it of visibleItems()){ if(!m.isConnected) break; await paint(it); } }catch(e){} rBusy=false; },250); };
+    const setZoom = (nz, fx, fy) => { // fx, fy : point fixe de l'écran (centre du pincement), relatif à l'aperçu
+      nz=Math.max(1,Math.min(4,nz)); if (nz===Z) return;
+      const k=nz/Z, cx=host.scrollLeft+fx, cy=host.scrollTop+fy; Z=nz;
+      items.forEach(it=>{ it.c.style.width=(wAvail*Z)+"px"; it.c.style.maxWidth="none"; });
+      host.scrollLeft=cx*k-fx; host.scrollTop=cy*k-fy; zl.textContent=Math.round(Z*100)+"%"; sharpen();
+    };
+    zoomBy = k => setZoom(Z*k, host.clientWidth/2, host.clientHeight/2);
+    let pinch=null; const dist=t=>Math.hypot(t[0].clientX-t[1].clientX, t[0].clientY-t[1].clientY);
+    host.addEventListener("touchstart", e=>{ if(e.touches.length===2){ const r=host.getBoundingClientRect(); pinch={d:dist(e.touches), z:Z}; e.preventDefault(); } }, {passive:false});
+    host.addEventListener("touchmove", e=>{ if(pinch && e.touches.length===2){ e.preventDefault(); const r=host.getBoundingClientRect(); const fx=(e.touches[0].clientX+e.touches[1].clientX)/2-r.left, fy=(e.touches[0].clientY+e.touches[1].clientY)/2-r.top; setZoom(pinch.z*dist(e.touches)/pinch.d, fx, fy); } }, {passive:false});
+    host.addEventListener("touchend", e=>{ if(e.touches.length<2) pinch=null; });
+    host.addEventListener("touchcancel", ()=>{ pinch=null; });
+    ["gesturestart","gesturechange","gestureend"].forEach(n=>host.addEventListener(n, e=>e.preventDefault())); // Safari : pas de zoom de page
+    host.addEventListener("scroll", sharpen, {passive:true});
     for (let i=1;i<=pdf.numPages;i++){
       if(!m.isConnected) break;
-      const pg=await pdf.getPage(i); const v1=pg.getViewport({scale:1}); const sc=wAvail/v1.width; const dpr=Math.min(2,window.devicePixelRatio||1);
+      const pg=await pdf.getPage(i); const v1=pg.getViewport({scale:1}); const sc=wAvail/v1.width;
       const vp=pg.getViewport({scale:sc*dpr}); const c=document.createElement("canvas"); c.width=vp.width; c.height=vp.height; c.className="prev-pg"; c.style.width=(vp.width/dpr)+"px";
-      host.appendChild(c); await pg.render({canvasContext:c.getContext("2d"),viewport:vp}).promise;
+      host.appendChild(c); items.push({pg, v1, c, sc:sc*dpr}); await pg.render({canvasContext:c.getContext("2d"),viewport:vp}).promise;
     }
   }catch(e){ done(); }
 }
