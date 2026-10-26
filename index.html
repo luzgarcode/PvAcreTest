@@ -788,51 +788,6 @@ async function showMigrationLock(){
   bindMigrationBanner();
 }
 
-/* ---- premier lancement sur un appareil vide : proposer d'importer une sauvegarde ----
-   Utile surtout au changement d'adresse de l'appli (les données sont liées à l'adresse du site). */
-const IMPORT_WELCOME_KEY = "pvgo_import_welcome_done";
-async function needsImportWelcome(){
-  try{
-    if (migCfg()) return false; // ancien site : c'est lui qu'on exporte, rien à importer ici
-    if (localStorage.getItem(IMPORT_WELCOME_KEY) === "1") return false;
-    if (localStorage.getItem(ONBOARD_KEY) === "1") return false; // déjà utilisé sur cet appareil
-    const [drafts, profile] = await Promise.all([Store.all("drafts"), getProfile()]);
-    return drafts.length === 0 && !profileFilled(profile);
-  }catch(e){ return false; }
-}
-function showImportWelcome(onClose){
-  const m = document.createElement("div"); m.className = "modal";
-  m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Bienvenue">
-    <div class="sheet-h"><h3>Bienvenue sur ${esc(APP_NAME)}</h3></div>
-    <div class="sheet-b">
-      <p style="margin:0 0 12px">Tu viens de l'<strong>ancienne version</strong> de l'appli ? Tu peux récupérer tes rapports en cours, ton profil et ta signature en important ta sauvegarde.</p>
-      <p style="margin:0;color:var(--ink-2);font-size:14px">Pas encore de sauvegarde ? Ouvre l'ancienne appli → Réglages → « Exporter mes rapports », enregistre le fichier, puis reviens ici.</p>
-      <input type="file" id="welcomeFile" accept="application/json" hidden>
-    </div>
-    <div class="sheet-f" style="justify-content:space-between;gap:8px">
-      <button class="btn ghost" data-x="skip">Je commence à neuf</button>
-      <button class="btn primary" data-x="import">Importer ma sauvegarde</button>
-    </div></div>`;
-  document.body.appendChild(m);
-  const finish = () => { try{ localStorage.setItem(IMPORT_WELCOME_KEY, "1"); }catch(e){} m.remove(); if (onClose) onClose(); };
-  const fileInp = m.querySelector("#welcomeFile");
-  fileInp.onchange = async () => {
-    const f = fileInp.files && fileInp.files[0]; if (!f) return;
-    const ok = await importBackupFile(f, {fresh:true, onDone:()=>{}});
-    fileInp.value = "";
-    if (ok){
-      // quelqu'un qui importe une sauvegarde connaît déjà l'appli : pas de tuto ni de nouveautés à la suite
-      try{ localStorage.setItem(ONBOARD_KEY, "1"); localStorage.setItem(CHANGELOG_KEY, CHANGELOG[0].version); }catch(e){}
-      finish();
-    }
-  };
-  m.onclick = e => {
-    const a = e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x);
-    if (a === "import") fileInp.click();
-    else if (a === "skip") finish();
-  };
-}
-
 /* ============ SYNCHRONISATION DES MODÈLES ============ */
 async function fetchJson(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); }
 async function fetchBuf(url){ const r = await fetch(url, {cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.arrayBuffer(); }
@@ -2644,11 +2599,8 @@ async function runOfflineDiagnostic(){
     const hadAny = (await Store.all("templates")).length > 0;
     if (!hadAny) S.syncing = true;
     showHome();
-    // Appareil vide (nouvelle adresse) : proposer d'importer une sauvegarde avant le tuto
-    const welcomeDone = (await needsImportWelcome()) ? new Promise(res => showImportWelcome(res)) : Promise.resolve();
     const res = await syncManifest();
     S.syncing = false; S.syncError = res.error || null; paintSyncState();
-    await welcomeDone;
     if (S.view === "home") showHome();
     runOfflineDiagnostic();
     loadMcdoRestaurants();
