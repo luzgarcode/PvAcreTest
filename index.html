@@ -292,6 +292,14 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .scan-focus-ring{ position:absolute; width:56px; height:56px; margin-left:-28px; margin-top:-28px; border:2px solid #fff; border-radius:50%; pointer-events:none; animation:focusring .6s ease-out forwards; }
 @keyframes focusring{ 0%{ transform:scale(1.3); opacity:1; } 100%{ transform:scale(1); opacity:0; } }
 
+.rate-card{ position:fixed; left:50%; bottom:calc(16px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); width:min(440px,calc(100vw - 24px)); background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,.28); padding:14px; z-index:70; }
+.rate-card b{ display:block; margin-bottom:2px; }
+.rate-card small{ color:var(--ink-2); }
+.rate-stars{ display:flex; gap:6px; margin:10px 0; }
+.rate-stars button{ flex:1; min-height:44px; font-size:26px; line-height:1; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-2); border-radius:8px; cursor:pointer; }
+.rate-stars button.on{ color:#E0A100; border-color:#E0A100; }
+.rate-card textarea{ width:100%; min-height:62px; font:inherit; background:var(--surface-2); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px; margin-bottom:8px; }
+.rate-act{ display:flex; gap:8px; justify-content:flex-end; }
 .toast{ position:fixed; left:50%; bottom:calc(84px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:6px; z-index:60; font-weight:600; max-width:90vw; }
 .resync-ov{ position:fixed; inset:0; z-index:200; background:var(--paper); display:flex; align-items:center; justify-content:center; padding:24px; touch-action:none; }
 .resync-box{ width:min(340px,100%); text-align:center; display:grid; gap:16px; justify-items:center; }
@@ -1084,7 +1092,7 @@ async function showHome(){
     <div style="margin:0 0 14px"><button class="btn sm ghost" id="importRelay">Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
-    <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?` Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos.`:""}</p>
+    <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?` Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos. Si tu notes un PV, la note est anonyme.`:""}</p>
     <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
   </div>`;
@@ -2216,6 +2224,52 @@ window.addEventListener("online", () => flushOutbox());
 document.addEventListener("visibilitychange", () => { if (document.visibilityState==="visible") flushOutbox(); });
 setTimeout(() => flushOutbox(), 4000);
 
+/* ============ NOTE DU PV ============
+   À la fin d'un PV terminé, un petit bandeau demande « Ce PV était-il facile à remplir ? » (1 à 5 étoiles + commentaire facultatif).
+   Au plus une fois par semaine, jamais bloquant ; arrêt après 3 « Plus tard » sans réponse. La note est envoyée SANS le mail de connexion.
+   Elle attend dans une petite file sur le téléphone si le réseau manque. Inactif sur le site de test (GitHub Pages). */
+const RATE_KEY = "pvgo_rate", RATE_OUT = "pvgo_rate_outbox";
+function rateState(){ try{ const o = JSON.parse(localStorage.getItem(RATE_KEY)||"{}"); return o && typeof o==="object" ? o : {}; }catch(e){ return {}; } }
+function rateSave(o){ try{ localStorage.setItem(RATE_KEY, JSON.stringify(o)); }catch(e){} }
+function rateOutRead(){ try{ const a = JSON.parse(localStorage.getItem(RATE_OUT)||"[]"); return Array.isArray(a) ? a : []; }catch(e){ return []; } }
+function rateOutWrite(a){ try{ localStorage.setItem(RATE_OUT, JSON.stringify(a.slice(-20))); }catch(e){} }
+let rateBusy = false;
+async function flushRatings(){
+  if (!COUNTER_ON || rateBusy || !navigator.onLine) return;
+  rateBusy = true;
+  try{
+    for (const ev of rateOutRead()){
+      let r;
+      try{ r = await fetch("/api/rating", {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(ev), credentials:"same-origin", cache:"no-store"}); }
+      catch(e){ break; }
+      if (r.ok || r.status===400 || r.status===413){ rateOutWrite(rateOutRead().filter(x=>x.id!==ev.id)); continue; }
+      if (r.status===404 || r.status===405){ rateOutWrite([]); break; }
+      break;
+    }
+  } finally { rateBusy = false; }
+}
+function askRating(tplId){
+  if (!COUNTER_ON || document.querySelector(".rate-card")) return;
+  const st = rateState(), DAY = 86400e3;
+  if ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY) return;
+  const c = document.createElement("div"); c.className = "rate-card"; c.setAttribute("role","dialog"); c.setAttribute("aria-label","Note du PV");
+  c.innerHTML = `<b>Ce PV était-il facile à remplir ?</b><small>Ta note est anonyme et sert à améliorer les modèles.</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><textarea maxlength="300" placeholder="Ce qui ne va pas ou manque (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
+  let stars = 0;
+  c.onclick = e => {
+    const b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.s){ stars = +b.dataset.s; c.querySelectorAll(".rate-stars button").forEach(x => x.classList.toggle("on", +x.dataset.s <= stars)); c.querySelector("textarea").hidden = false; c.querySelector("[data-r=send]").hidden = false; return; }
+    if (b.dataset.r === "later"){ const s2 = rateState(); s2.last = Date.now(); s2.skips = (s2.skips||0) + 1; rateSave(s2); c.remove(); return; }
+    if (b.dataset.r === "send" && stars){
+      rateOutWrite(rateOutRead().concat([{id: uid()+uid(), tpl: tplId, stars, comment: c.querySelector("textarea").value.trim().slice(0,300), ts: Date.now()}]));
+      rateSave({last: Date.now(), skips: 0}); c.remove(); toast("Merci pour ton retour !"); flushRatings();
+    }
+  };
+  document.body.appendChild(c);
+}
+window.addEventListener("online", () => flushRatings());
+document.addEventListener("visibilitychange", () => { if (document.visibilityState==="visible") flushRatings(); });
+setTimeout(() => flushRatings(), 6000);
+
 async function applySendOutcome(outcome){
   if (!outcome) return;
   if (outcome.action==="send" && outcome.result==="shared"){
@@ -2231,6 +2285,7 @@ async function applySendOutcome(outcome){
     S.draft.sentAt = Date.now();
     await Store.put("drafts", S.draft);
     sentCheck("PV envoyé");
+    { const tid = S.tpl && S.tpl.id; setTimeout(() => { if (tid) askRating(tid); }, 2600); }
   } else if (outcome.action==="send" && outcome.result==="downloaded"){
     toast("PDF téléchargé");
   } else if (outcome.action==="save" && (outcome.result==="shared" || outcome.result==="downloaded")){
