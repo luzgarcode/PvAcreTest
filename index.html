@@ -296,6 +296,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .rate-card b{ display:block; margin-bottom:2px; }
 .rate-card small{ color:var(--ink-2); }
 .rate-stars{ display:flex; gap:6px; margin:10px 0; }
+.rate-ends{ display:flex; justify-content:space-between; gap:8px; font-size:12px; color:var(--ink-2); margin:-4px 0 10px; }
 .rate-stars button{ flex:1; min-height:44px; font-size:26px; line-height:1; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-2); border-radius:8px; cursor:pointer; }
 .rate-stars button.on{ color:#E0A100; border-color:#E0A100; }
 .rate-card textarea{ width:100%; min-height:62px; font:inherit; background:var(--surface-2); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px; margin-bottom:8px; }
@@ -2252,7 +2253,8 @@ function askRating(tplId){
   const st = rateState(), DAY = 86400e3;
   if ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY) return;
   const c = document.createElement("div"); c.className = "rate-card"; c.setAttribute("role","dialog"); c.setAttribute("aria-label","Note du PV");
-  c.innerHTML = `<b>Ce PV était-il facile à remplir ?</b><small>Ta note est anonyme et sert à améliorer les modèles.</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><textarea maxlength="300" placeholder="Ce qui ne va pas ou manque (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
+  const pvName = (S.tpl && S.tpl.id===tplId && S.tpl.name) ? S.tpl.name : "";
+  c.innerHTML = `<b>Note le PV, pas l'appli</b><small>${pvName?`« ${esc(pvName)} » : `:""}ce formulaire était-il clair et rapide à remplir ?</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><div class="rate-ends"><span>1 = confus, compliqué</span><span>5 = clair, rapide</span></div><textarea maxlength="300" placeholder="Quelle partie du PV est confuse, trop longue ou en trop ? (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
   let stars = 0;
   c.onclick = e => {
     const b = e.target.closest("button"); if (!b) return;
