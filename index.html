@@ -2254,7 +2254,7 @@ function askRating(tplId){
   if ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY) return;
   const c = document.createElement("div"); c.className = "rate-card"; c.setAttribute("role","dialog"); c.setAttribute("aria-label","Note du PV");
   const pvName = (S.tpl && S.tpl.id===tplId && S.tpl.name) ? S.tpl.name : "";
-  c.innerHTML = `<b>Note le PV, pas l'appli</b><small>${pvName?`« ${esc(pvName)} » : `:""}ce formulaire était-il clair et rapide à remplir ?</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><div class="rate-ends"><span>1 = confus, compliqué</span><span>5 = clair, rapide</span></div><textarea maxlength="300" placeholder="Quelle partie du PV est confuse, trop longue ou en trop ? (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
+  c.innerHTML = `<b>Ce PV était agréable à remplir ?</b><small>${pvName?`« ${esc(pvName)} » · `:""}on parle du formulaire, pas de l'appli.</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><div class="rate-ends"><span>1 = pénible</span><span>5 = agréable</span></div><textarea maxlength="300" placeholder="Qu'est-ce qui t'a gêné dans ce PV ? (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
   let stars = 0;
   c.onclick = e => {
     const b = e.target.closest("button"); if (!b) return;
