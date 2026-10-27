@@ -302,6 +302,7 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .rate-card textarea{ width:100%; min-height:62px; font:inherit; background:var(--surface-2); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px; margin-bottom:8px; }
 .rate-act{ display:flex; gap:8px; justify-content:flex-end; }
 .tgrid .thead,.tgrid .trow{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,1fr); gap:6px; align-items:center; }
+.tgrid.tn .thead,.tgrid.tn .trow{ grid-template-columns:1.6rem minmax(0,1fr) minmax(0,1fr); }
 .tgrid .thead{ font-size:11px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-2); font-weight:700; margin:10px 0 4px; }
 .tgrid .trow{ margin-bottom:6px; }
 .tgrid .tnm{ font-weight:600; font-size:14px; line-height:1.15; overflow-wrap:anywhere; }
@@ -1430,7 +1431,9 @@ function tableHtml(fs){
   const rowsOf = list => { const m = new Map(); for (const f of list){ if(!m.has(f.row)) m.set(f.row, []); m.get(f.row).push(f); } return m; };
   const rowHtml = (name, cells) => { const [n0, ...rest] = String(name).split(" | "); return `<div class="trow"><div class="tnm">${esc(n0)}${rest.length?`<small>${esc(rest.join(" "))}</small>`:""}</div>${cols.map(c=>{ const f=cells.find(x=>x.col===c); return f ? fieldHtml(f) : `<div></div>`; }).join("")}</div>`; };
   const main = fs.filter(f=>!f.sub), subs = [...new Set(fs.filter(f=>f.sub).map(f=>f.sub))];
-  let h = `<div class="tgrid"><div class="thead"><span>Équipement</span>${cols.map(c=>`<span>${esc(c)}</span>`).join("")}</div>`;
+  const narrow = [...new Set(fs.map(f=>f.row))].every(r=>String(r).length<=3);
+  const head = (fs.find(f=>f.rowHead)||{}).rowHead || "Équipement";
+  let h = `<div class="tgrid${narrow?" tn":""}"><div class="thead"><span>${esc(head)}</span>${cols.map(c=>`<span>${esc(c)}</span>`).join("")}</div>`;
   for (const [name, cells] of rowsOf(main)) h += rowHtml(name, cells);
   for (const sb of subs){
     const list = fs.filter(f=>f.sub===sb), open = list.some(f=>isFilled(S.draft.values[f.id]));
