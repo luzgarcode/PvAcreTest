@@ -811,7 +811,7 @@ async function fetchWithTimeout(url, kind, ms){
 }
 function tplRecord(m, meta, pdf, cur){
   const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true};
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true};
 }
 async function syncManifest(opts){
   opts = opts || {};
@@ -1922,6 +1922,14 @@ async function buildPdf(tpl, draft){
   const imgCache = new Map();
   const shrink = photoShrinkLevel(draft); S.lastShrink = shrink;
   const embed = async d0 => { if(imgCache.has(d0)) return imgCache.get(d0); let d=d0; if (shrink && d.startsWith("data:image/jpeg")){ try{ d = await shrinkJpegData(d, shrink.max, shrink.q); }catch(e){} } const bytes=dataUrlToBytes(d); const im = d.startsWith("data:image/png") ? await doc.embedPng(bytes) : await doc.embedJpg(bytes); imgCache.set(d0,im); return im; };
+  // « covers » : zones blanches posées sur du texte imprimé dans le PDF lui-même, sauf si la condition « unless » est vraie
+  // (ex. bloc « Caméra Crash Point » du PV Coates : gardé seulement pour un Drive Dual Lane).
+  for (const c of (tpl.covers||[])){
+    const g = pages[c.page]; if (!g) continue;
+    const u = c.unless, val = u ? draft.values[u.field] : undefined;
+    if (u && (u.equalsAny ? u.equalsAny.includes(val) : val===u.equals)) continue;
+    const r = toPdf(g, c); g.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
+  }
   for (const f of tpl.fields){
     if (f.noPdf) continue;
     // un champ "mirror" n'a pas sa propre valeur : il réaffiche celle d'un autre
