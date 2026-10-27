@@ -137,13 +137,13 @@ img{ max-width:100%; }
 .doc-ico.filled::after{ content:""; position:absolute; right:-6px; bottom:-6px; width:16px; height:16px; background:var(--vis); border-radius:50%; border:2px solid var(--surface); }
 .client-row{ cursor:pointer; }
 .client-row:hover{ background:var(--surface-2); }
-.list:has(.client-row){ background:transparent; border:0; border-radius:0; gap:10px; overflow:visible; }
-.list:has(.client-row) .row{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px; flex-wrap:nowrap; box-shadow:0 1px 2px rgba(0,0,0,.04); }
-.list:has(.client-row) .row .main{ min-width:0; }
-.list:has(.client-row) .row:active{ background:var(--blue-soft); }
-#normalSections .sec-h{ margin:22px 0 10px; }
-#normalSections .sec-h h2{ font-size:13px; font-family:inherit; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); }
-#importRelay{ width:100%; justify-content:flex-start; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-weight:600; }
+html.hv2 .list:has(.client-row){ background:transparent; border:0; border-radius:0; gap:10px; overflow:visible; }
+html.hv2 .list:has(.client-row) .row{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px; flex-wrap:nowrap; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+html.hv2 .list:has(.client-row) .row .main{ min-width:0; }
+html.hv2 .list:has(.client-row) .row:active{ background:var(--blue-soft); }
+html.hv2 #normalSections .sec-h{ margin:22px 0 10px; }
+html.hv2 #normalSections .sec-h h2{ font-size:13px; font-family:inherit; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); }
+html.hv2 #importRelay{ width:100%; justify-content:flex-start; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-weight:600; }
 .client-ico{ background:var(--blue-soft); color:var(--blue); border:none; display:flex; align-items:center; justify-content:center; font-family:var(--font-c); font-weight:700; font-size:16px; }
 .client-ico-img{ background:#fff; border:1px solid var(--line, #e2e2e2); border-radius:8px; padding:4px; overflow:hidden; }
 .client-ico-img::before{ content:none; }
@@ -160,17 +160,6 @@ img{ max-width:100%; }
 .progress-label{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--ink); }
 .sent-badge{ color:var(--ok); font-weight:700; }
 .sent-banner{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; background:var(--ok-soft); color:var(--ok); border-radius:var(--r); padding:10px 14px; font-weight:700; margin-bottom:12px; }
-.archive-month .list{ background:transparent; border:0; gap:8px; overflow:visible; }
-.archive-month .row{ display:grid; grid-template-columns:36px 1fr; gap:4px 12px; align-items:center; border:1px solid var(--line); border-radius:12px; padding:12px; background:var(--surface-2); }
-.archive-month .row:first-child{ border-top:1px solid var(--line); }
-.archive-month .row .doc-ico{ grid-row:1; }
-.archive-month .row .main{ min-width:0; }
-.archive-month .row .name{ font-size:15px; overflow:hidden; text-overflow:ellipsis; }
-.archive-month .row .acts{ grid-column:1 / -1; flex-wrap:wrap; margin-top:6px; gap:8px; }
-.archive-month .row .acts .btn{ flex:1 1 40%; justify-content:center; }
-.archive-month .row .acts .btn:first-child{ flex:1 1 100%; }
-.archive-month .row .acts .btn{ white-space:nowrap; }
-.grp[data-k] > summary{ padding:12px 14px; }
 .archive-month{ margin-top:10px; }
 .archive-month:first-child{ margin-top:0; }
 .archive-month-h{ font-weight:700; font-size:13px; color:var(--ink-2); text-transform:uppercase; letter-spacing:.02em; margin:0 0 6px 2px; }
@@ -1055,6 +1044,7 @@ function archiveRowsHtml(items, tplName){
   return items.map(d => `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span></div></div>
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn sm ghost" data-unsend-draft="${d.id}">Remettre en cours</button><button class="btn sm danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`).join("");
 }
+try{ document.documentElement.classList.toggle("hv2", localStorage.getItem("pvgo_home_v2")!=="0"); }catch(e){}
 async function showArchive(){
   // si on était déjà dans « Rapports envoyés » (suppression, remise en cours), les clients ouverts le restent
   const keepOpen = S.view==="archive" ? new Set([...document.querySelectorAll("details.grp[data-k][open]")].map(d=>d.dataset.k)) : new Set();
@@ -1244,6 +1234,10 @@ async function showSettings(){
       <button class="pf-row" id="showTutorial"><span class="pf-ri" aria-hidden="true">🎓</span><span class="pf-rt"><b>Revoir le tuto</b><small>Choisir un modèle, remplir, scanner, signer, envoyer</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
       <button class="pf-row" id="showChangelog"><span class="pf-ri" aria-hidden="true">🆕</span><span class="pf-rt"><b>Nouveautés</b><small>Les dernières nouveautés de l'appli</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
+    <div class="st-sec">Affichage</div>
+    <div class="pf-menu" style="margin-top:0">
+      <button class="pf-row" id="toggleHome"><span class="pf-ri" aria-hidden="true">🏠</span><span class="pf-rt"><b>Nouvel accueil</b><small>${document.documentElement.classList.contains("hv2")?"Activé : clients en cartes. Toucher pour revenir à l'ancien accueil":"Désactivé : ancien accueil. Toucher pour passer au nouveau"}</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
+    </div>
     <div class="st-sec">Mes données</div>
     <div class="pf-menu" style="margin-top:0">
       <button class="pf-row" id="exportBackup"><span class="pf-ri" aria-hidden="true">💾</span><span class="pf-rt"><b>Exporter mes rapports</b><small>Un fichier de sauvegarde (rapports et profil)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
@@ -1265,6 +1259,7 @@ async function showSettings(){
     <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:26px 0 4px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:0 0 4px">Usage réservé aux techniciens invités. Toute copie, extraction ou redistribution de l'application est interdite.</p>
   </div>`;
+  $("#toggleHome").onclick = () => { const on = !document.documentElement.classList.contains("hv2"); try{ localStorage.setItem("pvgo_home_v2", on?"1":"0"); }catch(e){} document.documentElement.classList.toggle("hv2", on); toast(on?"Nouvel accueil activé":"Ancien accueil rétabli"); showSettings(); };
   $("#showTutorial").onclick = () => showTutorial();
   $("#showChangelog").onclick = () => showChangelog(CHANGELOG);
   $("#exportBackup").onclick = () => exportBackup();
