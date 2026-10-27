@@ -2251,7 +2251,14 @@ async function flushRatings(){
 function askRating(tplId){
   if (!COUNTER_ON || document.querySelector(".rate-card")) return;
   const st = rateState(), DAY = 86400e3;
-  if ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY) return;
+  /* Retour prioritaire : PV ajouté/modifié depuis moins de 21 jours, ou PV très long (250 champs et plus).
+     Demandé une seule fois par technicien et par version du PV, même si la limite d'une fois par semaine n'est pas écoulée. */
+  const T = (S.tpl && S.tpl.id===tplId) ? S.tpl : null, ver = T ? (T.updatedAt||0) : 0;
+  const prio = !!T && ((ver && Date.now() - ver < 21*DAY) || (T.fields||[]).length >= 250);
+  const seen = st.seen && typeof st.seen==="object" ? st.seen : {};
+  const prioNow = prio && seen[tplId] !== ver;
+  if (!prioNow && ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY)) return;
+  if (prioNow){ const s0 = rateState(); s0.seen = Object.assign({}, s0.seen||{}, {[tplId]: ver}); rateSave(s0); }
   const c = document.createElement("div"); c.className = "rate-card"; c.setAttribute("role","dialog"); c.setAttribute("aria-label","Note du PV");
   const pvName = (S.tpl && S.tpl.id===tplId && S.tpl.name) ? S.tpl.name : "";
   c.innerHTML = `<b>Ce PV était agréable à remplir ?</b><small>${pvName?`« ${esc(pvName)} » · `:""}on parle du formulaire, pas de l'appli.</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><div class="rate-ends"><span>1 = pénible</span><span>5 = agréable</span></div><textarea maxlength="300" placeholder="Qu'est-ce qui t'a gêné dans ce PV ? (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
@@ -2262,7 +2269,7 @@ function askRating(tplId){
     if (b.dataset.r === "later"){ const s2 = rateState(); s2.last = Date.now(); s2.skips = (s2.skips||0) + 1; rateSave(s2); c.remove(); return; }
     if (b.dataset.r === "send" && stars){
       rateOutWrite(rateOutRead().concat([{id: uid()+uid(), tpl: tplId, stars, comment: c.querySelector("textarea").value.trim().slice(0,300), ts: Date.now()}]));
-      rateSave({last: Date.now(), skips: 0}); c.remove(); toast("Merci pour ton retour !"); flushRatings();
+      { const s3 = rateState(); s3.last = Date.now(); s3.skips = 0; rateSave(s3); } c.remove(); toast("Merci pour ton retour !"); flushRatings();
     }
   };
   document.body.appendChild(c);
