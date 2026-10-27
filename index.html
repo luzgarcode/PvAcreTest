@@ -821,7 +821,7 @@ async function fetchWithTimeout(url, kind, ms){
 }
 function tplRecord(m, meta, pdf, cur){
   const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], packPhotos:!!meta.packPhotos, multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
 }
 async function syncManifest(opts){
   opts = opts || {};
@@ -1967,15 +1967,27 @@ async function buildPdf(tpl, draft){
     if (u && (u.equalsAny ? u.equalsAny.includes(val) : val===u.equals)) continue;
     const r = toPdf(g, c); g.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
   }
+  // « packPhotos » : dans chaque rubrique de photos, les photos présentes prennent les premières cases, dans l'ordre,
+  // sans trou si le technicien en a sauté une (les cases du PDF n'ont pas de légende imprimée).
+  const packMap = new Map();
+  if (tpl.packPhotos){
+    const byGroup = new Map();
+    for (const f of tpl.fields){ if (f.type==="photo" && !f.noPdf){ if(!byGroup.has(f.group)) byGroup.set(f.group, []); byGroup.get(f.group).push(f); } }
+    for (const slots of byGroup.values()){
+      const filled = slots.filter(f => isFieldVisible(f, draft.values) && isFilled(draft.values[f.id]));
+      filled.forEach((f,i) => { if (slots[i]) packMap.set(f.id, slots[i]); });
+    }
+  }
   for (const f of tpl.fields){
     if (f.noPdf) continue;
+    const G = packMap.get(f.id) || f;
     // un champ "mirror" n'a pas sa propre valeur : il réaffiche celle d'un autre
     // champ du modèle (ex. le type NGK/SAT choisi dans le Matériel, recopié dans
     // l'en-tête de la checklist Installation correspondante)
     let v = draft.values[f.id];
     if (f.type==="mirror"){ const src=tpl.fields.find(x=>x.id===f.source); v = src ? draft.values[src.id] : undefined; }
     if(!isFilled(v)) continue;
-    const page = pages[f.page]; if(!page) continue;
+    const page = pages[G.page]; if(!page) continue;
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }
     if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
     if (f.type==="choice" && f.choiceMode==="color"){
@@ -1999,7 +2011,7 @@ async function buildPdf(tpl, draft){
       }
       continue;
     }
-    const r = toPdf(page, f);
+    const r = toPdf(page, G);
     if (f.eraseBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
     if (f.type==="photo" || f.type==="signature"){
       const im = await embed(v); const s=Math.min(r.w/im.width, r.h/im.height); const w=im.width*s, h=im.height*s;
