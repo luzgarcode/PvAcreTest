@@ -342,6 +342,11 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .pf-rt b{ display:block; font-size:16px; }
 .pf-rt small{ display:block; color:var(--ink-2); font-size:13px; line-height:1.3; }
 .pf-ch{ flex:none; color:var(--ink-2); font-size:22px; line-height:1; }
+.st-sec{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin:20px 4px 8px; }
+.st-sec:first-child{ margin-top:8px; }
+.st-note{ font-size:13px; color:var(--ink-2); margin:8px 4px 0; line-height:1.4; }
+.pf-danger .pf-ri{ background:var(--nok-soft); }
+.pf-danger .pf-rt b{ color:var(--nok); }
 .tcards{ padding-top:8px; }
 .tcard{ border:1px solid var(--line); border-radius:10px; padding:8px 10px 10px; margin-bottom:10px; background:var(--surface); }
 .tcn{ font-weight:700; font-size:15px; margin-bottom:4px; }
@@ -1216,38 +1221,30 @@ async function showSettings(){
   setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Réglages</div><div class="sp"></div>`);
   $("#bk").onclick = () => showProfile();
   main.innerHTML = `<div class="fill" style="max-width:520px">
-    <div class="grp" open style="padding:14px">
-      <div class="ql">Prise en main</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Revoir le tuto rapide : choisir un modèle, remplir, scanner, signer, envoyer.</p>
-      <button class="btn" id="showTutorial">Revoir le tuto</button>
+    <div class="st-sec">Aide</div>
+    <div class="pf-menu" style="margin-top:0">
+      <button class="pf-row" id="showTutorial"><span class="pf-ri" aria-hidden="true">🎓</span><span class="pf-rt"><b>Revoir le tuto</b><small>Choisir un modèle, remplir, scanner, signer, envoyer</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
+      <button class="pf-row" id="showChangelog"><span class="pf-ri" aria-hidden="true">🆕</span><span class="pf-rt"><b>Nouveautés</b><small>Les dernières nouveautés de l'appli</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
-    <div class="divider"></div>
-    <div class="grp" style="padding:14px">
-      <div class="ql">Nouveautés</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Revoir les dernières nouveautés de l'appli.</p>
-      <button class="btn" id="showChangelog">Voir les nouveautés</button>
+    <div class="st-sec">Mes données</div>
+    <div class="pf-menu" style="margin-top:0">
+      <button class="pf-row" id="exportBackup"><span class="pf-ri" aria-hidden="true">💾</span><span class="pf-rt"><b>Exporter mes rapports</b><small>Un fichier de sauvegarde (rapports et profil)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
+      <button class="pf-row" id="importBackup"><span class="pf-ri" aria-hidden="true">📥</span><span class="pf-rt"><b>Importer une sauvegarde</b><small>Récupérer des rapports sur ce téléphone</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
-    <div class="divider"></div>
-    <div class="grp" style="padding:14px">
-      <div class="ql">Modèles de PV</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Si un modèle affiche des infos anciennes ou incomplètes malgré « Vérifier les mises à jour », force une resynchronisation complète : ça efface et retélécharge tous les modèles depuis le début. Tes rapports en cours ne sont pas touchés.</p>
-      <button class="btn" id="hardResync">Forcer une resynchronisation complète</button>
+    <input type="file" id="importBackupFile" accept="application/json" hidden>
+    <p class="st-note">🔒 Tes rapports et ton profil restent uniquement sur ce téléphone : si tu vides les données du navigateur ou changes d'appareil, tout disparaît. Exporte une sauvegarde de temps en temps.</p>
+    <div class="st-sec">Modèles de PV</div>
+    <div class="pf-menu" style="margin-top:0">
+      <button class="pf-row" id="hardResync"><span class="pf-ri" aria-hidden="true">🔄</span><span class="pf-rt"><b>Resynchroniser tous les modèles</b><small>Si un modèle affiche des infos anciennes malgré « Vérifier les mises à jour » (≈ 10 Mo)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
-    <div class="divider"></div>
-    <div class="grp" style="padding:14px">
-      <div class="ql">Sauvegarde</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Tes rapports (en cours et envoyés) et ton profil restent uniquement sur ce téléphone : si tu vides les données du navigateur ou changes d'appareil, tout disparaît. Exporte un fichier de sauvegarde de temps en temps pour pouvoir tout récupérer.</p>
-      <div class="btnrow"><button class="btn" id="exportBackup">Exporter mes rapports</button><button class="btn ghost" id="importBackup">Importer une sauvegarde</button></div>
-      <input type="file" id="importBackupFile" accept="application/json" hidden>
+    <p class="st-note">Efface et retélécharge tous les modèles depuis le début. Tes rapports en cours ne sont pas touchés.</p>
+    <div class="st-sec">Dépannage</div>
+    <div class="pf-menu" style="margin-top:0">
+      <button class="pf-row pf-danger" id="hardReset"><span class="pf-ri" aria-hidden="true">🧹</span><span class="pf-rt"><b>Vider le cache et redémarrer</b><small>En cas de gros bug : écran figé, boutons qui ne répondent plus</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
+      <button class="pf-row" id="showDiag"><span class="pf-ri" aria-hidden="true">🩺</span><span class="pf-rt"><b>Diagnostic technique</b><small>Analyse hors-ligne de l'appli</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
-    <div class="divider"></div>
-    <div class="grp" style="padding:14px">
-      <div class="ql">Dépannage</div>
-      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">En cas de gros bug (écran figé, boutons qui ne répondent plus, affichage cassé) : vide le cache de l'appli et redémarre proprement. Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
-      <button class="btn sm ghost danger" id="hardReset">Vider le cache et redémarrer l'appli</button>
-      <button class="btn sm ghost" id="showDiag" style="margin-top:8px">Diagnostic technique</button>
-    </div>
-    <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:18px 0 4px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
+    <p class="st-note">Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
+    <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:26px 0 4px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:0 0 4px">Usage réservé aux techniciens invités. Toute copie, extraction ou redistribution de l'application est interdite.</p>
   </div>`;
   $("#showTutorial").onclick = () => showTutorial();
