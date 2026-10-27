@@ -1210,6 +1210,12 @@ async function showSettings(){
       <input type="file" id="importBackupFile" accept="application/json" hidden>
     </div>
     <div class="divider"></div>
+    ${COUNTER_ON ? `<div class="grp" style="padding:14px">
+      <div class="ql">Demander un PV</div>
+      <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">Il te manque un modèle de PV, ou un PV doit être corrigé ? Envoie ta demande, elle arrive directement chez moi.</p>
+      <button class="btn" id="goRequest">Demander un PV</button>
+    </div>
+    <div class="divider"></div>` : ""}
     <div class="grp" style="padding:14px">
       <div class="ql">Dépannage</div>
       <p style="margin:6px 0 12px;color:var(--ink-2);font-size:14px">En cas de gros bug (écran figé, boutons qui ne répondent plus, affichage cassé) : vide le cache de l'appli et redémarre proprement. Tes rapports en cours et tes réglages ne sont pas touchés, seuls les fichiers de l'appli sont retéléchargés.</p>
@@ -1236,6 +1242,7 @@ async function showSettings(){
     else alert(res.error || "La resynchronisation n'a pas abouti : rien n'a été modifié, réessaie avec du réseau.");
     showSettings();
   };
+  if ($("#goRequest")) $("#goRequest").onclick = () => showRequest();
   $("#hardReset").onclick = async () => {
     if (!confirm("Vider le cache et redémarrer l'appli maintenant ? Tes rapports en cours ne seront pas perdus.")) return;
     const btn = $("#hardReset"); btn.disabled = true; btn.textContent = "Nettoyage…";
@@ -2271,6 +2278,61 @@ setTimeout(() => flushOutbox(), 4000);
    À la fin d'un PV terminé, un petit bandeau demande « Ce PV était-il facile à remplir ? » (1 à 5 étoiles + commentaire facultatif).
    Au plus une fois par semaine, jamais bloquant ; arrêt après 3 « Plus tard » sans réponse. La note est envoyée SANS le mail de connexion.
    Elle attend dans une petite file sur le téléphone si le réseau manque. Inactif sur le site de test (GitHub Pages). */
+/* ============ DEMANDE DE PV (Réglages → Demander un PV) ============
+   Le technicien décrit le PV dont il a besoin ; la demande arrive dans l'admin (mail du technicien inclus).
+   Elle attend dans une petite file sur le téléphone si le réseau manque, comme les envois. 5 demandes par jour au maximum. */
+const REQ_OUT = "pvgo_req_outbox";
+function reqOutRead(){ try{ const a = JSON.parse(localStorage.getItem(REQ_OUT)||"[]"); return Array.isArray(a) ? a : []; }catch(e){ return []; } }
+function reqOutWrite(a){ try{ localStorage.setItem(REQ_OUT, JSON.stringify(a.slice(-10))); }catch(e){} }
+let reqBusy = false;
+/* renvoie "ok" (reçue), "limit" (5 par jour atteintes), "refused" (refusée) ou "later" (réseau / session : on réessaiera) */
+async function flushRequests(){
+  if (!COUNTER_ON || reqBusy || !navigator.onLine) return "later";
+  reqBusy = true; let last = "later";
+  try{
+    for (const ev of reqOutRead()){
+      let r;
+      try{ r = await fetch("/api/request", {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(ev), credentials:"same-origin", cache:"no-store"}); }
+      catch(e){ last = "later"; break; }
+      if (r.ok){ reqOutWrite(reqOutRead().filter(x=>x.id!==ev.id)); last = "ok"; continue; }
+      if (r.status===429){ reqOutWrite(reqOutRead().filter(x=>x.id!==ev.id)); last = "limit"; continue; }
+      if (r.status===400 || r.status===413 || r.status===404 || r.status===405){ reqOutWrite(reqOutRead().filter(x=>x.id!==ev.id)); last = "refused"; continue; }
+      last = "later"; break;                                  // 401 / 5xx : plus tard
+    }
+  } finally { reqBusy = false; }
+  return last;
+}
+async function showRequest(){
+  S.view="request";
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Demander un PV</div><div class="sp"></div>`);
+  $("#bk").onclick = () => showSettings();
+  const tpls = await Store.all("templates");
+  const clients = [...new Set(tpls.flatMap(t => tplClients(t)).filter(c => c && c!=="Tous clients"))].sort((a,b)=>a.localeCompare(b,"fr"));
+  const waiting = reqOutRead().length;
+  main.innerHTML = `<div class="fill" style="max-width:520px">
+    <div class="grp" style="padding:14px">
+      <p style="margin:0 0 12px;color:var(--ink-2);font-size:14px">Décris le PV dont tu as besoin (nouveau modèle ou correction d'un modèle existant). Pense à m'envoyer le PDF d'origine à part si tu l'as.</p>
+      ${waiting ? `<p class="warn" style="margin:0 0 12px">${waiting} demande${waiting>1?"s":""} en attente d'envoi (pas de réseau pour l'instant).</p>` : ""}
+      <div class="q"><label for="rqClient">Client</label><select class="inp" id="rqClient"><option value="">—</option>${clients.map(c=>`<option>${esc(c)}</option>`).join("")}<option>Autre</option></select></div>
+      <div class="q"><label for="rqTitle">PV demandé</label><input class="inp" id="rqTitle" maxlength="100" autocomplete="off" placeholder="Ex. PV Drive Burger King, PV borne X"></div>
+      <div class="q"><label for="rqDetails">Précisions (facultatif)</label><textarea class="inp" id="rqDetails" rows="4" maxlength="500" placeholder="Ce qu'il faut remplir, ce qui manque ou ne va pas dans le PV actuel…"></textarea></div>
+      <button class="btn primary" id="rqSend">Envoyer la demande</button>
+    </div></div>`;
+  $("#rqSend").onclick = async () => {
+    const title = $("#rqTitle").value.trim();
+    if (title.length < 3){ toast("Indique le PV demandé"); $("#rqTitle").focus(); return; }
+    const btn = $("#rqSend"); btn.disabled = true; btn.textContent = "Envoi…";
+    reqOutWrite(reqOutRead().concat([{id: uid()+uid(), client: $("#rqClient").value, title, details: $("#rqDetails").value.trim(), ts: Date.now()}]));
+    const r = await flushRequests();
+    if (r==="ok"){ toast("Demande envoyée, merci !"); showSettings(); }
+    else if (r==="limit"){ toast("Limite atteinte : 5 demandes par jour"); showSettings(); }
+    else if (r==="refused"){ toast("Demande refusée par le serveur"); btn.disabled = false; btn.textContent = "Envoyer la demande"; }
+    else { toast("Pas de réseau : la demande partira dès que possible"); showSettings(); }
+  };
+}
+window.addEventListener("online", () => flushRequests());
+setTimeout(() => flushRequests(), 7000);
+
 const RATE_KEY = "pvgo_rate", RATE_OUT = "pvgo_rate_outbox";
 function rateState(){ try{ const o = JSON.parse(localStorage.getItem(RATE_KEY)||"{}"); return o && typeof o==="object" ? o : {}; }catch(e){ return {}; } }
 function rateSave(o){ try{ localStorage.setItem(RATE_KEY, JSON.stringify(o)); }catch(e){} }
