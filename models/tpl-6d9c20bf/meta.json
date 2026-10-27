@@ -230,14 +230,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 1",
+      "col": "Type de borne"
     },
     {
       "id": "fb0eedd3a",
@@ -255,7 +266,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 1",
+      "col": "N° de série borne"
     },
     {
       "id": "f5d30e3ac",
@@ -273,7 +286,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 1",
+      "col": "N° de série TPE"
     },
     {
       "id": "f122d7b64",
@@ -291,7 +306,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 1",
+      "col": "N° de série PC"
     },
     {
       "id": "f9708f6f8",
@@ -309,7 +326,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 1",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "f4a1cafc4",
@@ -324,14 +343,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 2",
+      "col": "Type de borne"
     },
     {
       "id": "f00c4c132",
@@ -349,7 +379,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 2",
+      "col": "N° de série borne"
     },
     {
       "id": "fe4862721",
@@ -367,7 +399,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 2",
+      "col": "N° de série TPE"
     },
     {
       "id": "f50540338",
@@ -385,7 +419,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 2",
+      "col": "N° de série PC"
     },
     {
       "id": "f1445b2ba",
@@ -403,7 +439,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 2",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "fbbe448d6",
@@ -418,14 +456,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 3",
+      "col": "Type de borne"
     },
     {
       "id": "f8abfddbc",
@@ -443,7 +492,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 3",
+      "col": "N° de série borne"
     },
     {
       "id": "fb83bcc06",
@@ -461,7 +512,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 3",
+      "col": "N° de série TPE"
     },
     {
       "id": "f3368ee93",
@@ -479,7 +532,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 3",
+      "col": "N° de série PC"
     },
     {
       "id": "fc6f6a99b",
@@ -497,7 +552,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 3",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "f7268906e",
@@ -512,14 +569,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 4",
+      "col": "Type de borne"
     },
     {
       "id": "f48ac9eac",
@@ -537,7 +605,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 4",
+      "col": "N° de série borne"
     },
     {
       "id": "f0f785302",
@@ -555,7 +625,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 4",
+      "col": "N° de série TPE"
     },
     {
       "id": "f3b09ec7f",
@@ -573,7 +645,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 4",
+      "col": "N° de série PC"
     },
     {
       "id": "f11aa9ebf",
@@ -591,7 +665,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 4",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "f7820c73c",
@@ -606,14 +682,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 5",
+      "col": "Type de borne"
     },
     {
       "id": "fac46a583",
@@ -631,7 +718,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 5",
+      "col": "N° de série borne"
     },
     {
       "id": "ffee4a324",
@@ -649,7 +738,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 5",
+      "col": "N° de série TPE"
     },
     {
       "id": "fb8429942",
@@ -667,7 +758,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 5",
+      "col": "N° de série PC"
     },
     {
       "id": "f66204181",
@@ -685,7 +778,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 5",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "fef0f8460",
@@ -700,14 +795,25 @@
       "fontSize": 0,
       "align": "left",
       "options": [
-        { "label": "Simple", "box": null },
-        { "label": "Double", "box": null },
-        { "label": "Semi-outdoor", "box": null }
+        {
+          "label": "Simple",
+          "box": null
+        },
+        {
+          "label": "Double",
+          "box": null
+        },
+        {
+          "label": "Semi-outdoor",
+          "box": null
+        }
       ],
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 6",
+      "col": "Type de borne"
     },
     {
       "id": "fce9b5543",
@@ -725,7 +831,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 6",
+      "col": "N° de série borne"
     },
     {
       "id": "f1ca14f98",
@@ -743,7 +851,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 6",
+      "col": "N° de série TPE"
     },
     {
       "id": "ff8c06932",
@@ -761,7 +871,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 6",
+      "col": "N° de série PC"
     },
     {
       "id": "f1b537fa8",
@@ -779,7 +891,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "row": "Borne 6",
+      "col": "N° de brassage RJ45"
     },
     {
       "id": "f4c72a7c0",
