@@ -1114,7 +1114,6 @@ async function showHome(){
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
     <div style="margin:14px 0 0"><button class="btn ghost" id="importRelay">📨&nbsp; Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
-    <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?` Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos. Si tu notes un PV, la note est anonyme.`:""}</p>
     <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
   </div>`;
@@ -1250,6 +1249,8 @@ async function showSettings(){
       <button class="pf-row" id="hardResync"><span class="pf-ri" aria-hidden="true">🔄</span><span class="pf-rt"><b>Resynchroniser tous les modèles</b><small>Si un modèle affiche des infos anciennes malgré « Vérifier les mises à jour » (≈ 10 Mo)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
     <p class="st-note">Efface et retélécharge tous les modèles depuis le début. Tes rapports en cours ne sont pas touchés.</p>
+    <div class="st-sec">Confidentialité</div>
+    <div class="pf-menu" style="margin-top:0"><div class="pf-row" style="cursor:default"><span class="pf-ri" aria-hidden="true">🔐</span><span class="pf-rt"><small style="font-size:13px;line-height:1.45;white-space:normal">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?" Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos. Si tu notes un PV, la note est anonyme.":""}</small></span></div></div>
     <div class="st-sec">Dépannage</div>
     <div class="pf-menu" style="margin-top:0">
       <button class="pf-row pf-danger" id="hardReset"><span class="pf-ri" aria-hidden="true">🧹</span><span class="pf-rt"><b>Vider le cache et redémarrer</b><small>En cas de gros bug : écran figé, boutons qui ne répondent plus</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
