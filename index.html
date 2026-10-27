@@ -821,7 +821,7 @@ async function fetchWithTimeout(url, kind, ms){
 }
 function tplRecord(m, meta, pdf, cur){
   const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, published:true};
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
 }
 async function syncManifest(opts){
   opts = opts || {};
@@ -2251,14 +2251,15 @@ async function flushRatings(){
 function askRating(tplId){
   if (!COUNTER_ON || document.querySelector(".rate-card")) return;
   const st = rateState(), DAY = 86400e3;
-  /* Retour prioritaire : PV ajouté/modifié depuis moins de 21 jours, ou PV très long (250 champs et plus).
-     Demandé une seule fois par technicien et par version du PV, même si la limite d'une fois par semaine n'est pas écoulée. */
-  const T = (S.tpl && S.tpl.id===tplId) ? S.tpl : null, ver = T ? (T.updatedAt||0) : 0;
-  const prio = !!T && ((ver && Date.now() - ver < 21*DAY) || (T.fields||[]).length >= 250);
+  /* Retour prioritaire, une seule fois par technicien : (1) grosse mise à jour d'un PV (marquée par « feedbackAt » dans le manifeste, valable 21 jours),
+     (2) PV très long (250 champs et plus), une fois par PV. Dans ces deux cas la limite d'une fois par semaine est ignorée. */
+  const T = (S.tpl && S.tpl.id===tplId) ? S.tpl : null, fb = T ? (T.feedbackAt||0) : 0;
   const seen = st.seen && typeof st.seen==="object" ? st.seen : {};
-  const prioNow = prio && seen[tplId] !== ver;
+  const prioKey = !T ? null : (fb && Date.now() - fb < 21*DAY && seen[tplId+"@maj"] !== fb) ? [tplId+"@maj", fb]
+                  : ((T.fields||[]).length >= 250 && !seen[tplId+"@long"]) ? [tplId+"@long", 1] : null;
+  const prioNow = !!prioKey;
   if (!prioNow && ((st.skips||0) >= 3 || Date.now() - (st.last||0) < 7*DAY)) return;
-  if (prioNow){ const s0 = rateState(); s0.seen = Object.assign({}, s0.seen||{}, {[tplId]: ver}); rateSave(s0); }
+  if (prioNow){ const s0 = rateState(); s0.seen = Object.assign({}, s0.seen||{}, {[prioKey[0]]: prioKey[1]}); rateSave(s0); }
   const c = document.createElement("div"); c.className = "rate-card"; c.setAttribute("role","dialog"); c.setAttribute("aria-label","Note du PV");
   const pvName = (S.tpl && S.tpl.id===tplId && S.tpl.name) ? S.tpl.name : "";
   c.innerHTML = `<b>Ce PV était agréable à remplir ?</b><small>${pvName?`« ${esc(pvName)} » · `:""}on parle du formulaire, pas de l'appli.</small><div class="rate-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} sur 5">★</button>`).join("")}</div><div class="rate-ends"><span>1 = pénible</span><span>5 = agréable</span></div><textarea maxlength="300" placeholder="Qu'est-ce qui t'a gêné dans ce PV ? (facultatif)" hidden></textarea><div class="rate-act"><button type="button" class="btn sm" data-r="later">Plus tard</button><button type="button" class="btn sm primary" data-r="send" hidden>Envoyer</button></div>`;
