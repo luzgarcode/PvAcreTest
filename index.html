@@ -143,7 +143,7 @@ html.hv2 .list:has(.client-row) .row .main{ min-width:0; }
 html.hv2 .list:has(.client-row) .row:active{ background:var(--blue-soft); }
 html.hv2 #normalSections .sec-h{ margin:22px 0 10px; }
 html.hv2 #normalSections .sec-h h2{ font-size:13px; font-family:inherit; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); }
-html.hv2 #importRelay{ width:100%; justify-content:flex-start; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-weight:600; }
+html.hv2 #importRelay{ width:100%; justify-content:center; text-align:center; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-weight:600; }
 .client-ico{ background:var(--blue-soft); color:var(--blue); border:none; display:flex; align-items:center; justify-content:center; font-family:var(--font-c); font-weight:700; font-size:16px; }
 .client-ico-img{ background:#fff; border:1px solid var(--line, #e2e2e2); border-radius:8px; padding:4px; overflow:hidden; }
 .client-ico-img::before{ content:none; }
@@ -1111,9 +1111,9 @@ async function showHome(){
     ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"${keepDraftsOpen?" open":""}><summary><span class="t">Rapports en cours (${openCount})</span></summary>
     <div class="grp-body"><div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div></div></details>`:""}
 
-    <div style="margin:0 0 14px"><button class="btn ghost" id="importRelay">📨&nbsp; Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
     <div class="sec-h"><h2>Choisir un client</h2><button class="btn ghost sm" id="refreshBtn">${ICON.sync} Vérifier les mises à jour</button></div>
     <div class="list">${clients.map(c => `<div class="row client-row" data-client="${esc(c.client)}" role="button" tabindex="0">${clientIconHtml(c.client)}<div class="main"><div class="name">${esc(c.client)}</div><div class="meta">${countFor(c.client)} modèle${countFor(c.client)>1?"s":""} disponible${countFor(c.client)>1?"s":""}</div></div><div class="chev">${ICON.chev}</div></div>`).join("")}</div>
+    <div style="margin:14px 0 0"><button class="btn ghost" id="importRelay">📨&nbsp; Récupérer un PV reçu d'un collègue</button><input type="file" id="importRelayFile" accept="application/json,.json" hidden></div>
     <p class="kbd" style="margin-top:18px">Tes rapports restent sur cet appareil jusqu'à ce que tu télécharges le PDF. Les modèles sont automatiquement vérifiés à l'ouverture de la page.${COUNTER_ON?` Seul le nombre de PV que tu envoies est comptabilisé (ton mail de connexion, le type de PV et la date) : jamais le contenu ni les photos. Si tu notes un PV, la note est anonyme.`:""}</p>
     <p class="kbd" style="margin-top:6px;font-size:11px;text-align:center">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     </div>
