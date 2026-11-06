@@ -755,8 +755,6 @@
   "annexPhotos": [],
   "optionalPages": [],
   "category": "Autre",
-  "clients": [
-    "Burger King"
-  ],
+  "clients": ["Burger King", "McDonald's"],
   "shortName": "SAT"
 }
