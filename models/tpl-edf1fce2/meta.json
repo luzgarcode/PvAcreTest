@@ -755,6 +755,7 @@
   "annexPhotos": [],
   "optionalPages": [],
   "category": "Autre",
+  "subCategory": "Service à table",
   "clients": ["Burger King", "McDonald's"],
   "shortName": "SAT"
 }

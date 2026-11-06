@@ -877,7 +877,7 @@ async function fetchWithTimeout(url, kind, ms){
 }
 function tplRecord(m, meta, pdf, cur){
   const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], packPhotos:!!meta.packPhotos, multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], packPhotos:!!meta.packPhotos, multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", subCategory:meta.subCategory||"", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
 }
 async function syncManifest(opts){
   opts = opts || {};
@@ -1161,18 +1161,26 @@ async function showClient(clientName){
   $$(".client-row").forEach(el => { const go=()=>showCategory(clientName, el.dataset.cat); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
 }
 
-async function showCategory(clientName, categoryName){
-  S.view="category"; S.client=clientName; S.category=categoryName;
-  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">${esc(clientName)} · ${esc(categoryName)}</div><div class="sp"></div><button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}</button>`);
-  $("#bk").onclick = () => showClient(clientName);
+async function showCategory(clientName, categoryName, subName){
+  S.view="category"; S.client=clientName; S.category=categoryName; S.sub=subName||null;
+  const label = subName ? `${clientName} · ${categoryName} · ${subName}` : `${clientName} · ${categoryName}`;
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">${esc(label)}</div><div class="sp"></div><button class="btn sm" id="barProfile" aria-label="Mon profil">${ICON.user}</button>`);
+  $("#bk").onclick = () => subName ? showCategory(clientName, categoryName) : showClient(clientName);
   $("#barProfile").onclick = () => showProfile();
-  const tpls = templatesForClient(await Store.all("templates"), clientName).filter(t => tplCategory(t)===categoryName);
-  tpls.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+  const all = templatesForClient(await Store.all("templates"), clientName).filter(t => tplCategory(t)===categoryName);
+  all.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+  // sous-dossiers : un modèle peut porter "subCategory" ; ils s'affichent comme des dossiers dans leur rubrique
+  const subs = subName ? [] : [...new Set(all.map(t => t.subCategory).filter(Boolean))].sort((x,y)=>x.localeCompare(y,"fr"));
+  const tpls = subName ? all.filter(t => t.subCategory===subName) : all.filter(t => !t.subCategory);
+  const folderHtml = n => { const c = all.filter(t => t.subCategory===n).length; return `<div class="row client-row" data-sub="${esc(n)}" role="button" tabindex="0"><span class="pf-ri" aria-hidden="true" style="flex:none">📁</span><div class="main"><div class="name">${esc(n)}</div><div class="meta">${c} modèle${c>1?"s":""}</div></div><span class="pf-ch" aria-hidden="true">›</span></div>`; };
+  const rowHtml = t => { const cnt=countableFields(t).length; return `<div class="row">${templateIconHtml(t)}<div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${clientName==="Tous clients"?`${esc(tplClients(t).join(", "))} · `:""}${cnt} zone${cnt>1?"s":""} à remplir${t.annexPhotos&&t.annexPhotos.length?` · ${t.annexPhotos.length} photo${t.annexPhotos.length>1?"s":""} demandée${t.annexPhotos.length>1?"s":""}`:""}</div></div>
+      <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`; };
+  const items = subs.map(folderHtml).concat(tpls.map(rowHtml));
   main.innerHTML = `<div class="wrap">
-    <div class="sec-h"><h2>${esc(clientName)} · ${esc(categoryName)}</h2></div>
-    <div class="list">${tpls.length ? tpls.map(t => { const cnt=countableFields(t).length; return `<div class="row">${templateIconHtml(t)}<div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${clientName==="Tous clients"?`${esc(tplClients(t).join(", "))} · `:""}${cnt} zone${cnt>1?"s":""} à remplir${t.annexPhotos&&t.annexPhotos.length?` · ${t.annexPhotos.length} photo${t.annexPhotos.length>1?"s":""} demandée${t.annexPhotos.length>1?"s":""}`:""}</div></div>
-      <div class="acts">${IS_TEST_BUILD?`<button class="btn sm ghost" data-calib="${t.id}">🛠</button>`:""}<button class="btn primary" data-new-draft="${t.id}">Nouveau rapport</button></div></div>`; }).join("") : `<div class="empty">Aucun modèle pour l'instant dans cette rubrique.</div>`}</div>
+    <div class="sec-h"><h2>${esc(label)}</h2></div>
+    <div class="list">${items.length ? items.join("") : `<div class="empty">Aucun modèle pour l'instant dans cette rubrique.</div>`}</div>
   </div>`;
+  $$("[data-sub]").forEach(el => { const go=()=>showCategory(clientName, categoryName, el.dataset.sub); el.onclick=go; el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }; });
   $$("[data-new-draft]").forEach(b => b.onclick = () => newDraft(b.dataset.newDraft));
   if (IS_TEST_BUILD) $$("[data-calib]").forEach(b => b.onclick = async () => openCalibrate(await Store.get("templates", b.dataset.calib)));
 }
