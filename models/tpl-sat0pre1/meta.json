@@ -1,0 +1,2390 @@
+{
+  "name": "Service à Table – Prévisite",
+  "annexPhotos": [
+    "Plan du restaurant et de la terrasse annotés",
+    "Plan du service à table (TT2 et TT3)",
+    "Orientation du plan (emplacement Panel PC / comptoir)",
+    "Photo des implantations bornes",
+    "Photo du lieu du Panel PC",
+    "Photo du lieu du support de chevalet au comptoir",
+    "Photo des éléments métalliques pouvant bloquer le signal",
+    "Photo des décorations pouvant être gênantes",
+    "Photo du plan d'évacuation / d'intervention",
+    "Photo du TGBT (emplacement de l'ondulé)"
+  ],
+  "optionalPages": [],
+  "category": "Autre",
+  "subCategory": "Service à table",
+  "clients": [
+    "Burger King",
+    "McDonald's"
+  ],
+  "shortName": "SAT Prévisite",
+  "fields": [
+    {
+      "id": "f12470ac8",
+      "type": "text",
+      "label": "Restaurant",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 230,
+      "y": 161,
+      "w": 318,
+      "h": 20,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "f00368459",
+      "type": "text",
+      "label": "Code restaurant",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 230,
+      "y": 188,
+      "w": 318,
+      "h": 20,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "f4a0702f7",
+      "type": "text",
+      "label": "Adresse du restaurant",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 230,
+      "y": 216,
+      "w": 318,
+      "h": 28,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f62bdd25d",
+      "type": "text",
+      "label": "Horaire d'ouverture",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 230,
+      "y": 252,
+      "w": 318,
+      "h": 28,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f295cd6e7",
+      "type": "date",
+      "label": "Date du rapport",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 42,
+      "y": 325,
+      "w": 174,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa161e146",
+      "type": "date",
+      "label": "Date d'installation souhaitée",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 229,
+      "y": 325,
+      "w": 140,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbd3f970c",
+      "type": "date",
+      "label": "Date d'ouverture (mise en service)",
+      "group": "Informations restaurant",
+      "page": 2,
+      "x": 380,
+      "y": 325,
+      "w": 168,
+      "h": 38,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f12be062f",
+      "type": "text",
+      "label": "Nom du technicien",
+      "group": "Pour Acrelec",
+      "page": 2,
+      "x": 42,
+      "y": 414,
+      "w": 505,
+      "h": 26,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-name"
+    },
+    {
+      "id": "f690f8bbb",
+      "type": "text",
+      "label": "Nom du responsable de projet",
+      "group": "Pour le restaurant",
+      "page": 2,
+      "x": 42,
+      "y": 490,
+      "w": 250,
+      "h": 60,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f90ce6389",
+      "type": "text",
+      "label": "Téléphone",
+      "group": "Pour le restaurant",
+      "page": 2,
+      "x": 340,
+      "y": 490,
+      "w": 205,
+      "h": 22,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffbfb0ecb",
+      "type": "text",
+      "label": "Adresse mail",
+      "group": "Pour le restaurant",
+      "page": 2,
+      "x": 340,
+      "y": 531,
+      "w": 205,
+      "h": 22,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3b7b21b9",
+      "type": "choice",
+      "label": "Configuration devant être installée",
+      "group": "Configuration SAT",
+      "page": 3,
+      "x": 452.5,
+      "y": 150.4,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "TT1",
+          "box": {
+            "page": 3,
+            "x": 452.5,
+            "y": 150.4,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "TT2",
+          "box": {
+            "page": 3,
+            "x": 452.4,
+            "y": 190.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "TT3",
+          "box": {
+            "page": 3,
+            "x": 452.4,
+            "y": 230.3,
+            "w": 19.8,
+            "h": 19.0
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fecefecd4",
+      "type": "choice",
+      "label": "Le restaurant utilise-t-il déjà le service à table sur les kiosks ?",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 460.1,
+      "y": 351.9,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 3,
+            "x": 460.1,
+            "y": 351.9,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 3,
+            "x": 460.1,
+            "y": 379.9,
+            "w": 19.9,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f76dad5a4",
+      "type": "text",
+      "label": "Nombre de zones",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 360,
+      "y": 433,
+      "w": 188,
+      "h": 24,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb28770a5",
+      "type": "text",
+      "label": "Nom de la zone 1",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 462,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3102bbe9",
+      "type": "text",
+      "label": "Nom de la zone 2",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 479,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f94beff81",
+      "type": "text",
+      "label": "Nom de la zone 3",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 497,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fdf4f8dae",
+      "type": "text",
+      "label": "Nom de la zone 4",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 514,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f65de598b",
+      "type": "text",
+      "label": "Nom de la zone 5",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 531,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff3a4b1a9",
+      "type": "text",
+      "label": "Nom de la zone 6",
+      "group": "Configuration TT2 uniquement",
+      "page": 3,
+      "x": 372,
+      "y": 549,
+      "w": 176,
+      "h": 15,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fba939746",
+      "type": "choice",
+      "label": "Le restaurant possède-t-il une terrasse ?",
+      "group": "Configuration TT2 ou TT3",
+      "page": 3,
+      "x": 459.4,
+      "y": 618.0,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 3,
+            "x": 459.4,
+            "y": 618.0,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 3,
+            "x": 459.4,
+            "y": 647.2,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2fb94439",
+      "type": "choice",
+      "label": "Plans (si terrasse)",
+      "group": "Configuration TT2 ou TT3",
+      "page": 3,
+      "x": 437.5,
+      "y": 687.4,
+      "w": 19.9,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Plan unique (lobby + terrasse)",
+          "box": {
+            "page": 3,
+            "x": 437.5,
+            "y": 687.4,
+            "w": 19.9,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "2 plans dissociés (lobby / terrasse)",
+          "box": {
+            "page": 3,
+            "x": 437.2,
+            "y": 728.4,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2097e2bc",
+      "type": "choice",
+      "label": "Dispose d'une terrasse",
+      "group": "Configuration restaurant",
+      "page": 4,
+      "x": 443.8,
+      "y": 154.0,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 4,
+            "x": 443.8,
+            "y": 154.0,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 4,
+            "x": 489.8,
+            "y": 154.5,
+            "w": 12,
+            "h": 12
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa5418e33",
+      "type": "text",
+      "label": "Dispose d'étage(s) – nombre",
+      "group": "Configuration restaurant",
+      "page": 4,
+      "x": 416,
+      "y": 199,
+      "w": 140,
+      "h": 25,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7f5775be",
+      "type": "choice",
+      "label": "Dispose du multi-paiement",
+      "group": "Configuration restaurant",
+      "page": 4,
+      "x": 443.8,
+      "y": 239.3,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 4,
+            "x": 443.8,
+            "y": 239.3,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 4,
+            "x": 489.8,
+            "y": 239.8,
+            "w": 12,
+            "h": 12
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fbed7e9c7",
+      "type": "check",
+      "label": "Dalles métalliques",
+      "group": "Décoration du lobby",
+      "page": 4,
+      "x": 377.2,
+      "y": 283.7,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc4ccb46d",
+      "type": "multiline",
+      "label": "Dalles métalliques – commentaires",
+      "group": "Décoration du lobby",
+      "page": 4,
+      "x": 416,
+      "y": 287,
+      "w": 140,
+      "h": 33,
+      "fontSize": 8,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8bc8fe3a",
+      "type": "check",
+      "label": "Large staff au plafond (à représenter sur le plan)",
+      "group": "Décoration du lobby",
+      "page": 4,
+      "x": 377.2,
+      "y": 326.4,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb44e0c90",
+      "type": "check",
+      "label": "Abat-jour métalliques (à représenter sur le plan)",
+      "group": "Décoration du lobby",
+      "page": 4,
+      "x": 377.2,
+      "y": 357.8,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f6dc39821",
+      "type": "check",
+      "label": "Table en bois",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 377.2,
+      "y": 390.1,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb53ba4e5",
+      "type": "text",
+      "label": "Table en bois – nombre",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 416,
+      "y": 395,
+      "w": 140,
+      "h": 18,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fba6e34f1",
+      "type": "check",
+      "label": "Table métallique",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 377.2,
+      "y": 422.9,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd83d6b8d",
+      "type": "text",
+      "label": "Table métallique – nombre",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 416,
+      "y": 431,
+      "w": 140,
+      "h": 18,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7c2552f0",
+      "type": "check",
+      "label": "Possibilité d'accrocher les antennes extérieures sur la décoration",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 377.2,
+      "y": 463.7,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3bbc99ed",
+      "type": "text",
+      "label": "Antennes extérieures – indiquer où",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 416,
+      "y": 466,
+      "w": 140,
+      "h": 30,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1fd3e0ff",
+      "type": "choice",
+      "label": "Type de mobilier extérieur",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 437.4,
+      "y": 506.9,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Fixe",
+          "box": {
+            "page": 4,
+            "x": 437.4,
+            "y": 506.9,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Mobile",
+          "box": {
+            "page": 4,
+            "x": 481.2,
+            "y": 507.4,
+            "w": 12,
+            "h": 12
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f60897789",
+      "type": "choice",
+      "label": "Tables à la même hauteur",
+      "group": "Décoration de la terrasse",
+      "page": 4,
+      "x": 443.8,
+      "y": 540.9,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 4,
+            "x": 443.8,
+            "y": 540.9,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 4,
+            "x": 489.8,
+            "y": 541.4,
+            "w": 12,
+            "h": 12
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9a257a90",
+      "type": "check",
+      "label": "Hauteur plafond inférieure à 3 m (installation classique)",
+      "group": "Configuration lobby",
+      "page": 4,
+      "x": 377.2,
+      "y": 563.5,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "faec18ffb",
+      "type": "check",
+      "label": "Hauteur plafond supérieure à 3 m",
+      "group": "Configuration lobby",
+      "page": 4,
+      "x": 377.9,
+      "y": 607.7,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe3cfe923",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires – configuration restaurant",
+      "page": 4,
+      "x": 40,
+      "y": 719,
+      "w": 516,
+      "h": 44,
+      "fontSize": 8,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5fbf7235",
+      "type": "choice",
+      "label": "Type de support désiré",
+      "group": "Intégration au comptoir",
+      "page": 5,
+      "x": 373.0,
+      "y": 203.0,
+      "w": 19.9,
+      "h": 19.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Support PC mural",
+          "box": {
+            "page": 5,
+            "x": 373.0,
+            "y": 203.0,
+            "w": 19.9,
+            "h": 19.0
+          }
+        },
+        {
+          "label": "Support PC simple",
+          "box": {
+            "page": 5,
+            "x": 373.7,
+            "y": 242.0,
+            "w": 19.9,
+            "h": 19.0
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f9ce57f05",
+      "type": "choice",
+      "label": "Emplacement validé",
+      "group": "Validation de l'emplacement du support panel",
+      "page": 5,
+      "x": 76.8,
+      "y": 401.1,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Au comptoir",
+          "box": {
+            "page": 5,
+            "x": 76.8,
+            "y": 401.1,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Au poteau",
+          "box": {
+            "page": 5,
+            "x": 216.8,
+            "y": 401.6,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Au mur",
+          "box": {
+            "page": 5,
+            "x": 358.4,
+            "y": 401.6,
+            "w": 12,
+            "h": 12
+          }
+        },
+        {
+          "label": "Autre",
+          "box": {
+            "page": 5,
+            "x": 464.6,
+            "y": 401.6,
+            "w": 12,
+            "h": 12
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2b047abd",
+      "type": "signature",
+      "label": "Nom, prénom et signature (accord du responsable)",
+      "group": "Validation de l'emplacement du support panel",
+      "page": 5,
+      "x": 200,
+      "y": 470,
+      "w": 352,
+      "h": 36,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f003de2af",
+      "type": "text",
+      "label": "Nombre de bornes (au total)",
+      "group": "Configuration des bornes",
+      "page": 6,
+      "x": 345,
+      "y": 152,
+      "w": 194,
+      "h": 24,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f630fb07c",
+      "type": "text",
+      "label": "Bornes doubles – nombre",
+      "group": "Configuration des bornes",
+      "page": 6,
+      "x": 345,
+      "y": 181,
+      "w": 194,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f838bed93",
+      "type": "text",
+      "label": "Bornes simples – nombre",
+      "group": "Configuration des bornes",
+      "page": 6,
+      "x": 345,
+      "y": 208,
+      "w": 194,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7afe44f2",
+      "type": "text",
+      "label": "Bornes murales – nombre",
+      "group": "Configuration des bornes",
+      "page": 6,
+      "x": 345,
+      "y": 236,
+      "w": 194,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7d296283",
+      "type": "text",
+      "label": "Nombre de faces (au total)",
+      "group": "Configuration des bornes",
+      "page": 6,
+      "x": 345,
+      "y": 278,
+      "w": 194,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc7e0a822",
+      "type": "check",
+      "label": "ADDIE",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 363.8,
+      "y": 329.0,
+      "w": 13,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f5c804338",
+      "type": "text",
+      "label": "ADDIE – nombre",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 408,
+      "y": 335,
+      "w": 132,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f58eab8e7",
+      "type": "check",
+      "label": "WINCOR",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 363.8,
+      "y": 372.9,
+      "w": 13,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fabcbf72f",
+      "type": "text",
+      "label": "WINCOR – nombre",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 408,
+      "y": 374,
+      "w": 132,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc784a2cc",
+      "type": "check",
+      "label": "MERIM",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 363.8,
+      "y": 418.6,
+      "w": 13,
+      "h": 13,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4950b88b",
+      "type": "text",
+      "label": "MERIM – nombre",
+      "group": "Typologie des bornes",
+      "page": 6,
+      "x": 408,
+      "y": 420,
+      "w": 132,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fd6f15333",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires – bornes",
+      "page": 6,
+      "x": 40,
+      "y": 494,
+      "w": 500,
+      "h": 64,
+      "fontSize": 8,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fab59e0f6",
+      "type": "choice",
+      "label": "Rappel des prérequis et communication avec le restaurant",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 160.5,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 160.5,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 161.2,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f4c3cba0b",
+      "type": "choice",
+      "label": "Mise à jour du plan du restaurant et de la terrasse (TT2 / TT3)",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 191.8,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 191.8,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 190.2,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7f18ac52",
+      "type": "choice",
+      "label": "Zoning à établir avec le restaurant et représenter sur le plan (TT2)",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 220.0,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 220.0,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 220.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f680254e1",
+      "type": "choice",
+      "label": "Orientation du plan (emplacement Panel PC / comptoir)",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 253.2,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 253.2,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 253.6,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f10b22392",
+      "type": "choice",
+      "label": "Confirmer l'emplacement du support au comptoir et le reporter sur le plan",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 294.7,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 294.7,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 294.8,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f1e34b858",
+      "type": "choice",
+      "label": "Vérifier la position et l'espacement des bornes",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 327.3,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 327.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 328.0,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fee1d3be7",
+      "type": "choice",
+      "label": "Prendre des photos des décorations pouvant être gênantes",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 368.3,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 368.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 368.9,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff9bdd1ed",
+      "type": "choice",
+      "label": "Prendre des photos des bornes",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 408.6,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 408.6,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 409.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f60f47298",
+      "type": "choice",
+      "label": "Prendre des photos du plan d'évacuation / d'intervention",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 446.4,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 446.4,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 447.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f485d3b4b",
+      "type": "choice",
+      "label": "Prendre photo du TGBT (emplacement de l'ondulé)",
+      "group": "Check-list prévisite",
+      "page": 7,
+      "x": 430.7,
+      "y": 487.0,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 7,
+            "x": 430.7,
+            "y": 487.0,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 7,
+            "x": 507.4,
+            "y": 486.3,
+            "w": 19.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa768d061",
+      "type": "text",
+      "label": "Kit intérieur – quantité",
+      "group": "Équipements – les indispensables",
+      "page": 8,
+      "x": 400,
+      "y": 251,
+      "w": 164,
+      "h": 26,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f66f4132d",
+      "type": "text",
+      "label": "Kit extérieur – quantité",
+      "group": "Équipements – les indispensables",
+      "page": 8,
+      "x": 400,
+      "y": 307,
+      "w": 164,
+      "h": 22,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffd8c4411",
+      "type": "text",
+      "label": "Support pied (click & collect / désinfection) – quantité",
+      "group": "Équipements – les indispensables",
+      "page": 8,
+      "x": 400,
+      "y": 400,
+      "w": 164,
+      "h": 26,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f44a79046",
+      "type": "text",
+      "label": "Distributeur de chevalet – quantité",
+      "group": "Équipements – les indispensables",
+      "page": 8,
+      "x": 400,
+      "y": 520,
+      "w": 164,
+      "h": 26,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f042a8c5d",
+      "type": "text",
+      "label": "Antenne filaire terrasse – antennes",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 399,
+      "y": 143,
+      "w": 74,
+      "h": 32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa2442d7a",
+      "type": "text",
+      "label": "Antenne filaire terrasse – supports",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 477,
+      "y": 143,
+      "w": 81,
+      "h": 32,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f70a0c82d",
+      "type": "check",
+      "label": "Fixation d'antennes extérieures sous le mobilier (tables/sièges)",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 200.6,
+      "y": 216.9,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f46f23de0",
+      "type": "check",
+      "label": "Fixation d'antennes filaires additionnelles (perçage structure/bâtiment)",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 200.6,
+      "y": 253.7,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f28d2bc9f",
+      "type": "check",
+      "label": "… en façade",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 228.3,
+      "y": 288.0,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f3650b94c",
+      "type": "check",
+      "label": "… sur la terrasse bioclimatique",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 303.3,
+      "y": 288.6,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "feef168ee",
+      "type": "check",
+      "label": "… sous casquette",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 469.6,
+      "y": 288.6,
+      "w": 12,
+      "h": 12,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f174906a2",
+      "type": "signature",
+      "label": "Nom, prénom et signature (accord du responsable)",
+      "group": "Antennes filaires terrasse",
+      "page": 9,
+      "x": 232,
+      "y": 312,
+      "w": 322,
+      "h": 19,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f70b14c6c",
+      "type": "text",
+      "label": "Rallonge USB 10 m – quantité",
+      "group": "Équipements – ajouts optionnels",
+      "page": 9,
+      "x": 400,
+      "y": 375,
+      "w": 160,
+      "h": 26,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ff7d778e0",
+      "type": "text",
+      "label": "Deux prises électriques par gateway – à prévoir",
+      "group": "Prérequis – côté lobby",
+      "page": 10,
+      "x": 395,
+      "y": 350,
+      "w": 150,
+      "h": 20,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f867bae5e",
+      "type": "text",
+      "label": "Une prise réseau par gateway – à prévoir",
+      "group": "Prérequis – côté lobby",
+      "page": 10,
+      "x": 395,
+      "y": 381,
+      "w": 150,
+      "h": 20,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7d6962b1",
+      "type": "choice",
+      "label": "Une prise électrique disponible",
+      "group": "Prérequis – côté baie de brassage",
+      "page": 10,
+      "x": 330.7,
+      "y": 467.4,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 10,
+            "x": 330.7,
+            "y": 467.4,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 10,
+            "x": 436.9,
+            "y": 467.7,
+            "w": 19.9,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb2c95567",
+      "type": "choice",
+      "label": "Espace suffisant pour un switch",
+      "group": "Prérequis – côté baie de brassage",
+      "page": 10,
+      "x": 303.7,
+      "y": 529.7,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui (8 ports)",
+          "box": {
+            "page": 10,
+            "x": 303.7,
+            "y": 529.7,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Oui (24 ports)",
+          "box": {
+            "page": 10,
+            "x": 386.3,
+            "y": 530.2,
+            "w": 19.8,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 10,
+            "x": 459.7,
+            "y": 530.3,
+            "w": 19.9,
+            "h": 19.9
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f2ba9b7e4",
+      "type": "choice",
+      "label": "Un deuxième switch Zen Connect",
+      "group": "Prérequis – côté baie de brassage",
+      "page": 10,
+      "x": 331.1,
+      "y": 621.6,
+      "w": 19.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 10,
+            "x": 331.1,
+            "y": 621.6,
+            "w": 19.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 10,
+            "x": 441.0,
+            "y": 621.3,
+            "w": 19.9,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe89a77bb",
+      "type": "choice",
+      "label": "Vérification du port 44 disponible sur switch n° 2",
+      "group": "Prérequis – côté baie de brassage",
+      "page": 10,
+      "x": 330.7,
+      "y": 652.5,
+      "w": 19.9,
+      "h": 19.9,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 10,
+            "x": 330.7,
+            "y": 652.5,
+            "w": 19.9,
+            "h": 19.9
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 10,
+            "x": 441.5,
+            "y": 652.1,
+            "w": 19.9,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f46074646",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires – prérequis",
+      "page": 10,
+      "x": 40,
+      "y": 706,
+      "w": 510,
+      "h": 44,
+      "fontSize": 8,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe9ad9e72",
+      "type": "choice",
+      "label": "Plan du restaurant et de la terrasse annotés",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 179.6,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 179.6,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 179.5,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fb34eedd0",
+      "type": "choice",
+      "label": "Plan du service à table (TT2 et TT3 uniquement)",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 215.7,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 215.7,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 216.5,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fa9bf31f5",
+      "type": "choice",
+      "label": "Orientation du plan (emplacement Panel PC / comptoir)",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 253.0,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 253.0,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 253.5,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe341f166",
+      "type": "choice",
+      "label": "Photo des implantations bornes",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 289.8,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 289.8,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 290.5,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f7dbb3e97",
+      "type": "choice",
+      "label": "Photo du lieu où sera le Panel PC (TT2 et TT3)",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 330.7,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 330.7,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 330.2,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fec3cac72",
+      "type": "choice",
+      "label": "Photo du lieu où sera le support de chevalet au comptoir",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 381.0,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 381.0,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 385.7,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fc44885d2",
+      "type": "choice",
+      "label": "Photo des éléments métalliques pouvant bloquer le signal",
+      "group": "Éléments annexés au rapport",
+      "page": 11,
+      "x": 390.9,
+      "y": 429.1,
+      "w": 18.8,
+      "h": 19.8,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Oui",
+          "box": {
+            "page": 11,
+            "x": 390.9,
+            "y": 429.1,
+            "w": 18.8,
+            "h": 19.8
+          }
+        },
+        {
+          "label": "Non",
+          "box": {
+            "page": 11,
+            "x": 493.5,
+            "y": 429.8,
+            "w": 18.8,
+            "h": 19.8
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f05184ebb",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires – communication interne",
+      "page": 11,
+      "x": 40,
+      "y": 517,
+      "w": 510,
+      "h": 88,
+      "fontSize": 8,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    }
+  ]
+}
