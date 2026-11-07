@@ -354,6 +354,10 @@ textarea.inp, .panel textarea{ min-height:84px; resize:vertical; }
 .st-note{ font-size:13px; color:var(--ink-2); margin:8px 4px 0; line-height:1.4; }
 .pf-danger .pf-ri{ background:var(--nok-soft); }
 .pf-danger .pf-rt b{ color:var(--nok); }
+.pe-bar{ display:flex; align-items:center; gap:8px; padding:6px 12px; border-bottom:1px solid var(--line); overflow-x:auto; }
+.pe-bar .seg{ display:flex; gap:6px; }
+.pe-bar .seg .btn.on{ background:var(--blue-soft); color:var(--blue); border-color:var(--blue); font-weight:700; }
+.pe-insp{ display:flex; gap:8px; align-items:center; padding:8px 12px; border-top:1px solid var(--line); min-height:52px; background:var(--surface); }
 .tcards{ padding-top:8px; }
 .tcard{ border:1px solid var(--line); border-radius:10px; padding:8px 10px 10px; margin-bottom:10px; background:var(--surface); }
 .tcn{ font-weight:700; font-size:15px; margin-bottom:4px; }
@@ -989,7 +993,7 @@ function tplClients(t){
   const valid = raw.filter(c => clientDef(c) && c !== "Tous clients");
   return valid.length ? valid : ["Tous clients"];
 }
-function templatesForClient(tpls, clientName){ return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
+function templatesForClient(tpls, clientName){ tpls = tpls.filter(t => !t.personal); return clientName==="Tous clients" ? tpls : tpls.filter(t => tplClients(t).includes(clientName)); }
 function tplCategory(t){ const c = t.category; return CATEGORIES.includes(c) ? c : "Autre"; }
 const CATEGORY_ICONS = { "Borne de commande": "assets/logos/borne-k22.png", "Pointeuse": "assets/logos/pointeuse.png", "Sco/Aco": "assets/logos/sco-aco.png", "KFC": "assets/logos/kfc.png" };
 /* Icônes propres à un client + catégorie (ex. Drive de McDonald's) ; sinon l'icône de la catégorie */
@@ -1185,6 +1189,143 @@ async function showCategory(clientName, categoryName, subName){
   if (IS_TEST_BUILD) $$("[data-calib]").forEach(b => b.onclick = async () => openCalibrate(await Store.get("templates", b.dataset.calib)));
 }
 
+/* ============ MES PV PERSO : importer un PDF, poser des champs, remplir (modèles stockés sur ce téléphone uniquement) ============ */
+async function showPerso(){
+  S.view="perso";
+  setBar(`<button class="btn sm" id="bk" aria-label="Retour">${ICON.back}</button><div class="title">Mes PV perso</div><div class="sp"></div>`);
+  $("#bk").onclick = () => showProfile();
+  const mine = (await Store.all("templates")).filter(t => t.personal).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+  main.innerHTML = `<div class="fill" style="max-width:520px">
+    <p class="st-note" style="margin-top:4px">Importe n'importe quel PDF (un formulaire perso, une fiche, un document à signer), place les zones à remplir, puis remplis-le comme un PV normal. Ces modèles restent sur ce téléphone.</p>
+    <div class="pf-menu" style="margin-top:12px">
+      <button class="pf-row" id="persoNew"><span class="pf-ri" aria-hidden="true">➕</span><span class="pf-rt"><b>Importer un PDF</b><small>Depuis ce téléphone (Fichiers, Drive, mail…)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
+    </div>
+    <input type="file" id="persoFile" accept="application/pdf" hidden>
+    ${mine.length ? `<div class="st-sec">Mes modèles</div><div class="list">${mine.map(t=>`<div class="row"><span class="pf-ri" aria-hidden="true" style="flex:none">📄</span><div class="main"><div class="name">${esc(t.name)}</div><div class="meta">${t.fields.length} zone${t.fields.length>1?"s":""} à remplir</div></div><div class="acts"><button class="btn primary" data-fill="${t.id}">Remplir</button><button class="btn" data-edit="${t.id}">Modifier</button><button class="btn danger" data-del="${t.id}">Supprimer</button></div></div>`).join("")}</div>` : `<p class="st-note" style="text-align:center;margin-top:24px">Aucun modèle perso pour l'instant.</p>`}
+  </div>`;
+  $("#persoNew").onclick = () => $("#persoFile").click();
+  $("#persoFile").onchange = async e => { const f = e.target.files && e.target.files[0]; e.target.value=""; if (f) await importPersoPdf(f); };
+  $$("[data-fill]").forEach(b => b.onclick = () => newDraft(b.dataset.fill));
+  $$("[data-edit]").forEach(b => b.onclick = async () => { await openPersoEditor(await Store.get("templates", b.dataset.edit)); showPerso(); });
+  $$("[data-del]").forEach(b => b.onclick = async () => { const t = await Store.get("templates", b.dataset.del); if (!t) return; if (!confirm(`Supprimer « ${t.name} » ? Les rapports déjà commencés avec ce modèle ne pourront plus être ouverts.`)) return; await Store.del("templates", t.id); showPerso(); });
+}
+
+async function importPersoPdf(file){
+  const done = busy("Lecture du PDF…");
+  let buf, fields=[], nPages=0;
+  try{
+    buf = await file.arrayBuffer();
+    const doc = await PDFLib.PDFDocument.load(buf.slice(0), {ignoreEncryption:true});
+    const pages = doc.getPages(); nPages = pages.length;
+    try{
+      let n=0;
+      for (const fld of doc.getForm().getFields()){
+        const isCheck = fld instanceof PDFLib.PDFCheckBox, isText = fld instanceof PDFLib.PDFTextField;
+        if (!isCheck && !isText) continue;
+        for (const w of fld.acroField.getWidgets()){
+          const r = w.getRectangle(); let pi = 0;
+          try{ const ref = w.P(); const k = pages.findIndex(p => p.ref===ref); if (k>=0) pi=k; }catch(e){}
+          const H = pages[pi].getHeight();
+          fields.push(persoField(isCheck?"check":(r.height>34?"multiline":"text"), fld.getName(), pi, r.x, H-r.y-r.height, r.width, r.height));
+          n++;
+        }
+      }
+    }catch(e){}
+  }catch(e){ done(); alert("Ce PDF n'a pas pu être lu : "+(e.message||e)); return; }
+  done();
+  const tpl = {id:"perso-"+uid(), name:(file.name||"Mon PV").replace(/\.pdf$/i,""), shortName:"", fields, annexPhotos:[], optionalPages:[], covers:[], packPhotos:false, multiDay:null, clients:[], category:"Autre", subCategory:"", pdf:buf, createdAt:Date.now(), updatedAt:Date.now(), feedbackAt:0, published:false, personal:true, nPages};
+  if (fields.length) toast(`${fields.length} zone${fields.length>1?"s":""} détectée${fields.length>1?"s":""} automatiquement`);
+  const saved = await openPersoEditor(tpl, true);
+  showPerso();
+}
+
+function persoField(type, label, page, x, y, w, h){
+  const d = {check:[14,14], text:[150,18], date:[90,18], multiline:[220,60], signature:[160,44]}[type] || [150,18];
+  return {id:"f"+uid(), type, label, group:`Page ${page+1}`, page, x:Math.round(x*10)/10, y:Math.round(y*10)/10, w:Math.round((w||d[0])*10)/10, h:Math.round((h||d[1])*10)/10, fontSize:type==="multiline"?8:0, align:type==="date"||type==="check"?"center":"left", options:[], choiceMode:"text", mark:"x", lineHeight:0, auto:""};
+}
+
+async function openPersoEditor(tpl, isNew){
+  if (!tpl) return false;
+  const pdf = await pdfjsLib.getDocument({data:new Uint8Array(tpl.pdf.slice(0)), isEvalSupported:false}).promise;
+  const total = pdf.numPages; let pageIdx = 0, zoom = 1, tool = "text", sel = null, dirty = !!isNew, saved = false;
+  return new Promise(resolve => {
+    const m = document.createElement("div"); m.className="modal";
+    const TOOLS = [["text","Texte"],["check","Case ✔"],["date","Date"],["multiline","Zone longue"],["signature","Signature"]];
+    m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Éditeur" style="width:min(900px,100%);height:100%;max-height:100%;border-radius:0">
+      <div class="sheet-h" style="gap:8px"><input id="peName" class="inp" style="flex:1;min-width:0;font-weight:700" value="${esc(tpl.name)}" aria-label="Nom du modèle"><button class="btn sm" data-x="close">Fermer</button><button class="btn sm primary" data-x="save">Enregistrer</button></div>
+      <div class="pe-bar"><div class="seg" id="peTools">${TOOLS.map(([k,l])=>`<button class="btn sm${k===tool?" on":""}" data-tool="${k}">${l}</button>`).join("")}</div></div>
+      <div class="pe-bar" style="justify-content:space-between"><div class="btnrow"><button class="btn sm" data-x="prev">◀</button><span id="peLbl" class="kbd"></span><button class="btn sm" data-x="next">▶</button></div><div class="btnrow"><button class="btn sm" data-x="zout">−</button><span class="kbd" id="peZoom">100%</span><button class="btn sm" data-x="zin">+</button></div></div>
+      <div class="sheet-b" id="peBody" style="position:relative;overflow:auto;padding:8px;background:var(--surface-2)"></div>
+      <div class="pe-insp" id="peInsp"></div>
+    </div>`;
+    document.body.appendChild(m);
+    const body = $("#peBody", m), insp = $("#peInsp", m);
+    const here = () => tpl.fields.filter(f => f.page===pageIdx);
+    function inspect(){
+      const f = sel && tpl.fields.find(x => x.id===sel);
+      if (!f){ insp.innerHTML = `<span class="kbd">Touche la page pour ajouter une zone « ${esc((TOOLS.find(t=>t[0]===tool)||[])[1]||"")} ». Touche une zone pour la modifier ou la déplacer.</span>`; return; }
+      insp.innerHTML = `<input id="peLab" class="inp" value="${esc(f.label)}" aria-label="Nom de la zone" style="flex:1 1 140px;width:auto;min-width:90px"><select id="peTyp" class="inp" aria-label="Type" style="flex:0 0 auto;width:auto">${TOOLS.map(([k,l])=>`<option value="${k}"${k===f.type?" selected":""}>${l}</option>`).join("")}</select><button class="btn sm danger" data-x="del">🗑</button>`;
+      $("#peLab", m).oninput = e => { f.label = e.target.value; dirty = true; const b = body.querySelector(`[data-b="${f.id}"]`); if (b) b.firstChild.nodeValue = f.label; };
+      $("#peTyp", m).onchange = e => { f.type = e.target.value; if (f.type==="check"){ f.w=Math.min(f.w,16); f.h=Math.min(f.h,16); f.align="center"; } f.fontSize = f.type==="multiline"?8:0; dirty = true; render(); };
+    }
+    async function render(){
+      $("#peLbl", m).textContent = `Page ${pageIdx+1} / ${total}`; $("#peZoom", m).textContent = Math.round(zoom*100)+"%";
+      const pg = await pdf.getPage(pageIdx+1), v1 = pg.getViewport({scale:1});
+      const scale = Math.max(260, (body.clientWidth-16)) / v1.width * zoom, vp = pg.getViewport({scale});
+      body.innerHTML = "";
+      const wrap = document.createElement("div"); wrap.style.cssText = `position:relative;width:${vp.width}px;height:${vp.height}px;margin:0 auto;background:#fff;touch-action:pan-x pan-y;`;
+      const cv = document.createElement("canvas"); cv.width = vp.width*(window.devicePixelRatio>1?1.5:1); cv.height = vp.height*(window.devicePixelRatio>1?1.5:1); cv.style.cssText = `display:block;width:${vp.width}px;height:${vp.height}px`;
+      const k = cv.width/vp.width; await pg.render({canvasContext:cv.getContext("2d"), viewport:pg.getViewport({scale:scale*k})}).promise;
+      wrap.appendChild(cv); body.appendChild(wrap);
+      for (const f of here()) mkBox(wrap, f, scale);
+      wrap.onclick = e => {
+        if (e.target !== cv && e.target !== wrap) return;
+        const r = wrap.getBoundingClientRect(), x = (e.clientX-r.left)/scale, y = (e.clientY-r.top)/scale;
+        const n = tpl.fields.filter(f => f.type===tool).length+1, names = {text:"Texte",check:"Case",date:"Date",multiline:"Zone",signature:"Signature"};
+        const f = persoField(tool, `${names[tool]} ${n}`, pageIdx, 0, 0);
+        f.x = Math.max(0, Math.round((x - f.w/2)*10)/10); f.y = Math.max(0, Math.round((y - f.h/2)*10)/10);
+        tpl.fields.push(f); sel = f.id; dirty = true; render(); inspect();
+      };
+    }
+    function mkBox(wrap, f, scale){
+      const box = document.createElement("div"); box.dataset.b = f.id;
+      const col = f.type==="check" ? "#2e7d32" : f.type==="signature" ? "#7b3fb8" : "#e6522f";
+      const paint = () => { box.style.cssText = `position:absolute;left:${f.x*scale}px;top:${f.y*scale}px;width:${f.w*scale}px;height:${f.h*scale}px;border:${f.id===sel?"2.5px":"1.5px"} solid ${col};background:${col}${f.id===sel?"33":"1f"};font-size:9px;line-height:1.1;overflow:hidden;color:#000;touch-action:none;box-sizing:border-box;`; };
+      paint(); box.textContent = f.label;
+      const hd = document.createElement("div"); hd.style.cssText = `position:absolute;right:-2px;bottom:-2px;width:18px;height:18px;background:${col};border:2px solid #fff;border-radius:4px;touch-action:none;`; box.appendChild(hd);
+      let mode = null, sx=0, sy=0, o={};
+      const down = md => e => { e.stopPropagation(); e.preventDefault(); mode = md; sx=e.clientX; sy=e.clientY; o={x:f.x,y:f.y,w:f.w,h:f.h}; if (sel!==f.id){ sel=f.id; body.querySelectorAll("[data-b]").forEach(b=>b.style.borderWidth="1.5px"); box.style.borderWidth="2.5px"; inspect(); } try{ e.target.setPointerCapture(e.pointerId); }catch(_){} };
+      const move = e => { if (!mode) return; const dx=(e.clientX-sx)/scale, dy=(e.clientY-sy)/scale; if (mode==="drag"){ f.x=Math.round((o.x+dx)*10)/10; f.y=Math.round((o.y+dy)*10)/10; } else { f.w=Math.max(8,Math.round((o.w+dx)*10)/10); f.h=Math.max(8,Math.round((o.h+dy)*10)/10); } dirty = true; box.style.left=f.x*scale+"px"; box.style.top=f.y*scale+"px"; box.style.width=f.w*scale+"px"; box.style.height=f.h*scale+"px"; };
+      const up = () => { mode = null; };
+      box.onpointerdown = down("drag"); hd.onpointerdown = down("resize");
+      for (const el of [box, hd]){ el.onpointermove = move; el.onpointerup = up; el.onpointercancel = up; }
+      wrap.appendChild(box);
+    }
+    function finish(ok){ document.removeEventListener("keydown", onKey); m.remove(); resolve(ok); }
+    const onKey = e => { if (e.key==="Escape") m.querySelector('[data-x="close"]').click(); };
+    document.addEventListener("keydown", onKey);
+    m.onclick = async e => {
+      const t = e.target.closest("[data-tool],[data-x]"); if (!t) return;
+      if (t.dataset.tool){ tool = t.dataset.tool; sel = null; $$("#peTools button", m).forEach(b => b.classList.toggle("on", b.dataset.tool===tool)); render(); inspect(); return; }
+      const a = t.dataset.x;
+      if (a==="prev"){ pageIdx=(pageIdx-1+total)%total; sel=null; await render(); inspect(); }
+      if (a==="next"){ pageIdx=(pageIdx+1)%total; sel=null; await render(); inspect(); }
+      if (a==="zin"){ zoom=Math.min(3, zoom*1.3); await render(); }
+      if (a==="zout"){ zoom=Math.max(0.6, zoom/1.3); await render(); }
+      if (a==="del"){ tpl.fields = tpl.fields.filter(f => f.id!==sel); sel=null; dirty=true; await render(); inspect(); }
+      if (a==="close"){ if (dirty && !confirm("Fermer sans enregistrer les modifications ?")) return; finish(false); }
+      if (a==="save"){
+        if (!tpl.fields.length){ alert("Ajoute au moins une zone à remplir (touche la page)."); return; }
+        tpl.name = ($("#peName", m).value || "").trim() || "Mon PV";
+        tpl.fields.sort((a,b) => a.page-b.page || a.y-b.y || a.x-b.x);
+        tpl.updatedAt = Date.now(); tpl.pdfVersion = (tpl.pdfVersion||0)+1;
+        await Store.put("templates", tpl); toast("Modèle enregistré"); finish(true);
+      }
+    };
+    render().then(inspect);
+  });
+}
+
 /* ============ PROFIL TECHNICIEN ============ */
 async function showProfile(){
   S.view="profile";
@@ -1217,6 +1358,7 @@ async function showProfile(){
     <div class="pf-menu">
       <button class="pf-row" id="goArchive"><span class="pf-ri" aria-hidden="true">📤</span><span class="pf-rt"><b>Rapports envoyés</b><small>${sentCount ? `${sentCount} rapport${sentCount>1?"s":""}, classé${sentCount>1?"s":""} par client puis par mois` : "Aucun rapport envoyé pour l'instant"}</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
       ${COUNTER_ON ? `<button class="pf-row" id="goRequest"><span class="pf-ri" aria-hidden="true">💬</span><span class="pf-rt"><b>Demander un PV</b><small>Un modèle manque ou est à corriger ?</small></span><span class="pf-ch" aria-hidden="true">›</span></button>` : ""}
+      <button class="pf-row" id="goPerso"><span class="pf-ri" aria-hidden="true">🗂️</span><span class="pf-rt"><b>Mes PV perso</b><small>Importer un PDF et le remplir (reste sur ce téléphone)</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
       <button class="pf-row" id="goSettings"><span class="pf-ri" aria-hidden="true">⚙️</span><span class="pf-rt"><b>Réglages</b><small>Nouveautés, modèles, sauvegarde, dépannage</small></span><span class="pf-ch" aria-hidden="true">›</span></button>
     </div>
   </div>`;
@@ -1225,6 +1367,7 @@ async function showProfile(){
   $("#pfName").oninput = dirty; $("#pfPhone").oninput = dirty; $("#pfEmail").oninput = dirty; $("#pfSecteur").onchange = dirty;
   $("#pfSign").onclick = async () => { const png = await signaturePad("Ma signature", 3); if (png){ const cur = await getProfile(); await saveProfile({...cur, signature:png}); showProfile(); } };
   if ($("#pfSignClear")) $("#pfSignClear").onclick = async () => { const cur = await getProfile(); await saveProfile({...cur, signature:null}); showProfile(); };
+  $("#goPerso").onclick = () => showPerso();
   $("#goSettings").onclick = () => showSettings();
   if ($("#goRequest")) $("#goRequest").onclick = () => showRequest();
   $("#goArchive").onclick = () => showArchive();
