@@ -1,0 +1,2561 @@
+{
+  "name": "Check-list de désinstallation client",
+  "annexPhotos": [],
+  "optionalPages": [],
+  "category": "Autre",
+  "subCategory": "",
+  "clients": [
+    "Tous clients"
+  ],
+  "shortName": "Désinstallation",
+  "covers": [
+    {
+      "page": 0,
+      "x": 249,
+      "y": 182,
+      "w": 128,
+      "h": 14
+    }
+  ],
+  "fields": [
+    {
+      "id": "f66caa060",
+      "type": "text",
+      "label": "N° site",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 22,
+      "y": 119,
+      "w": 173,
+      "h": 50,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-number"
+    },
+    {
+      "id": "fb7db817d",
+      "type": "text",
+      "label": "Nom du restaurant",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 203,
+      "y": 119,
+      "w": 382,
+      "h": 50,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "site-client"
+    },
+    {
+      "id": "fce3e6570",
+      "type": "date",
+      "label": "Date de désinstallation",
+      "group": "Informations générales",
+      "page": 0,
+      "x": 250,
+      "y": 181,
+      "w": 125,
+      "h": 16,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f06cf5647",
+      "type": "text",
+      "label": "Ligne 1 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 299.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 1",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f7c3526e6",
+      "type": "text",
+      "label": "Ligne 1 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 299.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 1",
+      "col": "N° de série"
+    },
+    {
+      "id": "ff0d35a9d",
+      "type": "text",
+      "label": "Ligne 1 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 299.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 1",
+      "col": "Qté"
+    },
+    {
+      "id": "f7cc3e39c",
+      "type": "choice",
+      "label": "Ligne 1 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 302.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 302.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 302.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 1",
+      "col": "État physique"
+    },
+    {
+      "id": "fc7f7102c",
+      "type": "choice",
+      "label": "Ligne 1 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 302.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 302.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 302.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 1",
+      "col": "Fonction"
+    },
+    {
+      "id": "f70507aa6",
+      "type": "text",
+      "label": "Ligne 2 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 318.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 2",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fb1c9cd30",
+      "type": "text",
+      "label": "Ligne 2 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 318.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 2",
+      "col": "N° de série"
+    },
+    {
+      "id": "f90123c2d",
+      "type": "text",
+      "label": "Ligne 2 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 318.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 2",
+      "col": "Qté"
+    },
+    {
+      "id": "f03df7a2b",
+      "type": "choice",
+      "label": "Ligne 2 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 321.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 321.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 321.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 2",
+      "col": "État physique"
+    },
+    {
+      "id": "f1b8163e7",
+      "type": "choice",
+      "label": "Ligne 2 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 321.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 321.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 321.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 2",
+      "col": "Fonction"
+    },
+    {
+      "id": "fb416f782",
+      "type": "text",
+      "label": "Ligne 3 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 337.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 3",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fd8be3bfb",
+      "type": "text",
+      "label": "Ligne 3 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 337.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 3",
+      "col": "N° de série"
+    },
+    {
+      "id": "f2a059104",
+      "type": "text",
+      "label": "Ligne 3 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 337.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 3",
+      "col": "Qté"
+    },
+    {
+      "id": "f91ec31cc",
+      "type": "choice",
+      "label": "Ligne 3 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 340.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 340.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 340.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 3",
+      "col": "État physique"
+    },
+    {
+      "id": "fa774d57b",
+      "type": "choice",
+      "label": "Ligne 3 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 340.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 340.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 340.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 3",
+      "col": "Fonction"
+    },
+    {
+      "id": "ffc94ba76",
+      "type": "text",
+      "label": "Ligne 4 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 356.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 4",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f1eb979b0",
+      "type": "text",
+      "label": "Ligne 4 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 356.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 4",
+      "col": "N° de série"
+    },
+    {
+      "id": "fd7070590",
+      "type": "text",
+      "label": "Ligne 4 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 356.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 4",
+      "col": "Qté"
+    },
+    {
+      "id": "f18dea693",
+      "type": "choice",
+      "label": "Ligne 4 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 359.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 359.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 359.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 4",
+      "col": "État physique"
+    },
+    {
+      "id": "f4957fde1",
+      "type": "choice",
+      "label": "Ligne 4 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 359.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 359.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 359.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 4",
+      "col": "Fonction"
+    },
+    {
+      "id": "f8118d4c9",
+      "type": "text",
+      "label": "Ligne 5 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 375.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 5",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "ffdc4b2bf",
+      "type": "text",
+      "label": "Ligne 5 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 375.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 5",
+      "col": "N° de série"
+    },
+    {
+      "id": "f0fdc0366",
+      "type": "text",
+      "label": "Ligne 5 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 375.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 5",
+      "col": "Qté"
+    },
+    {
+      "id": "f36a98abc",
+      "type": "choice",
+      "label": "Ligne 5 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 378.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 378.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 378.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 5",
+      "col": "État physique"
+    },
+    {
+      "id": "f3bc216b5",
+      "type": "choice",
+      "label": "Ligne 5 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 378.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 378.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 378.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 5",
+      "col": "Fonction"
+    },
+    {
+      "id": "f98afcb1c",
+      "type": "text",
+      "label": "Ligne 6 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 394.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 6",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "ff04c218c",
+      "type": "text",
+      "label": "Ligne 6 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 394.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 6",
+      "col": "N° de série"
+    },
+    {
+      "id": "f8dd86c8f",
+      "type": "text",
+      "label": "Ligne 6 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 394.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 6",
+      "col": "Qté"
+    },
+    {
+      "id": "fd658ff3e",
+      "type": "choice",
+      "label": "Ligne 6 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 397.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 397.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 397.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 6",
+      "col": "État physique"
+    },
+    {
+      "id": "f3a159120",
+      "type": "choice",
+      "label": "Ligne 6 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 397.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 397.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 397.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 6",
+      "col": "Fonction"
+    },
+    {
+      "id": "f58c4bf91",
+      "type": "text",
+      "label": "Ligne 7 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 413.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 7",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f29425020",
+      "type": "text",
+      "label": "Ligne 7 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 413.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 7",
+      "col": "N° de série"
+    },
+    {
+      "id": "f196dc45d",
+      "type": "text",
+      "label": "Ligne 7 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 413.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 7",
+      "col": "Qté"
+    },
+    {
+      "id": "f161bc13b",
+      "type": "choice",
+      "label": "Ligne 7 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 416.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 416.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 416.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 7",
+      "col": "État physique"
+    },
+    {
+      "id": "fec353ec3",
+      "type": "choice",
+      "label": "Ligne 7 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 416.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 416.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 416.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 7",
+      "col": "Fonction"
+    },
+    {
+      "id": "f93cf1bc4",
+      "type": "text",
+      "label": "Ligne 8 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 432.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 8",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fbc226545",
+      "type": "text",
+      "label": "Ligne 8 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 432.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 8",
+      "col": "N° de série"
+    },
+    {
+      "id": "f27d94b8b",
+      "type": "text",
+      "label": "Ligne 8 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 432.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 8",
+      "col": "Qté"
+    },
+    {
+      "id": "ffef90c9f",
+      "type": "choice",
+      "label": "Ligne 8 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 435.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 435.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 435.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 8",
+      "col": "État physique"
+    },
+    {
+      "id": "f4b4a495e",
+      "type": "choice",
+      "label": "Ligne 8 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 435.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 435.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 435.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 8",
+      "col": "Fonction"
+    },
+    {
+      "id": "fbcc125a8",
+      "type": "text",
+      "label": "Ligne 9 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 451.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 9",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f77bf11d0",
+      "type": "text",
+      "label": "Ligne 9 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 451.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 9",
+      "col": "N° de série"
+    },
+    {
+      "id": "fd62c7ef2",
+      "type": "text",
+      "label": "Ligne 9 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 451.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 9",
+      "col": "Qté"
+    },
+    {
+      "id": "f18b06b09",
+      "type": "choice",
+      "label": "Ligne 9 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 454.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 454.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 454.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 9",
+      "col": "État physique"
+    },
+    {
+      "id": "fc6761dc9",
+      "type": "choice",
+      "label": "Ligne 9 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 454.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 454.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 454.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 9",
+      "col": "Fonction"
+    },
+    {
+      "id": "f01993f2e",
+      "type": "text",
+      "label": "Ligne 10 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 470.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 10",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f93f4b25d",
+      "type": "text",
+      "label": "Ligne 10 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 470.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 10",
+      "col": "N° de série"
+    },
+    {
+      "id": "f8afc35ca",
+      "type": "text",
+      "label": "Ligne 10 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 470.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 10",
+      "col": "Qté"
+    },
+    {
+      "id": "faf8a1878",
+      "type": "choice",
+      "label": "Ligne 10 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 473.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 473.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 473.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 10",
+      "col": "État physique"
+    },
+    {
+      "id": "fb1512c9e",
+      "type": "choice",
+      "label": "Ligne 10 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 473.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 473.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 473.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 10",
+      "col": "Fonction"
+    },
+    {
+      "id": "f5f34925b",
+      "type": "text",
+      "label": "Ligne 11 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 489.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 11",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fd1fd29f2",
+      "type": "text",
+      "label": "Ligne 11 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 489.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 11",
+      "col": "N° de série"
+    },
+    {
+      "id": "f987c4645",
+      "type": "text",
+      "label": "Ligne 11 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 489.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 11",
+      "col": "Qté"
+    },
+    {
+      "id": "f7271d7a8",
+      "type": "choice",
+      "label": "Ligne 11 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 492.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 492.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 492.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 11",
+      "col": "État physique"
+    },
+    {
+      "id": "f2a0ab7d0",
+      "type": "choice",
+      "label": "Ligne 11 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 492.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 492.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 492.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 11",
+      "col": "Fonction"
+    },
+    {
+      "id": "f132f2369",
+      "type": "text",
+      "label": "Ligne 12 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 508.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 12",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fbb90e466",
+      "type": "text",
+      "label": "Ligne 12 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 508.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 12",
+      "col": "N° de série"
+    },
+    {
+      "id": "fa1991f41",
+      "type": "text",
+      "label": "Ligne 12 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 508.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 12",
+      "col": "Qté"
+    },
+    {
+      "id": "f4e8534d6",
+      "type": "choice",
+      "label": "Ligne 12 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 511.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 511.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 511.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 12",
+      "col": "État physique"
+    },
+    {
+      "id": "f0d20b43e",
+      "type": "choice",
+      "label": "Ligne 12 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 511.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 511.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 511.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 12",
+      "col": "Fonction"
+    },
+    {
+      "id": "f313797dc",
+      "type": "text",
+      "label": "Ligne 13 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 527.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 13",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fb758692d",
+      "type": "text",
+      "label": "Ligne 13 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 527.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 13",
+      "col": "N° de série"
+    },
+    {
+      "id": "f3073e699",
+      "type": "text",
+      "label": "Ligne 13 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 527.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 13",
+      "col": "Qté"
+    },
+    {
+      "id": "f52f897c9",
+      "type": "choice",
+      "label": "Ligne 13 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 530.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 530.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 530.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 13",
+      "col": "État physique"
+    },
+    {
+      "id": "f6301a2a2",
+      "type": "choice",
+      "label": "Ligne 13 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 530.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 530.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 530.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 13",
+      "col": "Fonction"
+    },
+    {
+      "id": "f639c2723",
+      "type": "text",
+      "label": "Ligne 14 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 546.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 14",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f5fe87deb",
+      "type": "text",
+      "label": "Ligne 14 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 546.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 14",
+      "col": "N° de série"
+    },
+    {
+      "id": "f5f2466ce",
+      "type": "text",
+      "label": "Ligne 14 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 546.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 14",
+      "col": "Qté"
+    },
+    {
+      "id": "f3d4caa83",
+      "type": "choice",
+      "label": "Ligne 14 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 549.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 549.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 549.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 14",
+      "col": "État physique"
+    },
+    {
+      "id": "f1cea2244",
+      "type": "choice",
+      "label": "Ligne 14 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 549.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 549.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 549.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 14",
+      "col": "Fonction"
+    },
+    {
+      "id": "f54bd6405",
+      "type": "text",
+      "label": "Ligne 15 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 565.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 15",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "feb8fe982",
+      "type": "text",
+      "label": "Ligne 15 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 565.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 15",
+      "col": "N° de série"
+    },
+    {
+      "id": "fe27ef401",
+      "type": "text",
+      "label": "Ligne 15 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 565.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 15",
+      "col": "Qté"
+    },
+    {
+      "id": "f54070d46",
+      "type": "choice",
+      "label": "Ligne 15 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 568.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 568.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 568.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 15",
+      "col": "État physique"
+    },
+    {
+      "id": "ff3f5649e",
+      "type": "choice",
+      "label": "Ligne 15 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 568.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 568.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 568.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 15",
+      "col": "Fonction"
+    },
+    {
+      "id": "faf037e7f",
+      "type": "text",
+      "label": "Ligne 16 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 584.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 16",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "fded5cacf",
+      "type": "text",
+      "label": "Ligne 16 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 584.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 16",
+      "col": "N° de série"
+    },
+    {
+      "id": "f97c04e1e",
+      "type": "text",
+      "label": "Ligne 16 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 584.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 16",
+      "col": "Qté"
+    },
+    {
+      "id": "f37575dcc",
+      "type": "choice",
+      "label": "Ligne 16 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 587.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 587.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 587.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 16",
+      "col": "État physique"
+    },
+    {
+      "id": "f0e18b555",
+      "type": "choice",
+      "label": "Ligne 16 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 587.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 587.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 587.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 16",
+      "col": "Fonction"
+    },
+    {
+      "id": "fc1d100a2",
+      "type": "text",
+      "label": "Ligne 17 – Matériel",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 21,
+      "y": 603.1,
+      "w": 175,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 17",
+      "col": "Matériel",
+      "rowHead": "Ligne"
+    },
+    {
+      "id": "f0e4b71bb",
+      "type": "text",
+      "label": "Ligne 17 – SN",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 202,
+      "y": 603.1,
+      "w": 106,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 17",
+      "col": "N° de série"
+    },
+    {
+      "id": "fcb6ecc97",
+      "type": "text",
+      "label": "Ligne 17 – Qté",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 314,
+      "y": 603.1,
+      "w": 48,
+      "h": 17.0,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 17",
+      "col": "Qté"
+    },
+    {
+      "id": "f51d2890e",
+      "type": "choice",
+      "label": "Ligne 17 – État physique",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 389.5,
+      "y": 606.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "Bon",
+          "box": {
+            "page": 0,
+            "x": 389.5,
+            "y": 606.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "Mauvais",
+          "box": {
+            "page": 0,
+            "x": 451.0,
+            "y": 606.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 17",
+      "col": "État physique"
+    },
+    {
+      "id": "f34eb79d8",
+      "type": "choice",
+      "label": "Ligne 17 – Fonction",
+      "group": "Matériel désinstallé",
+      "page": 0,
+      "x": 507.0,
+      "y": 606.1,
+      "w": 11,
+      "h": 11,
+      "fontSize": 0,
+      "align": "center",
+      "options": [
+        {
+          "label": "OK",
+          "box": {
+            "page": 0,
+            "x": 507.0,
+            "y": 606.1,
+            "w": 11,
+            "h": 11
+          }
+        },
+        {
+          "label": "NOK",
+          "box": {
+            "page": 0,
+            "x": 557.5,
+            "y": 606.1,
+            "w": 11,
+            "h": 11
+          }
+        }
+      ],
+      "choiceMode": "boxes",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "row": "Ligne 17",
+      "col": "Fonction"
+    },
+    {
+      "id": "f78bdba63",
+      "type": "multiline",
+      "label": "Commentaires",
+      "group": "Commentaires",
+      "page": 0,
+      "x": 24,
+      "y": 637,
+      "w": 558,
+      "h": 92,
+      "fontSize": 9,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f281ca0a2",
+      "type": "signature",
+      "label": "Signature technicien Acrelec",
+      "group": "Signatures",
+      "page": 1,
+      "x": 22,
+      "y": 102,
+      "w": 174,
+      "h": 66,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "tech-signature"
+    },
+    {
+      "id": "f898e52cc",
+      "type": "signature",
+      "label": "Signature responsable site",
+      "group": "Signatures",
+      "page": 1,
+      "x": 369,
+      "y": 102,
+      "w": 216,
+      "h": 66,
+      "fontSize": 0,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    }
+  ]
+}
