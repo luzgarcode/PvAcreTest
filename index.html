@@ -1742,7 +1742,7 @@ function fieldHtml(f){
     case "multiline": w=`<textarea class="inp" id="${id}" data-f="${f.id}" rows="3"${f.placeholder?` placeholder="${esc(f.placeholder)}"`:""}>${esc(v||"")}</textarea>`; break;
     case "date": w=`<div class="btnrow"><input type="date" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:200px"><button class="btn sm" data-today="${f.id}">Aujourd'hui</button></div>`; break;
     case "time": w=`<div class="btnrow"><input type="time" class="inp" id="${id}" data-f="${f.id}" value="${esc(v||"")}" style="max-width:150px"><button class="btn sm" data-now="${f.id}">Maintenant</button></div>`; break;
-    case "check": w=`<label class="toggle"><input type="checkbox" id="${id}" data-f="${f.id}" ${v?"checked":""}> Oui</label>`; break;
+    case "check": w=`<label class="toggle"><input type="checkbox" id="${id}" data-f="${f.id}" ${v?"checked":""}> Oui</label>`+(f.hint?`<div style="margin-top:8px"><button type="button" class="btn sm" data-hint="${f.id}">📷 Photos à prendre</button></div>`:""); break;
     case "choice": w=`<div class="seg" role="group" aria-label="${esc(f.label)}">${f.options.map(o=>{ const on=v===o.label; const tone=/^(ok|oui|présent|conforme|fonctionnement ok)$/i.test(o.label)?"v-ok":/^(nok|non|non présent|non conforme|ne fonctionne pas)$/i.test(o.label)?"v-nok":/^(dégradé|fonctionnement dégradé|degrade)$/i.test(o.label)?"v-warn":""; return `<button type="button" class="${on?"on ":""}${tone}" data-choice="${f.id}" data-val="${esc(o.label)}" aria-pressed="${on}" ${o.color?`style="${on?`background:${esc(o.color)};border-color:${esc(o.color)}`:`border-color:${esc(o.color)};color:${esc(o.color)}`}"`:""}>${esc(o.label)}</button>`; }).join("")}</div>`; break;
     case "photo": w=`<div class="media">${v?`<img src="${v}" alt="">`:""}<button class="btn sm" data-photo="${f.id}">${v?"Remplacer":"Prendre ou choisir une photo"}</button>${v?`<button class="btn sm ghost danger" data-clearf="${f.id}">Retirer</button>`:""}</div>`; break;
     case "signature": w=`<div class="media">${v?`<img class="sig-prev" src="${v}" alt="Signature">`:""}<button class="btn sm" data-sign="${f.id}">${v?"Refaire la signature":"Signer"}</button>${v?`<button class="btn sm ghost danger" data-clearf="${f.id}">Effacer</button>`:""}</div>`; break;
@@ -1904,6 +1904,18 @@ function updateStats(){
 }
 function bindFill(){
   const G = $("#groups");
+  G.addEventListener("click", e => {
+    const hb = e.target.closest && e.target.closest("[data-hint]"); if (!hb) return;
+    const f = S.tpl.fields.find(x=>x.id===hb.dataset.hint); if (!f || !f.hint) return;
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Photos à prendre">
+      <div class="sheet-h"><h3>${esc(f.hint.title||"Photos à prendre")}</h3></div>
+      <div class="sheet-b"><ul style="margin:0;padding-left:20px;line-height:1.7">${(f.hint.items||[]).map(i=>`<li>${esc(i)}</li>`).join("")}</ul>
+      ${f.hint.note?`<div style="margin-top:12px;color:var(--ink-2);font-size:13px">${esc(f.hint.note)}</div>`:""}</div>
+      <div class="sheet-f" style="justify-content:center"><button class="btn primary" data-x="ok">Compris</button></div></div>`;
+    document.body.appendChild(m);
+    m.onclick = ev => { if (ev.target===m || (ev.target.closest && ev.target.closest("[data-x]"))) m.remove(); };
+  });
   G.addEventListener("input", e => {
     const fid=e.target.dataset.f; if(!fid) return;
     const f=S.tpl.fields.find(x=>x.id===fid);
@@ -2246,7 +2258,9 @@ async function buildPdf(tpl, draft){
     // champ du modèle (ex. le type NGK/SAT choisi dans le Matériel, recopié dans
     // l'en-tête de la checklist Installation correspondante)
     let v = draft.values[f.id];
-    if (f.type==="mirror"){ const src=tpl.fields.find(x=>x.id===f.source); v = src ? draft.values[src.id] : undefined; }
+    if (f.type==="mirror"){ const src=tpl.fields.find(x=>x.id===f.source); v = src ? draft.values[src.id] : undefined;
+      if (f.map){ v = isFilled(v) ? f.map[v] : undefined; }
+      else if (f.mul && isFilled(v)){ const n=parseFloat(String(v).replace(",",".")); v = isNaN(n) ? undefined : String(Math.round(n*f.mul*100)/100); } }
     if(!isFilled(v)) continue;
     const page = pages[G.page]; if(!page) continue;
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }

@@ -1587,13 +1587,13 @@
     },
     {
       "id": "f3fc1d8322",
-      "type": "text",
+      "type": "mirror",
       "label": "Extendeur Scanner – prises électriques",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 93.14,
+      "x": 92.94,
       "y": 345.6,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1601,17 +1601,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "f99262236a",
-      "type": "text",
+      "type": "mirror",
       "label": "Extendeur Scanner – prises RJ45",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 164.28,
+      "x": 167.08,
       "y": 345.6,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1619,17 +1625,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "f665682fca",
-      "type": "text",
+      "type": "mirror",
       "label": "Black Box – prises électriques",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 57.93,
+      "x": 57.73,
       "y": 370.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1637,17 +1649,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "ff0de33ce4",
-      "type": "text",
+      "type": "mirror",
       "label": "Black Box – prises RJ45",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 129.07,
+      "x": 131.87,
       "y": 370.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1655,17 +1673,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "f8e12b91d6",
-      "type": "text",
+      "type": "mirror",
       "label": "Caisse prise de CO – prises électriques",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 90.61,
+      "x": 90.41,
       "y": 419.4,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1673,17 +1697,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "f0782febde",
-      "type": "text",
+      "type": "mirror",
       "label": "Caisse prise de CO – prises RJ45",
       "group": "Drive – totaux",
       "page": 2,
-      "x": 161.75,
+      "x": 164.55,
       "y": 419.4,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1691,7 +1721,13 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f23031dfb9",
+      "map": {
+        "Single drive": "1",
+        "Dual lane": "2",
+        "Face to face": "1"
+      }
     },
     {
       "id": "f8410743f8",
@@ -1733,13 +1769,13 @@
     },
     {
       "id": "feb5dd2dfb",
-      "type": "text",
+      "type": "mirror",
       "label": "KDS – prises électriques",
       "group": "KDS – totaux",
       "page": 3,
-      "x": 68.24,
+      "x": 68.04,
       "y": 54.6,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1747,17 +1783,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f8410743f8",
+      "mul": 2
     },
     {
       "id": "fe86e0b2b2",
-      "type": "text",
+      "type": "mirror",
       "label": "KDS – prises RJ45",
       "group": "KDS – totaux",
       "page": 3,
-      "x": 158.09,
+      "x": 160.89,
       "y": 54.6,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1765,17 +1803,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f8410743f8",
+      "mul": 1
     },
     {
       "id": "f2ee664e6c",
-      "type": "text",
+      "type": "mirror",
       "label": "Répéteurs – prises électriques",
       "group": "KDS – totaux",
       "page": 3,
-      "x": 46.32,
+      "x": 46.12,
       "y": 79.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1783,17 +1823,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "ff6475e679",
+      "mul": 2
     },
     {
       "id": "f693de1775",
-      "type": "text",
+      "type": "mirror",
       "label": "Répéteurs – prises RJ45",
       "group": "KDS – totaux",
       "page": 3,
-      "x": 136.17,
+      "x": 138.97,
       "y": 79.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -1801,7 +1843,29 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "ff6475e679",
+      "mul": 1
+    },
+    {
+      "id": "f7b048f0f7",
+      "type": "mirror",
+      "label": "Répéteurs – ajout RJ45",
+      "group": "KDS – totaux",
+      "page": 3,
+      "x": 237.15,
+      "y": 91.5,
+      "w": 12.0,
+      "h": 9.4,
+      "fontSize": 9,
+      "align": "center",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "source": "ff6475e679",
+      "mul": 1
     },
     {
       "id": "fc3a3e3b98",
@@ -2413,13 +2477,13 @@
     },
     {
       "id": "f761512d27",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne murale – prises électriques",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 52.02,
+      "x": 51.82,
       "y": 427.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2427,17 +2491,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "fdfcd2bb80",
+      "mul": 1
     },
     {
       "id": "fd257df023",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne murale – prises RJ45",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 153.33,
+      "x": 156.13,
       "y": 427.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2445,7 +2511,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "fdfcd2bb80",
+      "mul": 1
     },
     {
       "id": "f003a7c7c3",
@@ -2601,13 +2669,13 @@
     },
     {
       "id": "fae7c49364",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne K22 – prises électriques",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 52.02,
+      "x": 51.82,
       "y": 489.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2615,17 +2683,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f754f3b17b",
+      "mul": 1
     },
     {
       "id": "f77e5e61ce",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne K22 – prises RJ45",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 153.33,
+      "x": 156.13,
       "y": 489.2,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2633,7 +2703,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f754f3b17b",
+      "mul": 1
     },
     {
       "id": "fe7d474d4c",
@@ -2865,13 +2937,13 @@
     },
     {
       "id": "fa78d676fc",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne simple sur pied – prises électriques",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 52.02,
+      "x": 51.82,
       "y": 575.7,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2879,17 +2951,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f73b300cb6",
+      "mul": 1
     },
     {
       "id": "ff7b6e483a",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne simple sur pied – prises RJ45",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 153.33,
+      "x": 156.13,
       "y": 575.7,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2897,7 +2971,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f73b300cb6",
+      "mul": 1
     },
     {
       "id": "faa2904e3f",
@@ -2977,13 +3053,13 @@
     },
     {
       "id": "f52f3971ba",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne double sur pied – prises électriques",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 52.02,
+      "x": 51.82,
       "y": 613.0,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -2991,17 +3067,19 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f7d79e587c",
+      "mul": 1
     },
     {
       "id": "ff2ba1252f",
-      "type": "text",
+      "type": "mirror",
       "label": "Borne double sur pied – prises RJ45",
       "group": "Bornes – totaux",
       "page": 3,
-      "x": 153.33,
+      "x": 156.13,
       "y": 613.0,
-      "w": 9.0,
+      "w": 12.0,
       "h": 9.4,
       "fontSize": 9,
       "align": "center",
@@ -3009,7 +3087,9 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "source": "f7d79e587c",
+      "mul": 2
     },
     {
       "id": "fcaed80b54",
@@ -3671,7 +3751,23 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "hint": {
+        "title": "Photos à prendre – Drive",
+        "items": [
+          "Vue ensemble de la/des voie(s)",
+          "Massif et fourreaux",
+          "Prérequis de la/des voie(s)",
+          "Ensemble guichet drive",
+          "Prérequis sous comptoir drive",
+          "Prérequis dans le plafond drive",
+          "Ensemble prise d'ENC 2",
+          "Prérequis sous comptoir ENC 2",
+          "Mât CrashPoint",
+          "Prérequis CrashPoint"
+        ],
+        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+      }
     },
     {
       "id": "ffcc08f9e2",
@@ -3689,7 +3785,16 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "hint": {
+        "title": "Photos à prendre – KDS",
+        "items": [
+          "L'ensemble des prérequis présent",
+          "L'emplacement des KDS",
+          "La présence du comptoir"
+        ],
+        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+      }
     },
     {
       "id": "f47c2c8b57",
@@ -3707,7 +3812,15 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "hint": {
+        "title": "Photos à prendre – Cuisine",
+        "items": [
+          "La présence du comptoir",
+          "L'ensemble des prérequis présent"
+        ],
+        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+      }
     },
     {
       "id": "f8129737e0",
@@ -3725,7 +3838,16 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "hint": {
+        "title": "Photos à prendre – Bornes de commande",
+        "items": [
+          "L'ensemble des prérequis présent",
+          "L'emplacement des bornes",
+          "Le meuble K22"
+        ],
+        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+      }
     },
     {
       "id": "fe225f2821",
@@ -3743,7 +3865,18 @@
       "choiceMode": "text",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "hint": {
+        "title": "Photos à prendre – Administratif",
+        "items": [
+          "L'ensemble des prérequis présent",
+          "L'ensemble du bureau",
+          "La présence de la baie de brassage",
+          "L'emplacement de la pointeuse",
+          "L'emplacement de l'ORB"
+        ],
+        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+      }
     },
     {
       "id": "fb08065012",
