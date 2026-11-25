@@ -2250,12 +2250,16 @@ async function buildPdf(tpl, draft){
     if(!isFilled(v)) continue;
     const page = pages[G.page]; if(!page) continue;
     if (f.type==="check"){ drawMark(page, toPdf(page,f), f.mark); continue; }
-    if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; drawMark(pg, toPdf(pg,o.box), f.mark); } continue; }
+    if (f.type==="choice" && f.choiceMode==="boxes"){ const o=f.strikeOpposite ? f.options.find(o=>o.label!==v) : f.options.find(o=>o.label===v); if(o && o.box){ const pg=pages[o.box.page ?? f.page]; const br=toPdf(pg,o.box);
+      if (o.fill){ const hx=o.fill.replace("#",""); pg.drawRectangle({x:br.x,y:br.y,width:br.w,height:br.h,color:rgb(parseInt(hx.slice(0,2),16)/255,parseInt(hx.slice(2,4),16)/255,parseInt(hx.slice(4,6),16)/255)});
+        if (o.text){ const ts=Math.min(9.5,br.h*0.6), tw=bold.widthOfTextAtSize(safeB(o.text),ts); pg.drawText(safeB(o.text),{x:br.x+(br.w-tw)/2,y:br.y+(br.h-ts*0.72)/2,size:ts,font:bold,color:rgb(0,0,0)}); } }
+      else drawMark(pg, br, f.mark); } continue; }
     if (f.type==="choice" && f.choiceMode==="color"){
       const o = f.options.find(o=>o.label===v);
       if (o && o.color){
         const r=toPdf(page,f); const hex=o.color.replace("#",""); const cr=parseInt(hex.slice(0,2),16)/255, cg=parseInt(hex.slice(2,4),16)/255, cb=parseInt(hex.slice(4,6),16)/255;
         page.drawRectangle({x:r.x,y:r.y,width:r.w,height:r.h,color:rgb(cr,cg,cb)});
+        if (f.fillBox && o.fillColor){ const fr=toPdf(page,f.fillBox), hx2=o.fillColor.replace("#",""); page.drawRectangle({x:fr.x,y:fr.y,width:fr.w,height:fr.h,color:rgb(parseInt(hx2.slice(0,2),16)/255,parseInt(hx2.slice(2,4),16)/255,parseInt(hx2.slice(4,6),16)/255)}); }
         // le libellé (OK/NOK/En cours/N/A) est redessiné par-dessus la pastille,
         // sauf quand le champ force fontSize:0 (pastille volontairement trop
         // étroite pour du texte, ex. le suivi Turn Over) ; couleur du texte

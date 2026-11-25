@@ -186,7 +186,9 @@
             "y": 202.4,
             "w": 95.2,
             "h": 16.4
-          }
+          },
+          "fill": "#F79646",
+          "text": "Oui"
         },
         {
           "label": "Dual lane",
@@ -196,7 +198,9 @@
             "y": 202.4,
             "w": 83,
             "h": 16.4
-          }
+          },
+          "fill": "#F79646",
+          "text": "Oui"
         },
         {
           "label": "Face to face",
@@ -206,7 +210,9 @@
             "y": 202.4,
             "w": 83,
             "h": 16.4
-          }
+          },
+          "fill": "#F79646",
+          "text": "Oui"
         }
       ],
       "choiceMode": "boxes",
@@ -227,14 +233,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 69.7,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fd63085c4d",
@@ -254,8 +284,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fa8802c81a",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fa8802c81a",
+            "equals": "NOK"
+          },
+          {
+            "field": "fa8802c81a",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -271,14 +309,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 94.3,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f64f3baa68",
@@ -298,8 +360,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f09fbdeda4",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f09fbdeda4",
+            "equals": "NOK"
+          },
+          {
+            "field": "f09fbdeda4",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -315,14 +385,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 118.9,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f256dd3a73",
@@ -342,8 +436,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fffd5bc2e7",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fffd5bc2e7",
+            "equals": "NOK"
+          },
+          {
+            "field": "fffd5bc2e7",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -359,14 +461,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 143.5,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f824901327",
@@ -386,8 +512,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fd4f6bf93e",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fd4f6bf93e",
+            "equals": "NOK"
+          },
+          {
+            "field": "fd4f6bf93e",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -403,14 +537,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 168.1,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fe3e6acc82",
@@ -430,8 +588,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fd0cc9989c",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fd0cc9989c",
+            "equals": "NOK"
+          },
+          {
+            "field": "fd0cc9989c",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -447,14 +613,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 192.7,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f855959b9b",
@@ -474,8 +664,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fcc1a5dfab",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fcc1a5dfab",
+            "equals": "NOK"
+          },
+          {
+            "field": "fcc1a5dfab",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -491,14 +689,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 217.3,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fd956c7ae1",
@@ -518,8 +740,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f59407cf52",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f59407cf52",
+            "equals": "NOK"
+          },
+          {
+            "field": "f59407cf52",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -535,14 +765,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 241.9,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f6db334cbd",
@@ -562,8 +816,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fca7ce39f0",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fca7ce39f0",
+            "equals": "NOK"
+          },
+          {
+            "field": "fca7ce39f0",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -579,14 +841,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 266.5,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f0e25c739d",
@@ -606,8 +892,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f28699e671",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f28699e671",
+            "equals": "NOK"
+          },
+          {
+            "field": "f28699e671",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -623,14 +917,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 291.1,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f27a9891d0",
@@ -650,8 +968,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f0015450e8",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f0015450e8",
+            "equals": "NOK"
+          },
+          {
+            "field": "f0015450e8",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -667,14 +993,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 315.7,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fdf5e5b6b1",
@@ -694,8 +1044,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fe54bc87cd",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fe54bc87cd",
+            "equals": "NOK"
+          },
+          {
+            "field": "fe54bc87cd",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -711,14 +1069,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 340.3,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f60ad7af04",
@@ -738,8 +1120,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f6c03b57d7",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f6c03b57d7",
+            "equals": "NOK"
+          },
+          {
+            "field": "f6c03b57d7",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -755,14 +1145,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 364.9,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f56c72e678",
@@ -782,8 +1196,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f377c935bb",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f377c935bb",
+            "equals": "NOK"
+          },
+          {
+            "field": "f377c935bb",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -799,14 +1221,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 389.5,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f71fdd48f7",
@@ -826,8 +1272,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f9d46054f7",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f9d46054f7",
+            "equals": "NOK"
+          },
+          {
+            "field": "f9d46054f7",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -843,14 +1297,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 414.1,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f9c0efc5e5",
@@ -870,8 +1348,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fa4ac3140c",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fa4ac3140c",
+            "equals": "NOK"
+          },
+          {
+            "field": "fa4ac3140c",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -887,14 +1373,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 438.7,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f77b01024a",
@@ -914,8 +1424,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fa28c48a84",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fa28c48a84",
+            "equals": "NOK"
+          },
+          {
+            "field": "fa28c48a84",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -931,14 +1449,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 463.3,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f6c3563ad6",
@@ -958,8 +1500,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "ff36c97b9a",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "ff36c97b9a",
+            "equals": "NOK"
+          },
+          {
+            "field": "ff36c97b9a",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -975,14 +1525,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 2,
+        "x": 342.4,
+        "y": 487.9,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fb3d0c9b61",
@@ -1002,8 +1576,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fba545ec0c",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fba545ec0c",
+            "equals": "NOK"
+          },
+          {
+            "field": "fba545ec0c",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1237,14 +1819,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 114.8,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f139a657db",
@@ -1264,8 +1870,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fc3a3e3b98",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fc3a3e3b98",
+            "equals": "NOK"
+          },
+          {
+            "field": "fc3a3e3b98",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1281,14 +1895,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 139.4,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fb0a325ee2",
@@ -1308,8 +1946,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f61fbf11fb",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f61fbf11fb",
+            "equals": "NOK"
+          },
+          {
+            "field": "f61fbf11fb",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1325,14 +1971,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 164.0,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f2c9628054",
@@ -1352,8 +2022,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f14a4211da",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f14a4211da",
+            "equals": "NOK"
+          },
+          {
+            "field": "f14a4211da",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1369,14 +2047,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 53.2,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "faf3230e1e",
@@ -1396,8 +2098,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f046924ff8",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f046924ff8",
+            "equals": "NOK"
+          },
+          {
+            "field": "f046924ff8",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1413,14 +2123,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 77.8,
+        "w": 238,
+        "h": 34.2
+      }
     },
     {
       "id": "fdcf49a56e",
@@ -1440,8 +2174,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f48aca983c",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f48aca983c",
+            "equals": "NOK"
+          },
+          {
+            "field": "f48aca983c",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1457,14 +2199,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 288.6,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f8e6289b0d",
@@ -1484,8 +2250,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f91ad93b84",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f91ad93b84",
+            "equals": "NOK"
+          },
+          {
+            "field": "f91ad93b84",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1501,14 +2275,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 313.2,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f2407c32f6",
@@ -1528,8 +2326,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fdcbc3baaf",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fdcbc3baaf",
+            "equals": "NOK"
+          },
+          {
+            "field": "fdcbc3baaf",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1657,14 +2463,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 425.8,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f982fdb1fc",
@@ -1684,8 +2514,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f003a7c7c3",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f003a7c7c3",
+            "equals": "NOK"
+          },
+          {
+            "field": "f003a7c7c3",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1701,14 +2539,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 450.4,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f92a679d91",
@@ -1728,8 +2590,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f00c52bc56",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f00c52bc56",
+            "equals": "NOK"
+          },
+          {
+            "field": "f00c52bc56",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1781,14 +2651,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 487.8,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fbff30b59b",
@@ -1808,8 +2702,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fe7d474d4c",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fe7d474d4c",
+            "equals": "NOK"
+          },
+          {
+            "field": "fe7d474d4c",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1825,14 +2727,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 512.4,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f0c09f585e",
@@ -1852,8 +2778,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f2def430c4",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f2def430c4",
+            "equals": "NOK"
+          },
+          {
+            "field": "f2def430c4",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1869,14 +2803,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 537.0,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f90c7a4348",
@@ -1896,8 +2854,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fae6d22bca",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fae6d22bca",
+            "equals": "NOK"
+          },
+          {
+            "field": "fae6d22bca",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -1949,14 +2915,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 574.3,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "ff0f796981",
@@ -1976,8 +2966,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "faa2904e3f",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "faa2904e3f",
+            "equals": "NOK"
+          },
+          {
+            "field": "faa2904e3f",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2029,14 +3027,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 3,
+        "x": 342.4,
+        "y": 611.6,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f07bb0cde5",
@@ -2056,8 +3078,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fcaed80b54",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fcaed80b54",
+            "equals": "NOK"
+          },
+          {
+            "field": "fcaed80b54",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2073,14 +3103,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 37.8,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fa9bf0e1ea",
@@ -2100,8 +3154,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f06571af64",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f06571af64",
+            "equals": "NOK"
+          },
+          {
+            "field": "f06571af64",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2117,14 +3179,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 62.4,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "facf9fbb1a",
@@ -2144,8 +3230,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fe486f44c9",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fe486f44c9",
+            "equals": "NOK"
+          },
+          {
+            "field": "fe486f44c9",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2161,14 +3255,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 87.0,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f05ed200be",
@@ -2188,8 +3306,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "ff427c6c52",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "ff427c6c52",
+            "equals": "NOK"
+          },
+          {
+            "field": "ff427c6c52",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2205,14 +3331,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 111.6,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "fcc5ebcecb",
@@ -2232,8 +3382,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f5b0d6eea5",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f5b0d6eea5",
+            "equals": "NOK"
+          },
+          {
+            "field": "f5b0d6eea5",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2249,14 +3407,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 136.2,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f28610d83c",
@@ -2276,8 +3458,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fb145c4183",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fb145c4183",
+            "equals": "NOK"
+          },
+          {
+            "field": "fb145c4183",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2293,14 +3483,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 160.8,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f4407e3880",
@@ -2320,8 +3534,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "fc74f6e467",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "fc74f6e467",
+            "equals": "NOK"
+          },
+          {
+            "field": "fc74f6e467",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2337,14 +3559,38 @@
       "fontSize": 9,
       "align": "center",
       "options": [
-        "OK",
-        "NOK",
-        "N/A"
+        {
+          "label": "OK",
+          "color": "#2E9E4F",
+          "fillColor": "#C6EFCE"
+        },
+        {
+          "label": "En cours",
+          "color": "#F79646",
+          "fillColor": "#FFD8A8"
+        },
+        {
+          "label": "NOK",
+          "color": "#D32F2F",
+          "fillColor": "#FFC7CE"
+        },
+        {
+          "label": "N/A",
+          "color": "#BFBFBF",
+          "fillColor": "#EDEDED"
+        }
       ],
-      "choiceMode": "text",
+      "choiceMode": "color",
       "mark": "x",
       "lineHeight": 0,
-      "auto": ""
+      "auto": "",
+      "fillBox": {
+        "page": 4,
+        "x": 342.4,
+        "y": 185.4,
+        "w": 238,
+        "h": 21.8
+      }
     },
     {
       "id": "f35e0d7ebf",
@@ -2364,8 +3610,16 @@
       "lineHeight": 8.6,
       "auto": "",
       "visibleIf": {
-        "field": "f422833ee1",
-        "equals": "NOK"
+        "anyOf": [
+          {
+            "field": "f422833ee1",
+            "equals": "NOK"
+          },
+          {
+            "field": "f422833ee1",
+            "equals": "En cours"
+          }
+        ]
       }
     },
     {
@@ -2405,6 +3659,96 @@
       "auto": ""
     },
     {
+      "id": "f3c1d9c423",
+      "type": "check",
+      "label": "Photos Drive prises",
+      "group": "Drive",
+      "page": 2,
+      "x": 301,
+      "y": 576.6,
+      "w": 16,
+      "h": 16,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "ffcc08f9e2",
+      "type": "check",
+      "label": "Photos KDS prises",
+      "group": "KDS",
+      "page": 3,
+      "x": 301,
+      "y": 211.1,
+      "w": 16,
+      "h": 16,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f47c2c8b57",
+      "type": "check",
+      "label": "Photos Cuisine prises",
+      "group": "Cuisine",
+      "page": 3,
+      "x": 301,
+      "y": 354.4,
+      "w": 16,
+      "h": 16,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "f8129737e0",
+      "type": "check",
+      "label": "Photos Bornes prises",
+      "group": "Bornes de commande",
+      "page": 3,
+      "x": 301,
+      "y": 658.7,
+      "w": 16,
+      "h": 16,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
+      "id": "fe225f2821",
+      "type": "check",
+      "label": "Photos Administratif prises",
+      "group": "Administratif et autres",
+      "page": 4,
+      "x": 301,
+      "y": 250.8,
+      "w": 16,
+      "h": 16,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": ""
+    },
+    {
       "id": "fb08065012",
       "type": "mirror",
       "label": "Numéro du site (rappel)",
@@ -2429,8 +3773,8 @@
       "label": "Page de garde – restaurant",
       "group": "Page de garde",
       "page": 0,
-      "x": 185,
-      "y": 122,
+      "x": 162,
+      "y": 132,
       "w": 168,
       "h": 17,
       "fontSize": 11,
@@ -2449,9 +3793,9 @@
       "label": "Page de garde – CC",
       "group": "Page de garde",
       "page": 0,
-      "x": 358,
-      "y": 137.5,
-      "w": 80,
+      "x": 356,
+      "y": 132,
+      "w": 95,
       "h": 17,
       "fontSize": 11,
       "align": "left",
