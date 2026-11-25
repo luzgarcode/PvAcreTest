@@ -915,7 +915,7 @@ async function fetchWithTimeout(url, kind, ms){
 }
 function tplRecord(m, meta, pdf, cur){
   const clientsArr = Array.isArray(meta.clients) ? meta.clients : (meta.client ? [meta.client] : []);
-  return {id:m.id, name:meta.name, shortName:meta.shortName||"", keywords:Array.isArray(meta.keywords)?meta.keywords:[], fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], hidden:!!meta.hidden, packPhotos:!!meta.packPhotos, multiDay:meta.multiDay||null, clients:clientsArr, category:meta.category||"Autre", subCategory:meta.subCategory||"", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
+  return {id:m.id, name:meta.name, shortName:meta.shortName||"", keywords:Array.isArray(meta.keywords)?meta.keywords:[], fields:meta.fields, annexPhotos:meta.annexPhotos||[], optionalPages:meta.optionalPages||[], covers:meta.covers||[], hidden:!!meta.hidden, packPhotos:!!meta.packPhotos, multiDay:meta.multiDay||null, reference:meta.reference||null, clients:clientsArr, category:meta.category||"Autre", subCategory:meta.subCategory||"", pdf, createdAt:(cur&&cur.createdAt)||Date.now(), updatedAt:m.updatedAt||0, feedbackAt:m.feedbackAt||0, published:true};
 }
 async function syncManifest(opts){
   opts = opts || {};
@@ -1621,6 +1621,7 @@ async function openFill(draftId){
       <label class="fld" style="margin:0"><span>Nom du rapport</span><input class="inp" id="dName" value="${esc(d.name)}"></label>
       <div class="fill-stats"><div class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="${countableFields(tpl).length}" aria-valuenow="0" aria-label="Zones remplies"><div class="pbar-fill" id="statFill"></div><span class="pbar-label" id="stat"></span></div><button class="btn sm ghost" id="openAll">Tout déplier</button><button class="btn sm ghost" id="closeAll">Tout replier</button></div>
     </div>
+    ${tpl.reference?`<button class="btn" id="refBtn" style="margin:4px 0 12px">📎 ${esc(tpl.reference.title||"Rappel")}</button>`:""}
     <div id="groups">${[...visibleGroups(tpl, d.values).entries()].map(([g,fs],gi)=>groupHtml(g,fs,gi)).join("")}</div>
     <details class="grp" open id="annexGrp"><summary><span class="t">Photos jointes au PV</span><span class="cnt" id="annexCnt"></span></summary>
       <div class="grp-body"><div id="annexList"></div>
@@ -1904,6 +1905,22 @@ function updateStats(){
 }
 function bindFill(){
   const G = $("#groups");
+  const refBtn = $("#refBtn");
+  if (refBtn && S.tpl.reference) refBtn.onclick = () => {
+    const imgs = (S.tpl.reference.images||[]);
+    const m=document.createElement("div"); m.className="modal";
+    m.innerHTML=`<div class="sheet" style="max-width:900px;width:100%;height:92vh;display:flex;flex-direction:column" role="dialog" aria-modal="true" aria-label="${esc(S.tpl.reference.title||"Rappel")}">
+      <div class="sheet-h"><h3>${esc(S.tpl.reference.title||"Rappel")}</h3></div>
+      <div class="sheet-b" style="flex:1;overflow:auto;-webkit-overflow-scrolling:touch;padding:8px"><div style="color:var(--ink-2);font-size:12px;margin-bottom:6px">Touche une page pour zoomer / dézoomer.</div>
+        ${imgs.map(u=>`<img src="${u}" alt="" data-zoom style="width:100%;display:block;margin:0 0 10px;border:1px solid #ddd">`).join("")}</div>
+      <div class="sheet-f" style="justify-content:center"><button class="btn primary" data-x="ok">Fermer</button></div></div>`;
+    document.body.appendChild(m);
+    m.onclick = ev => {
+      const z = ev.target.closest && ev.target.closest("[data-zoom]");
+      if (z){ z.style.width = z.style.width==="100%" ? "220%" : "100%"; z.style.maxWidth = z.style.width==="100%" ? "100%" : "none"; return; }
+      if (ev.target===m || (ev.target.closest && ev.target.closest("[data-x]"))) m.remove();
+    };
+  };
   G.addEventListener("click", e => {
     const hb = e.target.closest && e.target.closest("[data-hint]"); if (!hb) return;
     const f = S.tpl.fields.find(x=>x.id===hb.dataset.hint); if (!f || !f.hint) return;
