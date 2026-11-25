@@ -144,6 +144,14 @@ html.hv2 .list:has(.client-row) .row:active{ background:var(--blue-soft); }
 html.hv2 #normalSections .sec-h{ margin:22px 0 10px; }
 .rl-short{ display:none; }
 .seg-home{ flex-wrap:nowrap; }
+.hc-seg{ flex-wrap:nowrap; margin:6px 0 10px; } .hc-seg button{ flex:1 1 0; min-width:0; padding:10px 6px; }
+.hc-phone{ border:2px solid var(--ink); border-radius:18px; overflow:hidden; background:var(--paper); margin:0 auto 12px; max-width:250px; }
+.hc-bar{ height:22px; background:#17212B; }
+.hp{ padding:10px; display:grid; gap:8px; }
+.hp-i{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px; display:flex; align-items:center; gap:8px; }
+.hp-l{ width:30px; height:30px; border-radius:8px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; flex:none; } .hp-l img{ max-width:80%; max-height:80%; }
+.hp-t b{ display:block; font-size:12px; } .hp-t small{ display:block; font-size:9.5px; color:var(--ink-2); }
+.hp.tiles{ grid-template-columns:1fr 1fr; } .hp.tiles .hp-i{ flex-direction:column; align-items:stretch; gap:6px; } .hp.tiles .hp-l{ width:100%; height:44px; } .hp.tiles .hp-l img{ max-height:36px; }
 .seg-home button{ flex:1 1 0; min-width:0; padding:10px 6px; }
 html.hvt #draftsGrp{ background:var(--vis-soft); border:1px solid var(--vis); border-radius:16px; }
 html.hvt .list:has(.client-row[data-client]){ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
@@ -2865,9 +2873,8 @@ function maybeShowOnboarding(){
 /* ---- nouveautés ---- */
 const CHANGELOG_KEY = "pvgo_changelog_seen";
 const CHANGELOG = [
-  { version:"2026-11-25", title:"🏠 Nouvel accueil : 2 présentations au choix", items:[
-    "L'accueil passe en tuiles : un logo par client, plus facile à repérer d'un coup d'œil. C'est la présentation par défaut.",
-    "Tu préfères l'accueil en lignes (celui que tu avais jusqu'ici) ? Mon profil → Réglages → Affichage → « Design de l'accueil » : choisis Tuiles (nouveau) ou Ligne (actuel). Tu peux changer quand tu veux.",
+  { version:"2026-11-25", homeChoice:true, title:"🏠 Choisis la présentation de ton accueil", items:[
+    "Touche Tuiles ou Lignes pour voir l'aperçu, puis Valider. Tu pourras changer quand tu veux : Mon profil → Réglages → Affichage.",
     "Aussi : PV Drive Coates, les mentions JOUR 1 / 2 / 3 ne sont plus cachées par les photos. Et la recherche accepte plusieurs mots.",
   ] },
   { version:"2026-11-07", title:"🗂️ Mes PV perso & nouveaux PV Service à table", items:[
@@ -2933,15 +2940,32 @@ function changelogDate(v){
   const d = new Date(+m[1], +m[2]-1, +m[3]);
   return `<span style="flex:none;font-size:12px;color:var(--ink-2);white-space:nowrap">${esc(d.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"}))}</span>`;
 }
+function homeChooserHtml(){
+  const L = n => ({"Tous clients":"acrelec.jpg","McDonald's":"mcdonalds.png","KFC":"kfc.png","Burger King":"burgerking.jpg"})[n];
+  const names = ["Tous clients","McDonald's","KFC","Burger King"];
+  return `<div class="seg hc-seg" role="group" aria-label="Présentation de l'accueil"><button type="button" data-hsel="tiles">Tuiles</button><button type="button" data-hsel="lines">Lignes</button></div>
+    <div class="hc-phone" aria-hidden="true"><div class="hc-bar"></div><div id="homePrev" class="hp tiles">${names.map(n=>`<div class="hp-i"><div class="hp-l"><img src="assets/logos/${L(n)}" alt=""></div><div class="hp-t"><b>${esc(n)}</b><small>modèles disponibles</small></div></div>`).join("")}</div></div>`;
+}
 function showChangelog(entries){
   const m=document.createElement("div"); m.className="modal";
-  const body = entries.map(e => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px"><div style="font-weight:700">${esc(e.title)}</div>${changelogDate(e.version)}</div>${e.figure||""}<ul style="margin:0;padding-left:18px;color:var(--ink-2)">${e.items.map(i=>`<li style="margin-bottom:5px">${esc(i)}</li>`).join("")}</ul></div>`).join("");
+  const hasHome = entries.some(e => e.homeChoice);
+  const body = entries.map(e => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px"><div style="font-weight:700">${esc(e.title)}</div>${changelogDate(e.version)}</div>${e.homeChoice?homeChooserHtml():(e.figure||"")}<ul style="margin:0;padding-left:18px;color:var(--ink-2)">${e.items.map(i=>`<li style="margin-bottom:5px">${esc(i)}</li>`).join("")}</ul></div>`).join("");
   m.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Nouveautés">
     <div class="sheet-h"><h3>Nouveautés</h3></div>
     <div class="sheet-b">${body}</div>
-    <div class="sheet-f" style="justify-content:center"><button class="btn primary" data-x="ok">Compris</button></div></div>`;
+    <div class="sheet-f" style="justify-content:center"><button class="btn primary" data-x="ok">${hasHome?"Valider":"Compris"}</button></div></div>`;
   document.body.appendChild(m);
-  m.onclick = e => { const a=e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x); if(a==="ok") m.remove(); };
+  let homeSel = document.documentElement.classList.contains("hvt") ? "tiles" : "lines";
+  const paintHome = () => { const box = m.querySelector("#homePrev"); if (!box) return; box.className = "hp " + homeSel; m.querySelectorAll("[data-hsel]").forEach(b => { const on = b.dataset.hsel===homeSel; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); }); };
+  paintHome();
+  m.onclick = e => {
+    const sel = e.target.closest && e.target.closest("[data-hsel]"); if (sel){ homeSel = sel.dataset.hsel; paintHome(); return; }
+    const a=e.target.dataset && (e.target.dataset.x || e.target.closest("[data-x]")?.dataset.x);
+    if(a==="ok"){
+      if (hasHome){ try{ localStorage.setItem("pvgo_home_v3", homeSel); }catch(err){} document.documentElement.classList.toggle("hvt", homeSel==="tiles"); if (S.view==="home") showHome(); }
+      m.remove();
+    }
+  };
 }
 function maybeShowChangelog(){
   try{
