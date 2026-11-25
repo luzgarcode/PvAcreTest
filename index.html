@@ -145,21 +145,21 @@ html.hv2 #normalSections .sec-h{ margin:22px 0 10px; }
 .rl-short{ display:none; }
 .seg-home{ flex-wrap:nowrap; }
 .seg-home button{ flex:1 1 0; min-width:0; padding:10px 6px; }
-html.hv2 #draftsGrp{ background:var(--vis-soft); border:1px solid var(--vis); border-radius:16px; }
-html.hv2 .list:has(.client-row[data-client]){ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-html.hv2 .list:has(.client-row[data-client]) .row{ flex-direction:column; align-items:stretch; gap:10px; padding:14px; border-radius:18px; min-height:150px; position:relative; }
-html.hv2 .list:has(.client-row[data-client]) .row .doc-ico{ width:100%; height:74px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--surface-2); }
-html.hv2 .list:has(.client-row[data-client]) .row .client-ico-img{ border:0; }
-html.hv2 .list:has(.client-row[data-client]) .row .client-ico-img img{ width:auto; max-width:82%; max-height:60px; }
-html.hv2 .list:has(.client-row[data-client]) .row .main{ min-width:0; flex:none; }
-html.hv2 .list:has(.client-row[data-client]) .row .name{ font-size:16px; }
-html.hv2 .list:has(.client-row[data-client]) .row .meta{ font-size:12.5px; margin-top:1px; }
-html.hv2 .list:has(.client-row[data-client]) .row .chev{ display:none; }
+html.hvt #draftsGrp{ background:var(--vis-soft); border:1px solid var(--vis); border-radius:16px; }
+html.hvt .list:has(.client-row[data-client]){ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+html.hvt .list:has(.client-row[data-client]) .row{ flex-direction:column; align-items:stretch; gap:10px; padding:14px; border-radius:18px; min-height:150px; position:relative; }
+html.hvt .list:has(.client-row[data-client]) .row .doc-ico{ width:100%; height:74px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--surface-2); }
+html.hvt .list:has(.client-row[data-client]) .row .client-ico-img{ border:0; }
+html.hvt .list:has(.client-row[data-client]) .row .client-ico-img img{ width:auto; max-width:82%; max-height:60px; }
+html.hvt .list:has(.client-row[data-client]) .row .main{ min-width:0; flex:none; }
+html.hvt .list:has(.client-row[data-client]) .row .name{ font-size:16px; }
+html.hvt .list:has(.client-row[data-client]) .row .meta{ font-size:12.5px; margin-top:1px; }
+html.hvt .list:has(.client-row[data-client]) .row .chev{ display:none; }
 html.hv2 #normalSections .sec-h{ display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; gap:10px; margin:18px 2px 10px; }
 html.hv2 #normalSections .sec-h .rl-long{ display:none; }
 html.hv2 #normalSections .sec-h .rl-short{ display:inline; }
 html.hv2 #refreshBtn{ border-radius:999px; padding:6px 12px; min-height:34px; font-size:13px; flex:none; white-space:nowrap; }
-html.hv2 #draftsGrp{ border-radius:14px; }
+html.hvt #draftsGrp{ border-radius:14px; }
 html.hv2 #normalSections .sec-h h2{ font-size:13px; font-family:inherit; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); }
 html.hv2 #importRelay{ width:100%; justify-content:center; text-align:center; padding:12px 14px; border-radius:12px; border:1.5px dashed var(--blue); background:var(--blue-soft); color:var(--blue); font-weight:600; }
 .client-ico{ background:var(--blue-soft); color:var(--blue); border:none; display:flex; align-items:center; justify-content:center; font-family:var(--font-c); font-weight:700; font-size:16px; }
@@ -1074,7 +1074,7 @@ function archiveRowsHtml(items, tplName){
   return items.map(d => `<div class="row"><div class="doc-ico filled"></div><div class="main"><div class="name">${esc(d.name)}</div><div class="meta">${esc(tplName(d.templateId))} · <span class="sent-badge">✓ Envoyé le ${fmtDate(d.sentAt)}</span></div></div>
     <div class="acts"><button class="btn primary" data-open-draft="${d.id}">Reprendre</button><button class="btn sm ghost" data-unsend-draft="${d.id}">Remettre en cours</button><button class="btn sm danger ghost" data-del-draft="${d.id}">Supprimer</button></div></div>`).join("");
 }
-try{ document.documentElement.classList.toggle("hv2", localStorage.getItem("pvgo_home_v2")!=="0"); }catch(e){}
+document.documentElement.classList.add("hv2"); try{ document.documentElement.classList.toggle("hvt", localStorage.getItem("pvgo_home_v3")!=="lines"); }catch(e){ document.documentElement.classList.add("hvt"); }
 async function showArchive(){
   // si on était déjà dans « Rapports envoyés » (suppression, remise en cours), les clients ouverts le restent
   const keepOpen = S.view==="archive" ? new Set([...document.querySelectorAll("details.grp[data-k][open]")].map(d=>d.dataset.k)) : new Set();
@@ -1415,7 +1415,7 @@ async function showSettings(){
     <div class="st-sec">Affichage</div>
     <div class="pf-menu" style="margin-top:0">
       <div class="pf-row" id="homeDesign" style="flex-direction:column;align-items:stretch;gap:10px;cursor:default"><span style="display:flex;align-items:center;gap:12px"><span class="pf-ri" aria-hidden="true">🏠</span><span class="pf-rt"><b>Design de l'accueil</b></span></span>
-        <div class="seg seg-home" role="group" aria-label="Design de l'accueil">${(()=>{ const t = document.documentElement.classList.contains("hv2"); return `<button type="button" data-home="1" class="${t?"on":""}" aria-pressed="${t}">Tuiles (nouveau)</button><button type="button" data-home="0" class="${t?"":"on"}" aria-pressed="${!t}">Ligne (ancien)</button>`; })()}</div></div>
+        <div class="seg seg-home" role="group" aria-label="Design de l'accueil">${(()=>{ const t = document.documentElement.classList.contains("hvt"); return `<button type="button" data-home="1" class="${t?"on":""}" aria-pressed="${t}">Tuiles (nouveau)</button><button type="button" data-home="0" class="${t?"":"on"}" aria-pressed="${!t}">Ligne (actuel)</button>`; })()}</div></div>
     </div>
     <div class="st-sec">Mes données</div>
     <div class="pf-menu" style="margin-top:0">
@@ -1440,7 +1440,7 @@ async function showSettings(){
     <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:26px 0 4px">© 2026 Dylan Lagneau – Crimson Compass Soft. Tous droits réservés.</p>
     <p style="text-align:center;color:var(--ink-2);font-size:11px;margin:0 0 4px">Usage réservé aux techniciens invités. Toute copie, extraction ou redistribution de l'application est interdite.</p>
   </div>`;
-  $$(".seg-home button").forEach(b => b.onclick = () => { const on = b.dataset.home==="1"; try{ localStorage.setItem("pvgo_home_v2", on?"1":"0"); }catch(e){} document.documentElement.classList.toggle("hv2", on); toast(on?"Accueil en tuiles":"Accueil en lignes"); showSettings(); });
+  $$(".seg-home button").forEach(b => b.onclick = () => { const on = b.dataset.home==="1"; try{ localStorage.setItem("pvgo_home_v3", on?"tiles":"lines"); }catch(e){} document.documentElement.classList.toggle("hvt", on); toast(on?"Accueil en tuiles":"Accueil en lignes"); showSettings(); });
   $("#showTutorial").onclick = () => showTutorial();
   $("#showChangelog").onclick = () => showChangelog(CHANGELOG);
   $("#exportBackup").onclick = () => exportBackup();
