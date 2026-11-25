@@ -232,18 +232,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -308,18 +308,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -384,18 +384,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -460,18 +460,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -536,18 +536,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -612,18 +612,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -688,18 +688,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -764,18 +764,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -840,18 +840,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -916,18 +916,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -992,18 +992,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1068,18 +1068,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1144,18 +1144,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1220,18 +1220,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1296,18 +1296,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1372,18 +1372,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1448,18 +1448,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1524,18 +1524,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1882,18 +1882,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -1958,18 +1958,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2034,18 +2034,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2110,18 +2110,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2186,18 +2186,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2262,18 +2262,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2338,18 +2338,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2530,18 +2530,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2606,18 +2606,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2722,18 +2722,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2798,18 +2798,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2874,18 +2874,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -2990,18 +2990,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3106,18 +3106,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3182,18 +3182,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3258,18 +3258,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3334,18 +3334,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3410,18 +3410,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3486,18 +3486,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3562,18 +3562,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
@@ -3638,18 +3638,18 @@
       "options": [
         {
           "label": "OK",
-          "color": "#2E9E4F",
-          "fillColor": "#C6EFCE"
+          "color": "#D8E4BC",
+          "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
-          "color": "#F79646",
-          "fillColor": "#FFD8A8"
+          "color": "#EEFAA4",
+          "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
-          "color": "#D32F2F",
-          "fillColor": "#FFC7CE"
+          "color": "#E6B8B7",
+          "fillColor": "#E6B8B7"
         },
         {
           "label": "N/A",
