@@ -3765,8 +3765,7 @@
           "Prérequis sous comptoir ENC 2",
           "Mât CrashPoint",
           "Prérequis CrashPoint"
-        ],
-        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+        ]
       }
     },
     {
@@ -3792,8 +3791,7 @@
           "L'ensemble des prérequis présent",
           "L'emplacement des KDS",
           "La présence du comptoir"
-        ],
-        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+        ]
       }
     },
     {
@@ -3818,8 +3816,7 @@
         "items": [
           "La présence du comptoir",
           "L'ensemble des prérequis présent"
-        ],
-        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+        ]
       }
     },
     {
@@ -3845,8 +3842,7 @@
           "L'ensemble des prérequis présent",
           "L'emplacement des bornes",
           "Le meuble K22"
-        ],
-        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+        ]
       }
     },
     {
@@ -3874,8 +3870,7 @@
           "La présence de la baie de brassage",
           "L'emplacement de la pointeuse",
           "L'emplacement de l'ORB"
-        ],
-        "note": "Les photos sont à compiler en PDF et envoyées à la suite du mail PV."
+        ]
       }
     },
     {
