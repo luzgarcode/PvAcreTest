@@ -2273,7 +2273,7 @@ async function buildPdf(tpl, draft){
       continue;
     }
     const r = toPdf(page, G);
-    if (f.eraseBg || f.darkBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:f.darkBg ? rgb(0,0,0) : rgb(1,1,1)});
+    if (f.eraseBg) page.drawRectangle({x:r.x, y:r.y, width:r.w, height:r.h, color:rgb(1,1,1)});
     if (f.type==="photo" || f.type==="signature"){
       const im = await embed(v); const s=Math.min(r.w/im.width, r.h/im.height); const w=im.width*s, h=im.height*s;
       page.drawImage(im, {x:r.x+(r.w-w)/2, y:r.y+(r.h-h)/2, width:w, height:h}); continue;
@@ -2290,11 +2290,11 @@ async function buildPdf(tpl, draft){
     } else {
       let size = f.fontSize || Math.min(f.type==="choice" ? 9.5 : 11, Math.max(6, r.h*0.72));
       const oneLine = text.replace(/\s*\n\s*/g," ");
-      while ((f.darkBg?bold:font).widthOfTextAtSize(oneLine,size) > r.w-2*pad && size>5) size-=0.25;
-      const tw=(f.darkBg?bold:font).widthOfTextAtSize(oneLine,size);
+      while ((f.whiteText?bold:font).widthOfTextAtSize(oneLine,size) > r.w-2*pad && size>5) size-=0.25;
+      const tw=(f.whiteText?bold:font).widthOfTextAtSize(oneLine,size);
       const x = f.align==="center" ? r.x+(r.w-tw)/2 : r.x+pad;
       const y = r.y + (r.h - size*0.72)/2;
-      page.drawText(oneLine,f.darkBg ? {x,y,size,font:bold,color:rgb(1,1,1)} : {x,y,size,font,color:INK()});
+      page.drawText(oneLine,f.whiteText ? {x,y,size,font:bold,color:rgb(1,1,1)} : {x,y,size,font,color:INK()});
     }
   }
   // annex photos — une page pleine par photo, pour garder le détail
