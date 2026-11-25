@@ -2441,7 +2441,7 @@
       "lineHeight": 0,
       "auto": "",
       "source": "fb72db8f7e",
-      "eraseBg": true
+      "darkBg": true
     },
     {
       "id": "f179ee1228",
@@ -2461,7 +2461,7 @@
       "lineHeight": 0,
       "auto": "",
       "source": "f4ae78e6e5",
-      "eraseBg": true
+      "darkBg": true
     }
   ],
   "annexPhotos": [
