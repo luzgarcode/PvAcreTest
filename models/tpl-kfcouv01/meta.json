@@ -187,8 +187,7 @@
             "w": 95.2,
             "h": 16.4
           },
-          "fill": "#F79646",
-          "text": "Oui"
+          "fill": "#F79646"
         },
         {
           "label": "Dual lane",
@@ -199,8 +198,7 @@
             "w": 83,
             "h": 16.4
           },
-          "fill": "#F79646",
-          "text": "Oui"
+          "fill": "#F79646"
         },
         {
           "label": "Face to face",
@@ -211,8 +209,7 @@
             "w": 83,
             "h": 16.4
           },
-          "fill": "#F79646",
-          "text": "Oui"
+          "fill": "#F79646"
         }
       ],
       "choiceMode": "boxes",
