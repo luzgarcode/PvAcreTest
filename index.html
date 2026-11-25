@@ -143,6 +143,20 @@ html.hv2 .list:has(.client-row) .row .main{ min-width:0; }
 html.hv2 .list:has(.client-row) .row:active{ background:var(--blue-soft); }
 html.hv2 #normalSections .sec-h{ margin:22px 0 10px; }
 .rl-short{ display:none; }
+.hello{ display:none; }
+html.hv2 .hello{ display:block; margin:4px 2px 14px; }
+html.hv2 .hello h1{ font-size:26px; font-weight:800; margin:0; line-height:1.15; }
+html.hv2 .hello p{ margin:2px 0 0; color:var(--ink-2); font-size:15px; }
+html.hv2 #draftsGrp{ background:var(--vis-soft); border:1px solid var(--vis); border-radius:16px; }
+html.hv2 .list:has(.client-row){ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+html.hv2 .list:has(.client-row) .row{ flex-direction:column; align-items:stretch; gap:10px; padding:14px; border-radius:18px; min-height:132px; position:relative; }
+html.hv2 .list:has(.client-row) .row .doc-ico{ width:100%; height:58px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--surface-2); }
+html.hv2 .list:has(.client-row) .row .client-ico-img{ border:0; }
+html.hv2 .list:has(.client-row) .row .client-ico-img img{ width:auto; max-width:72%; max-height:44px; }
+html.hv2 .list:has(.client-row) .row .main{ min-width:0; flex:none; }
+html.hv2 .list:has(.client-row) .row .name{ font-size:16px; }
+html.hv2 .list:has(.client-row) .row .meta{ font-size:12.5px; margin-top:1px; }
+html.hv2 .list:has(.client-row) .row .chev{ display:none; }
 html.hv2 #normalSections .sec-h{ display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; gap:10px; margin:18px 2px 10px; }
 html.hv2 #normalSections .sec-h .rl-long{ display:none; }
 html.hv2 #normalSections .sec-h .rl-short{ display:inline; }
@@ -1126,6 +1140,7 @@ async function showHome(){
     <div id="searchResults"></div>
 
     <div id="normalSections" class="${S.searchQ?"hidden":""}">
+    <div class="hello"><h1>Bonjour${profile&&profile.name?" "+esc(String(profile.name).trim().split(/\s+/)[0]):""} 👋</h1><p>Quel PV aujourd'hui ?</p></div>
     ${openCount?`<details class="grp" id="draftsGrp" style="margin-bottom:14px"${keepDraftsOpen?" open":""}><summary><span class="t">Rapports en cours (${openCount})</span></summary>
     <div class="grp-body"><div class="list">${draftRowsHtml(drafts, tpls, tplName)}</div></div></details>`:""}
 
