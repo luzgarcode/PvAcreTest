@@ -3169,7 +3169,7 @@
     {
       "id": "f79c5bd6e",
       "type": "choice",
-      "label": "9. Ecran - Borne 1",
+      "label": "9. Écran - Borne 1",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 294.4,
@@ -3208,7 +3208,7 @@
     {
       "id": "f29afe48a",
       "type": "choice",
-      "label": "9. Ecran - Borne 2",
+      "label": "9. Écran - Borne 2",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 351.1,
@@ -3247,7 +3247,7 @@
     {
       "id": "f618bdc56",
       "type": "choice",
-      "label": "9. Ecran - Borne 3",
+      "label": "9. Écran - Borne 3",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 407.9,
@@ -3286,7 +3286,7 @@
     {
       "id": "f7913da7b",
       "type": "choice",
-      "label": "9. Ecran - Borne 4",
+      "label": "9. Écran - Borne 4",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 464.4,
@@ -3325,7 +3325,7 @@
     {
       "id": "f34290c0c",
       "type": "choice",
-      "label": "9. Ecran - Borne 5",
+      "label": "9. Écran - Borne 5",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 521.2,
@@ -3364,7 +3364,7 @@
     {
       "id": "fd7086905",
       "type": "choice",
-      "label": "9. Ecran - Borne 6",
+      "label": "9. Écran - Borne 6",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 577.9,
@@ -3403,7 +3403,7 @@
     {
       "id": "f6505045b",
       "type": "multiline",
-      "label": "9. Ecran - Commentaires (Reste à faire)",
+      "label": "9. Écran - Commentaires (Reste à faire)",
       "group": "Installation physique de la borne / Aspect général",
       "page": 5,
       "x": 633.5,
@@ -6445,7 +6445,7 @@
     {
       "id": "f2a837b38",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 1",
+      "label": "22. Écran (lisibilité + tactile) - Borne 1",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 295.4,
@@ -6484,7 +6484,7 @@
     {
       "id": "f123bb92a",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 2",
+      "label": "22. Écran (lisibilité + tactile) - Borne 2",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 352.2,
@@ -6523,7 +6523,7 @@
     {
       "id": "fc361a14f",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 3",
+      "label": "22. Écran (lisibilité + tactile) - Borne 3",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 408.8,
@@ -6562,7 +6562,7 @@
     {
       "id": "f8a9c9f28",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 4",
+      "label": "22. Écran (lisibilité + tactile) - Borne 4",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 465.6,
@@ -6601,7 +6601,7 @@
     {
       "id": "f35f45696",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 5",
+      "label": "22. Écran (lisibilité + tactile) - Borne 5",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 522.2,
@@ -6640,7 +6640,7 @@
     {
       "id": "fb7d72639",
       "type": "choice",
-      "label": "22. Ecran (lisibilité + tactile) - Borne 6",
+      "label": "22. Écran (lisibilité + tactile) - Borne 6",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 579.1,
@@ -6679,7 +6679,7 @@
     {
       "id": "f6c1cf783",
       "type": "multiline",
-      "label": "22. Ecran (lisibilité + tactile) - Commentaires (Reste à faire)",
+      "label": "22. Écran (lisibilité + tactile) - Commentaires (Reste à faire)",
       "group": "Contrôle des périphériques et formation",
       "page": 7,
       "x": 634.8,
@@ -8965,7 +8965,7 @@
     {
       "id": "f01b83eca",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 1",
+      "label": "Sc1. Écran verrouillage - Borne 1",
       "group": "Sémaphore",
       "page": 8,
       "x": 294.7,
@@ -9004,7 +9004,7 @@
     {
       "id": "f2d765596",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 2",
+      "label": "Sc1. Écran verrouillage - Borne 2",
       "group": "Sémaphore",
       "page": 8,
       "x": 351.4,
@@ -9043,7 +9043,7 @@
     {
       "id": "f8a3d65c3",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 3",
+      "label": "Sc1. Écran verrouillage - Borne 3",
       "group": "Sémaphore",
       "page": 8,
       "x": 408.1,
@@ -9082,7 +9082,7 @@
     {
       "id": "fde3ce776",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 4",
+      "label": "Sc1. Écran verrouillage - Borne 4",
       "group": "Sémaphore",
       "page": 8,
       "x": 464.9,
@@ -9121,7 +9121,7 @@
     {
       "id": "fe00f181d",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 5",
+      "label": "Sc1. Écran verrouillage - Borne 5",
       "group": "Sémaphore",
       "page": 8,
       "x": 521.5,
@@ -9160,7 +9160,7 @@
     {
       "id": "f7c53cb96",
       "type": "choice",
-      "label": "Sc1. Ecran verrouillage - Borne 6",
+      "label": "Sc1. Écran verrouillage - Borne 6",
       "group": "Sémaphore",
       "page": 8,
       "x": 578.3,
@@ -9199,7 +9199,7 @@
     {
       "id": "ff45a6857",
       "type": "multiline",
-      "label": "Sc1. Ecran verrouillage - Commentaires (Reste à faire)",
+      "label": "Sc1. Écran verrouillage - Commentaires (Reste à faire)",
       "group": "Sémaphore",
       "page": 8,
       "x": 634.1,
@@ -10981,7 +10981,7 @@
     {
       "id": "f0ace267d",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 1",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 1",
       "group": "Documentation & signature",
       "page": 8,
       "x": 294.7,
@@ -11020,7 +11020,7 @@
     {
       "id": "f47919cb4",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 2",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 2",
       "group": "Documentation & signature",
       "page": 8,
       "x": 351.4,
@@ -11059,7 +11059,7 @@
     {
       "id": "fb7aec4fb",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 3",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 3",
       "group": "Documentation & signature",
       "page": 8,
       "x": 408.1,
@@ -11098,7 +11098,7 @@
     {
       "id": "ffc323c32",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 4",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 4",
       "group": "Documentation & signature",
       "page": 8,
       "x": 464.9,
@@ -11137,7 +11137,7 @@
     {
       "id": "f0c4d39b8",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 5",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 5",
       "group": "Documentation & signature",
       "page": 8,
       "x": 521.5,
@@ -11176,7 +11176,7 @@
     {
       "id": "f848a8a59",
       "type": "choice",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Borne 6",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Borne 6",
       "group": "Documentation & signature",
       "page": 8,
       "x": 578.3,
@@ -11215,7 +11215,7 @@
     {
       "id": "f8ad16e40",
       "type": "multiline",
-      "label": "30a. Remise des clés monnayeurs – Charriots : 4 jeux de 2 clés rouges (8 clés) - Commentaires (Reste à faire)",
+      "label": "30a. Remise des clés monnayeurs – Chariots : 4 jeux de 2 clés rouges (8 clés) - Commentaires (Reste à faire)",
       "group": "Documentation & signature",
       "page": 8,
       "x": 634.1,

@@ -1906,7 +1906,7 @@
     {
       "id": "f5c9ab59b",
       "type": "choice",
-      "label": "Borne 1 - Ecran",
+      "label": "Borne 1 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 294.8,
@@ -1945,7 +1945,7 @@
     {
       "id": "fefff6657",
       "type": "choice",
-      "label": "Borne 2 - Ecran",
+      "label": "Borne 2 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 351.6,
@@ -1984,7 +1984,7 @@
     {
       "id": "f30ca86a1",
       "type": "choice",
-      "label": "Borne 3 - Ecran",
+      "label": "Borne 3 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 408.1,
@@ -2023,7 +2023,7 @@
     {
       "id": "fd72ceaa8",
       "type": "choice",
-      "label": "Borne 4 - Ecran",
+      "label": "Borne 4 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 464.8,
@@ -2062,7 +2062,7 @@
     {
       "id": "fbd42fe60",
       "type": "choice",
-      "label": "Borne 5 - Ecran",
+      "label": "Borne 5 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 521.6,
@@ -2101,7 +2101,7 @@
     {
       "id": "fa4a8959a",
       "type": "choice",
-      "label": "Borne 6 - Ecran",
+      "label": "Borne 6 - Écran",
       "group": "Installation physique de la borne",
       "page": 3,
       "x": 578.3,
