@@ -232,16 +232,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -308,16 +311,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -384,16 +390,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -460,16 +469,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -536,16 +548,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -612,16 +627,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -688,16 +706,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -764,16 +785,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -840,16 +864,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -916,16 +943,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -992,16 +1022,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1068,16 +1101,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1144,16 +1180,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1220,16 +1259,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1296,16 +1338,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1372,16 +1417,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1448,16 +1496,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1524,16 +1575,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1882,16 +1936,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -1958,16 +2015,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2034,16 +2094,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2110,16 +2173,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2186,16 +2252,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2262,16 +2331,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2338,16 +2410,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2530,16 +2605,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2606,16 +2684,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2722,16 +2803,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2798,16 +2882,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2874,16 +2961,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -2990,16 +3080,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3106,16 +3199,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3182,16 +3278,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3258,16 +3357,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3334,16 +3436,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3410,16 +3515,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3486,16 +3594,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3562,16 +3673,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
@@ -3638,16 +3752,19 @@
       "options": [
         {
           "label": "OK",
+          "tone": "v-ok",
           "color": "#D8E4BC",
           "fillColor": "#D8E4BC"
         },
         {
           "label": "En cours",
+          "tone": "v-warn",
           "color": "#EEFAA4",
           "fillColor": "#EEFAA4"
         },
         {
           "label": "NOK",
+          "tone": "v-nok",
           "color": "#E6B8B7",
           "fillColor": "#E6B8B7"
         },
