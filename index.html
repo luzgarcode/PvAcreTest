@@ -750,17 +750,9 @@ async function saveFile(filename, bytes, mime, text, shareTitle){
   let file = null;
   try{ file = new File([blob], filename, {type:mime}); }catch(e){}
   if (file && navigator.canShare && navigator.canShare({files:[file]})){
-    /* 1er essai : fichier + titre + texte ; si le téléphone refuse (erreur autre qu'une annulation),
-       on réessaie avec le fichier seul avant de se rabattre sur le téléchargement. */
-    const tries = [];
-    const full = {files:[file], title:shareTitle||filename}; if (text) full.text = text;
-    tries.push(full, {files:[file]});
-    for (const payload of tries){
-      try{ await navigator.share(payload); return "shared"; }
-      catch(e){ if (e && e.name === "AbortError") return "aborted"; window.__lastShareError = (e && (e.name+": "+e.message)) || String(e); console.warn("share failed", e); }
-    }
+    try{ const payload = {files:[file], title:shareTitle||filename}; if (text) payload.text = text; await navigator.share(payload); return "shared"; }
+    catch(e){ if (e && e.name === "AbortError") return "aborted"; }
   }
-  if (window.__lastShareError && file) { try{ alert("Le partage a été refusé par le téléphone ("+window.__lastShareError+"). Le PDF va s'ouvrir : utilise le bouton Partager de l'aperçu."); }catch(e){} }
   const url = URL.createObjectURL(blob); const a=document.createElement("a"); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url), 8000);
   return "downloaded";
 }
