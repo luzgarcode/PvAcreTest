@@ -503,11 +503,12 @@ function sentCheck(text){
   setTimeout(() => ov.remove(), 2100);
 }
 /* Écran bloquant (logo qui pulse + barre) pendant la resynchronisation : rien d'autre n'est utilisable. */
-function showResyncOverlay(){
-  const o = document.createElement("div"); o.className = "resync-ov"; o.setAttribute("role","alertdialog"); o.setAttribute("aria-label","Resynchronisation en cours");
-  o.innerHTML = `<div class="resync-box"><div class="resync-logo"></div><div class="resync-t">Resynchronisation en cours…</div>
+function showResyncOverlay(opts){
+  opts = opts || {};
+  const o = document.createElement("div"); o.className = "resync-ov"; o.setAttribute("role","alertdialog"); o.setAttribute("aria-label", opts.title || "Resynchronisation en cours");
+  o.innerHTML = `<div class="resync-box"><div class="resync-logo"></div><div class="resync-t">${esc(opts.title || "Resynchronisation en cours…")}</div>
     <div class="resync-bar"><i id="resyncFill"></i></div><div class="resync-n" id="resyncN">Connexion…</div>
-    <div class="resync-h">Ne ferme pas l'appli. Tes rapports ne sont pas touchés.</div></div>`;
+    <div class="resync-h">${esc(opts.hint || "Ne ferme pas l'appli. Tes rapports ne sont pas touchés.")}</div></div>`;
   document.body.appendChild(o);
   return { update(done, total){ const f=$("#resyncFill",o), n=$("#resyncN",o); if(f) f.style.width = Math.round(done/total*100)+"%"; if(n) n.textContent = `${done} / ${total} modèles`; }, close(){ o.remove(); } };
 }
@@ -3062,8 +3063,11 @@ async function runOfflineDiagnostic(){
     if (migrationPhase() === 2){ await showMigrationLock(); return; } // ancien site : export seulement
     const hadAny = (await Store.all("templates")).length > 0;
     if (!hadAny) S.syncing = true;
-    showHome();
-    const res = await syncManifest();
+    // Tout premier lancement : écran d'attente (logo qui bat) le temps de télécharger les modèles, au lieu d'un accueil vide
+    const firstOv = hadAny ? null : showResyncOverlay({title:`${APP_NAME} se prépare pour la première utilisation…`, hint:"Merci de patienter, ça ne prend qu'un instant. Ne ferme pas l'appli."});
+    if (!firstOv) showHome();
+    const res = await syncManifest(firstOv ? {onProgress:(d,t)=>firstOv.update(d,t)} : undefined);
+    if (firstOv){ firstOv.close(); showHome(); }
     S.syncing = false; S.syncError = res.error || null; paintSyncState();
     if (S.view === "home") showHome();
     runOfflineDiagnostic();
