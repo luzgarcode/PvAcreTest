@@ -218,6 +218,30 @@
       "auto": ""
     },
     {
+      "id": "fb8458e817",
+      "type": "info",
+      "label": "Choisissez le type de drive",
+      "group": "Drive",
+      "page": 2,
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "fontSize": 0,
+      "align": "left",
+      "options": [],
+      "choiceMode": "text",
+      "mark": "x",
+      "lineHeight": 0,
+      "auto": "",
+      "noPdf": true,
+      "text": "⚠️ Choisissez d'abord le type de drive (rubrique « Type de drive ») pour afficher la checklist.",
+      "visibleIf": {
+        "field": "f23031dfb9",
+        "empty": true
+      }
+    },
+    {
       "id": "fa8802c81a",
       "type": "choice",
       "label": "Massif en béton Speaker Box présent et conforme.",
@@ -258,6 +282,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -283,6 +315,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -337,6 +377,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -362,6 +410,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -416,6 +472,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -441,6 +505,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -495,6 +567,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -520,6 +600,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -574,6 +662,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -599,6 +695,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -653,6 +757,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -678,6 +790,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -732,6 +852,12 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -757,6 +883,12 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -811,6 +943,12 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -836,6 +974,12 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -890,6 +1034,12 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -915,6 +1065,12 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -969,6 +1125,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -994,6 +1158,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1048,6 +1220,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1073,6 +1253,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1127,6 +1315,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1152,6 +1348,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1206,6 +1410,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1231,6 +1443,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1285,6 +1505,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1310,6 +1538,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1364,6 +1600,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1389,6 +1633,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1443,6 +1695,12 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1468,6 +1726,12 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1522,6 +1786,12 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1547,6 +1817,12 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Dual lane"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -1601,6 +1877,14 @@
       "mark": "x",
       "lineHeight": 0,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "fillBox": {
         "page": 2,
         "x": 342.4,
@@ -1626,6 +1910,14 @@
       "mark": "x",
       "lineHeight": 8.6,
       "auto": "",
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
+      },
       "visibleIf": {
         "anyOf": [
           {
@@ -3883,6 +4175,14 @@
           "Mât CrashPoint",
           "Prérequis CrashPoint"
         ]
+      },
+      "visibleAlso": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Dual lane",
+          "Face to face"
+        ]
       }
     },
     {
@@ -4061,6 +4361,103 @@
     "KFC"
   ],
   "shortName": "KFC Ouverture",
+  "shades": [
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "empty": true
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 68.3,
+      "w": 567.8,
+      "h": 589.8
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 215.9,
+      "w": 567.8,
+      "h": 24.6
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 240.5,
+      "w": 567.8,
+      "h": 24.6
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 265.1,
+      "w": 567.8,
+      "h": 24.6
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 437.3,
+      "w": 567.8,
+      "h": 24.6
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 13.4,
+      "y": 461.9,
+      "w": 567.8,
+      "h": 24.6
+    },
+    {
+      "when": {
+        "field": "f23031dfb9",
+        "equalsAny": [
+          "Single drive",
+          "Face to face"
+        ]
+      },
+      "page": 2,
+      "x": 116.5,
+      "y": 632.6,
+      "w": 165,
+      "h": 24.4
+    }
+  ],
   "reference": {
     "title": "Rappel (à consulter pendant l'audit)",
     "images": [
